@@ -1,6 +1,6 @@
 import { Badge, Box, Container, Heading, Image, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
-import nusLogo from '../assets/nus.svg'
+import nusLogo from '../assets/nus.png'
 import saLogo from '../assets/sa.png'
 
 function Awards() {

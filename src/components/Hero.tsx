@@ -24,7 +24,7 @@ function Hero() {
     }
   }
 
-  const stackHighlights = ['Apache Spark', 'Kafka', 'Airflow', 'Kubernetes', 'Hive', 'Looker']
+  const stackHighlights = ['Apache Spark', 'Apache Kafka', 'Airflow', 'Kubernetes', 'BigQuery', 'GCP']
 
   return (
     <Box
@@ -211,7 +211,7 @@ function Hero() {
                       LOCATION
                     </Text>
                     <Text color="var(--text-100)" mt={1}>
-                      Ho Chi Minh City, Vietnam
+                      Hanoi Capital Region, Vietnam
                     </Text>
                   </Box>
                 </HStack>

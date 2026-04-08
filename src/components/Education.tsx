@@ -1,6 +1,6 @@
 import { Box, Container, Heading, Image, Text, VStack } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
-import nusLogo from '../assets/nus.svg'
+import nusLogo from '../assets/nus.png'
 import saLogo from '../assets/sa.png'
 import utLogo from '../assets/ut.png'
 
