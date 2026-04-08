@@ -1,38 +1,41 @@
-import { Box, Heading, Text, SimpleGrid, Badge, Image, VStack } from '@chakra-ui/react'
+import { Badge, Box, Container, Heading, Image, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
-import saLogo from '../assets/sa.png'
 import nusLogo from '../assets/nus.svg'
+import saLogo from '../assets/sa.png'
 
 function Awards() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
   }
+
   const awards = [
     {
       title: 'ASEAN Secondary Scholarship',
-      organization: 'Saint Andrew\'s Junior College',
+      organization: "Saint Andrew's Junior College",
       year: '2014 - 2018',
-      description: 'Full-ride scholarship for 4 years of secondary and junior college education',
+      description: 'Full-ride scholarship for secondary and junior college education.',
       logo: saLogo,
-      icon: '⭐',
+      tag: 'SCHOLARSHIP',
     },
     {
       title: 'ASEAN Undergraduate Scholarship',
       organization: 'National University of Singapore',
       year: '2018 - 2022',
-      description: 'Full-ride scholarship for 4 years of undergraduate study',
+      description: 'Full-ride scholarship for undergraduate studies.',
       logo: nusLogo,
-      icon: '🎓',
+      tag: 'SCHOLARSHIP',
     },
     {
-      title: '1st prize winning team | Healthcare track | AIxImpact Case Competition',
+      title: '1st Prize Team | AIxImpact Healthcare Track',
       organization: 'QuantumBlack, a McKinsey company',
       year: '2022',
-      description: 'Best Project award within the Healthcare track of AIxImpact Case Competition',
+      description: 'Best project award in the AIxImpact healthcare case competition track.',
       logo: nusLogo,
-      icon: '⭐',
-    }
+      tag: 'COMPETITION',
+    },
   ]
 
   return (
@@ -40,135 +43,102 @@ function Awards() {
       id="awards"
       minH="100vh"
       w="100%"
+      position="relative"
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg="gray.50"
       py={{ base: 16, md: 24 }}
-      px={0}
-      position="relative"
+      className="engineering-grid"
     >
-      <Box w="100%" px={{ base: 4, md: 8, lg: 12 }} maxW="1200px" mx="auto">
-        <VStack gap={3} mb={12} textAlign="center">
-          <Box
-            as="span"
-            fontSize={{ base: 'md', md: 'lg' }}
-            fontWeight={700}
-            color="purple.600"
-            textTransform="uppercase"
-            letterSpacing="wide"
-            px={6}
-            py={3}
-            bg="white"
-            borderRadius="full"
-            boxShadow="md"
-          >
-            Awards & Achievements
-          </Box>
-          <Heading
-            as="h2"
-            fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
-            fontWeight={800}
-            textAlign="center"
-            lineHeight="shorter"
-            bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
-            bgClip="text"
-            letterSpacing="tight"
-          >
-            Awards & Achievements
+      <Container maxW="1200px" px={{ base: 4, md: 8 }}>
+        <VStack align="stretch" gap={4} mb={12} className="reveal-up">
+          <Text className="code-font" color="var(--text-300)" letterSpacing="widest" fontSize="xs">
+            ACHIEVEMENT_LOG
+          </Text>
+          <Heading as="h2" fontSize={{ base: '3xl', md: '5xl' }} color="var(--text-100)">
+            Awards and Achievements
           </Heading>
         </VStack>
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
-            {awards.map((award, index) => (
-              <Box
-                key={index}
-                bg="white"
-                borderRadius="2xl"
-                p={8}
-                boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
-                border="1px solid"
-                borderColor="gray.100"
-                textAlign="center"
-                position="relative"
-                overflow="hidden"
-                _hover={{
-                  transform: 'translateY(-8px)',
-                  boxShadow: '0 12px 40px rgba(102, 126, 234, 0.15)',
-                  borderColor: 'purple.200',
-                }}
-                transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-              >
-                <Box
-                  w="90px"
-                  h="90px"
-                  borderRadius="full"
-                  bg="white"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  mx="auto"
-                  mb={6}
-                  boxShadow="0 8px 24px rgba(102, 126, 234, 0.3)"
-                  border="3px solid"
-                  borderColor="purple.100"
-                  p={3}
-                  position="relative"
-                  overflow="hidden"
-                >
-                  <Image
-                    src={award.logo}
-                    alt={`${award.organization} logo`}
-                    w="100%"
-                    h="100%"
-                    objectFit="contain"
-                  />
-                </Box>
-                <Heading as="h3" fontSize="lg" mb={3} color="gray.900" fontWeight={700}>
-                  {award.title}
-                </Heading>
-                <Text fontSize="md" color="purple.700" fontWeight={600} mb={3}>
-                  {award.organization}
-                </Text>
-                <Badge
-                  bgGradient="linear(135deg, #667eea, #764ba2)"
-                  color="blue"
-                  backgroundColor="gray.100"
-                  mb={4}
-                  px={4}
-                  py={1.5}
-                  borderRadius="full"
-                  fontSize="xs"
-                  fontWeight={600}
-                >
-                  {award.year}
-                </Badge>
-                <Text color="gray.800" lineHeight="tall" fontSize="sm" fontWeight={500}>
-                  {award.description}
-                </Text>
-              </Box>
-            ))}
-          </SimpleGrid>
 
-          {/* Scroll Arrow */}
-          <Box
-            position="absolute"
-            bottom={8}
-            left="50%"
-            transform="translateX(-50%)"
-            color="purple.600"
-            _hover={{ color: 'purple.700', transform: 'translateX(-50%) translateY(4px)' }}
-            cursor="pointer"
-            onClick={() => scrollToSection('projects')}
-            transition="all 0.3s"
-            zIndex={2}
-            display={{ base: 'none', md: 'block' }}
-          >
-            <HiArrowDown size={32} />
-          </Box>
+        <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap={6}>
+          {awards.map((award, index) => (
+            <Box
+              key={award.title}
+              p={6}
+              borderRadius="lg"
+              bg="var(--surface-900)"
+              border="1px solid"
+              borderColor="var(--line-700)"
+              textAlign="left"
+              className={`reveal-up delay-${Math.min(index + 1, 3)}`}
+              _hover={{
+                borderColor: 'rgba(98, 240, 213, 0.45)',
+                transform: 'translateY(-4px)',
+                boxShadow: '0 16px 34px rgba(3, 10, 21, 0.55)',
+              }}
+              transition="all 0.25s ease"
+            >
+              <Box display="flex" justifyContent="space-between" alignItems="center" mb={4}>
+                <Box
+                  w="48px"
+                  h="48px"
+                  p={2}
+                  borderRadius="md"
+                  bg="rgba(34, 128, 235, 0.15)"
+                  border="1px solid"
+                  borderColor="rgba(69, 162, 255, 0.36)"
+                >
+                  <Image src={award.logo} alt={`${award.organization} logo`} w="100%" h="100%" objectFit="contain" />
+                </Box>
+                <Badge
+                  className="code-font"
+                  px={2.5}
+                  py={1}
+                  borderRadius="md"
+                  bg="rgba(98, 240, 213, 0.12)"
+                  border="1px solid"
+                  borderColor="rgba(98, 240, 213, 0.45)"
+                  color="var(--text-100)"
+                  fontWeight={500}
+                  fontSize="0.65rem"
+                >
+                  {award.tag}
+                </Badge>
+              </Box>
+
+              <Heading as="h3" fontSize="xl" color="var(--text-100)" mb={2}>
+                {award.title}
+              </Heading>
+              <Text className="code-font" color="var(--accent-300)" fontSize="sm" mb={3}>
+                {award.organization}
+              </Text>
+              <Text color="var(--text-300)" mb={3} lineHeight="1.75">
+                {award.description}
+              </Text>
+              <Text className="code-font" color="var(--text-300)" fontSize="xs">
+                YEAR: {award.year}
+              </Text>
+            </Box>
+          ))}
+        </SimpleGrid>
+      </Container>
+
+      <Box
+        position="absolute"
+        bottom={6}
+        left="50%"
+        transform="translateX(-50%)"
+        color="var(--text-300)"
+        _hover={{ color: 'var(--text-100)' }}
+        cursor="pointer"
+        onClick={() => scrollToSection('projects')}
+        className="pulse-line"
+        display={{ base: 'none', md: 'block' }}
+      >
+        <HiArrowDown size={28} />
       </Box>
     </Box>
   )
 }
 
 export default Awards
-

@@ -1,45 +1,51 @@
-import { Box, Heading, Text, Link, SimpleGrid, VStack } from '@chakra-ui/react'
+import { Box, Container, Heading, Link, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import { FiExternalLink } from 'react-icons/fi'
 import { HiArrowDown } from 'react-icons/hi'
 
 function Videos() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
   }
+
   const videos = [
     {
       id: 1,
-      title: 'Tự học IT như nào hiệu quả nhất?',
-      description: 'Với vô số các nguồn tài nguyên học IT từ miễn phí cho tới mất phí, làm sao để chúng ta có thể quyết định được cách học nào là hiệu quả cho bản thân mình nhất?',
+      title: 'Tu hoc IT nhu nao hieu qua nhat?',
+      description:
+        'With many learning resources available, this video focuses on choosing a practical and sustainable way to self-study IT.',
       videoId: '1Whd4I0b1u4',
-      thumbnail: 'https://youtu.be/1Whd4I0b1u4?si=NyZBJaONBFr6PlGV',
     },
     {
       id: 2,
-      title: 'Xử lý dữ liệu trong thời gian thực với Apache Kafka',
-      description: 'Ở trong video này, chúng ta sẽ cùng tìm hiểu cách sử dụng Apache Kafka để xử lý dữ liệu trong thời gian thực nhé!',
+      title: 'Xu ly du lieu trong thoi gian thuc voi Apache Kafka',
+      description: 'A walkthrough of building real-time data processing flows with Apache Kafka.',
       videoId: 'jfu4ORM8k9Q',
-      thumbnail: 'https://youtu.be/jfu4ORM8k9Q',
     },
     {
       id: 3,
-      title: 'Mình có hối tiếc khi học Thạc sĩ Khoa học máy tính?',
-      description: 'Ở trong video này, mình sẽ chia sẻ những trải nghiệm và đúc kết được sau quá trình apply và học Thạc sĩ ngành Khoa học máy tính',
+      title: 'Minh co hoi tiec khi hoc Thac si Khoa hoc may tinh?',
+      description: 'A reflection on applying for and studying a Master of Computer Science.',
       videoId: 'lBOcJR7QOMs',
-      thumbnail: 'https://youtu.be/lBOcJR7QOMs',
     },
     {
       id: 4,
-      title: 'Cách mình tối ưu hoá thời gian cho việc học IT?',
-      description: 'Ở trong video này, mình muốn chia sẻ một số đúc kết về các cách mình đang làm để tối ưu hoá thời gian cho việc học IT.',
+      title: 'Cach minh toi uu hoa thoi gian cho viec hoc IT?',
+      description: 'Practical tactics to optimize study time and improve consistency in technical learning.',
       videoId: 'C7d0LEefUcw',
-      thumbnail: 'https://youtu.be/C7d0LEefUcw',
     },
   ]
 
   const getEmbedUrl = (videoId: string) => {
-    return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`
+    return 'https://www.youtube.com/embed/' + videoId + '?rel=0&modestbranding=1'
+  }
+
+  const getDelayClass = (index: number) => {
+    if (index === 0) return 'reveal-up delay-1'
+    if (index === 1) return 'reveal-up delay-2'
+    return 'reveal-up delay-3'
   }
 
   return (
@@ -47,68 +53,41 @@ function Videos() {
       id="videos"
       minH="100vh"
       w="100%"
+      position="relative"
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg="white"
       py={{ base: 16, md: 24 }}
-      px={0}
-      position="relative"
+      className="engineering-grid"
     >
-      <Box w="100%" px={{ base: 4, md: 8, lg: 12 }} maxW="1200px" mx="auto">
-        <VStack gap={3} mb={12} textAlign="center">
-          <Box
-            as="span"
-            fontSize={{ base: 'md', md: 'lg' }}
-            fontWeight={700}
-            color="purple.600"
-            textTransform="uppercase"
-            letterSpacing="wide"
-            px={6}
-            py={3}
-            bg="white"
-            borderRadius="full"
-            boxShadow="md"
-          >
-            Educational Videos
-          </Box>
-          <Heading
-            as="h2"
-            fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
-            fontWeight={800}
-            textAlign="center"
-            lineHeight="shorter"
-            bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
-            bgClip="text"
-            letterSpacing="tight"
-          >
+      <Container maxW="1200px" px={{ base: 4, md: 8 }}>
+        <VStack align="stretch" gap={4} mb={12} className="reveal-up">
+          <Text className="code-font" color="var(--text-300)" letterSpacing="widest" fontSize="xs">
+            VIDEO_FEED
+          </Text>
+          <Heading as="h2" fontSize={{ base: '3xl', md: '5xl' }} color="var(--text-100)">
             Educational Videos
           </Heading>
         </VStack>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={8}>
-          {videos.map((video) => (
+
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
+          {videos.map((video, index) => (
             <Box
               key={video.id}
-              bg="white"
-              borderRadius="2xl"
+              bg="var(--surface-900)"
+              borderRadius="lg"
               overflow="hidden"
-              boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
               border="1px solid"
-              borderColor="gray.100"
+              borderColor="var(--line-700)"
+              className={getDelayClass(index)}
               _hover={{
-                transform: 'translateY(-8px)',
-                boxShadow: '0 12px 40px rgba(102, 126, 234, 0.15)',
-                borderColor: 'purple.200',
+                transform: 'translateY(-3px)',
+                borderColor: 'rgba(98, 240, 213, 0.45)',
+                boxShadow: '0 16px 34px rgba(3, 10, 21, 0.55)',
               }}
-              transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+              transition="all 0.25s ease"
             >
-              <Box
-                position="relative"
-                paddingBottom="56.25%"
-                height="0"
-                overflow="hidden"
-                bg="gray.100"
-              >
+              <Box position="relative" paddingBottom="56.25%" height="0" overflow="hidden" bg="rgba(14, 31, 54, 0.6)">
                 <iframe
                   style={{
                     position: 'absolute',
@@ -124,55 +103,49 @@ function Videos() {
                   allowFullScreen
                 />
               </Box>
-              <Box p={6}>
-                <Heading as="h3" fontSize="lg" mb={3} color="gray.900" fontWeight={700}>
+              <Box p={5}>
+                <Heading as="h3" fontSize="lg" mb={2} color="var(--text-100)">
                   {video.title}
                 </Heading>
-                <Text color="gray.800" mb={4} lineHeight="tall" fontSize="sm" fontWeight={500}>
+                <Text color="var(--text-300)" mb={4} lineHeight="1.75" fontSize="sm">
                   {video.description}
                 </Text>
                 <Link
-                  href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                  href={'https://www.youtube.com/watch?v=' + video.videoId}
                   target="_blank"
                   rel="noopener noreferrer"
-                  color="purple.700"
-                  fontWeight={600}
-                  _hover={{
-                    color: 'purple.800',
-                    textDecoration: 'underline',
-                  }}
+                  color="var(--accent-300)"
+                  className="code-font"
+                  fontSize="sm"
                   display="flex"
                   alignItems="center"
                   gap={2}
-                  fontSize="sm"
+                  _hover={{ color: 'var(--text-100)' }}
                 >
-                  Watch on YouTube <FiExternalLink />
+                  WATCH_ON_YOUTUBE <FiExternalLink />
                 </Link>
               </Box>
             </Box>
           ))}
         </SimpleGrid>
+      </Container>
 
-        {/* Scroll Arrow */}
-        <Box
-          position="absolute"
-          bottom={8}
-          left="50%"
-          transform="translateX(-50%)"
-          color="purple.600"
-          _hover={{ color: 'purple.700', transform: 'translateX(-50%) translateY(4px)' }}
-          cursor="pointer"
-          onClick={() => scrollToSection('skills')}
-          transition="all 0.3s"
-          zIndex={2}
-          display={{ base: 'none', md: 'block' }}
-        >
-          <HiArrowDown size={32} />
-        </Box>
+      <Box
+        position="absolute"
+        bottom={6}
+        left="50%"
+        transform="translateX(-50%)"
+        color="var(--text-300)"
+        _hover={{ color: 'var(--text-100)' }}
+        cursor="pointer"
+        onClick={() => scrollToSection('skills')}
+        className="pulse-line"
+        display={{ base: 'none', md: 'block' }}
+      >
+        <HiArrowDown size={28} />
       </Box>
     </Box>
   )
 }
 
 export default Videos
-

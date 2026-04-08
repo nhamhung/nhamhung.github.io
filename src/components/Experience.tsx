@@ -1,31 +1,33 @@
-import { Box, Heading, Text, VStack, Badge, HStack } from '@chakra-ui/react'
+import { Badge, Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 
 function Experience() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
   }
+
   const experiences = [
     {
       title: 'Educator',
       company: 'AVK+',
       period: '2025 - Present',
       description: [
-        'Mentored students both in-person and online on all things education-related and in various formats.',
-        'Covered subjects such as: Math, Science, English, Economics and Computer Science.',
-        'Prepared students for various certifications such as: SAT, ACT, IELTS, GCSE, GCE O-levels and A-levels, etc.',
-        'Supported students in applications and interviews for various scholarships and entrance exams such as ASEAN, A-Star, TestAS, AEIS, etc.',
-      ]
+        'Mentored students in-person and online across Math, Science, English, Economics, and Computer Science.',
+        'Prepared students for certifications such as SAT, ACT, IELTS, GCSE, and A-levels.',
+        'Supported scholarship and entrance exam applications including ASEAN, A-Star, TestAS, and AEIS.',
+      ],
     },
     {
       title: 'Data Engineer',
       company: 'Torilab Inc.',
       period: '2025 - Present',
       description: [
-        'Supported BI team in building over 20 data models across 5 different applications and present actionable insights to company executives and business leaders on a biweekly basis',
-        'Design and maintain pipelines to collect data from various sources that power the company\'s analytics ecosystem and enable decision-making dashboard creation in Looker',
-        'Collaborate closely with cross-functional teams including Mobile, Frontend, Backend, Marketing, Sales and Product to ensure data quality, support self-service analytics, and drive data-driven business growth'
+        'Built and maintained 20+ data models across multiple products to support executive decision-making.',
+        'Designed pipelines powering analytics workflows and Looker dashboards for business teams.',
+        'Partnered with cross-functional teams to improve data quality and self-service reporting.',
       ],
     },
     {
@@ -33,9 +35,9 @@ function Experience() {
       company: 'Rakuten Asia Pte Ltd',
       period: '2023 - 2025',
       description: [
-        'Worked under Global Ad Technology Supervisory Department to manage Ad Item Master, a key service which stores, delivers, tracks and reports highly critical, revenue-generating ads for hundreds of millions of Rakuten Group\'s Ichiba app users as well as merchants, one of Japan\'s largest online retail marketplaces',
-        'Administered highly available Couchbase Enterprise clusters and Hive data warehouses acting as key sources of 500 million ad items, shops and campaigns across different data centers to enable real-time ad delivery as well as analytical and reporting capabilities for all downstream ad users',
-        'Developed and maintained highly scalable, low-latency, cached, containerised and load-balanced backend systems and APIs on top of Couchbase and Redis clusters using Spring Framework, Kubernetes, Kafka and Hive to serve super targeted ads and accurately track user clicks and impressions for merchant charging'
+        'Maintained ad-serving systems handling mission-critical ad item delivery and tracking.',
+        'Managed Couchbase and Hive data platforms operating at hundreds of millions of records.',
+        'Built scalable backend APIs with Spring, Kafka, Kubernetes, Redis, and caching strategies.',
       ],
     },
     {
@@ -43,9 +45,9 @@ function Experience() {
       company: 'Sea Limited',
       period: '2021 - 2023',
       description: [
-        'Worked under Data Platform team to develop batch and real-time data ingestion pipelines to support downstream Finance users in data modelling and financial reporting for Garena, Sea Group\'s gaming arm',
-        'Built a fully automated, user-centric and web-based data ingestion portal for non-technical Finance users to ingest data from various sources of their needs such as relational databases, Google Sheets, CSV and Kafka into HDFS, hence removed the need for manual ticket requests and significantly boosted productivity',
-        'Performed daily on-call duties to monitor hundreds of Terabyte-scale batch and streaming ingestion jobs from major games such as Free Fire, Call of Duty or Undawn using Bash and PySpark'
+        'Developed batch and streaming ingestion pipelines for finance reporting use cases.',
+        'Built a self-service ingestion portal for non-technical users across databases, sheets, and Kafka.',
+        'Operated large-scale pipelines and on-call workflows using Bash and PySpark.',
       ],
     },
   ]
@@ -55,181 +57,123 @@ function Experience() {
       id="experience"
       minH="100vh"
       w="100%"
+      position="relative"
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg="white"
       py={{ base: 16, md: 24 }}
-      px={0}
-      position="relative"
+      className="engineering-grid"
     >
-      <Box w="100%" px={{ base: 4, md: 8, lg: 12 }} maxW="1200px" mx="auto">
-        <VStack gap={3} mb={12} textAlign="center">
-          <Box
-            as="span"
-            fontSize={{ base: 'md', md: 'lg' }}
-            fontWeight={700}
-            color="purple.600"
-            textTransform="uppercase"
-            letterSpacing="wide"
-            px={6}
-            py={3}
-            bg="white"
-            borderRadius="full"
-            boxShadow="md"
-          >
-            Professional Experience
-          </Box>
-          <Heading
-            as="h2"
-            fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
-            fontWeight={800}
-            textAlign="center"
-            lineHeight="shorter"
-            bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
-            bgClip="text"
-            letterSpacing="tight"
-          >
+      <Container maxW="1200px" px={{ base: 4, md: 8 }}>
+        <VStack align="stretch" gap={4} mb={12} className="reveal-up">
+          <Text className="code-font" color="var(--text-300)" letterSpacing="widest" fontSize="xs">
+            CAREER_LOG
+          </Text>
+          <Heading as="h2" fontSize={{ base: '3xl', md: '5xl' }} color="var(--text-100)">
             Professional Experience
           </Heading>
+          <Text maxW="760px" color="var(--text-300)" lineHeight="1.8">
+            High-impact roles across data engineering, backend systems, and education with production ownership and
+            business-facing delivery.
+          </Text>
         </VStack>
-        <Box position="relative" maxW="1000px" mx="auto">
-          {/* Center Timeline Line */}
+
+        <VStack align="stretch" gap={8} position="relative" pl={{ base: 0, md: 8 }}>
           <Box
             position="absolute"
-            left="50%"
-            top={0}
-            bottom={0}
-            w="4px"
-            transform="translateX(-50%)"
-            bgGradient="linear(180deg, #667eea 0%, #764ba2 100%)"
-            borderRadius="full"
-            boxShadow="0 0 10px rgba(102, 126, 234, 0.3)"
-            display={{ base: 'none', md: 'block' }}
+            left={{ base: '10px', md: '22px' }}
+            top="6px"
+            bottom="8px"
+            w="2px"
+            bg="rgba(118, 168, 255, 0.4)"
+            className="pulse-line"
           />
-          
-          <VStack align="stretch" gap={10}>
-            {experiences.map((exp, index) => {
-              const isEven = index % 2 === 0
-              return (
-                <Box
-                  key={index}
-                  position="relative"
-                  display="flex"
-                  alignItems="center"
-                  flexDirection={{ base: 'column', md: isEven ? 'row' : 'row-reverse' }}
-                  gap={{ base: 4, md: 6 }}
-                >
-                  {/* Card */}
-                  <Box
-                    flex={{ base: '1', md: '1' }}
-                    maxW={{ base: '100%', md: '45%' }}
-                    bg="white"
-                    p={{ base: 6, md: 8 }}
-                    borderRadius="xl"
-                    boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
-                    border="1px solid"
-                    borderColor="gray.100"
-                    _hover={{
-                      transform: { base: 'translateY(-4px)', md: isEven ? 'translateX(-8px)' : 'translateX(8px)' },
-                      boxShadow: '0 8px 30px rgba(102, 126, 234, 0.15)',
-                      borderColor: 'purple.200',
-                    }}
-                    transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-                  >
-                    <HStack mb={3} flexWrap="wrap" gap={2}>
-                      <Heading as="h3" fontSize={{ base: 'lg', md: 'xl' }} fontWeight={700} color="gray.900">
-                        {exp.title}
-                      </Heading>
-                      <Badge
-                        bgGradient="linear(135deg, #667eea, #764ba2)"
-                        color="blue"
-                        backgroundColor="gray.100"
-                        px={4}
-                        py={1.5}
-                        borderRadius="full"
-                        fontSize="sm"
-                        fontWeight={700}
-                        boxShadow="0 4px 12px rgba(102, 126, 234, 0.4)"
-                        letterSpacing="wide"
-                      >
-                        {exp.period}
-                      </Badge>
-                    </HStack>
-                  <Text fontSize={{ base: 'md', md: 'lg' }} color="purple.700" mb={4} fontWeight={600}>
-                    {exp.company}
-                  </Text>
-                  <VStack align="stretch" gap={3} mt={4}>
-                    {exp.description?.map((item, i) => (
-                      <Box
-                        key={i}
-                        color="gray.800"
-                        pl={6}
-                        position="relative"
-                        fontSize={{ base: 'sm', md: 'md' }}
-                        lineHeight="tall"
-                        fontWeight={500}
-                      >
-                          <Box
-                            as="span"
-                            position="absolute"
-                            left={0}
-                            color="purple.500"
-                            fontWeight="bold"
-                            fontSize="lg"
-                          >
-                            •
-                          </Box>
-                          {item}
-                        </Box>
-                      ))}
-                    </VStack>
+
+          {experiences.map((exp, index) => (
+            <Box key={index} position="relative" pl={{ base: 8, md: 10 }} className="reveal-up delay-1">
+              <Box
+                position="absolute"
+                left={{ base: '2px', md: '14px' }}
+                top="12px"
+                w="18px"
+                h="18px"
+                borderRadius="full"
+                bg="var(--accent-500)"
+                border="3px solid"
+                borderColor="var(--bg-900)"
+                boxShadow="0 0 0 3px rgba(69, 162, 255, 0.35)"
+              />
+
+              <Box
+                p={{ base: 5, md: 6 }}
+                borderRadius="lg"
+                bg="var(--surface-900)"
+                border="1px solid"
+                borderColor="var(--line-700)"
+                _hover={{
+                  borderColor: 'rgba(98, 240, 213, 0.42)',
+                  transform: 'translateY(-3px)',
+                  boxShadow: '0 16px 38px rgba(3, 10, 21, 0.55)',
+                }}
+                transition="all 0.25s ease"
+              >
+                <VStack align="stretch" gap={3}>
+                  <Box display="flex" justifyContent="space-between" gap={4} flexWrap="wrap" alignItems="center">
+                    <Heading as="h3" fontSize={{ base: 'xl', md: '2xl' }} color="var(--text-100)">
+                      {exp.title}
+                    </Heading>
+                    <Badge
+                      px={3}
+                      py={1.5}
+                      borderRadius="full"
+                      className="code-font"
+                      bg="rgba(34, 128, 235, 0.18)"
+                      border="1px solid"
+                      borderColor="rgba(69, 162, 255, 0.42)"
+                      color="var(--text-100)"
+                      fontWeight={500}
+                    >
+                      {exp.period}
+                    </Badge>
                   </Box>
 
-                  {/* Timeline Dot */}
-                  <Box
-                    position={{ base: 'relative', md: 'absolute' }}
-                    left={{ base: 'auto', md: '50%' }}
-                    transform={{ base: 'none', md: 'translateX(-50%)' }}
-                    w={{ base: '24px', md: '32px' }}
-                    h={{ base: '24px', md: '32px' }}
-                    borderRadius="full"
-                    bgGradient="linear(135deg, #667eea, #764ba2)"
-                    border="5px solid white"
-                    boxShadow="0 0 0 5px rgba(102, 126, 234, 0.3), 0 6px 20px rgba(102, 126, 234, 0.4)"
-                    zIndex={2}
-                    flexShrink={0}
-                    display={{ base: 'none', md: 'block' }}
-                  />
+                  <Text className="code-font" color="var(--accent-300)" fontSize="sm">
+                    {exp.company}
+                  </Text>
 
-                  {/* Spacer for desktop */}
-                  <Box flex={{ base: '0', md: '1' }} maxW={{ base: '0', md: '45%' }} display={{ base: 'none', md: 'block' }} />
-                </Box>
-              )
-            })}
-          </VStack>
-        </Box>
+                  <VStack align="stretch" gap={2}>
+                    {exp.description.map((item) => (
+                      <Text key={item} color="var(--text-300)" lineHeight="1.75" pl={4} position="relative">
+                        <Box as="span" position="absolute" left={0} top={0} color="var(--accent-400)">
+                          ▸
+                        </Box>
+                        {item}
+                      </Text>
+                    ))}
+                  </VStack>
+                </VStack>
+              </Box>
+            </Box>
+          ))}
+        </VStack>
+      </Container>
 
-        {/* Scroll Arrow */}
-        <Box
-          position="absolute"
-          bottom={8}
-          left="50%"
-          transform="translateX(-50%)"
-          color="purple.600"
-          _hover={{ color: 'purple.700', transform: 'translateX(-50%) translateY(4px)' }}
-          cursor="pointer"
-          onClick={() => scrollToSection('awards')}
-          transition="all 0.3s"
-          zIndex={2}
-          display={{ base: 'none', md: 'block' }}
-        >
-          <HiArrowDown size={32} />
-        </Box>
+      <Box
+        position="absolute"
+        bottom={6}
+        left="50%"
+        transform="translateX(-50%)"
+        color="var(--text-300)"
+        _hover={{ color: 'var(--text-100)' }}
+        cursor="pointer"
+        onClick={() => scrollToSection('awards')}
+        className="pulse-line"
+        display={{ base: 'none', md: 'block' }}
+      >
+        <HiArrowDown size={28} />
       </Box>
     </Box>
   )
 }
 
 export default Experience
-

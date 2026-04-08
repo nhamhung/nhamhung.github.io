@@ -1,5 +1,16 @@
-import { useState, useEffect } from 'react'
-import { Box, Container, Flex, Link, IconButton, useDisclosure, Drawer, VStack, Text, Image } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+import {
+  Box,
+  Container,
+  Drawer,
+  Flex,
+  IconButton,
+  Image,
+  Link,
+  Text,
+  VStack,
+  useDisclosure,
+} from '@chakra-ui/react'
 import { HiMenu, HiX } from 'react-icons/hi'
 import profileImage from '../assets/profile.jpeg'
 
@@ -9,12 +20,13 @@ interface NavbarProps {
 
 function Navbar({ activeSection = 'home' }: NavbarProps) {
   const { open, onOpen, onClose } = useDisclosure()
-  const [, setScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setIsScrolled(window.scrollY > 24)
     }
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -47,199 +59,146 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
       top={0}
       left={0}
       right={0}
-      bg="white"
-      backdropFilter="blur(12px)"
-      boxShadow="0 4px 20px rgba(0, 0, 0, 0.12)"
       zIndex={1000}
-      transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-      borderBottom="2px solid"
-      borderColor="gray.200"
-      w="100%"
+      borderBottom="1px solid"
+      borderColor={isScrolled ? 'rgba(118, 168, 255, 0.34)' : 'transparent'}
+      bg={isScrolled ? 'rgba(5, 17, 32, 0.82)' : 'rgba(4, 12, 24, 0.64)'}
+      backdropFilter="blur(14px)"
+      boxShadow={isScrolled ? '0 14px 40px rgba(2, 10, 20, 0.5)' : 'none'}
+      transition="all 0.3s ease"
     >
-      <Container maxW="1280px" px={{ base: 6, md: 8 }} w="100%">
-        <Flex
-          as="nav"
-          justify="space-between"
-          align="center"
-          h={{ base: '64px', md: '72px' }}
-        >
-          {/* Logo - Enhanced */}
+      <Container maxW="1280px" px={{ base: 4, md: 8 }}>
+        <Flex as="nav" justify="space-between" align="center" h={{ base: '68px', md: '76px' }}>
           <Link
             href="#home"
-            onClick={(e) => { e.preventDefault(); scrollToSection('home') }}
+            onClick={(e) => {
+              e.preventDefault()
+              scrollToSection('home')
+            }}
             display="flex"
             alignItems="center"
-            gap={2}
-            _hover={{ transform: 'scale(1.05)' }}
-            transition="transform 0.2s"
+            gap={3}
           >
             <Box
-              w={{ base: '40px', md: '48px' }}
-              h={{ base: '40px', md: '48px' }}
-              borderRadius="lg"
+              w={{ base: '36px', md: '40px' }}
+              h={{ base: '36px', md: '40px' }}
+              borderRadius="md"
               overflow="hidden"
-              boxShadow="0 4px 12px rgba(102, 126, 234, 0.4)"
-              border="2px solid"
-              borderColor="purple.200"
-              bg="gray.100"
+              border="1px solid"
+              borderColor="rgba(98, 240, 213, 0.5)"
+              boxShadow="0 0 0 2px rgba(98, 240, 213, 0.15)"
             >
-              <Image
-                src={profileImage}
-                alt="Profile"
-                w="100%"
-                h="100%"
-                objectFit="cover"
-              />
+              <Image src={profileImage} alt="Profile" w="100%" h="100%" objectFit="cover" />
             </Box>
-            <Text
-              fontSize={{ base: 'lg', md: 'xl' }}
-              fontWeight={700}
-              color="gray.800"
-              display={{ base: 'none', sm: 'block' }}
-            >
-              Greetings
-            </Text>
+            <Box>
+              <Text className="code-font" fontSize="xs" color="var(--text-300)" letterSpacing="widest">
+                PROFILE.NODE
+              </Text>
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight={600} color="var(--text-100)">
+                Nham Quoc Hung
+              </Text>
+            </Box>
           </Link>
 
-          {/* Desktop Navigation - Enhanced */}
-          <Flex
-            as="ul"
-            listStyleType="none"
-            gap={2}
-            align="center"
-            display={{ base: 'none', md: 'flex' }}
-          >
+          <Flex as="ul" listStyleType="none" gap={1} align="center" display={{ base: 'none', lg: 'flex' }}>
             {navItems.map((item) => {
               const isActive = activeSection === item.id
+
               return (
                 <Box as="li" key={item.id}>
                   <Link
                     href={`#${item.id}`}
-                    onClick={(e) => { e.preventDefault(); scrollToSection(item.id) }}
-                    px={4}
-                    py={2}
-                    borderRadius="lg"
-                    fontSize="sm"
-                    fontWeight={isActive ? 600 : 500}
-                    color={isActive ? '#667eea' : 'gray.700'}
-                    bg={isActive ? 'purple.50' : 'transparent'}
-                    position="relative"
-                    _hover={{
-                      color: '#667eea',
-                      bg: 'purple.50',
-                      transform: 'translateY(-1px)',
+                    onClick={(e) => {
+                      e.preventDefault()
+                      scrollToSection(item.id)
                     }}
-                    transition="all 0.2s ease"
-                    className="relative"
+                    px={3}
+                    py={2}
+                    borderRadius="md"
+                    fontSize="sm"
+                    className="code-font"
+                    color={isActive ? 'var(--text-100)' : 'var(--text-300)'}
+                    bg={isActive ? 'rgba(34, 128, 235, 0.22)' : 'transparent'}
+                    border="1px solid"
+                    borderColor={isActive ? 'rgba(69, 162, 255, 0.6)' : 'transparent'}
+                    _hover={{
+                      color: 'var(--text-100)',
+                      borderColor: 'rgba(69, 162, 255, 0.4)',
+                      bg: 'rgba(34, 128, 235, 0.16)',
+                    }}
                   >
                     {item.label}
-                    {isActive && (
-                      <Box
-                        position="absolute"
-                        bottom={0}
-                        left="50%"
-                        transform="translateX(-50%)"
-                        w="6px"
-                        h="6px"
-                        borderRadius="full"
-                        bg="#667eea"
-                        boxShadow="0 0 8px rgba(102, 126, 234, 0.6)"
-                      />
-                    )}
                   </Link>
                 </Box>
               )
             })}
           </Flex>
 
-          {/* Mobile Menu Button - Enhanced */}
           <IconButton
             aria-label="Toggle menu"
-            display={{ base: 'flex', md: 'none' }}
+            display={{ base: 'flex', lg: 'none' }}
             variant="ghost"
             onClick={open ? onClose : onOpen}
-            color="gray.700"
-            size="lg"
-            borderRadius="lg"
-            _hover={{
-              bg: 'purple.50',
-              color: '#667eea',
-            }}
-            transition="all 0.2s"
-            backgroundColor="gray.100"
+            color="var(--text-100)"
+            border="1px solid"
+            borderColor="rgba(118, 168, 255, 0.35)"
+            bg="rgba(14, 31, 54, 0.75)"
+            _hover={{ bg: 'rgba(22, 45, 74, 0.88)' }}
           >
-            {open ? <HiX size={24} /> : <HiMenu size={24} />}
+            {open ? <HiX size={20} /> : <HiMenu size={20} />}
           </IconButton>
         </Flex>
       </Container>
 
-      {/* Mobile Drawer - Enhanced */}
       <Drawer.Root open={open} onOpenChange={(e) => !e.open && onClose()} placement="end">
-        <Drawer.Backdrop bg="rgba(0, 0, 0, 0.4)" />
+        <Drawer.Backdrop bg="rgba(0, 0, 0, 0.45)" />
         <Drawer.Positioner>
-          <Drawer.Content maxW="320px" bg="white">
-            <Drawer.Header
-              borderBottom="1px solid"
-              borderColor="gray.200"
-              bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
-              color="blue.600"
-              py={6}
-            >
+          <Drawer.Content maxW="300px" bg="var(--bg-800)" borderLeft="1px solid" borderColor="rgba(118, 168, 255, 0.24)">
+            <Drawer.Header borderBottom="1px solid" borderColor="rgba(118, 168, 255, 0.22)">
               <Flex justify="space-between" align="center">
-                <Text fontSize="xl" fontWeight={700} mr={1}>
-                  Menu
+                <Text className="code-font" fontWeight={600} color="var(--text-100)">
+                  NAV_INDEX
                 </Text>
                 <IconButton
                   aria-label="Close menu"
                   variant="ghost"
                   onClick={onClose}
-                  size="sm"
-                  color="blue.600"
-                  _hover={{ bg: 'rgba(255, 255, 255, 0.2)' }}
-                  backgroundColor="gray.100"
+                  color="var(--text-100)"
+                  _hover={{ bg: 'rgba(22, 45, 74, 0.88)' }}
                 >
                   <HiX />
                 </IconButton>
               </Flex>
             </Drawer.Header>
-            <Drawer.Body py={6} px={4}>
+            <Drawer.Body py={4} px={3}>
               <VStack align="stretch" gap={2}>
                 {navItems.map((item) => {
                   const isActive = activeSection === item.id
+
                   return (
                     <Link
                       key={item.id}
                       href={`#${item.id}`}
-                      onClick={(e) => { e.preventDefault(); scrollToSection(item.id) }}
-                      px={4}
-                      py={3}
-                      borderRadius="lg"
-                      color={isActive ? '#667eea' : 'gray.700'}
-                      fontWeight={isActive ? 600 : 500}
-                      fontSize="md"
-                      bg={isActive ? 'purple.50' : 'transparent'}
-                      transition="all 0.2s"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        scrollToSection(item.id)
+                      }}
+                      px={3}
+                      py={2.5}
+                      borderRadius="md"
+                      className="code-font"
+                      fontSize="sm"
+                      color={isActive ? 'var(--text-100)' : 'var(--text-300)'}
+                      bg={isActive ? 'rgba(34, 128, 235, 0.2)' : 'transparent'}
+                      border="1px solid"
+                      borderColor={isActive ? 'rgba(69, 162, 255, 0.52)' : 'transparent'}
                       _hover={{
-                        color: '#667eea',
-                        bg: 'purple.50',
-                        pl: isActive ? 4 : 5,
-                        borderLeft: '3px solid',
-                        borderColor: '#667eea',
+                        bg: 'rgba(34, 128, 235, 0.16)',
+                        borderColor: 'rgba(69, 162, 255, 0.4)',
+                        color: 'var(--text-100)',
                       }}
                     >
-                      <Flex align="center" gap={2}>
-                        {isActive && (
-                          <Box
-                            w="8px"
-                            h="8px"
-                            borderRadius="full"
-                            bg="#667eea"
-                            boxShadow="0 0 8px rgba(102, 126, 234, 0.6)"
-                            flexShrink={0}
-                          />
-                        )}
-                        <Text>{item.label}</Text>
-                      </Flex>
+                      {item.label}
                     </Link>
                   )
                 })}

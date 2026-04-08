@@ -1,178 +1,131 @@
-import { Box, Heading, SimpleGrid, Badge, VStack, Flex } from '@chakra-ui/react'
+import { Badge, Box, Container, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 
 function Skills() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  // Color palette for badges
-  const badgeColors = [
-    { bg: 'purple.100', color: 'purple.700', hoverBg: 'purple.200' },
-    { bg: 'blue.100', color: 'blue.700', hoverBg: 'blue.200' },
-    { bg: 'cyan.100', color: 'cyan.700', hoverBg: 'cyan.200' },
-    { bg: 'teal.100', color: 'teal.700', hoverBg: 'teal.200' },
-    { bg: 'green.100', color: 'green.700', hoverBg: 'green.200' },
-    { bg: 'yellow.100', color: 'yellow.700', hoverBg: 'yellow.200' },
-    { bg: 'orange.100', color: 'orange.700', hoverBg: 'orange.200' },
-    { bg: 'red.100', color: 'red.700', hoverBg: 'red.200' },
-    { bg: 'pink.100', color: 'pink.700', hoverBg: 'pink.200' },
-    { bg: 'indigo.100', color: 'indigo.700', hoverBg: 'indigo.200' },
-  ]
-
-  const getBadgeColor = (index: number) => {
-    return badgeColors[index % badgeColors.length]
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   const skillCategories = [
     {
       category: 'Academic',
-      skills: ['Ielts 8.0', 'ACT 35/36 (STEM)', 'SAT 800/800 (Chemistry)'],
+      skills: ['IELTS 8.0', 'ACT 35/36 (STEM)', 'SAT 800/800 (Chemistry)'],
     },
     {
       category: 'Professional',
-      skills: ['Couchbase Associate Developer', 'Certified Kubernetes App Developer', 'GCP Cloud Enginnering', 'AWS Cloud Practitioner'],
+      skills: [
+        'Couchbase Associate Developer',
+        'Certified Kubernetes App Developer',
+        'GCP Cloud Engineering',
+        'AWS Cloud Practitioner',
+      ],
     },
     {
       category: 'Data Engineering',
-      skills: ['GCP', 'Hadoop', 'Hive', 'Spark', 'Kafka', 'MySQL', 'MongoDB', 'Couchbase', 'Redis', 'dbt', 'Iceberg', 'Debezium'],
+      skills: ['GCP', 'Hadoop', 'Hive', 'Spark', 'Kafka', 'MySQL', 'MongoDB', 'Couchbase', 'Redis', 'dbt', 'Iceberg'],
     },
     {
-      category: 'Data & ML',
-      skills: ['SQL', 'Python', 'Java', 'Scala', 'Bash', 'Airflow', 'Spring Boot', 'GCP', 'AWS', 'Scikit-learn', 'TensorFlow', 'PyTorch'],
+      category: 'Data and ML',
+      skills: ['SQL', 'Python', 'Java', 'Scala', 'Bash', 'Airflow', 'Scikit-learn', 'TensorFlow', 'PyTorch'],
     },
     {
-      category: 'DevOps & MLOps',
-      skills: ['Linux', 'Jenkins', 'Ansible', 'Docker', 'Kubernetes', 'Spring Cloud', 'ELK', 'Prometheus', 'Grafana', 'MLflow', 'Feature Store', 'Expectations'],
-    }
+      category: 'DevOps and MLOps',
+      skills: ['Linux', 'Jenkins', 'Ansible', 'Docker', 'Kubernetes', 'ELK', 'Prometheus', 'Grafana', 'MLflow'],
+    },
   ]
+
+  const getDelayClass = (index: number) => {
+    if (index === 0) return 'reveal-up delay-1'
+    if (index === 1) return 'reveal-up delay-2'
+    return 'reveal-up delay-3'
+  }
 
   return (
     <Box
       id="skills"
       minH="100vh"
       w="100%"
+      position="relative"
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg="gray.50"
       py={{ base: 16, md: 24 }}
-      px={0}
-      position="relative"
+      className="engineering-grid"
     >
-      <Box w="100%" px={{ base: 4, md: 8, lg: 12 }} maxW="1200px" mx="auto">
-        <VStack gap={3} mb={12} textAlign="center">
-          <Box
-            as="span"
-            fontSize={{ base: 'md', md: 'lg' }}
-            fontWeight={700}
-            color="purple.600"
-            textTransform="uppercase"
-            letterSpacing="wide"
-            px={6}
-            py={3}
-            bg="white"
-            borderRadius="full"
-            boxShadow="md"
-          >
-            Technical Skills & Certifications
-          </Box>
-          <Heading
-            as="h2"
-            fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
-            fontWeight={800}
-            textAlign="center"
-            lineHeight="shorter"
-            bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
-            bgClip="text"
-            letterSpacing="tight"
-          >
-            Technical Skills & Certifications
+      <Container maxW="1200px" px={{ base: 4, md: 8 }}>
+        <VStack align="stretch" gap={4} mb={12} className="reveal-up">
+          <Text className="code-font" color="var(--text-300)" letterSpacing="widest" fontSize="xs">
+            SKILL_MATRIX
+          </Text>
+          <Heading as="h2" fontSize={{ base: '3xl', md: '5xl' }} color="var(--text-100)">
+            Technical Skills and Certifications
           </Heading>
         </VStack>
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
+
+        <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap={6}>
           {skillCategories.map((category, index) => (
             <Box
-              key={index}
-              bg="white"
-              p={8}
-              borderRadius="2xl"
-              boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
+              key={category.category}
+              p={6}
+              borderRadius="lg"
+              bg="var(--surface-900)"
               border="1px solid"
-              borderColor="gray.100"
+              borderColor="var(--line-700)"
+              className={getDelayClass(index)}
               _hover={{
-                transform: 'translateY(-4px)',
-                boxShadow: '0 8px 30px rgba(102, 126, 234, 0.15)',
-                borderColor: 'purple.200',
+                transform: 'translateY(-3px)',
+                borderColor: 'rgba(98, 240, 213, 0.45)',
+                boxShadow: '0 16px 34px rgba(3, 10, 21, 0.55)',
               }}
-              transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+              transition="all 0.25s ease"
             >
-              <Heading
-                as="h3"
-                fontSize="lg"
-                mb={6}
-                color="gray.900"
-                fontWeight={700}
-                pb={3}
-                borderBottom="2px solid"
-                borderColor="purple.200"
-              >
-                {category.category}
-              </Heading>
-              <Flex
-                gap={2}
-                flexWrap="wrap"
-                align="flex-start"
-              >
-                {category.skills.map((skill, i) => {
-                  const colorScheme = getBadgeColor(i)
-                  return (
-                    <Badge
-                      key={i}
-                      bg={colorScheme.bg}
-                      color={colorScheme.color}
-                      px={2.5}
-                      py={1}
-                      borderRadius="md"
-                      fontSize="xs"
-                      fontWeight={600}
-                      textTransform="none"
-                      _hover={{
-                        bg: colorScheme.hoverBg,
-                        transform: 'translateY(-2px) scale(1.05)',
-                      }}
-                      transition="all 0.2s"
-                    >
-                      {skill}
-                    </Badge>
-                  )
-                })}
-              </Flex>
+              <Text className="code-font" color="var(--accent-300)" fontSize="sm" mb={4}>
+                {category.category.toUpperCase()}
+              </Text>
+              <Box display="flex" gap={2} flexWrap="wrap">
+                {category.skills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    px={2.5}
+                    py={1}
+                    borderRadius="md"
+                    className="code-font"
+                    fontSize="0.68rem"
+                    fontWeight={500}
+                    bg="rgba(34, 128, 235, 0.18)"
+                    border="1px solid"
+                    borderColor="rgba(69, 162, 255, 0.36)"
+                    color="var(--text-100)"
+                    textTransform="none"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </Box>
             </Box>
           ))}
         </SimpleGrid>
+      </Container>
 
-        {/* Scroll Arrow - Optional, can scroll to contact or top */}
-        <Box
-          position="absolute"
-          bottom={8}
-          left="50%"
-          transform="translateX(-50%)"
-          color="purple.600"
-          _hover={{ color: 'purple.700', transform: 'translateX(-50%) translateY(4px)' }}
-          cursor="pointer"
-          onClick={() => scrollToSection('contact')}
-          transition="all 0.3s"
-          zIndex={2}
-          display={{ base: 'none', md: 'block' }}
-        >
-          <HiArrowDown size={32} />
-        </Box>
+      <Box
+        position="absolute"
+        bottom={6}
+        left="50%"
+        transform="translateX(-50%)"
+        color="var(--text-300)"
+        _hover={{ color: 'var(--text-100)' }}
+        cursor="pointer"
+        onClick={() => scrollToSection('contact')}
+        className="pulse-line"
+        display={{ base: 'none', md: 'block' }}
+      >
+        <HiArrowDown size={28} />
       </Box>
     </Box>
   )
 }
 
 export default Skills
-

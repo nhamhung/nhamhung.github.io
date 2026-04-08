@@ -1,360 +1,267 @@
-import { Box, Container, Heading, Text, Button, Flex, VStack, Link, Image } from '@chakra-ui/react'
+import {
+  Badge,
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Link,
+  SimpleGrid,
+  Text,
+  VStack,
+} from '@chakra-ui/react'
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
 import { HiArrowDown } from 'react-icons/hi'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import profileImage from '../assets/profile.jpeg'
 
 function Hero() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
   }
+
+  const stackHighlights = ['Apache Spark', 'Kafka', 'Airflow', 'Kubernetes', 'Hive', 'Looker']
 
   return (
     <Box
       id="home"
       minH="100vh"
       w="100%"
+      position="relative"
       display="flex"
       alignItems="center"
       justifyContent="center"
-      position="relative"
-      overflow="hidden"
-      pt={{ base: "80px", md: "88px" }}
-      pb={20}
-      css={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
-        backgroundSize: '200% 200%',
-        animation: 'gradientShift 15s ease infinite',
-      }}
+      pt={{ base: '96px', md: '110px' }}
+      pb={{ base: 16, md: 20 }}
+      px={0}
+      className="engineering-grid"
     >
-      {/* Animated floating particles */}
-      {[...Array(6)].map((_, i) => {
-        const size = 60 + i * 20
-        const top = 10 + i * 15
-        const left = 5 + i * 12
-        const duration = 8 + i * 2
-        
-        let gradient = 'linear(135deg, #f093fb, #f5576c)'
-        if (i % 3 === 1) gradient = 'linear(135deg, #4facfe, #00f2fe)'
-        else if (i % 3 === 2) gradient = 'linear(135deg, #43e97b, #38f9d7)'
-        
-        return (
-          <Box
-            key={i}
-            position="absolute"
-            w={`${size}px`}
-            h={`${size}px`}
-            borderRadius="full"
-            bgGradient={gradient}
-            opacity={0.2 + i * 0.05}
-            top={`${top}%`}
-            left={`${left}%`}
-            css={{
-              animation: `float ${duration}s ease-in-out infinite`,
-              animationDelay: `${i * 0.5}s`,
-            }}
-          />
-        )
-      })}
-
-      {/* Large animated background orbs */}
-      <Box
-        position="absolute"
-        top="-40%"
-        right="-40%"
-        w="900px"
-        h="900px"
-        borderRadius="full"
-        bgGradient="linear(135deg, #f093fb 0%, #f5576c 100%)"
-        opacity={0.25}
-        css={{
-          animation: 'pulse 8s ease-in-out infinite',
-        }}
-      />
-      <Box
-        position="absolute"
-        bottom="-35%"
-        left="-35%"
-        w="800px"
-        h="800px"
-        borderRadius="full"
-        bgGradient="linear(135deg, #4facfe 0%, #00f2fe 100%)"
-        opacity={0.25}
-        css={{
-          animation: 'pulse 10s ease-in-out infinite',
-          transform: 'scale(1.15)',
-        }}
-      />
-      <Box
-        position="absolute"
-        top="50%"
-        left="50%"
-        transform="translate(-50%, -50%)"
-        w="600px"
-        h="600px"
-        borderRadius="full"
-        bgGradient="linear(135deg, #43e97b 0%, #38f9d7 100%)"
-        opacity={0.15}
-        css={{
-          animation: 'pulseCenter 12s ease-in-out infinite',
-        }}
-      />
-
-      <Container maxW="1280px" position="relative" zIndex={10} px={{ base: 4, md: 8 }}>
-        <Flex
-          direction={{ base: 'column', lg: 'row' }}
-          align="center"
-          gap={{ base: 8, lg: 12 }}
-        >
-          <VStack
-            align={{ base: 'center', lg: 'flex-start' }}
-            textAlign={{ base: 'center', lg: 'left' }}
-            gap={6}
-            flex={1}
-          >
-            <Box
-              css={{
-                animation: 'fadeInUp 1s ease-out',
-              }}
-            >
-              <Text
-                fontSize={{ base: 'sm', md: 'md' }}
-                color="yellow.300"
-                mb={2}
-                fontWeight={600}
-                letterSpacing="wide"
-                opacity={0.95}
-                css={{
-                  animation: 'fadeIn 1.2s ease-out',
-                }}
+      <Container maxW="1280px" px={{ base: 4, md: 8 }}>
+        <Flex direction={{ base: 'column', xl: 'row' }} gap={{ base: 10, xl: 14 }} align="stretch">
+          <VStack align={{ base: 'flex-start', lg: 'flex-start' }} gap={6} flex={1.1} className="reveal-up">
+            <HStack gap={3} flexWrap="wrap">
+              <Badge
+                className="code-font"
+                px={3}
+                py={1}
+                borderRadius="full"
+                fontWeight={500}
+                fontSize="0.72rem"
+                border="1px solid"
+                borderColor="rgba(69, 162, 255, 0.5)"
+                bg="rgba(34, 128, 235, 0.16)"
+                color="var(--text-100)"
               >
-                Hello, I'm
+                SYSTEM STATUS: BUILDING
+              </Badge>
+              <Badge
+                className="code-font"
+                px={3}
+                py={1}
+                borderRadius="full"
+                fontWeight={500}
+                fontSize="0.72rem"
+                border="1px solid"
+                borderColor="rgba(98, 240, 213, 0.45)"
+                bg="rgba(98, 240, 213, 0.1)"
+                color="var(--text-100)"
+              >
+                DATA | SOFTWARE | MENTORSHIP
+              </Badge>
+            </HStack>
+
+            <VStack align="flex-start" gap={3}>
+              <Text className="code-font" fontSize={{ base: 'sm', md: 'md' }} color="var(--text-300)">
+                &lt;engineer id="nham-quoc-hung" /&gt;
               </Text>
-              <Heading
-                as="h1"
-                fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
-                fontWeight={800}
-                color="green.200"
-                mb={4}
-                lineHeight="shorter"
-                textShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
-                css={{
-                  animation: 'fadeInUp 1s ease-out 0.2s both',
-                }}
-              >
-                Nham Quoc Hung
+              <Heading as="h1" fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }} lineHeight="1.05" color="var(--text-100)">
+                Building reliable
+                <Box as="span" color="var(--accent-300)"> data systems </Box>
+                and scalable backend platforms.
               </Heading>
-              <Heading
-                as="h2"
-                fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }}
-                fontWeight={600}
-                color="orange.300"
-                mb={6}
-                opacity={0.95}
-                css={{
-                  animation: 'fadeInUp 1s ease-out 0.4s both',
-                }}
-              >
-                Data Engineer, Software Engineer & Educator
-              </Heading>
-              <Text
-                fontSize={{ base: 'md', md: 'lg' }}
-                color="white"
-                maxW="600px"
-                lineHeight="tall"
-                opacity={0.9}
-                css={{
-                  animation: 'fadeInUp 1s ease-out 0.6s both',
-                }}
-              >
-                I am a Computer Science graduate with a specialisation in Data and passion for teaching.
-              </Text>
-            </Box>
+            </VStack>
 
-            <Flex
-              gap={4}
-              direction={{ base: 'column', sm: 'row' }}
-              w={{ base: 'full', sm: 'auto' }}
-              css={{
-                animation: 'fadeInUp 1s ease-out 0.8s both',
-              }}
-            >
+            <Text fontSize={{ base: 'md', md: 'lg' }} maxW="720px" color="var(--text-300)" lineHeight="1.85">
+              Computer Science graduate specialized in Data. I design and ship production-ready pipelines, low-latency services,
+              and analytics systems that teams can trust for decisions and growth.
+            </Text>
+
+            <SimpleGrid columns={{ base: 1, sm: 3 }} gap={3} w="full">
+              <Box p={4} borderRadius="md" bg="var(--surface-900)" border="1px solid" borderColor="var(--line-700)">
+                <Text className="code-font" color="var(--text-300)" fontSize="xs" mb={2}>
+                  EXPERIENCE
+                </Text>
+                <Text fontSize="xl" fontWeight={700} color="var(--text-100)">
+                  4+ Years
+                </Text>
+              </Box>
+              <Box p={4} borderRadius="md" bg="var(--surface-900)" border="1px solid" borderColor="var(--line-700)">
+                <Text className="code-font" color="var(--text-300)" fontSize="xs" mb={2}>
+                  FOCUS
+                </Text>
+                <Text fontSize="xl" fontWeight={700} color="var(--text-100)">
+                  Data + Backend
+                </Text>
+              </Box>
+              <Box p={4} borderRadius="md" bg="var(--surface-900)" border="1px solid" borderColor="var(--line-700)">
+                <Text className="code-font" color="var(--text-300)" fontSize="xs" mb={2}>
+                  DELIVERY
+                </Text>
+                <Text fontSize="xl" fontWeight={700} color="var(--text-100)">
+                  End-to-End
+                </Text>
+              </Box>
+            </SimpleGrid>
+
+            <HStack gap={3} pt={2} flexWrap="wrap">
               <Button
                 onClick={() => scrollToSection('projects')}
-                size={{ base: 'md', md: 'lg' }}
-                bg="white"
-                color="purple.700"
-                fontWeight={600}
-                px={8}
-                boxShadow="0 8px 30px rgba(0, 0, 0, 0.3)"
-                _hover={{
-                  transform: 'translateY(-4px) scale(1.05)',
-                  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.4)',
-                  bg: 'gray.50',
-                }}
-                backgroundColor="gray.100"
-                transition="all 0.3s"
-                css={{
-                  animation: 'buttonPulse 3s ease-in-out infinite',
-                }}
+                bg="var(--accent-500)"
+                color="white"
+                border="1px solid"
+                borderColor="rgba(118, 168, 255, 0.6)"
+                _hover={{ bg: 'var(--accent-400)' }}
               >
-                View My Work
+                View Projects
               </Button>
               <Button
                 onClick={() => scrollToSection('contact')}
-                size={{ base: 'md', md: 'lg' }}
                 variant="outline"
-                borderColor="white"
-                borderWidth="2px"
-                color="blue.600"
-                fontWeight={600}
-                px={8}
-                bg="rgba(255, 255, 255, 0.1)"
-                backdropFilter="blur(10px)"
-                _hover={{
-                  bg: 'rgba(255, 255, 255, 0.2)',
-                  transform: 'translateY(-4px) scale(1.05)',
-                  borderColor: 'white',
-                }}
-                backgroundColor="gray.100"
-                transition="all 0.3s"
+                borderColor="rgba(118, 168, 255, 0.45)"
+                color="var(--text-100)"
+                bg="rgba(34, 128, 235, 0.1)"
+                _hover={{ bg: 'rgba(34, 128, 235, 0.2)' }}
               >
-                Get In Touch
+                Contact
               </Button>
-            </Flex>
+            </HStack>
 
-            <Flex
-              gap={6}
-              mt={4}
-              css={{
-                animation: 'fadeInUp 1s ease-out 1s both',
-              }}
-            >
-              <Link
-                href="https://github.com/nhamhung"
-                target="_blank"
-                rel="noopener noreferrer"
-                color="white"
-                _hover={{
-                  color: 'white',
-                  transform: 'translateY(-4px) scale(1.2)',
-                }}
-                transition="all 0.3s"
-                css={{
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))',
-                }}
-              >
-                <FaGithub size={24} />
+            <HStack gap={4}>
+              <Link href="https://github.com/nhamhung" target="_blank" rel="noopener noreferrer" color="var(--text-300)" _hover={{ color: 'var(--text-100)' }}>
+                <FaGithub size={22} />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/quoc-hung-nham/"
                 target="_blank"
                 rel="noopener noreferrer"
-                color="white"
-                _hover={{
-                  color: 'white',
-                  transform: 'translateY(-4px) scale(1.2)',
-                }}
-                transition="all 0.3s"
-                css={{
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))',
-                }}
+                color="var(--text-300)"
+                _hover={{ color: 'var(--text-100)' }}
               >
-                <FaLinkedin size={24} />
+                <FaLinkedin size={22} />
               </Link>
-              <Link
-                href="mailto:nhamhung.gttn@gmail.com"
-                color="white"
-                _hover={{
-                  color: 'white',
-                  transform: 'translateY(-4px) scale(1.2)',
-                }}
-                transition="all 0.3s"
-                css={{
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))',
-                }}
-              >
-                <FaEnvelope size={24} />
+              <Link href="mailto:nhamhung.gttn@gmail.com" color="var(--text-300)" _hover={{ color: 'var(--text-100)' }}>
+                <FaEnvelope size={22} />
               </Link>
-            </Flex>
+            </HStack>
           </VStack>
 
-          <Box
-            flex={1}
-            display={{ base: 'none', lg: 'flex' }}
-            justifyContent="center"
-            alignItems="center"
-            css={{
-              animation: 'fadeInRight 1s ease-out 0.4s both',
-            }}
-          >
+          <VStack flex={0.9} align="stretch" gap={4} className="reveal-up delay-1">
             <Box
-              w="400px"
-              h="400px"
-              borderRadius="2xl"
+              bg="var(--surface-800)"
+              border="1px solid"
+              borderColor="var(--line-500)"
+              borderRadius="xl"
               overflow="hidden"
-              border="4px solid"
-              borderColor="white"
-              boxShadow="0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 255, 255, 0.2)"
-              position="relative"
-              css={{
-                animation: 'float 6s ease-in-out infinite',
-                '@keyframes float': {
-                  '0%, 100%': { transform: 'translateY(0px)' },
-                  '50%': { transform: 'translateY(-20px)' },
-                },
-              }}
+              boxShadow="0 20px 55px rgba(3, 10, 21, 0.65)"
             >
-              <Image
-                src={profileImage}
-                alt="Nham Quoc Hung"
-                w="100%"
-                h="100%"
-                objectFit="cover"
-              />
-              <Box
-                position="absolute"
-                top={0}
-                left={0}
-                right={0}
-                bottom={0}
-                bgGradient="linear(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)"
-                pointerEvents="none"
-              />
+              <Flex
+                px={4}
+                py={3}
+                justify="space-between"
+                align="center"
+                bg="rgba(8, 22, 40, 0.95)"
+                borderBottom="1px solid"
+                borderColor="rgba(118, 168, 255, 0.2)"
+              >
+                <Text className="code-font" fontSize="xs" color="var(--text-300)">
+                  ENGINEERING SNAPSHOT
+                </Text>
+                <HStack gap={1.5}>
+                  <Box w="8px" h="8px" borderRadius="full" bg="#ee6a5f" />
+                  <Box w="8px" h="8px" borderRadius="full" bg="#f3be4e" />
+                  <Box w="8px" h="8px" borderRadius="full" bg="#61c554" />
+                </HStack>
+              </Flex>
+
+              <Box p={{ base: 4, md: 6 }}>
+                <HStack gap={4} align="start" mb={4}>
+                  <Box
+                    w={{ base: '90px', md: '120px' }}
+                    h={{ base: '90px', md: '120px' }}
+                    borderRadius="lg"
+                    overflow="hidden"
+                    border="1px solid"
+                    borderColor="rgba(118, 168, 255, 0.4)"
+                    className="float-soft"
+                  >
+                    <Image src={profileImage} alt="Nham Quoc Hung" w="100%" h="100%" objectFit="cover" />
+                  </Box>
+                  <Box>
+                    <Text className="code-font" fontSize="xs" color="var(--text-300)">
+                      CURRENT ROLE
+                    </Text>
+                    <Text color="var(--text-100)" fontWeight={600} mt={1}>
+                      Data Engineer at Torilab Inc.
+                    </Text>
+                    <Text className="code-font" fontSize="xs" color="var(--text-300)" mt={3}>
+                      LOCATION
+                    </Text>
+                    <Text color="var(--text-100)" mt={1}>
+                      Ho Chi Minh City, Vietnam
+                    </Text>
+                  </Box>
+                </HStack>
+
+                <Box pt={2} borderTop="1px solid" borderColor="rgba(118, 168, 255, 0.2)">
+                  <Text className="code-font" fontSize="xs" color="var(--text-300)" mb={3}>
+                    ACTIVE STACK
+                  </Text>
+                  <Flex gap={2} wrap="wrap">
+                    {stackHighlights.map((item) => (
+                      <Badge
+                        key={item}
+                        borderRadius="md"
+                        px={2.5}
+                        py={1}
+                        fontSize="0.68rem"
+                        className="code-font"
+                        bg="rgba(34, 128, 235, 0.18)"
+                        border="1px solid"
+                        borderColor="rgba(69, 162, 255, 0.38)"
+                        color="var(--text-100)"
+                        fontWeight={500}
+                      >
+                        {item}
+                      </Badge>
+                    ))}
+                  </Flex>
+                </Box>
+              </Box>
             </Box>
-          </Box>
+          </VStack>
         </Flex>
       </Container>
 
       <Box
         position="absolute"
-        bottom={8}
+        bottom={6}
         left="50%"
         transform="translateX(-50%)"
-        color="white"
+        color="var(--text-300)"
         cursor="pointer"
         onClick={() => scrollToSection('about')}
-        transition="all 0.3s"
-        zIndex={10}
+        className="pulse-line"
+        _hover={{ color: 'var(--text-100)' }}
         display={{ base: 'none', md: 'block' }}
-        css={{
-          animation: 'bounce 2s infinite',
-          '@keyframes bounce': {
-            '0%, 100%': { transform: 'translateX(-50%) translateY(0)' },
-            '50%': { transform: 'translateX(-50%) translateY(-10px)' },
-          },
-          filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))',
-        }}
-        _hover={{
-          color: 'white',
-          transform: 'translateX(-50%) translateY(-5px)',
-        }}
       >
-        <HiArrowDown size={32} />
+        <HiArrowDown size={28} />
       </Box>
     </Box>
   )
 }
 
 export default Hero
-
