@@ -11,13 +11,13 @@ function Experience() {
 
   const experiences = [
     {
-      title: 'Educator',
-      company: 'AVK+',
+      title: 'Mentor',
+      company: 'Self-employed',
       period: '2025 - Present',
       description: [
         'Mentored students in-person and online across Math, Science, English, Economics, and Computer Science.',
-        'Prepared students for certifications such as SAT, ACT, IELTS, GCSE, and A-levels.',
-        'Supported scholarship and entrance exam applications including ASEAN, A-Star, TestAS, and AEIS.',
+        'Prepared students for certifications such as SAT, ACT, IELTS, GCSE, O-levels and A-levels.',
+        'Supported scholarship and entrance exam applications including ASEAN, A-Star, TestAS, AEIS and UEE into top public universities in Singapore.',
       ],
     },
     {
@@ -25,7 +25,7 @@ function Experience() {
       company: 'Torilab Inc.',
       period: '2025 - Present',
       description: [
-        'Built and maintained 20+ data models across multiple products to support executive decision-making.',
+        'Built and maintained 30+ data models across multiple products to support executive decision-making.',
         'Designed pipelines powering analytics workflows and Looker dashboards for business teams.',
         'Partnered with cross-functional teams to improve data quality and self-service reporting.',
       ],
