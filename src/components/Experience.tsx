@@ -17,7 +17,7 @@ function Experience() {
       description: [
         'Mentored students in-person and online across Math, Science, English, Economics, and Computer Science.',
         'Prepared students for certifications such as SAT, ACT, IELTS, GCSE, O-levels and A-levels.',
-        'Supported scholarship and entrance exam applications including ASEAN, A-Star, TestAS, AEIS and UEE into top public universities in Singapore.',
+        'Supported scholarship and entrance exam applications including ASEAN, A*STAR, TestAS, AEIS and UEE into top public secondary schools and universities in Singapore.',
       ],
     },
     {
