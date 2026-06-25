@@ -1,116 +1,149 @@
 # GitHub Pages Deployment Guide
 
-## Automatic Deployment
+This portfolio deploys as a static site on GitHub Pages. The repository already includes a GitHub Actions workflow that builds the project and publishes the `dist` folder for you.
 
-This project uses GitHub Actions to automatically deploy to GitHub Pages when you push to the `main` branch.
+You do not need to manually edit `vite.config.ts` for normal GitHub Pages deployment. The workflow derives the correct `VITE_BASE_PATH` automatically.
 
-## Setup Steps
+## Deployment Overview
 
-### 1. Enable GitHub Pages
+The deployment flow is:
 
-1. Go to your repository on GitHub
-2. Click on **Settings**
-3. Scroll down to **Pages** in the left sidebar
-4. Under **Source**, select **GitHub Actions** (not "Deploy from a branch")
+1. You push code to the `main` branch.
+2. GitHub Actions starts the deploy workflow.
+3. The workflow installs dependencies with `npm ci`.
+4. The workflow derives `VITE_BASE_PATH` from the repository name.
+5. The workflow runs `npm run build`.
+6. Vite creates the static site in `dist`.
+7. GitHub Pages publishes the uploaded build artifact.
 
-### 2. Configure Base Path
+## Enable GitHub Pages
 
-**Important:** If your repository name is NOT `username.github.io`, you need to configure the base path.
+1. Open your repository on GitHub.
+2. Go to Settings.
+3. Open Pages in the left sidebar.
+4. Under Build and deployment, set Source to GitHub Actions.
+5. Save the setting if GitHub asks you to.
 
-#### Option A: Repository named `my-portfolio` (or any other name)
+Use GitHub Actions as the source. Do not use Deploy from a branch for this project.
 
-Update `vite.config.ts`:
+## Repository URL Types
 
-```typescript
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import tailwindcss from "@tailwindcss/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+GitHub Pages has two common URL patterns.
 
-export default defineConfig({
-  base: '/my-portfolio/', // Replace 'my-portfolio' with your repository name
-  plugins: [react(), tailwindcss(), tsconfigPaths()],
-});
+### Project Pages
+
+Most student repositories use project Pages.
+
+Repository example:
+
+- `<owner>/<repository>`
+
+Published URL:
+
+- `https://<owner>.github.io/<repository>/`
+
+Workflow base path:
+
+- `VITE_BASE_PATH=/<repository>/`
+
+### Root Pages
+
+A repository named `<owner>.github.io` publishes at the account root.
+
+Repository example:
+
+- `<owner>/<owner>.github.io`
+
+Published URL:
+
+- `https://<owner>.github.io/`
+
+Workflow base path:
+
+- `VITE_BASE_PATH=/`
+
+## Automatic Base Path Behavior
+
+The deployment workflow checks the repository name during the build:
+
+- If the repository is named `<owner>.github.io`, it sets `VITE_BASE_PATH=/`.
+- Otherwise, it sets `VITE_BASE_PATH=/<repository>/`.
+
+`vite.config.ts` reads that value:
+
+```ts
+base: process.env.VITE_BASE_PATH ?? '/',
 ```
 
-Your site will be available at: `https://username.github.io/my-portfolio/`
+This keeps CSS, JavaScript, images, and PDFs loading correctly for both root Pages and project Pages.
 
-#### Option B: Repository named `username.github.io` (user/organization page)
+## Deploy From Main
 
-Keep the default base path (`/`):
+Push your changes to the `main` branch:
 
-```typescript
-export default defineConfig({
-  // base: '/' is the default, no need to specify
-  plugins: [react(), tailwindcss(), tsconfigPaths()],
-});
+```bash
+git status
+git add .
+git commit -m "update portfolio"
+git branch -M main
+git push -u origin main
 ```
 
-Your site will be available at: `https://username.github.io/`
+After the push, open the Actions tab in your GitHub repository. The workflow is named Deploy to GitHub Pages.
 
-### 3. Push to Main Branch
+You can also run it manually:
 
-Once you push to the `main` branch, the GitHub Actions workflow will:
-1. Checkout your code
-2. Install dependencies
-3. Build the project
-4. Deploy to GitHub Pages
+1. Open the Actions tab.
+2. Select Deploy to GitHub Pages.
+3. Click Run workflow.
+4. Choose the `main` branch.
+5. Click Run workflow again.
 
-You can monitor the deployment progress in the **Actions** tab of your repository.
+## Verify Deployment
 
-### 4. Verify Deployment
+After the workflow succeeds:
 
-After the workflow completes:
-1. Go to **Settings** → **Pages**
-2. You should see a green checkmark and your site URL
-3. It may take a few minutes for the site to be accessible
+1. Open Settings > Pages.
+2. Confirm Source is GitHub Actions.
+3. Copy the published Pages URL.
+4. Open the URL in your browser.
+5. Check that the page loads without a 404.
+6. Check that styling, navigation, images, and certificate PDFs load correctly.
+
+GitHub Pages can take a few minutes to update after a successful workflow.
 
 ## Troubleshooting
 
-### Build Fails
+| Symptom | Likely Cause | Fix | Verify |
+|---|---|---|---|
+| Workflow fails during install | Dependency install problem or wrong Node setup | Open the failed Actions log and check the `npm ci` step. Confirm the workflow uses Node.js 20. | Re-run the workflow after fixing dependency issues. |
+| Workflow fails during build | TypeScript, Vite, missing asset, or lint-related issue | Run `npm run build` locally and fix the reported error. Check renamed images or PDFs. | Push the fix and confirm the build step succeeds. |
+| Pages says the site is not published | Pages source is not set to GitHub Actions | Go to Settings > Pages and set Source to GitHub Actions. | The Pages settings page shows a published URL. |
+| Site shows 404 | Wrong URL, Pages still updating, or Pages source not configured | Use the URL from Settings > Pages. Wait a few minutes after the workflow succeeds. Confirm Source is GitHub Actions. | Refresh the published URL after the deployment finishes. |
+| CSS or JavaScript does not load | Base path or deployment URL mismatch | Confirm you are using the correct project Pages or root Pages URL. The workflow should set `VITE_BASE_PATH` automatically. | Reload the page and check that styling and interactions work. |
+| Images or PDFs do not load | Missing asset file or stale import path | Confirm the file exists under `src/assets/` and the matching `src/data/` import uses the correct filename. | Run `npm run build`, push, and check the deployed asset again. |
+| Old content is still visible | Browser cache or Pages update delay | Wait a few minutes, refresh, or open the site in a private browser window. | The deployed page shows the latest commit content. |
 
-- Check the **Actions** tab for error messages
-- Ensure all dependencies are listed in `package.json`
-- Verify Node.js version compatibility (project uses Node 20)
+## Optional Custom Domain
 
-### 404 Errors
+Custom domains are not required for the baseline student portfolio.
 
-- Verify the base path in `vite.config.ts` matches your repository name
-- Clear browser cache
-- Wait a few minutes after deployment (DNS propagation)
+If you later use a custom domain:
 
-### Assets Not Loading
+1. Add a `CNAME` file in `public/` containing your domain.
+2. Configure DNS with your domain provider.
+3. Add the custom domain in Settings > Pages.
+4. Re-run the GitHub Actions workflow.
 
-- Ensure the base path is correctly configured
-- Check that all asset paths are relative (not absolute)
-- Verify the build output in the `dist` folder
+Keep the default GitHub Pages URL working first, then add a custom domain only after the normal deployment succeeds.
 
-## Manual Deployment
+## What This Deployment Does Not Need
 
-If you need to deploy manually:
+This static portfolio does not need:
 
-```bash
-# Build the project
-npm run build
-
-# The dist folder contains the built files
-# You can upload this folder to GitHub Pages manually
-# or use a tool like gh-pages:
-npm install --save-dev gh-pages
-
-# Add to package.json scripts:
-# "deploy": "npm run build && gh-pages -d dist"
-```
-
-## Custom Domain
-
-To use a custom domain:
-
-1. Add a `CNAME` file in the `public` folder with your domain:
-   ```
-   example.com
-   ```
-
-2. Configure DNS settings with your domain provider
-3. Update GitHub Pages settings to use your custom domain
-
+- A Node.js server after deployment.
+- A database.
+- API keys or private environment variables.
+- Analytics.
+- External uptime monitoring.
+- Paid hosting.

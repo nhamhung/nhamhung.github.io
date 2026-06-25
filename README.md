@@ -1,203 +1,180 @@
-# My Portfolio
+# Student Portfolio Template
 
-A modern, responsive portfolio website built with React, TypeScript, Vite, Chakra UI, and Tailwind CSS.
+This repository is a baseline portfolio template that students can customize, run locally, and deploy to GitHub Pages. It is built with React, TypeScript, Vite, Chakra UI, Tailwind CSS, and React Icons.
 
-## Features
+Use this template to create a personal portfolio with sections for your profile, education, experience, awards, projects, gallery, videos, skills, certificates, and contact information.
 
-- 🎨 Modern and animated UI with Chakra UI v3
-- 📱 Fully responsive design
-- ✨ Smooth animations and transitions
-- 🎯 Multiple sections: Hero, About, Education, Experience, Awards, Projects, Gallery, Videos, Skills, and Contact
-- 🚀 Deployed on GitHub Pages
+## What You Can Customize
 
-## Development
+- Your name, headline, location, resume link, contact email, and social links.
+- About, education, experience, awards, projects, gallery, videos, skills, and certificates.
+- Section order and visibility in the navigation.
+- Images, logos, gallery photos, and certificate PDFs.
+- Reusable card/action/section components if you want to extend the layout later.
 
-### Prerequisites
+## Prerequisites
 
-- Node.js 20 or higher
-- npm
+Install these before starting:
 
-### Installation
+- Git: https://git-scm.com/downloads
+- Node.js 20 or newer: https://nodejs.org/
+- npm, which is included with Node.js
+- A GitHub account
 
-- Install Git CLI: https://git-scm.com/install/windows
-
-- Install npm: https://nodejs.org/en/download/
+Check your versions:
 
 ```bash
-git clone https://github.com/yourusername/yourrepo.git
-cd my-portfolio
+git --version
+node --version
+npm --version
 ```
 
+## Quick Start
+
+Clone your repository and install dependencies:
+
 ```bash
+git clone https://github.com/<owner>/<repository>.git
+cd <repository>
 npm install
 ```
 
-### Run Development Server
+Start the local development server:
 
 ```bash
 npm run dev
 ```
 
-### Push code to GitHub
+Vite will print a local URL, usually `http://localhost:5173/`. Open it in your browser and edit files under `src/data/` to customize the portfolio.
 
-```bash
-git status
-git add .
-git commit -m "make a change"
-git branch -M main
-git remote add origin https://github.com/yourusername/yourrepo.git
-git push -u origin main
-```
+## Verify Before Publishing
 
-### Build for Production
+Run these commands before pushing important changes:
 
 ```bash
 npm run build
-```
-
-### Preview Production Build
-
-```bash
+npm run lint
 npm run preview
 ```
 
-## Deployment to GitHub Pages
+What each command does:
 
-This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+| Command | Purpose |
+|---|---|
+| `npm run build` | Checks TypeScript and creates a production build in `dist`. |
+| `npm run lint` | Runs ESLint across the project. |
+| `npm run preview` | Serves the production build locally for a final check. |
 
-### Setup Instructions
-
-1. **Enable GitHub Pages in your repository:**
-   - Go to your repository settings on GitHub
-   - Navigate to "Pages" in the left sidebar
-   - Under "Source", select "GitHub Actions"
-
-2. **Configure Base Path (if needed):**
-   - If your repository is named `my-portfolio` (not `username.github.io`), you need to set the base path in `vite.config.ts`:
-   ```typescript
-   export default defineConfig({
-     base: '/my-portfolio/',
-     plugins: [react(), tailwindcss(), tsconfigPaths()],
-   });
-   ```
-   - If your repository is `username.github.io`, the base should be `/` (default)
-
-3. **Push to main branch:**
-   - The GitHub Actions workflow will automatically build and deploy your site when you push to the `main` branch
-   - You can also manually trigger deployment from the "Actions" tab
-
-4. **Access your site:**
-   - Your site will be available at `https://username.github.io/my-portfolio/` (or `https://username.github.io/` if using a user/organization page)
-
-### Manual Deployment
-
-If you prefer to deploy manually:
-
-```bash
-npm run build
-# Then upload the dist folder to GitHub Pages
-```
-
-## Tech Stack
-
-- **React 19** - UI library
-- **TypeScript** - Type safety
-- **Vite** - Build tool
-- **Chakra UI v3** - Component library
-- **Tailwind CSS** - Utility-first CSS
-- **React Icons** - Icon library
+Test commands will be documented after the test unit is added.
 
 ## Project Structure
 
-```
-src/
-├── components/       # React components
-│   ├── ui/          # Chakra UI wrapper components
-│   ├── About.tsx
-│   ├── Awards.tsx
-│   ├── Contact.tsx
-│   ├── Education.tsx
-│   ├── Experience.tsx
-│   ├── Gallery.tsx
-│   ├── Hero.tsx
-│   ├── Navbar.tsx
-│   ├── Projects.tsx
-│   ├── Skills.tsx
-│   └── Videos.tsx
-├── assets/          # Images and static assets
-└── App.tsx          # Main app component
-```
+| Path | What To Edit There |
+|---|---|
+| `src/data/profile.ts` | Your name, hero text, contact email, resume, and social links. |
+| `src/data/about.ts` | About section content and highlights. |
+| `src/data/education.ts` | Schools, degrees, coursework, and education dates. |
+| `src/data/experience.ts` | Work, internship, leadership, or volunteer experience. |
+| `src/data/awards.ts` | Awards, honors, and recognitions. |
+| `src/data/projects.ts` | Project cards, descriptions, links, and technologies. |
+| `src/data/gallery.ts` | Gallery image entries. |
+| `src/data/videos.ts` | Video entries and links. |
+| `src/data/skills.ts` | Skill groups and tools. |
+| `src/data/certificates.ts` | Certificate metadata and PDF imports. |
+| `src/data/navigation.ts` | Section order, labels, and visibility. |
+| `src/types/portfolio.ts` | Shared TypeScript types for portfolio data. Use this as a reference when editing data files. |
+| `src/assets/` | Images, logos, gallery photos, and certificate PDFs. |
+| `src/components/shared/` | Reusable UI helpers for cards, section shells, and external actions. |
+
+Most students should start with `src/data/profile.ts`, then update the section-specific files under `src/data/`.
+
+## Customize Your Portfolio
+
+### Profile, Contact, And Social Links
+
+Edit:
+
+- `src/data/profile.ts`
+
+Update your display name, short introduction, location, email, resume link, and social links. Use a public-facing email or contact method that you are comfortable publishing online.
+
+### Sections And Navigation
+
+Edit:
+
+- `src/data/navigation.ts`
+
+Use this file to control which sections appear in navigation and how they are ordered. Keep navigation IDs aligned with the matching page sections.
+
+### Education, Experience, Awards, Projects, Gallery, Videos, And Skills
+
+Edit the matching file under `src/data/`:
+
+- `src/data/education.ts`
+- `src/data/experience.ts`
+- `src/data/awards.ts`
+- `src/data/projects.ts`
+- `src/data/gallery.ts`
+- `src/data/videos.ts`
+- `src/data/skills.ts`
+
+The shared types in `src/types/portfolio.ts` show the expected fields for each kind of data.
+
+### Images And Logos
+
+Place images and logos in:
+
+- `src/assets/`
+
+If you replace an existing image with a new filename, update the import or reference in the matching `src/data/` file. Run `npm run build` after replacing assets so TypeScript and Vite can catch missing files.
+
+### Certificate PDFs
+
+Place certificate PDFs in:
+
+- `src/assets/certificates/`
+
+Then update:
+
+- `src/data/certificates.ts`
+
+If the PDF filename changes, update the import in `src/data/certificates.ts` as well.
+
+## Deploy To GitHub Pages
+
+This project is already configured for GitHub Pages deployment through GitHub Actions.
+
+Short version:
+
+1. Push your code to GitHub.
+2. In your repository, go to Settings > Pages.
+3. Set Source to GitHub Actions.
+4. Push to the `main` branch.
+5. Check the Actions tab and the published Pages URL.
+
+For the detailed guide, including URL patterns and troubleshooting, read [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Common Local Issues
+
+| Symptom | What To Try |
+|---|---|
+| `npm install` fails | Confirm Node.js is version 20 or newer, then try again. |
+| The dev server does not start | Make sure dependencies are installed with `npm install`. |
+| An image or PDF is missing | Check that the file exists in `src/assets/` and that the matching import path is correct. |
+| TypeScript reports a data error | Compare your data file with the matching type in `src/types/portfolio.ts`. |
+| The deployed site has broken assets | Read the base path and troubleshooting sections in `DEPLOYMENT.md`. |
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Chakra UI v3
+- Tailwind CSS
+- React Icons
+- GitHub Actions
+- GitHub Pages
 
 ## License
 
 MIT
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
