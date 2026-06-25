@@ -1,0 +1,43 @@
+import type { Portfolio } from '../types/portfolio'
+import { about } from './about'
+import { awards } from './awards'
+import { certificates } from './certificates'
+import { education } from './education'
+import { experience } from './experience'
+import { gallery } from './gallery'
+import { navigation, sectionIds } from './navigation'
+import { hero, profile } from './profile'
+import { projects } from './projects'
+import { skills } from './skills'
+import { videos } from './videos'
+
+export const portfolio = {
+  profile,
+  hero,
+  navigation,
+  about,
+  education,
+  experience,
+  awards,
+  projects,
+  gallery,
+  videos,
+  skills,
+  certificates,
+} satisfies Portfolio
+
+export {
+  about,
+  awards,
+  certificates,
+  education,
+  experience,
+  gallery,
+  hero,
+  navigation,
+  profile,
+  projects,
+  sectionIds,
+  skills,
+  videos,
+}

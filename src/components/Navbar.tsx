@@ -12,13 +12,17 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { HiMenu, HiX } from 'react-icons/hi'
-import profileImage from '../assets/profile.jpeg'
 
-interface NavbarProps {
-  activeSection?: string
+import { navigation, profile } from '../data/portfolio'
+import type { NavigationItem, SectionId } from '../types/portfolio'
+import { getEnabledNavigationItems, scrollToSection } from '../utils/scroll'
+
+type NavbarProps = {
+  activeSection?: SectionId
+  navigationItems?: NavigationItem[]
 }
 
-function Navbar({ activeSection = 'home' }: NavbarProps) {
+function Navbar({ activeSection = 'home', navigationItems = getEnabledNavigationItems(navigation) }: NavbarProps) {
   const { open, onOpen, onClose } = useDisclosure()
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -31,25 +35,9 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'education', label: 'Education' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'awards', label: 'Awards' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'videos', label: 'Videos' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'contact', label: 'Contact' },
-  ]
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      onClose()
-    }
+  const handleSectionClick = (sectionId: SectionId) => {
+    scrollToSection(sectionId)
+    onClose()
   }
 
   return (
@@ -78,6 +66,8 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
             display="flex"
             alignItems="center"
             gap={3}
+            aria-label="Scroll to home section"
+            data-testid="navbar-brand-link"
           >
             <Box
               w={{ base: '36px', md: '40px' }}
@@ -88,20 +78,20 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
               borderColor="rgba(98, 240, 213, 0.5)"
               boxShadow="0 0 0 2px rgba(98, 240, 213, 0.15)"
             >
-              <Image src={profileImage} alt="Profile" w="100%" h="100%" objectFit="cover" />
+              <Image src={profile.profileImage} alt={`${profile.name} profile`} w="100%" h="100%" objectFit="cover" />
             </Box>
             <Box>
               <Text className="code-font" fontSize="xs" color="var(--text-300)" letterSpacing="widest">
                 PROFILE.NODE
               </Text>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight={600} color="var(--text-100)">
-                Nham Quoc Hung
+                {profile.name}
               </Text>
             </Box>
           </Link>
 
           <Flex as="ul" listStyleType="none" gap={1} align="center" display={{ base: 'none', lg: 'flex' }}>
-            {navItems.map((item) => {
+            {navigationItems.map((item) => {
               const isActive = activeSection === item.id
 
               return (
@@ -110,7 +100,7 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
                     href={`#${item.id}`}
                     onClick={(e) => {
                       e.preventDefault()
-                      scrollToSection(item.id)
+                      handleSectionClick(item.id)
                     }}
                     px={3}
                     py={2}
@@ -126,6 +116,9 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
                       borderColor: 'rgba(69, 162, 255, 0.4)',
                       bg: 'rgba(34, 128, 235, 0.16)',
                     }}
+                    aria-current={isActive ? 'page' : undefined}
+                    aria-label={`Scroll to ${item.label} section`}
+                    data-testid={`navbar-link-${item.id}`}
                   >
                     {item.label}
                   </Link>
@@ -144,6 +137,7 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
             borderColor="rgba(118, 168, 255, 0.35)"
             bg="rgba(14, 31, 54, 0.75)"
             _hover={{ bg: 'rgba(22, 45, 74, 0.88)' }}
+            data-testid="navbar-menu-toggle"
           >
             {open ? <HiX size={20} /> : <HiMenu size={20} />}
           </IconButton>
@@ -165,6 +159,7 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
                   onClick={onClose}
                   color="var(--text-100)"
                   _hover={{ bg: 'rgba(22, 45, 74, 0.88)' }}
+                  data-testid="navbar-menu-close"
                 >
                   <HiX />
                 </IconButton>
@@ -172,7 +167,7 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
             </Drawer.Header>
             <Drawer.Body py={4} px={3}>
               <VStack align="stretch" gap={2}>
-                {navItems.map((item) => {
+                {navigationItems.map((item) => {
                   const isActive = activeSection === item.id
 
                   return (
@@ -181,7 +176,7 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
                       href={`#${item.id}`}
                       onClick={(e) => {
                         e.preventDefault()
-                        scrollToSection(item.id)
+                        handleSectionClick(item.id)
                       }}
                       px={3}
                       py={2.5}
@@ -197,6 +192,9 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
                         borderColor: 'rgba(69, 162, 255, 0.4)',
                         color: 'var(--text-100)',
                       }}
+                      aria-current={isActive ? 'page' : undefined}
+                      aria-label={`Scroll to ${item.label} section`}
+                      data-testid={`navbar-mobile-link-${item.id}`}
                     >
                       {item.label}
                     </Link>

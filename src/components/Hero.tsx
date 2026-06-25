@@ -7,25 +7,50 @@ import {
   Heading,
   HStack,
   Image,
-  Link,
   SimpleGrid,
   Text,
   VStack,
 } from '@chakra-ui/react'
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
 import { HiArrowDown } from 'react-icons/hi'
-import profileImage from '../assets/profile.jpeg'
 
-function Hero() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+import ExternalAction from './shared/ExternalAction'
+import { hero, profile } from '../data/portfolio'
+import type { ExternalLink } from '../types/portfolio'
+import { scrollToSection } from '../utils/scroll'
+
+const getSocialIcon = (link: ExternalLink) => {
+  if (link.label.toLowerCase().includes('github')) {
+    return <FaGithub size={22} />
   }
 
-  const stackHighlights = ['Apache Spark', 'Apache Kafka', 'Airflow', 'Kubernetes', 'BigQuery', 'GCP']
+  if (link.label.toLowerCase().includes('linkedin')) {
+    return <FaLinkedin size={22} />
+  }
 
+  return <FaEnvelope size={22} />
+}
+
+const renderHeadline = () => {
+  const [beforeHighlight, afterHighlight] = hero.headline.split(hero.highlightedPhrase)
+
+  if (!beforeHighlight || !afterHighlight) {
+    return hero.headline
+  }
+
+  return (
+    <>
+      {beforeHighlight}
+      <Box as="span" color="var(--accent-300)">
+        {' '}
+        {hero.highlightedPhrase}{' '}
+      </Box>
+      {afterHighlight}
+    </>
+  )
+}
+
+function Hero() {
   return (
     <Box
       id="home"
@@ -44,118 +69,90 @@ function Hero() {
         <Flex direction={{ base: 'column', xl: 'row' }} gap={{ base: 10, xl: 14 }} align="stretch">
           <VStack align={{ base: 'flex-start', lg: 'flex-start' }} gap={6} flex={1.1} className="reveal-up">
             <HStack gap={3} flexWrap="wrap">
-              <Badge
-                className="code-font"
-                px={3}
-                py={1}
-                borderRadius="full"
-                fontWeight={500}
-                fontSize="0.72rem"
-                border="1px solid"
-                borderColor="rgba(69, 162, 255, 0.5)"
-                bg="rgba(34, 128, 235, 0.16)"
-                color="var(--text-100)"
-              >
-                SYSTEM STATUS: BUILDING
-              </Badge>
-              <Badge
-                className="code-font"
-                px={3}
-                py={1}
-                borderRadius="full"
-                fontWeight={500}
-                fontSize="0.72rem"
-                border="1px solid"
-                borderColor="rgba(98, 240, 213, 0.45)"
-                bg="rgba(98, 240, 213, 0.1)"
-                color="var(--text-100)"
-              >
-                DATA | SOFTWARE | MENTORSHIP
-              </Badge>
+              {hero.statusBadges.map((badge, index) => (
+                <Badge
+                  key={badge}
+                  className="code-font"
+                  px={3}
+                  py={1}
+                  borderRadius="full"
+                  fontWeight={500}
+                  fontSize="0.72rem"
+                  border="1px solid"
+                  borderColor={index === 0 ? 'rgba(69, 162, 255, 0.5)' : 'rgba(98, 240, 213, 0.45)'}
+                  bg={index === 0 ? 'rgba(34, 128, 235, 0.16)' : 'rgba(98, 240, 213, 0.1)'}
+                  color="var(--text-100)"
+                >
+                  {badge}
+                </Badge>
+              ))}
             </HStack>
 
             <VStack align="flex-start" gap={3}>
               <Text className="code-font" fontSize={{ base: 'sm', md: 'md' }} color="var(--text-300)">
-                &lt;engineer id="nham-quoc-hung" /&gt;
+                {hero.eyebrow}
               </Text>
               <Heading as="h1" fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }} lineHeight="1.05" color="var(--text-100)">
-                Building reliable
-                <Box as="span" color="var(--accent-300)"> data systems </Box>
-                and scalable backend platforms.
+                {renderHeadline()}
               </Heading>
             </VStack>
 
             <Text fontSize={{ base: 'md', md: 'lg' }} maxW="720px" color="var(--text-300)" lineHeight="1.85">
-              Computer Science graduate specialized in Data. I design and ship production-ready pipelines, low-latency services,
-              and analytics systems that teams can trust for decisions and growth.
+              {hero.intro}
             </Text>
 
             <SimpleGrid columns={{ base: 1, sm: 3 }} gap={3} w="full">
-              <Box p={4} borderRadius="md" bg="var(--surface-900)" border="1px solid" borderColor="var(--line-700)">
-                <Text className="code-font" color="var(--text-300)" fontSize="xs" mb={2}>
-                  EXPERIENCE
-                </Text>
-                <Text fontSize="xl" fontWeight={700} color="var(--text-100)">
-                  4+ Years
-                </Text>
-              </Box>
-              <Box p={4} borderRadius="md" bg="var(--surface-900)" border="1px solid" borderColor="var(--line-700)">
-                <Text className="code-font" color="var(--text-300)" fontSize="xs" mb={2}>
-                  FOCUS
-                </Text>
-                <Text fontSize="xl" fontWeight={700} color="var(--text-100)">
-                  Data + Backend
-                </Text>
-              </Box>
-              <Box p={4} borderRadius="md" bg="var(--surface-900)" border="1px solid" borderColor="var(--line-700)">
-                <Text className="code-font" color="var(--text-300)" fontSize="xs" mb={2}>
-                  DELIVERY
-                </Text>
-                <Text fontSize="xl" fontWeight={700} color="var(--text-100)">
-                  End-to-End
-                </Text>
-              </Box>
+              {hero.stats.map((stat) => (
+                <Box key={stat.label} p={4} borderRadius="md" bg="var(--surface-900)" border="1px solid" borderColor="var(--line-700)">
+                  <Text className="code-font" color="var(--text-300)" fontSize="xs" mb={2}>
+                    {stat.label.toUpperCase()}
+                  </Text>
+                  <Text fontSize="xl" fontWeight={700} color="var(--text-100)">
+                    {stat.value}
+                  </Text>
+                </Box>
+              ))}
             </SimpleGrid>
 
             <HStack gap={3} pt={2} flexWrap="wrap">
               <Button
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection(hero.primaryAction.sectionId)}
                 bg="var(--accent-500)"
                 color="white"
                 border="1px solid"
                 borderColor="rgba(118, 168, 255, 0.6)"
                 _hover={{ bg: 'var(--accent-400)' }}
+                aria-label={hero.primaryAction.ariaLabel}
+                data-testid="hero-primary-action"
               >
-                View Projects
+                {hero.primaryAction.label}
               </Button>
               <Button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection(hero.secondaryAction.sectionId)}
                 variant="outline"
                 borderColor="rgba(118, 168, 255, 0.45)"
                 color="var(--text-100)"
                 bg="rgba(34, 128, 235, 0.1)"
                 _hover={{ bg: 'rgba(34, 128, 235, 0.2)' }}
+                aria-label={hero.secondaryAction.ariaLabel}
+                data-testid="hero-secondary-action"
               >
-                Contact
+                {hero.secondaryAction.label}
               </Button>
             </HStack>
 
             <HStack gap={4}>
-              <Link href="https://github.com/nhamhung" target="_blank" rel="noopener noreferrer" color="var(--text-300)" _hover={{ color: 'var(--text-100)' }}>
-                <FaGithub size={22} />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/quoc-hung-nham/"
-                target="_blank"
-                rel="noopener noreferrer"
-                color="var(--text-300)"
-                _hover={{ color: 'var(--text-100)' }}
-              >
-                <FaLinkedin size={22} />
-              </Link>
-              <Link href="mailto:nhamhung.gttn@gmail.com" color="var(--text-300)" _hover={{ color: 'var(--text-100)' }}>
-                <FaEnvelope size={22} />
-              </Link>
+              {profile.socialLinks.map((link) => (
+                <ExternalAction
+                  key={link.href}
+                  href={link.href}
+                  label={link.label}
+                  ariaLabel={link.ariaLabel}
+                  icon={getSocialIcon(link)}
+                  variant="icon"
+                  testId={`hero-social-link-${link.label.toLowerCase()}`}
+                />
+              ))}
             </HStack>
           </VStack>
 
@@ -198,20 +195,20 @@ function Hero() {
                     borderColor="rgba(118, 168, 255, 0.4)"
                     className="float-soft"
                   >
-                    <Image src={profileImage} alt="Nham Quoc Hung" w="100%" h="100%" objectFit="cover" />
+                    <Image src={profile.profileImage} alt={profile.name} w="100%" h="100%" objectFit="cover" />
                   </Box>
                   <Box>
                     <Text className="code-font" fontSize="xs" color="var(--text-300)">
                       CURRENT ROLE
                     </Text>
                     <Text color="var(--text-100)" fontWeight={600} mt={1}>
-                      Data Engineer at Torilab Inc.
+                      {profile.role}
                     </Text>
                     <Text className="code-font" fontSize="xs" color="var(--text-300)" mt={3}>
                       LOCATION
                     </Text>
                     <Text color="var(--text-100)" mt={1}>
-                      Hanoi Capital Region, Vietnam
+                      {profile.location}
                     </Text>
                   </Box>
                 </HStack>
@@ -221,7 +218,7 @@ function Hero() {
                     ACTIVE STACK
                   </Text>
                   <Flex gap={2} wrap="wrap">
-                    {stackHighlights.map((item) => (
+                    {hero.stackHighlights.map((item) => (
                       <Badge
                         key={item}
                         borderRadius="md"
@@ -257,6 +254,8 @@ function Hero() {
         className="pulse-line"
         _hover={{ color: 'var(--text-100)' }}
         display={{ base: 'none', md: 'block' }}
+        aria-label="Scroll to about section"
+        data-testid="hero-next-section"
       >
         <HiArrowDown size={28} />
       </Box>
