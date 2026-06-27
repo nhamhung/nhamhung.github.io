@@ -1813,3 +1813,415 @@ approve and continue"
 **Context**: CONSTRUCTION - Functional Design planning question gate for Lightweight Tests And Verification
 
 ---
+
+## Architecture Discussion - Google Sheets Content Source
+**Timestamp**: 2026-06-25T18:13:57Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+- AGENTS.md: AGENTS.md
+- tsconfig.app.json: tsconfig.app.json
+
+## My request for Codex:
+before moving on, do you think it's possible to allow students to build their custom github pages by filling in details from an external google sheet instead of the code directly?"
+**AI Response**: "Paused workflow progression to discuss whether Google Sheets can be used as an external portfolio content source and what implementation options would fit the student template."
+**Context**: CONSTRUCTION - Architecture discussion before continuing Unit 5 Functional Design
+
+---
+
+## Architecture Discussion - Portfolio Class Achievement Sheet
+**Timestamp**: 2026-06-25T18:16:43Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+- AGENTS.md: AGENTS.md
+- tsconfig.app.json: tsconfig.app.json
+
+## My request for Codex:
+I'm building a portfolio construction class, do you think this would be a good idea? For example, students would maintain an achievement tracking sheets and our site can pull it in during build time to render the page. This might be a bit more interesting and easier to do for students right?"
+**AI Response**: "Discussed whether a build-time Google Sheets achievement tracker would be a good classroom model for portfolio construction and how to keep it beginner-friendly."
+**Context**: CONSTRUCTION - Architecture discussion before continuing Unit 5 Functional Design
+
+---
+
+## Functional Design Plan Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-25T18:18:24Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+- AGENTS.md: AGENTS.md
+- tsconfig.app.json: tsconfig.app.json
+
+## My request for Codex:
+okay, finish the current test unit 5 please, approve and continue"
+**AI Response**: "Recorded approval of the Unit 5 functional design plan with answers A, A, A, A, A and generated functional design artifacts."
+**Context**: CONSTRUCTION - Functional Design plan approval and artifact generation for Lightweight Tests And Verification
+
+---
+
+## Functional Design Approval Prompt - Lightweight Tests And Verification
+**Timestamp**: 2026-06-25T18:18:24Z
+**User Input**: "N/A"
+**AI Response**: "Generated Unit 5 functional design artifacts and requested review/approval before proceeding to NFR Requirements."
+**Context**: CONSTRUCTION - Functional Design approval gate for Lightweight Tests And Verification
+
+---
+
+## Functional Design Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-25T18:50:03Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+- AGENTS.md: AGENTS.md
+- tsconfig.app.json: tsconfig.app.json
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded approval of Unit 5 functional design and proceeded to NFR Requirements planning."
+**Context**: CONSTRUCTION - Functional Design approval and transition to NFR Requirements for Lightweight Tests And Verification
+
+---
+
+## NFR Requirements Planning - Lightweight Tests And Verification
+**Timestamp**: 2026-06-25T18:50:03Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+- AGENTS.md: AGENTS.md
+- tsconfig.app.json: tsconfig.app.json
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Created Unit 5 NFR Requirements plan with questions for test tooling, performance, reliability isolation, failure message quality, and documentation maintenance."
+**Context**: CONSTRUCTION - NFR Requirements planning question gate for Lightweight Tests And Verification
+
+---
+
+## NFR Requirements Plan Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-25T18:52:22Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+- AGENTS.md: AGENTS.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded approval of the Unit 5 NFR Requirements plan with answers A, A, A, A, A and generated NFR requirements artifacts."
+**Context**: CONSTRUCTION - NFR Requirements plan approval and artifact generation for Lightweight Tests And Verification
+
+---
+
+## NFR Requirements Approval Prompt - Lightweight Tests And Verification
+**Timestamp**: 2026-06-25T18:52:22Z
+**User Input**: "N/A"
+**AI Response**: "Generated Unit 5 NFR Requirements artifacts and requested review/approval before proceeding to NFR Design."
+**Context**: CONSTRUCTION - NFR Requirements approval gate for Lightweight Tests And Verification
+
+---
+
+## NFR Requirements Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T16:56:49Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+- AGENTS.md: AGENTS.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded approval of Unit 5 NFR requirements and proceeded to NFR Design planning."
+**Context**: CONSTRUCTION - NFR Requirements approval and transition to NFR Design for Lightweight Tests And Verification
+
+---
+
+## NFR Design Planning - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T16:56:49Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+- AGENTS.md: AGENTS.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Created Unit 5 NFR Design plan with questions for resilience, scalability, performance, security, and logical testing components."
+**Context**: CONSTRUCTION - NFR Design planning question gate for Lightweight Tests And Verification
+
+---
+
+## NFR Design Plan Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T17:23:02Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-nfr-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded approval of the Unit 5 NFR Design plan with answers A, A, A, A, A and generated NFR design artifacts."
+**Context**: CONSTRUCTION - NFR Design plan approval and artifact generation for Lightweight Tests And Verification
+
+---
+
+## NFR Design Approval Prompt - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T17:23:02Z
+**User Input**: "N/A"
+**AI Response**: "Generated Unit 5 NFR Design artifacts and requested review/approval before proceeding to Infrastructure Design."
+**Context**: CONSTRUCTION - NFR Design approval gate for Lightweight Tests And Verification
+
+---
+
+## NFR Design Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:10:18Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-nfr-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+
+## My request for Codex:
+approve and continue. Also, I want to have a button which automatically convert the current design of a single landing page to a stunning multi-page layout "
+**AI Response**: "Recorded approval of Unit 5 NFR design and proceeded to Infrastructure Design planning. Captured the multi-page layout conversion button as a deferred user-facing feature request outside Unit 5."
+**Context**: CONSTRUCTION - NFR Design approval, Infrastructure Design transition, and new scope note for Lightweight Tests And Verification
+
+---
+
+## Infrastructure Design Planning - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:10:18Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-nfr-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+- DEPLOYMENT.md: DEPLOYMENT.md
+
+## My request for Codex:
+approve and continue. Also, I want to have a button which automatically convert the current design of a single landing page to a stunning multi-page layout "
+**AI Response**: "Created Unit 5 Infrastructure Design plan with questions for deployment environment, compute, storage, messaging, networking, monitoring, shared infrastructure, and handling the new multi-page layout conversion feature request."
+**Context**: CONSTRUCTION - Infrastructure Design planning question gate for Lightweight Tests And Verification
+
+---
+
+## Infrastructure Design Plan Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:16:04Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-infrastructure-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+- lightweight-tests-and-verification-nfr-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded approval of the Unit 5 Infrastructure Design plan with answers A, A, A, A, A, A, A, A and generated infrastructure design artifacts."
+**Context**: CONSTRUCTION - Infrastructure Design plan approval and artifact generation for Lightweight Tests And Verification
+
+---
+
+## Infrastructure Design Approval Prompt - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:16:04Z
+**User Input**: "N/A"
+**AI Response**: "Generated Unit 5 Infrastructure Design artifacts and requested review/approval before proceeding to Code Generation."
+**Context**: CONSTRUCTION - Infrastructure Design approval gate for Lightweight Tests And Verification
+
+---
+
+## Infrastructure Design Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:21:03Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-infrastructure-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+- lightweight-tests-and-verification-nfr-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded approval of Unit 5 infrastructure design and proceeded to Code Generation planning."
+**Context**: CONSTRUCTION - Infrastructure Design approval and transition to Code Generation planning for Lightweight Tests And Verification
+
+---
+
+## Code Generation Planning - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:21:03Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-infrastructure-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+- lightweight-tests-and-verification-nfr-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Created Unit 5 Code Generation plan for Vitest setup, test command, smoke render tests, navigation tests, portfolio data tests, README update, verification runs, and code summary generation."
+**Context**: CONSTRUCTION - Code Generation Part 1 planning for Lightweight Tests And Verification
+
+---
+
+## Code Generation Plan Approval Prompt - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:21:03Z
+**User Input**: "N/A"
+**AI Response**: "Created Unit 5 Code Generation plan and requested approval before modifying application code."
+**Context**: CONSTRUCTION - Code Generation Part 1 approval gate for Lightweight Tests And Verification
+
+---
+
+## Code Generation Plan Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:24:54Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-infrastructure-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+- lightweight-tests-and-verification-nfr-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded approval of Unit 5 Code Generation plan and began implementing Vitest setup, test command, test files, README update, and code generation summary."
+**Context**: CONSTRUCTION - Code Generation Part 2 implementation for Lightweight Tests And Verification
+
+---
+
+## Code Generation Complete - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:24:54Z
+**User Input**: "N/A"
+**AI Response**: "Completed Unit 5 Code Generation: installed approved test tooling, added npm test script, configured Vitest/JSDOM, created setup and test files, updated README, generated code summary, and verified npm run test, npm run build, and npm run lint."
+**Context**: CONSTRUCTION - Code Generation completion for Lightweight Tests And Verification
+
+---
+
+## Code Generation Approval Prompt - Lightweight Tests And Verification
+**Timestamp**: 2026-06-26T18:24:54Z
+**User Input**: "N/A"
+**AI Response**: "Generated Unit 5 code and requested review/approval before proceeding to Build and Test."
+**Context**: CONSTRUCTION - Code Generation approval gate for Lightweight Tests And Verification
+
+---
+
+## Code Generation Approval - Lightweight Tests And Verification
+**Timestamp**: 2026-06-27T06:09:05Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-infrastructure-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+- lightweight-tests-and-verification-nfr-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded approval of Unit 5 Code Generation and proceeded to Build and Test instruction generation."
+**Context**: CONSTRUCTION - Code Generation approval and transition to Build and Test
+
+---
+
+## Build and Test Complete
+**Timestamp**: 2026-06-27T06:09:05Z
+**User Input**: "N/A"
+**AI Response**: "Generated build instructions, unit test instructions, integration test instructions, performance test instructions, and build-and-test summary."
+**Context**: CONSTRUCTION - Build and Test instruction generation
+
+---
+
+## Build and Test Approval Prompt
+**Timestamp**: 2026-06-27T06:09:05Z
+**User Input**: "N/A"
+**AI Response**: "Build and test instructions complete. Ready to proceed to Operations stage?"
+**Context**: CONSTRUCTION - Build and Test approval gate
+
+---
+
+## Workflow Clarification - Operations Stage
+**Timestamp**: 2026-06-27T06:37:03Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+
+## Open tabs:
+- lightweight-tests-and-verification-infrastructure-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-infrastructure-design-plan.md
+- lightweight-tests-and-verification-nfr-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-design-plan.md
+- lightweight-tests-and-verification-nfr-requirements-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-nfr-requirements-plan.md
+- lightweight-tests-and-verification-functional-design-plan.md: aidlc-docs/construction/plans/lightweight-tests-and-verification-functional-design-plan.md
+- README.md: README.md
+
+## My request for Codex:
+what is the operation stages about?"
+**AI Response**: "Explained that the current AI-DLC Operations phase is a placeholder for future deployment, monitoring, maintenance, incident response, and production readiness workflows; current workflow effectively ends after Build and Test."
+**Context**: Operations phase clarification
+
+---

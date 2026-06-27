@@ -47,14 +47,14 @@ Out of scope:
 - [x] Read project requirements for lightweight tests.
 - [x] Identify functional design questions.
 - [x] Create this functional design plan with clarification questions.
-- [ ] Collect and validate answers.
-- [ ] Generate `aidlc-docs/construction/lightweight-tests-and-verification/functional-design/business-logic-model.md`.
-- [ ] Generate `aidlc-docs/construction/lightweight-tests-and-verification/functional-design/business-rules.md`.
-- [ ] Generate `aidlc-docs/construction/lightweight-tests-and-verification/functional-design/domain-entities.md`.
-- [ ] Generate `aidlc-docs/construction/lightweight-tests-and-verification/functional-design/frontend-components.md`.
-- [ ] Update plan checkboxes after artifact generation.
-- [ ] Update `aidlc-docs/aidlc-state.md`.
-- [ ] Log completion and approval prompt in `aidlc-docs/audit.md`.
+- [x] Collect and validate answers.
+- [x] Generate `aidlc-docs/construction/lightweight-tests-and-verification/functional-design/business-logic-model.md`.
+- [x] Generate `aidlc-docs/construction/lightweight-tests-and-verification/functional-design/business-rules.md`.
+- [x] Generate `aidlc-docs/construction/lightweight-tests-and-verification/functional-design/domain-entities.md`.
+- [x] Generate `aidlc-docs/construction/lightweight-tests-and-verification/functional-design/frontend-components.md`.
+- [x] Update plan checkboxes after artifact generation.
+- [x] Update `aidlc-docs/aidlc-state.md`.
+- [x] Log completion and approval prompt in `aidlc-docs/audit.md`.
 
 ## Planning Questions
 
@@ -67,7 +67,7 @@ B. Only app smoke render.
 C. Full end-to-end user flows in a real browser.  
 X. Other.
 
-[Answer]:
+[Answer]: A
 
 Recommendation: A. This matches the approved Unit 5 purpose without adding browser automation.
 
@@ -80,7 +80,7 @@ B. Snapshot-first tests for most components.
 C. Manual checklist only, no automated tests.  
 X. Other.
 
-[Answer]:
+[Answer]: A
 
 Recommendation: A. This provides useful guardrails while staying beginner-friendly.
 
@@ -93,7 +93,7 @@ B. Add only a watch-mode command.
 C. Do not add a package script.  
 X. Other.
 
-[Answer]:
+[Answer]: A
 
 Recommendation: A. Requirements call for a simple npm test command.
 
@@ -106,7 +106,7 @@ B. Only mention tests in AI-DLC docs, not student-facing docs.
 C. Defer all documentation updates to Build and Test.  
 X. Other.
 
-[Answer]:
+[Answer]: A
 
 Recommendation: A. Student-facing verification should include the new command once it exists.
 
@@ -119,33 +119,33 @@ B. Strict validation of every possible text field and visual detail.
 C. Only fail on TypeScript compiler errors.  
 X. Other.
 
-[Answer]:
+[Answer]: A
 
 Recommendation: A. It catches likely student mistakes without making tests brittle.
 
 ## Proposed Answers
 
 | Question | Proposed Answer |
-|---|---|
-| 1 | A |
-| 2 | A |
-| 3 | A |
-| 4 | A |
-| 5 | A |
+| -------- | --------------- |
+| 1        | A               |
+| 2        | A               |
+| 3        | A               |
+| 4        | A               |
+| 5        | A               |
 
 ## Content Validation
 
-| Check | Status |
-|---|---|
-| Mermaid syntax | N/A - no Mermaid diagrams included. |
-| ASCII diagram syntax | N/A - no ASCII diagrams included. |
-| Markdown tables | Valid pipe table format used. |
-| Question format | Each question includes A/B/C/X options and an `[Answer]:` tag. |
-| Special characters | File paths and commands are wrapped in backticks where needed. |
+| Check                | Status                                                         |
+| -------------------- | -------------------------------------------------------------- |
+| Mermaid syntax       | N/A - no Mermaid diagrams included.                            |
+| ASCII diagram syntax | N/A - no ASCII diagrams included.                              |
+| Markdown tables      | Valid pipe table format used.                                  |
+| Question format      | Each question includes A/B/C/X options and an `[Answer]:` tag. |
+| Special characters   | File paths and commands are wrapped in backticks where needed. |
 
 ## Extension Rule Compliance
 
-| Extension | Status | Rationale |
-|---|---|---|
-| Security Baseline | Disabled | User opted out during Requirements Analysis. |
+| Extension              | Status   | Rationale                                    |
+| ---------------------- | -------- | -------------------------------------------- |
+| Security Baseline      | Disabled | User opted out during Requirements Analysis. |
 | Property-Based Testing | Disabled | User opted out during Requirements Analysis. |

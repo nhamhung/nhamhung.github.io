@@ -52,6 +52,7 @@ Vite will print a local URL, usually `http://localhost:5173/`. Open it in your b
 Run these commands before pushing important changes:
 
 ```bash
+npm run test
 npm run build
 npm run lint
 npm run preview
@@ -61,11 +62,10 @@ What each command does:
 
 | Command | Purpose |
 |---|---|
+| `npm run test` | Runs lightweight checks for app rendering, navigation config, and portfolio data. |
 | `npm run build` | Checks TypeScript and creates a production build in `dist`. |
 | `npm run lint` | Runs ESLint across the project. |
 | `npm run preview` | Serves the production build locally for a final check. |
-
-Test commands will be documented after the test unit is added.
 
 ## Project Structure
 
