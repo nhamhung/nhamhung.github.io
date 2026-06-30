@@ -64,13 +64,13 @@ function Contact() {
                   onChange={handleChange}
                   placeholder="Your Name"
                   required
-                  bg="rgba(14, 31, 54, 0.7)"
+                  bg="var(--input-bg)"
                   color="var(--text-100)"
                   border="1px solid"
-                  borderColor="rgba(118, 168, 255, 0.32)"
+                  borderColor="var(--line-500)"
                   _focusVisible={{
-                    borderColor: 'rgba(98, 240, 213, 0.58)',
-                    boxShadow: '0 0 0 1px rgba(98, 240, 213, 0.35)',
+                    borderColor: 'var(--focus-border)',
+                    boxShadow: 'var(--focus-ring)',
                   }}
                   data-testid="contact-name-input"
                 />
@@ -86,13 +86,13 @@ function Contact() {
                   onChange={handleChange}
                   placeholder="your.email@example.com"
                   required
-                  bg="rgba(14, 31, 54, 0.7)"
+                  bg="var(--input-bg)"
                   color="var(--text-100)"
                   border="1px solid"
-                  borderColor="rgba(118, 168, 255, 0.32)"
+                  borderColor="var(--line-500)"
                   _focusVisible={{
-                    borderColor: 'rgba(98, 240, 213, 0.58)',
-                    boxShadow: '0 0 0 1px rgba(98, 240, 213, 0.35)',
+                    borderColor: 'var(--focus-border)',
+                    boxShadow: 'var(--focus-ring)',
                   }}
                   data-testid="contact-email-input"
                 />
@@ -108,13 +108,13 @@ function Contact() {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder="Project discussion"
-                bg="rgba(14, 31, 54, 0.7)"
+                bg="var(--input-bg)"
                 color="var(--text-100)"
                 border="1px solid"
-                borderColor="rgba(118, 168, 255, 0.32)"
+                borderColor="var(--line-500)"
                 _focusVisible={{
-                  borderColor: 'rgba(98, 240, 213, 0.58)',
-                  boxShadow: '0 0 0 1px rgba(98, 240, 213, 0.35)',
+                  borderColor: 'var(--focus-border)',
+                  boxShadow: 'var(--focus-ring)',
                 }}
                 data-testid="contact-subject-input"
               />
@@ -132,13 +132,13 @@ function Contact() {
                 required
                 rows={6}
                 resize="vertical"
-                bg="rgba(14, 31, 54, 0.7)"
+                bg="var(--input-bg)"
                 color="var(--text-100)"
                 border="1px solid"
-                borderColor="rgba(118, 168, 255, 0.32)"
+                borderColor="var(--line-500)"
                 _focusVisible={{
-                  borderColor: 'rgba(98, 240, 213, 0.58)',
-                  boxShadow: '0 0 0 1px rgba(98, 240, 213, 0.35)',
+                  borderColor: 'var(--focus-border)',
+                  boxShadow: 'var(--focus-ring)',
                 }}
                 data-testid="contact-message-input"
               />
@@ -158,11 +158,11 @@ function Contact() {
           </VStack>
         </form>
 
-        <Box mt={8} pt={6} borderTop="1px solid" borderColor="rgba(118, 168, 255, 0.24)">
+        <Box mt={8} pt={6} borderTop="1px solid" borderColor="rgba(118, 168, 255, 0.24)" textAlign="center">
           <Text className="code-font" color="var(--text-300)" fontSize="xs" mb={3}>
             CONNECT_CHANNELS
           </Text>
-          <HStack gap={4} flexWrap="wrap">
+          <HStack gap={4} flexWrap="wrap" justify="center" w="100%">
             {profile.socialLinks.map((link) => (
               <ExternalAction
                 key={link.href}

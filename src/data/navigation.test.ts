@@ -11,7 +11,7 @@ const expectedSectionIds: SectionId[] = [
   'awards',
   'projects',
   'gallery',
-  'videos',
+  'journal',
   'skills',
   'contact',
 ]

@@ -1,6 +1,7 @@
 import type { Portfolio } from '../types/portfolio'
 import { about } from './about'
 import { awards } from './awards'
+import { blog } from './blog'
 import { certificates } from './certificates'
 import { education } from './education'
 import { experience } from './experience'
@@ -22,6 +23,7 @@ export const portfolio = {
   projects,
   gallery,
   videos,
+  blog,
   skills,
   certificates,
 } satisfies Portfolio
@@ -29,6 +31,7 @@ export const portfolio = {
 export {
   about,
   awards,
+  blog,
   certificates,
   education,
   experience,

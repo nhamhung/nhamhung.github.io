@@ -17,7 +17,7 @@ function Gallery() {
   }
 
   return (
-    <SectionShell id="gallery" eyebrow="JOURNEY_FRAMES" title="Learning Journey" nextSectionId="videos">
+    <SectionShell id="gallery" eyebrow="JOURNEY_FRAMES" title="Learning Journey" nextSectionId="journal">
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
           {gallery.map((image, index) => (
             <Box

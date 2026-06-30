@@ -6,7 +6,7 @@ export type SectionId =
   | 'awards'
   | 'projects'
   | 'gallery'
-  | 'videos'
+  | 'journal'
   | 'skills'
   | 'contact'
 
@@ -92,6 +92,9 @@ export type AwardEntry = {
 export type ProjectEntry = {
   title: string
   description: string
+  logoKey: string
+  logoLabel: string
+  logoAccent?: string
   technologies: string[]
   actions: ExternalLink[]
 }
@@ -112,9 +115,27 @@ export type VideoEntry = {
   watchLink: ExternalLink
 }
 
+export type BlogEntry = {
+  title: string
+  href: string
+  image: string
+  imageAlt: string
+  publishedDate: string
+  category: string
+  summary: string
+  topics: string[]
+}
+
+export type SkillEntry = {
+  label: string
+  logoKey: string
+  logoLabel: string
+  logoAccent?: string
+}
+
 export type SkillCategory = {
   category: string
-  skills: string[]
+  skills: SkillEntry[]
 }
 
 export type CertificateEntry = {
@@ -122,6 +143,9 @@ export type CertificateEntry = {
   issuer: string
   kind: string
   file: string
+  logoKey: string
+  logoLabel: string
+  logoAccent?: string
   ariaLabel: string
 }
 
@@ -136,6 +160,7 @@ export type Portfolio = {
   projects: ProjectEntry[]
   gallery: GalleryItem[]
   videos: VideoEntry[]
+  blog: BlogEntry[]
   skills: SkillCategory[]
   certificates: CertificateEntry[]
 }

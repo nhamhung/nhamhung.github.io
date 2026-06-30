@@ -2,53 +2,65 @@ import type { ProjectEntry } from '../types/portfolio'
 
 export const projects = [
   {
-    title: "Master's Coursework and Technical Certificates",
-    description: 'Graduate coursework and technical certifications with applied work from professional projects.',
-    technologies: ['Deep Learning', 'Machine Learning', 'Linear Algebra', 'Generative AI'],
+    title: 'Coursework and Certificates',
+    description:
+      'A curated learning archive covering machine learning, deep learning, cloud, data science, mobile development, and technical certifications.',
+    logoKey: 'jupyter',
+    logoLabel: 'Jupyter Notebook project logo',
+    logoAccent: '#f37626',
+    technologies: ['Jupyter Notebook', 'Python', 'PyTorch', 'AWS', 'Kubernetes'],
     actions: [
       {
         label: 'Repository',
         href: 'https://github.com/nhamhung/Coursework-and-Certificates',
-        ariaLabel: "Open Master's Coursework and Technical Certificates repository",
+        ariaLabel: 'Open Coursework and Certificates repository',
       },
       {
-        label: 'View',
-        href: 'https://github.com/nhamhung/Coursework-and-Certificates/blob/main/Coursework/Statement%20of%20Purpose.pdf',
-        ariaLabel: "View Master's Coursework and Technical Certificates example",
-      },
-    ],
-  },
-  {
-    title: 'YouTube Engineering Journal',
-    description: 'Technical content sharing lessons from data engineering, computer science, and interview prep.',
-    technologies: ['Data Engineering', 'LeetCode', 'Data Analytics'],
-    actions: [
-      {
-        label: 'Repository',
-        href: 'https://github.com/nhamhung/youtube-scripts',
-        ariaLabel: 'Open YouTube Engineering Journal scripts repository',
-      },
-      {
-        label: 'View',
-        href: 'https://www.youtube.com/watch?v=cmZ9-sDzYYY',
-        ariaLabel: 'Watch the YouTube Engineering Journal example video',
+        label: 'README',
+        href: 'https://github.com/nhamhung/Coursework-and-Certificates#readme',
+        ariaLabel: 'Read Coursework and Certificates repository README',
       },
     ],
   },
   {
-    title: 'Personal Technical Blog',
-    description: 'Knowledge base covering software, AI, cloud systems, and personal learning write-ups.',
-    technologies: ['Computer Science', 'AI', 'Cloud Computing'],
+    title: 'Program Analyzer',
+    description:
+      "A C++ static program analyzer built as a team project to answer developers' queries about source-code relationships.",
+    logoKey: 'cplusplus',
+    logoLabel: 'C++ project logo',
+    logoAccent: '#659ad2',
+    technologies: ['C++', 'Static Analysis', 'Query Engine', 'Team Project'],
     actions: [
       {
         label: 'Repository',
-        href: 'https://nhamhung.wordpress.com/',
-        ariaLabel: 'Open the Personal Technical Blog home page',
+        href: 'https://github.com/nhamhung/Program-Analyzer',
+        ariaLabel: 'Open Program Analyzer repository',
       },
       {
-        label: 'View',
-        href: 'https://nhamhung.wordpress.com/2025/03/10/nhat-ky-hang-ngay/',
-        ariaLabel: 'Read an example Personal Technical Blog post',
+        label: 'README',
+        href: 'https://github.com/nhamhung/Program-Analyzer#readme',
+        ariaLabel: 'Read Program Analyzer repository README',
+      },
+    ],
+  },
+  {
+    title: 'Java Resume Application',
+    description:
+      'A Java desktop application for managing, customizing, and exporting resume versions from a centralized command-line workflow.',
+    logoKey: 'openjdk',
+    logoLabel: 'Java project logo',
+    logoAccent: '#e76f00',
+    technologies: ['Java', 'JavaFX', 'Gradle', 'JUnit 5', 'PDFBox'],
+    actions: [
+      {
+        label: 'Repository',
+        href: 'https://github.com/nhamhung/Java-Resume-Application',
+        ariaLabel: 'Open Java Resume Application repository',
+      },
+      {
+        label: 'README',
+        href: 'https://github.com/nhamhung/Java-Resume-Application/blob/master/README.adoc',
+        ariaLabel: 'Read Java Resume Application README',
       },
     ],
   },

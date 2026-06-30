@@ -77,3 +77,8 @@
 .float-soft {
   animation: drift 5s ease-in-out infinite;
 }
+
+[data-layout-mode='multi'] [data-testid='hero-next-section'],
+[data-layout-mode='multi'] [data-testid$='-next-section'] {
+  display: none;
+}

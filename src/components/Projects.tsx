@@ -1,7 +1,8 @@
-import { Badge, Flex, Heading, HStack, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Badge, Box, Flex, Heading, HStack, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 
 import ContentCard from './shared/ContentCard'
 import ExternalAction from './shared/ExternalAction'
+import LogoMark from './shared/LogoMark'
 import SectionShell from './shared/SectionShell'
 import { projects } from '../data/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
@@ -31,12 +32,22 @@ function Projects() {
               className={`reveal-up ${getAnimationDelayClass(index)}`}
             >
               <VStack align="stretch" gap={4}>
-                <Text className="code-font" fontSize="xs" color="var(--text-300)">
-                  MODULE
-                </Text>
-                <Heading as="h3" fontSize="xl" color="var(--text-100)">
-                  {project.title}
-                </Heading>
+                <HStack align="center" gap={4}>
+                  <LogoMark
+                    logoKey={project.logoKey}
+                    logoLabel={project.logoLabel}
+                    logoAccent={project.logoAccent}
+                    size="xl"
+                  />
+                  <Box minW={0}>
+                    <Text className="code-font" fontSize="xs" color="var(--text-300)" mb={1}>
+                      REPOSITORY
+                    </Text>
+                    <Heading as="h3" fontSize="xl" color="var(--text-100)" lineHeight="1.2">
+                      {project.title}
+                    </Heading>
+                  </Box>
+                </HStack>
                 <Text color="var(--text-300)" lineHeight="1.8">
                   {project.description}
                 </Text>

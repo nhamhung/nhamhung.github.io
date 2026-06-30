@@ -41,11 +41,25 @@ describe('src/data/portfolio.ts', () => {
     for (const project of portfolio.projects) {
       expectNonEmpty(project.title, 'src/data/projects.ts project.title is required')
       expectNonEmpty(project.description, `src/data/projects.ts project "${project.title}" needs a description`)
+      expectNonEmpty(project.logoKey, `src/data/projects.ts project "${project.title}" needs a logo key`)
+      expectNonEmpty(project.logoLabel, `src/data/projects.ts project "${project.title}" needs a logo label`)
       expect(project.technologies.length, `src/data/projects.ts project "${project.title}" needs technologies`).toBeGreaterThan(0)
 
       for (const action of project.actions) {
         expectExternalLink(action, `src/data/projects.ts project "${project.title}" action "${action.label}"`)
       }
+    }
+
+    for (const post of portfolio.blog) {
+      expectNonEmpty(post.title, 'src/data/blog.ts blog post title is required')
+      expectNonEmpty(post.image, `src/data/blog.ts blog post "${post.title}" needs a feed image`)
+      expectNonEmpty(post.imageAlt, `src/data/blog.ts blog post "${post.title}" needs image alt text`)
+      expectNonEmpty(post.summary, `src/data/blog.ts blog post "${post.title}" needs a summary`)
+      expectExternalLink(
+        { label: post.title, href: post.href, ariaLabel: `Read ${post.title}` },
+        `src/data/blog.ts blog post "${post.title}"`,
+      )
+      expect(post.topics.length, `src/data/blog.ts blog post "${post.title}" needs topics`).toBeGreaterThan(0)
     }
   })
 
@@ -61,6 +75,8 @@ describe('src/data/portfolio.ts', () => {
       expectNonEmpty(certificate.title, 'src/data/certificates.ts certificate title is required')
       expectNonEmpty(certificate.issuer, `src/data/certificates.ts certificate "${certificate.title}" needs an issuer`)
       expectNonEmpty(certificate.file, `src/data/certificates.ts certificate "${certificate.title}" needs a file`)
+      expectNonEmpty(certificate.logoKey, `src/data/certificates.ts certificate "${certificate.title}" needs a logo key`)
+      expectNonEmpty(certificate.logoLabel, `src/data/certificates.ts certificate "${certificate.title}" needs a logo label`)
       expectNonEmpty(certificate.ariaLabel, `src/data/certificates.ts certificate "${certificate.title}" needs an ariaLabel`)
     }
   })
@@ -85,6 +101,12 @@ describe('src/data/portfolio.ts', () => {
     for (const skillCategory of portfolio.skills) {
       expectNonEmpty(skillCategory.category, 'src/data/skills.ts skill category name is required')
       expect(skillCategory.skills.length, `src/data/skills.ts category "${skillCategory.category}" needs skills`).toBeGreaterThan(0)
+
+      for (const skill of skillCategory.skills) {
+        expectNonEmpty(skill.label, `src/data/skills.ts category "${skillCategory.category}" has a skill without a label`)
+        expectNonEmpty(skill.logoKey, `src/data/skills.ts skill "${skill.label}" needs a logo key`)
+        expectNonEmpty(skill.logoLabel, `src/data/skills.ts skill "${skill.label}" needs a logo label`)
+      }
     }
   })
 })

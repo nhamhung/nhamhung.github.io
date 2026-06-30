@@ -2,10 +2,40 @@ import { useEffect, useState } from 'react'
 import { Badge, Box, Button, Heading, HStack, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 
 import ContentCard from './shared/ContentCard'
+import LogoMark from './shared/LogoMark'
 import SectionShell from './shared/SectionShell'
 import { certificates, skills } from '../data/portfolio'
-import type { CertificateEntry } from '../types/portfolio'
+import type { CertificateEntry, SkillEntry } from '../types/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
+
+function SkillTile({ skill }: { skill: SkillEntry }) {
+  return (
+    <Box
+      as="li"
+      display="flex"
+      alignItems="center"
+      gap={2}
+      minH="40px"
+      px={2.5}
+      py={2}
+      borderRadius="md"
+      bg="var(--surface-800)"
+      border="1px solid"
+      borderColor="var(--line-700)"
+      transition="all 0.2s ease"
+      _hover={{
+        transform: 'translateY(-2px)',
+        borderColor: 'rgba(98, 240, 213, 0.4)',
+        bg: 'var(--control-hover-bg)',
+      }}
+    >
+      <LogoMark logoKey={skill.logoKey} logoLabel={skill.logoLabel} logoAccent={skill.logoAccent} size="xs" />
+      <Text color="var(--text-100)" fontSize="xs" fontWeight={650} lineHeight="1.25">
+        {skill.label}
+      </Text>
+    </Box>
+  )
+}
 
 function Skills() {
   const [selectedCertificate, setSelectedCertificate] = useState<CertificateEntry | null>(null)
@@ -52,30 +82,23 @@ function Skills() {
             _hover={{
               transform: 'translateY(-3px)',
               borderColor: 'rgba(98, 240, 213, 0.45)',
-              boxShadow: '0 16px 34px rgba(3, 10, 21, 0.55)',
+              boxShadow: 'var(--card-hover-shadow)',
             }}
           >
             <Text className="code-font" color="var(--accent-300)" fontSize="sm" mb={4}>
               {category.category.toUpperCase()}
             </Text>
-            <Box display="flex" gap={2} flexWrap="wrap">
+            <Box
+              as="ul"
+              display="flex"
+              flexWrap="wrap"
+              gap={2.5}
+              p={0}
+              m={0}
+              listStyleType="none"
+            >
               {category.skills.map((skill) => (
-                <Badge
-                  key={skill}
-                  px={2.5}
-                  py={1}
-                  borderRadius="md"
-                  className="code-font"
-                  fontSize="0.68rem"
-                  fontWeight={500}
-                  bg="rgba(34, 128, 235, 0.18)"
-                  border="1px solid"
-                  borderColor="rgba(69, 162, 255, 0.36)"
-                  color="var(--text-100)"
-                  textTransform="none"
-                >
-                  {skill}
-                </Badge>
+                <SkillTile key={skill.label} skill={skill} />
               ))}
             </Box>
           </ContentCard>
@@ -113,15 +136,15 @@ function Skills() {
               }}
               p={4}
               borderRadius="xl"
-              bg="rgba(8, 21, 39, 0.92)"
+              bg="var(--surface-900)"
               border="1px solid"
-              borderColor="rgba(98, 240, 213, 0.22)"
+              borderColor="var(--line-700)"
               transition="all 0.25s ease"
               className={`reveal-up ${getAnimationDelayClass(index)}`}
               _hover={{
                 transform: 'translateY(-4px)',
                 borderColor: 'rgba(98, 240, 213, 0.48)',
-                boxShadow: '0 18px 36px rgba(3, 10, 21, 0.52)',
+                boxShadow: 'var(--card-hover-shadow)',
               }}
               data-testid={`certificate-card-${certificate.title.toLowerCase().replaceAll(' ', '-')}`}
             >
@@ -129,8 +152,8 @@ function Skills() {
                 overflow="hidden"
                 borderRadius="lg"
                 border="1px solid"
-                borderColor="rgba(118, 168, 255, 0.22)"
-                bg="rgba(2, 8, 15, 0.78)"
+                borderColor="var(--line-700)"
+                bg="var(--media-shell-bg)"
                 mb={4}
               >
                 <object
@@ -166,14 +189,22 @@ function Skills() {
               </Box>
               <VStack align="stretch" gap={2}>
                 <HStack justify="space-between" align="start" gap={3}>
-                  <Box>
-                    <Heading as="h5" fontSize="lg" color="var(--text-100)">
-                      {certificate.title}
-                    </Heading>
-                    <Text color="var(--text-300)" fontSize="sm">
-                      {certificate.issuer}
-                    </Text>
-                  </Box>
+                  <HStack align="center" gap={3} minW={0}>
+                    <LogoMark
+                      logoKey={certificate.logoKey}
+                      logoLabel={certificate.logoLabel}
+                      logoAccent={certificate.logoAccent}
+                      size="lg"
+                    />
+                    <Box minW={0}>
+                      <Heading as="h5" fontSize="lg" color="var(--text-100)">
+                        {certificate.title}
+                      </Heading>
+                      <Text color="var(--text-300)" fontSize="sm">
+                        {certificate.issuer}
+                      </Text>
+                    </Box>
+                  </HStack>
                   <Badge
                     px={2.5}
                     py={1}
@@ -204,7 +235,7 @@ function Skills() {
           position="fixed"
           inset={0}
           zIndex={2000}
-          bg="rgba(2, 8, 15, 0.86)"
+          bg="var(--modal-overlay-bg)"
           backdropFilter="blur(8px)"
           px={{ base: 4, md: 8 }}
           pt={{ base: 20, md: 24 }}
@@ -222,10 +253,10 @@ function Skills() {
             h={{ base: 'calc(100dvh - 7rem)', md: 'calc(100dvh - 9rem)' }}
             bg="var(--surface-900)"
             border="1px solid"
-            borderColor="rgba(98, 240, 213, 0.36)"
+            borderColor="var(--line-500)"
             borderRadius="2xl"
             overflow="hidden"
-            boxShadow="0 32px 80px rgba(0, 0, 0, 0.45)"
+            boxShadow="var(--elevated-shadow)"
             display="flex"
             flexDirection="column"
             onClick={(event) => event.stopPropagation()}
@@ -237,25 +268,33 @@ function Skills() {
               px={{ base: 4, md: 6 }}
               py={4}
               borderBottom="1px solid"
-              borderColor="rgba(118, 168, 255, 0.22)"
-              bg="rgba(8, 21, 39, 0.94)"
+              borderColor="var(--line-700)"
+              bg="var(--panel-header-bg)"
             >
-              <Box>
-                <Heading as="h3" fontSize={{ base: 'md', md: 'lg' }} color="var(--text-100)">
-                  {selectedCertificate.title}
-                </Heading>
-                <Text color="var(--text-300)" fontSize="sm">
-                  {selectedCertificate.issuer} - {selectedCertificate.kind}
-                </Text>
-              </Box>
+              <HStack align="center" gap={3}>
+                <LogoMark
+                  logoKey={selectedCertificate.logoKey}
+                  logoLabel={selectedCertificate.logoLabel}
+                  logoAccent={selectedCertificate.logoAccent}
+                  size="lg"
+                />
+                <Box>
+                  <Heading as="h3" fontSize={{ base: 'md', md: 'lg' }} color="var(--text-100)">
+                    {selectedCertificate.title}
+                  </Heading>
+                  <Text color="var(--text-300)" fontSize="sm">
+                    {selectedCertificate.issuer} - {selectedCertificate.kind}
+                  </Text>
+                </Box>
+              </HStack>
               <HStack gap={3} flexWrap="wrap" justify={{ base: 'flex-start', md: 'flex-end' }}>
                 <Button
                   size="sm"
-                  bg="rgba(34, 128, 235, 0.16)"
+                  bg="var(--active-nav-bg)"
                   border="1px solid"
-                  borderColor="rgba(69, 162, 255, 0.36)"
+                  borderColor="var(--active-nav-border)"
                   color="var(--text-100)"
-                  _hover={{ bg: 'rgba(34, 128, 235, 0.24)' }}
+                  _hover={{ bg: 'var(--control-hover-bg)' }}
                   onClick={() => openCertificateInNewTab(selectedCertificate.file)}
                   data-testid="certificate-open-new-tab"
                 >
@@ -265,7 +304,7 @@ function Skills() {
                   size="sm"
                   variant="ghost"
                   color="var(--text-300)"
-                  _hover={{ bg: 'rgba(255, 255, 255, 0.06)', color: 'var(--text-100)' }}
+                  _hover={{ bg: 'var(--control-hover-bg)', color: 'var(--text-100)' }}
                   onClick={() => setSelectedCertificate(null)}
                   data-testid="certificate-close"
                 >
@@ -273,7 +312,7 @@ function Skills() {
                 </Button>
               </HStack>
             </HStack>
-            <Box flex="1" minH={0} bg="#111827">
+            <Box flex="1" minH={0} bg="var(--media-shell-bg)">
               <iframe
                 title={`${selectedCertificate.title} expanded preview`}
                 src={`${selectedCertificate.file}#page=1&view=FitH`}

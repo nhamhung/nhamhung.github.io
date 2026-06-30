@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import {
   Box,
+  Button,
   Container,
   Drawer,
   Flex,
@@ -14,17 +15,32 @@ import {
 import { HiMenu, HiX } from 'react-icons/hi'
 
 import { navigation, profile } from '../data/portfolio'
+import type { LayoutMode } from '../hooks/usePortfolioLayout'
 import type { NavigationItem, SectionId } from '../types/portfolio'
-import { getEnabledNavigationItems, scrollToSection } from '../utils/scroll'
+import { getEnabledNavigationItems } from '../utils/scroll'
+import { ColorModeButton } from './ui/color-mode'
 
 type NavbarProps = {
   activeSection?: SectionId
+  getNavigationHref?: (sectionId: SectionId) => string
+  layoutMode?: LayoutMode
   navigationItems?: NavigationItem[]
+  onNavigate?: (sectionId: SectionId) => void
+  onToggleLayoutMode?: () => void
 }
 
-function Navbar({ activeSection = 'home', navigationItems = getEnabledNavigationItems(navigation) }: NavbarProps) {
+function Navbar({
+  activeSection = 'home',
+  getNavigationHref = (sectionId) => `#${sectionId}`,
+  layoutMode = 'single',
+  navigationItems = getEnabledNavigationItems(navigation),
+  onNavigate = () => undefined,
+  onToggleLayoutMode = () => undefined,
+}: NavbarProps) {
   const { open, onOpen, onClose } = useDisclosure()
   const [isScrolled, setIsScrolled] = useState(false)
+  const nextLayoutLabel = layoutMode === 'single' ? 'Multi-page' : 'Single page'
+  const isMultiPageLayout = layoutMode === 'multi'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +52,12 @@ function Navbar({ activeSection = 'home', navigationItems = getEnabledNavigation
   }, [])
 
   const handleSectionClick = (sectionId: SectionId) => {
-    scrollToSection(sectionId)
+    onNavigate(sectionId)
+    onClose()
+  }
+
+  const handleLayoutToggle = () => {
+    onToggleLayoutMode()
     onClose()
   }
 
@@ -49,19 +70,19 @@ function Navbar({ activeSection = 'home', navigationItems = getEnabledNavigation
       right={0}
       zIndex={1000}
       borderBottom="1px solid"
-      borderColor={isScrolled ? 'rgba(118, 168, 255, 0.34)' : 'transparent'}
-      bg={isScrolled ? 'rgba(5, 17, 32, 0.82)' : 'rgba(4, 12, 24, 0.64)'}
+      borderColor={isScrolled ? 'var(--nav-border)' : 'transparent'}
+      bg={isScrolled ? 'var(--nav-bg-scrolled)' : 'var(--nav-bg)'}
       backdropFilter="blur(14px)"
-      boxShadow={isScrolled ? '0 14px 40px rgba(2, 10, 20, 0.5)' : 'none'}
+      boxShadow={isScrolled ? 'var(--nav-shadow)' : 'none'}
       transition="all 0.3s ease"
     >
       <Container maxW="1280px" px={{ base: 4, md: 8 }}>
         <Flex as="nav" justify="space-between" align="center" h={{ base: '68px', md: '76px' }}>
           <Link
-            href="#home"
+            href={getNavigationHref('home')}
             onClick={(e) => {
               e.preventDefault()
-              scrollToSection('home')
+              handleSectionClick('home')
             }}
             display="flex"
             alignItems="center"
@@ -90,65 +111,95 @@ function Navbar({ activeSection = 'home', navigationItems = getEnabledNavigation
             </Box>
           </Link>
 
-          <Flex as="ul" listStyleType="none" gap={1} align="center" display={{ base: 'none', lg: 'flex' }}>
-            {navigationItems.map((item) => {
-              const isActive = activeSection === item.id
+          {!isMultiPageLayout ? (
+            <Flex as="ul" listStyleType="none" gap={1} align="center" display={{ base: 'none', lg: 'flex' }}>
+              {navigationItems.map((item) => {
+                const isActive = activeSection === item.id
 
-              return (
-                <Box as="li" key={item.id}>
-                  <Link
-                    href={`#${item.id}`}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      handleSectionClick(item.id)
-                    }}
-                    px={3}
-                    py={2}
-                    borderRadius="md"
-                    fontSize="sm"
-                    className="code-font"
-                    color={isActive ? 'var(--text-100)' : 'var(--text-300)'}
-                    bg={isActive ? 'rgba(34, 128, 235, 0.22)' : 'transparent'}
-                    border="1px solid"
-                    borderColor={isActive ? 'rgba(69, 162, 255, 0.6)' : 'transparent'}
-                    _hover={{
-                      color: 'var(--text-100)',
-                      borderColor: 'rgba(69, 162, 255, 0.4)',
-                      bg: 'rgba(34, 128, 235, 0.16)',
-                    }}
-                    aria-current={isActive ? 'page' : undefined}
-                    aria-label={`Scroll to ${item.label} section`}
-                    data-testid={`navbar-link-${item.id}`}
-                  >
-                    {item.label}
-                  </Link>
-                </Box>
-              )
-            })}
+                return (
+                  <Box as="li" key={item.id}>
+                    <Link
+                      href={getNavigationHref(item.id)}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        handleSectionClick(item.id)
+                      }}
+                      px={3}
+                      py={2}
+                      borderRadius="md"
+                      fontSize="sm"
+                      className="code-font"
+                      color={isActive ? 'var(--text-100)' : 'var(--text-300)'}
+                      bg={isActive ? 'var(--active-nav-bg)' : 'transparent'}
+                      border="1px solid"
+                      borderColor={isActive ? 'var(--active-nav-border)' : 'transparent'}
+                      _hover={{
+                        color: 'var(--text-100)',
+                        borderColor: 'var(--active-nav-border)',
+                        bg: 'var(--active-nav-bg)',
+                      }}
+                      aria-current={isActive ? 'page' : undefined}
+                      aria-label={`Navigate to ${item.label}`}
+                      data-testid={`navbar-link-${item.id}`}
+                    >
+                      {item.label}
+                    </Link>
+                  </Box>
+                )
+              })}
+            </Flex>
+          ) : null}
+
+          <Flex align="center" gap={2}>
+            <ColorModeButton
+              color="var(--text-100)"
+              border="1px solid"
+              borderColor="var(--line-500)"
+              bg="var(--control-bg-soft)"
+              _hover={{ bg: 'var(--control-hover-bg)' }}
+              data-testid="navbar-theme-toggle"
+            />
+
+            <Button
+              display={{ base: 'none', sm: 'inline-flex' }}
+              size="sm"
+              variant="outline"
+              borderColor="rgba(98, 240, 213, 0.46)"
+              color="var(--text-100)"
+              bg="var(--accent-control-bg)"
+              className="code-font"
+              fontSize="xs"
+              onClick={handleLayoutToggle}
+              _hover={{ bg: 'var(--accent-control-hover-bg)' }}
+              aria-label={`Switch to ${nextLayoutLabel} layout`}
+              data-testid="navbar-layout-toggle"
+            >
+              {nextLayoutLabel}
+            </Button>
+
+            <IconButton
+              aria-label="Toggle menu"
+              display={isMultiPageLayout ? 'flex' : { base: 'flex', lg: 'none' }}
+              variant="ghost"
+              onClick={open ? onClose : onOpen}
+              color="var(--text-100)"
+              border="1px solid"
+              borderColor="var(--line-500)"
+              bg="var(--control-bg)"
+              _hover={{ bg: 'var(--control-hover-bg)' }}
+              data-testid="navbar-menu-toggle"
+            >
+              {open ? <HiX size={20} /> : <HiMenu size={20} />}
+            </IconButton>
           </Flex>
-
-          <IconButton
-            aria-label="Toggle menu"
-            display={{ base: 'flex', lg: 'none' }}
-            variant="ghost"
-            onClick={open ? onClose : onOpen}
-            color="var(--text-100)"
-            border="1px solid"
-            borderColor="rgba(118, 168, 255, 0.35)"
-            bg="rgba(14, 31, 54, 0.75)"
-            _hover={{ bg: 'rgba(22, 45, 74, 0.88)' }}
-            data-testid="navbar-menu-toggle"
-          >
-            {open ? <HiX size={20} /> : <HiMenu size={20} />}
-          </IconButton>
         </Flex>
       </Container>
 
       <Drawer.Root open={open} onOpenChange={(e) => !e.open && onClose()} placement="end">
-        <Drawer.Backdrop bg="rgba(0, 0, 0, 0.45)" />
+        <Drawer.Backdrop bg="var(--drawer-backdrop)" />
         <Drawer.Positioner>
-          <Drawer.Content maxW="300px" bg="var(--bg-800)" borderLeft="1px solid" borderColor="rgba(118, 168, 255, 0.24)">
-            <Drawer.Header borderBottom="1px solid" borderColor="rgba(118, 168, 255, 0.22)">
+          <Drawer.Content maxW="300px" bg="var(--surface-800)" borderLeft="1px solid" borderColor="var(--line-700)">
+            <Drawer.Header borderBottom="1px solid" borderColor="var(--line-700)">
               <Flex justify="space-between" align="center">
                 <Text className="code-font" fontWeight={600} color="var(--text-100)">
                   NAV_INDEX
@@ -158,7 +209,7 @@ function Navbar({ activeSection = 'home', navigationItems = getEnabledNavigation
                   variant="ghost"
                   onClick={onClose}
                   color="var(--text-100)"
-                  _hover={{ bg: 'rgba(22, 45, 74, 0.88)' }}
+                  _hover={{ bg: 'var(--control-hover-bg)' }}
                   data-testid="navbar-menu-close"
                 >
                   <HiX />
@@ -167,13 +218,28 @@ function Navbar({ activeSection = 'home', navigationItems = getEnabledNavigation
             </Drawer.Header>
             <Drawer.Body py={4} px={3}>
               <VStack align="stretch" gap={2}>
+                <Button
+                  w="100%"
+                  variant="outline"
+                  borderColor="rgba(98, 240, 213, 0.46)"
+                  color="var(--text-100)"
+                  bg="var(--accent-control-bg)"
+                  className="code-font"
+                  fontSize="xs"
+                  onClick={handleLayoutToggle}
+                  _hover={{ bg: 'var(--accent-control-hover-bg)' }}
+                  aria-label={`Switch to ${nextLayoutLabel} layout`}
+                  data-testid="navbar-mobile-layout-toggle"
+                >
+                  {nextLayoutLabel}
+                </Button>
                 {navigationItems.map((item) => {
                   const isActive = activeSection === item.id
 
                   return (
                     <Link
                       key={item.id}
-                      href={`#${item.id}`}
+                      href={getNavigationHref(item.id)}
                       onClick={(e) => {
                         e.preventDefault()
                         handleSectionClick(item.id)
@@ -184,16 +250,16 @@ function Navbar({ activeSection = 'home', navigationItems = getEnabledNavigation
                       className="code-font"
                       fontSize="sm"
                       color={isActive ? 'var(--text-100)' : 'var(--text-300)'}
-                      bg={isActive ? 'rgba(34, 128, 235, 0.2)' : 'transparent'}
+                      bg={isActive ? 'var(--active-nav-bg)' : 'transparent'}
                       border="1px solid"
-                      borderColor={isActive ? 'rgba(69, 162, 255, 0.52)' : 'transparent'}
+                      borderColor={isActive ? 'var(--active-nav-border)' : 'transparent'}
                       _hover={{
-                        bg: 'rgba(34, 128, 235, 0.16)',
-                        borderColor: 'rgba(69, 162, 255, 0.4)',
+                        bg: 'var(--active-nav-bg)',
+                        borderColor: 'var(--active-nav-border)',
                         color: 'var(--text-100)',
                       }}
                       aria-current={isActive ? 'page' : undefined}
-                      aria-label={`Scroll to ${item.label} section`}
+                      aria-label={`Navigate to ${item.label}`}
                       data-testid={`navbar-mobile-link-${item.id}`}
                     >
                       {item.label}

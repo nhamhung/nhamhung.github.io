@@ -8,7 +8,7 @@ export const sectionIds = [
   'awards',
   'projects',
   'gallery',
-  'videos',
+  'journal',
   'skills',
   'contact',
 ] as const satisfies readonly SectionId[]
@@ -21,7 +21,7 @@ export const navigation = [
   { id: 'awards', label: 'Awards', enabled: true },
   { id: 'projects', label: 'Projects', enabled: true },
   { id: 'gallery', label: 'Gallery', enabled: true },
-  { id: 'videos', label: 'Videos', enabled: true },
+  { id: 'journal', label: 'Journal', enabled: true },
   { id: 'skills', label: 'Skills', enabled: true },
   { id: 'contact', label: 'Contact', enabled: true },
 ] satisfies NavigationItem[]

@@ -114,7 +114,7 @@ function Hero() {
               ))}
             </SimpleGrid>
 
-            <HStack gap={3} pt={2} flexWrap="wrap">
+            <HStack gap={3} pt={2} flexWrap="wrap" justify="center" w="100%">
               <Button
                 onClick={() => scrollToSection(hero.primaryAction.sectionId)}
                 bg="var(--accent-500)"
@@ -141,7 +141,7 @@ function Hero() {
               </Button>
             </HStack>
 
-            <HStack gap={4}>
+            <HStack gap={4} justify="center" w="100%">
               {profile.socialLinks.map((link) => (
                 <ExternalAction
                   key={link.href}
@@ -163,16 +163,16 @@ function Hero() {
               borderColor="var(--line-500)"
               borderRadius="xl"
               overflow="hidden"
-              boxShadow="0 20px 55px rgba(3, 10, 21, 0.65)"
+              boxShadow="var(--elevated-shadow)"
             >
               <Flex
                 px={4}
                 py={3}
                 justify="space-between"
                 align="center"
-                bg="rgba(8, 22, 40, 0.95)"
+                bg="var(--panel-header-bg)"
                 borderBottom="1px solid"
-                borderColor="rgba(118, 168, 255, 0.2)"
+                borderColor="var(--line-700)"
               >
                 <Text className="code-font" fontSize="xs" color="var(--text-300)">
                   ENGINEERING SNAPSHOT
@@ -213,7 +213,7 @@ function Hero() {
                   </Box>
                 </HStack>
 
-                <Box pt={2} borderTop="1px solid" borderColor="rgba(118, 168, 255, 0.2)">
+                <Box pt={2} borderTop="1px solid" borderColor="var(--line-700)">
                   <Text className="code-font" fontSize="xs" color="var(--text-300)" mb={3}>
                     ACTIVE STACK
                   </Text>
