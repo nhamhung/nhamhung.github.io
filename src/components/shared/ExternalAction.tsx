@@ -9,6 +9,7 @@ type ExternalActionProps = {
   icon?: ReactNode
   variant?: 'button' | 'link' | 'icon'
   tone?: 'primary' | 'outline'
+  download?: string
   testId?: string
 }
 
@@ -21,6 +22,7 @@ function ExternalAction({
   icon,
   variant = 'button',
   tone = 'outline',
+  download,
   testId,
 }: ExternalActionProps) {
   const external = isExternalHref(href)
@@ -28,6 +30,7 @@ function ExternalAction({
     href,
     target: external ? '_blank' : undefined,
     rel: external ? 'noreferrer' : undefined,
+    download,
     'aria-label': ariaLabel,
     'data-testid': testId,
   }
@@ -55,7 +58,7 @@ function ExternalAction({
       >
         <HStack gap={1.5}>
           <Text>{label}</Text>
-          <FiExternalLink />
+          {icon ?? <FiExternalLink />}
         </HStack>
       </Link>
     )
@@ -93,7 +96,7 @@ function ExternalAction({
     >
       <HStack gap={1.5}>
         <Text>{label}</Text>
-        <FiExternalLink />
+        {icon ?? <FiExternalLink />}
       </HStack>
     </Link>
   )

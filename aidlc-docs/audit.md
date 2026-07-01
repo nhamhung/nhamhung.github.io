@@ -3050,3 +3050,90 @@ help me rewrite a better title and description for each of the Certificate Galle
 **Context**: CONSTRUCTION - Certificate Gallery copy verification
 
 ---
+
+## Code Generation Change Request - Blog Entries Replacement
+**Timestamp**: 2026-07-01T11:10:58Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: src/data/blog.ts
+
+## Active selection of the file:
+https://nhamhung.wordpress.com
+## Open tabs:
+- blog.ts: src/data/blog.ts
+
+## My request for Codex:
+change my blogs to the following ones:
+
+https://nhamhung.wordpress.com/2024/12/31/nam-nay-minh-lam-duoc-nhung-gi/
+
+https://nhamhung.wordpress.com/2024/12/07/cach-minh-toi-uu-hoa-thoi-gian-cho-viec-it/
+
+https://nhamhung.wordpress.com/2023/11/08/apply-thac-si-online-nganh-khoa-hoc-may-tinh/
+
+https://nhamhung.wordpress.com/2022/08/13/sweet-success-2/
+"
+**AI Response**: "Accepted the request as a Code Generation review change, skipped disabled extensions per aidlc-state.md, verified WordPress metadata from public pages/feed, and replaced the local blog entries with the four requested posts."
+**Context**: CONSTRUCTION - Blog section code generation review change
+
+---
+
+## Code Generation Change Request Verification - Blog Entries Replacement
+**Timestamp**: 2026-07-01T11:12:41Z
+**User Input**: "N/A"
+**AI Response**: "Verified requested blog entry replacement. npm run test -- src/data/portfolio.test.ts, npm run test, npm run lint, and npm run build all passed."
+**Context**: CONSTRUCTION - Blog section code generation verification
+
+---
+
+## Code Generation Change Request - Resume Download Button
+**Timestamp**: 2026-07-01T11:19:04Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: src/assets/resume.pdf
+
+## Open tabs:
+- resume.pdf: src/assets/resume.pdf
+- README.md.pdf: src/assets/README.md.pdf
+- blog.ts: src/data/blog.ts
+
+## My request for Codex:
+help me add a resume download button for the resume inside resume.pdf
+"
+**AI Response**: "Accepted the request as a Code Generation review change, added the local resume PDF to profile data, rendered a hero download action, and extended the shared action component to support download links."
+**Context**: CONSTRUCTION - Resume download button review change
+
+---
+
+## Code Generation Change Request Verification - Resume Download Button
+**Timestamp**: 2026-07-01T11:20:02Z
+**User Input**: "N/A"
+**AI Response**: "Verified resume download button implementation. npm run test, npm run lint, and npm run build all passed; production build emitted the resume PDF asset."
+**Context**: CONSTRUCTION - Resume download button verification
+
+---
+
+## Code Generation Change Request - Resume Asset Relocation
+**Timestamp**: 2026-07-01T11:22:09Z
+**User Input**: "# Context from my IDE setup:
+
+## Open tabs:
+- resume.pdf: src/assets/resume.pdf
+- README.md.pdf: src/assets/README.md.pdf
+- blog.ts: src/data/blog.ts
+
+## My request for Codex:
+feel free to move resume.pdf to a more suitable location
+"
+**AI Response**: "Accepted the request as a Code Generation review change, moved the resume PDF to src/assets/documents/resume.pdf, and updated the profile data import to use the new asset path."
+**Context**: CONSTRUCTION - Resume asset organization review change
+
+---
+
+## Code Generation Change Request Verification - Resume Asset Relocation
+**Timestamp**: 2026-07-01T11:22:38Z
+**User Input**: "N/A"
+**AI Response**: "Verified relocated resume asset. npm run test, npm run lint, and npm run build all passed; production build still emitted the resume PDF asset."
+**Context**: CONSTRUCTION - Resume asset organization verification
+
+---

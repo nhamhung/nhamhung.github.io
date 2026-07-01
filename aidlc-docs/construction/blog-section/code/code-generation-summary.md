@@ -31,3 +31,16 @@ Merged the previous video and blog presentation into one Journal section. The se
 - Links open through existing external link behavior.
 - Multi-page mode works because `journal` is part of the shared section ID/navigation model.
 - Blog feed images were sourced from the public WordPress RSS feed and stored as local metadata URLs.
+
+## Review Change - 2026-07-01
+
+- Replaced the curated blog cards with the four WordPress posts requested by the site owner.
+- Preserved local metadata so the GitHub Pages build remains independent of WordPress at runtime.
+- Verified post titles, publication dates, categories, and featured images from the public WordPress pages/feed.
+
+## Review Change - Resume Download
+
+- Added `src/assets/documents/resume.pdf` as a typed profile resume asset.
+- Added a hero action that downloads the resume PDF with a stable file name.
+- Extended the shared external action so local download links can reuse the existing button styling.
+- Moved the resume into `src/assets/documents/` to keep general documents separate from image and certificate assets.

@@ -30,6 +30,7 @@ describe('App smoke render', () => {
     expect(document.body.textContent).toContain(profile.name)
     expect(document.body.textContent).toContain(profile.role)
     expect(document.body.textContent).toContain(hero.primaryAction.label)
+    expect(screen.getByTestId('hero-resume-download')).toHaveAttribute('download', profile.resume.fileName)
     expect(screen.getAllByText(enabledNavigationItems[0].label).length).toBeGreaterThan(0)
   })
 

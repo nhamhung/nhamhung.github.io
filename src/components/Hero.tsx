@@ -12,6 +12,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FiDownload } from 'react-icons/fi'
 import { HiArrowDown } from 'react-icons/hi'
 
 import ExternalAction from './shared/ExternalAction'
@@ -139,6 +140,14 @@ function Hero() {
               >
                 {hero.secondaryAction.label}
               </Button>
+              <ExternalAction
+                href={profile.resume.href}
+                label={profile.resume.label}
+                ariaLabel={profile.resume.ariaLabel}
+                icon={<FiDownload />}
+                download={profile.resume.fileName}
+                testId="hero-resume-download"
+              />
             </HStack>
 
             <HStack gap={4} justify="center" w="100%">

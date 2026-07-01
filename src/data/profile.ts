@@ -1,4 +1,5 @@
 import profileImage from '../assets/profile.jpeg'
+import resumePdf from '../assets/documents/resume.pdf'
 import type { HeroSection, Profile } from '../types/portfolio'
 
 export const profile = {
@@ -8,6 +9,12 @@ export const profile = {
   location: 'Hanoi Capital Region, Vietnam',
   email: 'nhamhung.gttn@gmail.com',
   profileImage,
+  resume: {
+    label: 'Download Resume',
+    href: resumePdf,
+    fileName: 'Nham-Quoc-Hung-Resume.pdf',
+    ariaLabel: 'Download Nham Quoc Hung resume PDF',
+  },
   summary:
     'Computer Science graduate specialized in Data. I design and ship production-ready pipelines, low-latency services, and analytics systems that teams can trust for decisions and growth.',
   socialLinks: [
