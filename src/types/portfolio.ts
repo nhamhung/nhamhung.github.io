@@ -142,6 +142,7 @@ export type CertificateEntry = {
   title: string
   issuer: string
   kind: string
+  description: string
   file: string
   logoKey: string
   logoLabel: string

@@ -74,6 +74,10 @@ describe('src/data/portfolio.ts', () => {
     for (const certificate of portfolio.certificates) {
       expectNonEmpty(certificate.title, 'src/data/certificates.ts certificate title is required')
       expectNonEmpty(certificate.issuer, `src/data/certificates.ts certificate "${certificate.title}" needs an issuer`)
+      expectNonEmpty(
+        certificate.description,
+        `src/data/certificates.ts certificate "${certificate.title}" needs a description`,
+      )
       expectNonEmpty(certificate.file, `src/data/certificates.ts certificate "${certificate.title}" needs a file`)
       expectNonEmpty(certificate.logoKey, `src/data/certificates.ts certificate "${certificate.title}" needs a logo key`)
       expectNonEmpty(certificate.logoLabel, `src/data/certificates.ts certificate "${certificate.title}" needs a logo label`)

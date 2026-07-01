@@ -10,9 +10,11 @@ import type { CertificateEntry } from '../types/portfolio'
 
 export const certificates = [
   {
-    title: 'AIxImpact Certificate',
+    title: 'AIxImpact Competition Certificate',
     issuer: 'AIxImpact',
     kind: 'Competition',
+    description:
+      'Recognition for applying AI and product thinking in a competitive build setting, with emphasis on practical delivery and presentation.',
     file: aixImpactCertificate,
     logoKey: 'aiximpact',
     logoLabel: 'AIxImpact competition logo mark',
@@ -20,9 +22,11 @@ export const certificates = [
     ariaLabel: 'Open AIxImpact Certificate',
   },
   {
-    title: 'ABC',
+    title: 'AIxImpact Final Presentation',
     issuer: 'AIxImpact',
     kind: 'Presentation',
+    description:
+      'Final project deck showing problem framing, solution design, implementation decisions, and communication of the AIxImpact outcome.',
     file: aixImpactPresentation,
     logoKey: 'aiximpact',
     logoLabel: 'AIxImpact presentation logo mark',
@@ -33,6 +37,8 @@ export const certificates = [
     title: 'AWS Certified Cloud Practitioner',
     issuer: 'Amazon Web Services',
     kind: 'Certification',
+    description:
+      'Foundational AWS certification covering cloud concepts, core services, security, architecture, pricing, and operational practices.',
     file: awsCloudPractitioner,
     logoKey: 'amazonwebservices',
     logoLabel: 'Amazon Web Services certification logo',
@@ -40,9 +46,11 @@ export const certificates = [
     ariaLabel: 'Open AWS Certified Cloud Practitioner certificate',
   },
   {
-    title: 'Kubernetes',
+    title: 'Certified Kubernetes Application Developer',
     issuer: 'The Linux Foundation',
     kind: 'Certification',
+    description:
+      'Cloud-native credential demonstrating hands-on Kubernetes application design, deployment, configuration, and troubleshooting skills.',
     file: kubernetesApplicationDeveloper,
     logoKey: 'kubernetes',
     logoLabel: 'Kubernetes certification logo',
@@ -50,9 +58,11 @@ export const certificates = [
     ariaLabel: 'Open Certified Kubernetes Application Developer certificate',
   },
   {
-    title: 'Coursera Certificate',
+    title: 'Coursera Machine Learning Certificate',
     issuer: 'Coursera',
     kind: 'Coursework',
+    description:
+      'Course completion evidence for structured machine learning study, strengthening the portfolio with formal online learning artifacts.',
     file: courseraCertificate,
     logoKey: 'coursera',
     logoLabel: 'Coursera logo',
@@ -63,6 +73,8 @@ export const certificates = [
     title: 'Database System Focus Area',
     issuer: 'Academic',
     kind: 'Coursework',
+    description:
+      'Academic focus area evidence for database systems, reinforcing backend, data modeling, and scalable storage foundations.',
     file: databaseSystemFocusArea,
     logoKey: 'database',
     logoLabel: 'Database coursework logo mark',
@@ -73,6 +85,8 @@ export const certificates = [
     title: 'NUS Top Student for Big Data Systems',
     issuer: 'National University of Singapore',
     kind: 'Award',
+    description:
+      'Academic award recognizing strong performance in big data systems, highlighting distributed data processing and analytical depth.',
     file: nusBigDataSystemsAward,
     logoKey: 'nus',
     logoLabel: 'National University of Singapore award logo mark',
@@ -80,9 +94,11 @@ export const certificates = [
     ariaLabel: 'Open NUS Top Student for Big Data Systems award',
   },
   {
-    title: 'University',
+    title: 'University Academic Certificate',
     issuer: 'Academic',
     kind: 'Academic',
+    description:
+      'Formal academic record supporting the education timeline and providing evidence of completed university-level study.',
     file: universityCertificate,
     logoKey: 'university',
     logoLabel: 'University certificate logo mark',

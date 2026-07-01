@@ -221,6 +221,9 @@ function Skills() {
                     {certificate.kind}
                   </Badge>
                 </HStack>
+                <Text color="var(--text-300)" fontSize="sm" lineHeight="1.7">
+                  {certificate.description}
+                </Text>
                 <Text color="var(--accent-300)" fontSize="sm" className="code-font">
                   Click to expand PDF
                 </Text>
@@ -284,6 +287,9 @@ function Skills() {
                   </Heading>
                   <Text color="var(--text-300)" fontSize="sm">
                     {selectedCertificate.issuer} - {selectedCertificate.kind}
+                  </Text>
+                  <Text color="var(--text-300)" fontSize="sm" lineHeight="1.6" maxW="640px" mt={1}>
+                    {selectedCertificate.description}
                   </Text>
                 </Box>
               </HStack>

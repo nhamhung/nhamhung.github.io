@@ -3022,3 +3022,31 @@ make the page light mode by default"
 **Context**: CONSTRUCTION - Theme behavior code generation verification
 
 ---
+
+## Code Generation Change Request - Certificate Gallery Copy
+**Timestamp**: 2026-06-30T11:24:37Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/blog-section-code-generation-plan.md
+
+## Open tabs:
+- blog-section-code-generation-plan.md: aidlc-docs/construction/plans/blog-section-code-generation-plan.md
+- code-generation-summary.md: aidlc-docs/construction/blog-section/code/code-generation-summary.md
+- blog-section-requirements.md: aidlc-docs/inception/requirements/blog-section-requirements.md
+- certificates.ts: src/data/certificates.ts
+- client.d.ts: node_modules/vite/client.d.ts
+
+## My request for Codex:
+help me rewrite a better title and description for each of the Certificate Gallery section"
+**AI Response**: "Accepted the request as a Code Generation review change, rewrote certificate gallery titles, added certificate descriptions to the shared data model, and rendered descriptions in the certificate cards and modal header."
+**Context**: CONSTRUCTION - Certificate Gallery copy review change
+
+---
+
+## Code Generation Change Request Verification - Certificate Gallery Copy
+**Timestamp**: 2026-06-30T11:24:37Z
+**User Input**: "N/A"
+**AI Response**: "Verified certificate gallery copy changes. npm run test, npm run lint, and npm run build all passed."
+**Context**: CONSTRUCTION - Certificate Gallery copy verification
+
+---
