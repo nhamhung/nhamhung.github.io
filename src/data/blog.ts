@@ -2,6 +2,7 @@ import type { BlogEntry } from '../types/portfolio'
 
 export const blog = [
   {
+    source: 'wordpress',
     title: 'Năm nay mình làm được những gì?',
     href: 'https://nhamhung.wordpress.com/2024/12/31/nam-nay-minh-lam-duoc-nhung-gi/',
     image: 'https://nhamhung.wordpress.com/wp-content/uploads/2024/12/pexels-photo-1478685.jpeg',
@@ -13,6 +14,7 @@ export const blog = [
     topics: ['Reflection', 'Learning', 'Teaching'],
   },
   {
+    source: 'wordpress',
     title: 'Cách mình tối ưu hoá thời gian cho việc học IT?',
     href: 'https://nhamhung.wordpress.com/2024/12/07/cach-minh-toi-uu-hoa-thoi-gian-cho-viec-it/',
     image: 'https://nhamhung.wordpress.com/wp-content/uploads/2024/12/pexels-photo-3077882.jpeg',
@@ -24,6 +26,7 @@ export const blog = [
     topics: ['Time Management', 'Learning', 'Computer Science'],
   },
   {
+    source: 'wordpress',
     title: 'Apply thạc sĩ Online ngành Khoa học máy tính',
     href: 'https://nhamhung.wordpress.com/2023/11/08/apply-thac-si-online-nganh-khoa-hoc-may-tinh/',
     image: 'https://nhamhung.wordpress.com/wp-content/uploads/2023/11/pexels-photo-4348401.jpeg',
@@ -35,6 +38,7 @@ export const blog = [
     topics: ['Graduate Study', 'Computer Science', 'Career'],
   },
   {
+    source: 'wordpress',
     title: 'Trình biên dịch (Compiler) là gì? (Phần 1)',
     href: 'https://nhamhung.wordpress.com/2022/08/13/sweet-success-2/',
     image: 'https://nhamhung.wordpress.com/wp-content/uploads/2022/08/scott-graham-5fnmwej4taa-unsplash.jpg',

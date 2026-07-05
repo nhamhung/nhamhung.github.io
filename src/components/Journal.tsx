@@ -3,9 +3,14 @@ import { Badge, Box, Flex, Heading, HStack, Image, SimpleGrid, Text, VStack } fr
 import ContentCard from './shared/ContentCard'
 import ExternalAction from './shared/ExternalAction'
 import SectionShell from './shared/SectionShell'
-import { blog, videos } from '../data/portfolio'
+import { videos, writing } from '../data/portfolio'
+import type { WritingEntry } from '../types/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
 import { getYouTubeEmbedUrl } from '../utils/media'
+
+const getSourceBadgeLabel = (post: WritingEntry): string => (post.source === 'local' ? 'IN_SITE' : 'WORDPRESS')
+
+const getPostActionLabel = (post: WritingEntry): string => (post.source === 'local' ? 'READ_HERE' : 'READ_POST')
 
 function Journal() {
   return (
@@ -91,7 +96,7 @@ function Journal() {
           </Box>
 
           <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
-            {blog.map((post, index) => (
+            {writing.map((post, index) => (
               <ContentCard
                 key={post.href}
                 p={0}
@@ -127,6 +132,22 @@ function Journal() {
                     >
                       {post.category}
                     </Badge>
+                    <Badge
+                      px={2.5}
+                      py={1}
+                      borderRadius="md"
+                      className="code-font"
+                      bg={post.source === 'local' ? 'var(--accent-control-bg)' : 'rgba(34, 128, 235, 0.18)'}
+                      border="1px solid"
+                      borderColor={post.source === 'local' ? 'rgba(98, 240, 213, 0.34)' : 'rgba(69, 162, 255, 0.38)'}
+                      color="var(--text-100)"
+                      fontSize="0.68rem"
+                      fontWeight={500}
+                      textTransform="none"
+                      data-testid={`writing-source-${post.source}-${index}`}
+                    >
+                      {getSourceBadgeLabel(post)}
+                    </Badge>
                   </HStack>
 
                   <Heading as="h4" fontSize="xl" color="var(--text-100)" lineHeight="1.25">
@@ -160,10 +181,10 @@ function Journal() {
                   <HStack mt="auto">
                     <ExternalAction
                       href={post.href}
-                      label="READ_POST"
+                      label={getPostActionLabel(post)}
                       ariaLabel={`Read blog post: ${post.title}`}
                       variant="link"
-                      testId={`blog-post-${index}`}
+                      testId={`writing-post-${post.source}-${index}`}
                     />
                   </HStack>
                 </VStack>

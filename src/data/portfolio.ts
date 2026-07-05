@@ -6,6 +6,7 @@ import { certificates } from './certificates'
 import { education } from './education'
 import { experience } from './experience'
 import { gallery } from './gallery'
+import { journalPosts, writing } from './journalPosts'
 import { navigation, sectionIds } from './navigation'
 import { hero, profile } from './profile'
 import { projects } from './projects'
@@ -24,6 +25,8 @@ export const portfolio = {
   gallery,
   videos,
   blog,
+  journalPosts,
+  writing,
   skills,
   certificates,
 } satisfies Portfolio
@@ -37,10 +40,12 @@ export {
   experience,
   gallery,
   hero,
+  journalPosts,
   navigation,
   profile,
   projects,
   sectionIds,
   skills,
   videos,
+  writing,
 }

@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { portfolio, sectionIds } from './portfolio'
 import type { ExternalLink, SectionId } from '../types/portfolio'
 
-const supportedHrefPattern = /^(https?:\/\/|mailto:)/
+const supportedHrefPattern = /^(https?:\/\/|mailto:|#\/)/
 
 const expectNonEmpty = (value: string, message: string) => {
   expect(value.trim(), message).not.toHaveLength(0)
@@ -54,6 +54,7 @@ describe('src/data/portfolio.ts', () => {
     }
 
     for (const post of portfolio.blog) {
+      expect(post.source, `src/data/blog.ts blog post "${post.title}" must be a WordPress entry`).toBe('wordpress')
       expectNonEmpty(post.title, 'src/data/blog.ts blog post title is required')
       expectNonEmpty(post.image, `src/data/blog.ts blog post "${post.title}" needs a feed image`)
       expectNonEmpty(post.imageAlt, `src/data/blog.ts blog post "${post.title}" needs image alt text`)
@@ -64,6 +65,25 @@ describe('src/data/portfolio.ts', () => {
       )
       expect(post.topics.length, `src/data/blog.ts blog post "${post.title}" needs topics`).toBeGreaterThan(0)
     }
+
+    for (const post of portfolio.journalPosts) {
+      expect(post.source, `src/data/journalPosts.ts local post "${post.title}" must be a local entry`).toBe('local')
+      expectNonEmpty(post.slug, `src/data/journalPosts.ts local post "${post.title}" needs a slug`)
+      expectNonEmpty(post.title, 'src/data/journalPosts.ts local post title is required')
+      expectNonEmpty(post.href, `src/data/journalPosts.ts local post "${post.title}" needs an href`)
+      expect(post.href.startsWith('#/journal/'), `src/data/journalPosts.ts local post "${post.title}" needs a journal hash href`).toBe(true)
+      expectNonEmpty(post.image, `src/data/journalPosts.ts local post "${post.title}" needs an image`)
+      expectNonEmpty(post.imageAlt, `src/data/journalPosts.ts local post "${post.title}" needs image alt text`)
+      expectNonEmpty(post.summary, `src/data/journalPosts.ts local post "${post.title}" needs a summary`)
+      expectNonEmpty(post.content, `src/data/journalPosts.ts local post "${post.title}" needs Markdown content`)
+      expect(post.topics.length, `src/data/journalPosts.ts local post "${post.title}" needs topics`).toBeGreaterThan(0)
+    }
+
+    expect(portfolio.writing.some((post) => post.source === 'local'), 'src/data/portfolio.ts writing needs local posts').toBe(true)
+    expect(
+      portfolio.writing.some((post) => post.source === 'wordpress'),
+      'src/data/portfolio.ts writing needs WordPress posts',
+    ).toBe(true)
   })
 
   it('keeps gallery and certificate entries accessible', () => {

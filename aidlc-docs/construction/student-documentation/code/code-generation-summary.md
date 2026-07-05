@@ -12,7 +12,7 @@ Generated student-facing documentation updates for the portfolio template by mod
 
 | File | Change Summary |
 |---|---|
-| `README.md` | Rewritten as a student-first portfolio template guide with prerequisites, quick start, verification commands, editable file map, customization guidance, deployment handoff, and local troubleshooting. |
+| `README.md` | Rewritten as a student-first portfolio template guide with prerequisites, quick start, verification commands, editable file map, customization guidance, deployment handoff, and local troubleshooting. Later updated to clarify that students can edit the web page through source files, not directly in the browser preview, and to document in-site journal and external blog editing paths. |
 | `DEPLOYMENT.md` | Rewritten as a GitHub Pages deployment guide aligned with the existing GitHub Actions workflow and automatic `VITE_BASE_PATH` behavior. |
 
 ## Created AI-DLC Documentation
@@ -32,6 +32,7 @@ Generated student-facing documentation updates for the portfolio template by mod
 | US-05: Replace visual and certificate assets | README explains image, logo, and certificate PDF replacement. |
 | US-11: Verify the portfolio before publishing | README includes local build, lint, and preview verification. |
 | US-12: Deploy to GitHub Pages with minimal manual setup | DEPLOYMENT explains GitHub Actions Pages source and automatic base path derivation. |
+| Journal Inline Posts documentation | README now explains when to edit `src/content/journal/`, `src/data/journalPosts.ts`, and `src/data/blog.ts`. |
 
 ## Validation Notes
 

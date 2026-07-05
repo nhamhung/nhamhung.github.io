@@ -3,7 +3,7 @@ import type { VideoEntry } from '../types/portfolio'
 export const videos = [
   {
     id: 'effective-it-self-study',
-    title: 'Tu hoc IT nhu nao hieu qua nhat?',
+    title: 'Tự học IT như nào hiệu quả nhất?',
     description:
       'With many learning resources available, this video focuses on choosing a practical and sustainable way to self-study IT.',
     videoId: '1Whd4I0b1u4',
@@ -15,8 +15,8 @@ export const videos = [
   },
   {
     id: 'apache-kafka-real-time-processing',
-    title: 'Xu ly du lieu trong thoi gian thuc voi Apache Kafka',
-    description: 'A walkthrough of building real-time data processing flows with Apache Kafka.',
+    title: 'Xử lý dữ liệu trong thời gian thực với Apache Kafka',
+    description: 'A detailed walkthrough of building real-time data processing flows with Apache Kafka.',
     videoId: 'jfu4ORM8k9Q',
     watchLink: {
       label: 'Watch on YouTube',
@@ -26,8 +26,8 @@ export const videos = [
   },
   {
     id: 'computer-science-masters-reflection',
-    title: 'Minh co hoi tiec khi hoc Thac si Khoa hoc may tinh?',
-    description: 'A reflection on applying for and studying a Master of Computer Science.',
+    title: 'Mình có hối tiếc khi học Thạc sĩ Khoa học Máy tính?',
+    description: 'A reflection on my decision to pursue a Master\'s of Computer Science online and part-time while working a full-time job.',
     videoId: 'lBOcJR7QOMs',
     watchLink: {
       label: 'Watch on YouTube',
@@ -37,8 +37,8 @@ export const videos = [
   },
   {
     id: 'optimizing-it-study-time',
-    title: 'Cach minh toi uu hoa thoi gian cho viec hoc IT?',
-    description: 'Practical tactics to optimize study time and improve consistency in technical learning.',
+    title: 'Cách mình tối ưu hoá thời gian cho việc học IT?',
+    description: 'A personal sharing on tips and tricks to maximise learning within the IT field given our busy schedule and limited time.',
     videoId: 'C7d0LEefUcw',
     watchLink: {
       label: 'Watch on YouTube',

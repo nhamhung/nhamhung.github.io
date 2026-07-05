@@ -16,7 +16,7 @@ export const profile = {
     ariaLabel: 'Download Nham Quoc Hung resume PDF',
   },
   summary:
-    'Computer Science graduate specialized in Data. I design and ship production-ready pipelines, low-latency services, and analytics systems that teams can trust for decisions and growth.',
+    'I am a Computer Science graduate with a specialisation in Data and passion for teaching. In a world being increasingly influenced and shaped by technological advances, these domains are my way of navigating through present complexities and making sense of what is coming next.',
   socialLinks: [
     {
       label: 'GitHub',
@@ -39,13 +39,13 @@ export const profile = {
 export const hero = {
   eyebrow: '<engineer id="nham-quoc-hung" />',
   statusBadges: ['SYSTEM STATUS: BUILDING', 'DATA | SOFTWARE | MENTORSHIP'],
-  headline: 'Building reliable data systems and scalable backend platforms.',
-  highlightedPhrase: 'data systems',
+  headline: 'Building reliable data pipelines and scalable data platforms.',
+  highlightedPhrase: 'data pipelines',
   intro: profile.summary,
   stats: [
     { value: '4+ Years', label: 'Experience' },
     { value: 'Data + Backend', label: 'Focus' },
-    { value: 'End-to-End', label: 'Delivery' },
+    { value: 'End-to-End', label: 'Coverage' },
   ],
   primaryAction: {
     label: 'View Projects',
@@ -57,5 +57,5 @@ export const hero = {
     sectionId: 'contact',
     ariaLabel: 'Scroll to contact section',
   },
-  stackHighlights: ['Apache Spark', 'Apache Kafka', 'Airflow', 'Kubernetes', 'BigQuery', 'GCP'],
+  stackHighlights: ['Big Data', 'Data Analytics', 'Data Science', 'Data Engineering', 'Machine Learning', 'Deep Learning'],
 } satisfies HeroSection

@@ -3137,3 +3137,282 @@ feel free to move resume.pdf to a more suitable location
 **Context**: CONSTRUCTION - Resume asset organization verification
 
 ---
+
+## Workspace Detection - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T16:53:32Z
+**User Input**: "using ai-dlc, help to enhance my journal to also include blog posts which is directly within the website. This is so that students without wordpress or other sites can directly jot down their journals here"
+**AI Response**: "Started AI-DLC workflow for a new Journal inline posts enhancement. Detected existing brownfield React/Vite portfolio with current AI-DLC state and existing reverse-engineering artifacts; proceeding to Requirements Analysis without rerunning Reverse Engineering."
+**Context**: INCEPTION - Workspace Detection
+
+---
+
+## Requirements Analysis Questions - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T16:53:32Z
+**User Input**: "using ai-dlc, help to enhance my journal to also include blog posts which is directly within the website. This is so that students without wordpress or other sites can directly jot down their journals here"
+**AI Response**: "Created aidlc-docs/inception/requirements/journal-inline-posts-requirement-questions.md with product-shaping questions for local/static vs browser-authored vs backend-backed journal posts. Security Baseline and Property-Based Testing extensions are disabled in aidlc-state.md, so full extension rules were skipped."
+**Context**: INCEPTION - Requirements Analysis
+
+---
+
+## Requirements Analysis Answers - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T16:57:27Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/requirements/journal-inline-posts-requirement-questions.md
+
+## Open tabs:
+- journal-inline-posts-requirement-questions.md: aidlc-docs/inception/requirements/journal-inline-posts-requirement-questions.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Read completed requirement questions. Answers selected static local Markdown posts, unified display with WordPress posts, GitHub Pages-compatible hash reading pages, equal priority for students and visitors, and no backend/database/authentication/runtime API."
+**Context**: INCEPTION - Requirements Analysis
+
+---
+
+## Requirements Analysis Completion Prompt - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T16:57:27Z
+**User Input**: "N/A"
+**AI Response**: "Generated aidlc-docs/inception/requirements/journal-inline-posts-requirements.md and presented the Requirements Analysis completion review prompt."
+**Context**: INCEPTION - Requirements Analysis Approval Gate
+
+---
+
+## Requirements Analysis Approval - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T17:09:04Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/requirements/journal-inline-posts-requirements.md
+
+## Open tabs:
+- journal-inline-posts-requirements.md: aidlc-docs/inception/requirements/journal-inline-posts-requirements.md
+- journal-inline-posts-requirement-questions.md: aidlc-docs/inception/requirements/journal-inline-posts-requirement-questions.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded requirements approval, completed User Stories assessment, and created the Journal Inline Posts story generation plan for approval."
+**Context**: INCEPTION - Requirements Analysis Approval and User Stories Planning
+
+---
+
+## User Stories Plan Approval Prompt - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T17:09:04Z
+**User Input**: "N/A"
+**AI Response**: "Presented story generation plan approval gate for aidlc-docs/inception/plans/journal-inline-posts-story-generation-plan.md."
+**Context**: INCEPTION - User Stories Planning Approval Gate
+
+---
+
+## User Stories Plan Approval - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T17:17:00Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/plans/journal-inline-posts-story-generation-plan.md
+
+## Open tabs:
+- journal-inline-posts-story-generation-plan.md: aidlc-docs/inception/plans/journal-inline-posts-story-generation-plan.md
+- journal-inline-posts-requirements.md: aidlc-docs/inception/requirements/journal-inline-posts-requirements.md
+- journal-inline-posts-requirement-questions.md: aidlc-docs/inception/requirements/journal-inline-posts-requirement-questions.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded story generation plan approval and generated Journal Inline Posts personas and user stories with acceptance criteria and requirement mappings."
+**Context**: INCEPTION - User Stories Generation
+
+---
+
+## User Stories Completion Prompt - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T17:17:00Z
+**User Input**: "N/A"
+**AI Response**: "Generated aidlc-docs/inception/user-stories/journal-inline-posts-personas.md and aidlc-docs/inception/user-stories/journal-inline-posts-stories.md, updated the story generation plan checkboxes, and presented the User Stories completion review prompt."
+**Context**: INCEPTION - User Stories Approval Gate
+
+---
+
+## User Stories Approval - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T17:25:47Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/user-stories/journal-inline-posts-stories.md
+
+## Open tabs:
+- journal-inline-posts-stories.md: aidlc-docs/inception/user-stories/journal-inline-posts-stories.md
+- journal-inline-posts-personas.md: aidlc-docs/inception/user-stories/journal-inline-posts-personas.md
+- journal-inline-posts-story-generation-plan.md: aidlc-docs/inception/plans/journal-inline-posts-story-generation-plan.md
+- journal-inline-posts-requirements.md: aidlc-docs/inception/requirements/journal-inline-posts-requirements.md
+- journal-inline-posts-requirement-questions.md: aidlc-docs/inception/requirements/journal-inline-posts-requirement-questions.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded user stories approval and generated the Journal Inline Posts execution plan with phase decisions, risk assessment, workflow visualization, and proposed unit of work."
+**Context**: INCEPTION - Workflow Planning
+
+---
+
+## Workflow Planning Completion Prompt - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T17:25:47Z
+**User Input**: "N/A"
+**AI Response**: "Created aidlc-docs/inception/plans/journal-inline-posts-execution-plan.md and presented the Workflow Planning review prompt."
+**Context**: INCEPTION - Workflow Planning Approval Gate
+
+---
+
+## Workflow Planning Approval - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T18:02:32Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/plans/journal-inline-posts-execution-plan.md
+
+## Open tabs:
+- journal-inline-posts-execution-plan.md: aidlc-docs/inception/plans/journal-inline-posts-execution-plan.md
+- journal-inline-posts-stories.md: aidlc-docs/inception/user-stories/journal-inline-posts-stories.md
+- journal-inline-posts-personas.md: aidlc-docs/inception/user-stories/journal-inline-posts-personas.md
+- journal-inline-posts-story-generation-plan.md: aidlc-docs/inception/plans/journal-inline-posts-story-generation-plan.md
+- journal-inline-posts-requirements.md: aidlc-docs/inception/requirements/journal-inline-posts-requirements.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded workflow planning approval and generated Journal Inline Posts application design artifacts."
+**Context**: INCEPTION - Application Design
+
+---
+
+## Application Design Completion Prompt - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T18:02:32Z
+**User Input**: "N/A"
+**AI Response**: "Created application design artifacts under aidlc-docs/inception/application-design/journal-inline-posts/ and presented the Application Design review prompt."
+**Context**: INCEPTION - Application Design Approval Gate
+
+---
+
+## Application Design Approval - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T18:05:25Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/application-design/journal-inline-posts/components.md
+
+## Open tabs:
+- components.md: aidlc-docs/inception/application-design/journal-inline-posts/components.md
+- journal-inline-posts-execution-plan.md: aidlc-docs/inception/plans/journal-inline-posts-execution-plan.md
+- journal-inline-posts-stories.md: aidlc-docs/inception/user-stories/journal-inline-posts-stories.md
+- journal-inline-posts-personas.md: aidlc-docs/inception/user-stories/journal-inline-posts-personas.md
+- journal-inline-posts-story-generation-plan.md: aidlc-docs/inception/plans/journal-inline-posts-story-generation-plan.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded application design approval and generated Journal Inline Posts unit of work artifacts."
+**Context**: INCEPTION - Units Generation
+
+---
+
+## Units Generation Completion Prompt - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-02T18:05:25Z
+**User Input**: "N/A"
+**AI Response**: "Created unit of work, dependency, and story map artifacts under aidlc-docs/inception/application-design/journal-inline-posts/ and presented the Units Generation review prompt."
+**Context**: INCEPTION - Units Generation Approval Gate
+
+---
+
+## Units Generation Approval - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-03T16:15:53Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/application-design/journal-inline-posts/components.md
+
+## Open tabs:
+- components.md: aidlc-docs/inception/application-design/journal-inline-posts/components.md
+- journal-inline-posts-execution-plan.md: aidlc-docs/inception/plans/journal-inline-posts-execution-plan.md
+- journal-inline-posts-stories.md: aidlc-docs/inception/user-stories/journal-inline-posts-stories.md
+- journal-inline-posts-personas.md: aidlc-docs/inception/user-stories/journal-inline-posts-personas.md
+- journal-inline-posts-story-generation-plan.md: aidlc-docs/inception/plans/journal-inline-posts-story-generation-plan.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded units generation approval, entered Construction, and generated Journal Inline Posts functional design artifacts."
+**Context**: CONSTRUCTION - Functional Design
+
+---
+
+## Functional Design Completion Prompt - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-03T16:15:53Z
+**User Input**: "N/A"
+**AI Response**: "Created functional design artifacts under aidlc-docs/construction/journal-inline-posts/functional-design/ and presented the Functional Design review prompt."
+**Context**: CONSTRUCTION - Functional Design Approval Gate
+
+---
+
+## Functional Design Approval - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-03T17:11:40Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/journal-inline-posts/functional-design/business-logic-model.md
+
+## Open tabs:
+- business-logic-model.md: aidlc-docs/construction/journal-inline-posts/functional-design/business-logic-model.md
+- components.md: aidlc-docs/inception/application-design/journal-inline-posts/components.md
+- journal-inline-posts-execution-plan.md: aidlc-docs/inception/plans/journal-inline-posts-execution-plan.md
+- journal-inline-posts-stories.md: aidlc-docs/inception/user-stories/journal-inline-posts-stories.md
+- journal-inline-posts-personas.md: aidlc-docs/inception/user-stories/journal-inline-posts-personas.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded functional design approval and created the Journal Inline Posts code generation plan."
+**Context**: CONSTRUCTION - Code Generation Planning
+
+---
+
+## Code Generation Plan Approval Prompt - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-03T17:11:40Z
+**User Input**: "N/A"
+**AI Response**: "Created aidlc-docs/construction/plans/journal-inline-posts-code-generation-plan.md and presented the code generation plan approval prompt."
+**Context**: CONSTRUCTION - Code Generation Planning Approval Gate
+
+---
+
+## Code Generation Plan Approval - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-03T17:11:40Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/journal-inline-posts-code-generation-plan.md
+
+## Open tabs:
+- journal-inline-posts-code-generation-plan.md: aidlc-docs/construction/plans/journal-inline-posts-code-generation-plan.md
+- business-logic-model.md: aidlc-docs/construction/journal-inline-posts/functional-design/business-logic-model.md
+- components.md: aidlc-docs/inception/application-design/journal-inline-posts/components.md
+- journal-inline-posts-execution-plan.md: aidlc-docs/inception/plans/journal-inline-posts-execution-plan.md
+- journal-inline-posts-stories.md: aidlc-docs/inception/user-stories/journal-inline-posts-stories.md
+
+## My request for Codex:
+approve and continue"
+**AI Response**: "Recorded code generation plan approval and implemented Journal Inline Posts application code, tests, and code summary according to the approved plan."
+**Context**: CONSTRUCTION - Code Generation
+
+---
+
+## Code Generation Verification - Journal Inline Posts Enhancement
+**Timestamp**: 2026-07-03T17:11:40Z
+**User Input**: "N/A"
+**AI Response**: "Verified Journal Inline Posts implementation. npm run test, npx tsc -p tsconfig.app.json --noEmit, npm run lint, and npm run build all passed."
+**Context**: CONSTRUCTION - Code Generation Verification
+
+---
+
+## Student Documentation Update - Editable Web Page Guidance
+**Timestamp**: 2026-07-04T07:16:56Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: src/components/shared/LogoMark.tsx
+
+## Open tabs:
+- LogoMark.tsx: src/components/shared/LogoMark.tsx
+- ExternalAction.tsx: src/components/shared/ExternalAction.tsx
+- ContentCard.tsx: src/components/shared/ContentCard.tsx
+- media.ts: src/utils/media.ts
+- animation.ts: src/utils/animation.ts
+
+## My request for Codex:
+using ai-dlc, update instruction manual for students so that they know whether they can edit the web page"
+**AI Response**: "Updated README.md with student-facing guidance explaining that the web page is editable through project files, not directly through the browser preview, and added journal/blog file locations to the manual."
+**Context**: CONSTRUCTION - Student Documentation Maintenance
+
+---

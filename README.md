@@ -8,9 +8,18 @@ Use this template to create a personal portfolio with sections for your profile,
 
 - Your name, headline, location, resume link, contact email, and social links.
 - About, education, experience, awards, projects, gallery, videos, skills, and certificates.
+- In-site journal posts and external blog post links.
 - Section order and visibility in the navigation.
-- Images, logos, gallery photos, and certificate PDFs.
+- Images, logos, gallery photos, resume PDF, and certificate PDFs.
 - Reusable card/action/section components if you want to extend the layout later.
+
+## Can I Edit The Web Page?
+
+Yes. You can edit this web page, but you edit it through the project files, not by changing text directly in the browser preview.
+
+The browser page is a live preview. When you run `npm run dev`, Vite watches the files and refreshes the page after you save changes. Most students should edit content in `src/data/`, write in-site journal posts in `src/content/journal/`, and place files such as images or PDFs in `src/assets/`.
+
+If you want to change the layout, buttons, cards, or visual components, edit files under `src/components/`. Layout changes require more care than content edits, so run the verification commands before publishing.
 
 ## Prerequisites
 
@@ -47,6 +56,8 @@ npm run dev
 
 Vite will print a local URL, usually `http://localhost:5173/`. Open it in your browser and edit files under `src/data/` to customize the portfolio.
 
+Do not edit the text only inside the browser page. Those changes are temporary and will disappear when the page refreshes. Save your edits in the project files instead.
+
 ## Verify Before Publishing
 
 Run these commands before pushing important changes:
@@ -81,9 +92,13 @@ What each command does:
 | `src/data/videos.ts` | Video entries and links. |
 | `src/data/skills.ts` | Skill groups and tools. |
 | `src/data/certificates.ts` | Certificate metadata and PDF imports. |
+| `src/data/blog.ts` | External blog links, such as WordPress posts. |
+| `src/data/journalPosts.ts` | In-site journal post metadata and Markdown imports. |
 | `src/data/navigation.ts` | Section order, labels, and visibility. |
+| `src/content/journal/` | Markdown files for journal posts that are published directly inside this site. |
 | `src/types/portfolio.ts` | Shared TypeScript types for portfolio data. Use this as a reference when editing data files. |
-| `src/assets/` | Images, logos, gallery photos, and certificate PDFs. |
+| `src/assets/` | Images, logos, gallery photos, PDFs, and other static files. |
+| `src/assets/documents/` | Resume and other downloadable document files. |
 | `src/components/shared/` | Reusable UI helpers for cards, section shells, and external actions. |
 
 Most students should start with `src/data/profile.ts`, then update the section-specific files under `src/data/`.
@@ -119,6 +134,27 @@ Edit the matching file under `src/data/`:
 - `src/data/skills.ts`
 
 The shared types in `src/types/portfolio.ts` show the expected fields for each kind of data.
+
+### Journal And Blog Posts
+
+Use the Journal section for two kinds of writing:
+
+- In-site posts that live directly in this portfolio.
+- External posts that link to another site, such as WordPress.
+
+For an in-site journal post, add a Markdown file under:
+
+- `src/content/journal/`
+
+Then add its title, date, summary, tags, and content import in:
+
+- `src/data/journalPosts.ts`
+
+For an external blog post, update:
+
+- `src/data/blog.ts`
+
+External blog posts open outside the site. In-site journal posts open directly inside this portfolio.
 
 ### Images And Logos
 
@@ -160,6 +196,7 @@ For the detailed guide, including URL patterns and troubleshooting, read [DEPLOY
 |---|---|
 | `npm install` fails | Confirm Node.js is version 20 or newer, then try again. |
 | The dev server does not start | Make sure dependencies are installed with `npm install`. |
+| I changed text in the browser but it disappeared | Edit and save the matching file in `src/data/`, `src/content/journal/`, or `src/components/` instead. The browser is only a preview. |
 | An image or PDF is missing | Check that the file exists in `src/assets/` and that the matching import path is correct. |
 | TypeScript reports a data error | Compare your data file with the matching type in `src/types/portfolio.ts`. |
 | The deployed site has broken assets | Read the base path and troubleshooting sections in `DEPLOYMENT.md`. |

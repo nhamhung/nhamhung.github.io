@@ -4,7 +4,7 @@ export const projects = [
   {
     title: 'Coursework and Certificates',
     description:
-      'A curated learning archive covering machine learning, deep learning, cloud, data science, mobile development, and technical certifications.',
+      'A curated academic archive covering everything I have learnt over the years.',
     logoKey: 'jupyter',
     logoLabel: 'Jupyter Notebook project logo',
     logoAccent: '#f37626',
@@ -25,7 +25,7 @@ export const projects = [
   {
     title: 'Program Analyzer',
     description:
-      "A C++ static program analyzer built as a team project to answer developers' queries about source-code relationships.",
+      "A C++ static program analyzer built to answer developers' queries about source-code relationships.",
     logoKey: 'cplusplus',
     logoLabel: 'C++ project logo',
     logoAccent: '#659ad2',

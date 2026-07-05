@@ -4,7 +4,7 @@
 - **Project Type**: Brownfield
 - **Start Date**: 2026-06-08T13:11:07Z
 - **Current Phase**: CONSTRUCTION
-- **Current Stage**: Code Generation - Blog Section - Awaiting Review
+- **Current Stage**: Code Generation Planning - Journal Inline Posts - Awaiting Review
 
 ## Workspace State
 - **Existing Code**: Yes
@@ -67,6 +67,14 @@
 - [x] NFR Requirements - Multi-Page Layout Switcher completed on 2026-06-28T01:26:59Z
 - [x] NFR Design - Multi-Page Layout Switcher completed on 2026-06-28T08:54:03Z
 - [x] Code Generation - Blog Section completed on 2026-06-29T15:03:43Z
+- [x] Requirements Analysis - Journal Inline Posts completed on 2026-07-02T17:09:04Z
+- [x] User Stories - Journal Inline Posts completed on 2026-07-02T17:17:00Z
+- [x] Workflow Planning - Journal Inline Posts completed on 2026-07-02T18:02:32Z
+- [x] Application Design - Journal Inline Posts completed on 2026-07-02T18:02:32Z
+- [x] Units Generation - Journal Inline Posts completed on 2026-07-02T18:05:25Z
+- [x] Functional Design - Journal Inline Posts completed on 2026-07-03T16:15:53Z
+- [x] Code Generation Planning - Journal Inline Posts completed on 2026-07-03T17:11:40Z
+- [ ] Code Generation - Journal Inline Posts awaiting review
 
 ## Reverse Engineering Status
 - [x] Reverse Engineering - Completed on 2026-06-08T13:11:07Z
@@ -79,16 +87,16 @@
 
 ## Current Status
 - **Lifecycle Phase**: CONSTRUCTION
-- **Current Stage**: Code Generation - Blog Section
+- **Current Stage**: Code Generation - Journal Inline Posts - Awaiting Review
 - **Next Stage**: Build and Test after code generation approval
-- **Status**: Blog section implementation complete; awaiting user review and approval
+- **Status**: Code generated and verified; awaiting user review and approval
 
 ## Active Change Request
-- **Name**: Blog Section
-- **Started**: 2026-06-29T14:59:58Z
-- **User Request**: Add a blog section referencing writings from `https://nhamhung.wordpress.com/`.
+- **Name**: Journal Inline Posts
+- **Started**: 2026-07-02T16:53:32Z
+- **User Request**: Enhance Journal to include local in-site blog posts so students without WordPress or another external site can maintain journals directly in the portfolio.
 - **Classification**: Brownfield user-facing feature
-- **Recommended Next Step**: Review generated Blog section code and approve Code Generation to proceed to Build and Test
+- **Recommended Next Step**: Review generated Journal Inline Posts code and approve Code Generation
 
 ## Deferred Scope Notes
 - **Multi-page layout conversion button**: User requested a button to automatically convert the current single landing page design into a stunning multi-page layout. This is a new user-facing feature and should be planned as a separate AI-DLC change after the current lightweight testing unit, unless the user explicitly asks to pause Unit 5 and re-scope the project.

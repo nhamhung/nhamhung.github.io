@@ -120,7 +120,8 @@ export type VideoEntry = {
   watchLink: ExternalLink
 }
 
-export type BlogEntry = {
+export type WordPressWritingPost = {
+  source: 'wordpress'
   title: string
   href: string
   image: string
@@ -130,6 +131,24 @@ export type BlogEntry = {
   summary: string
   topics: string[]
 }
+
+export type BlogEntry = WordPressWritingPost
+
+export type LocalJournalPost = {
+  source: 'local'
+  slug: string
+  href: string
+  title: string
+  image: string
+  imageAlt: string
+  publishedDate: string
+  category: string
+  summary: string
+  topics: string[]
+  content: string
+}
+
+export type WritingEntry = BlogEntry | LocalJournalPost
 
 export type SkillEntry = {
   label: string
@@ -167,6 +186,8 @@ export type Portfolio = {
   gallery: GalleryItem[]
   videos: VideoEntry[]
   blog: BlogEntry[]
+  journalPosts: LocalJournalPost[]
+  writing: WritingEntry[]
   skills: SkillCategory[]
   certificates: CertificateEntry[]
 }

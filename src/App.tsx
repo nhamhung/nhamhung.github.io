@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { ComponentType } from 'react'
 
 import './App.css'
@@ -11,12 +11,14 @@ import Experience from './components/Experience'
 import Gallery from './components/Gallery'
 import Hero from './components/Hero'
 import Journal from './components/Journal'
+import JournalPostPage from './components/JournalPostPage'
 import Navbar from './components/Navbar'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import { navigation } from './data/portfolio'
 import { usePortfolioLayout } from './hooks/usePortfolioLayout'
 import type { SectionId } from './types/portfolio'
+import { parseJournalPostHash } from './utils/journal'
 import { getEnabledNavigationItems, getEnabledSectionIds, useActiveSection } from './utils/scroll'
 
 const sectionComponents = {
@@ -33,6 +35,7 @@ const sectionComponents = {
 } satisfies Record<SectionId, ComponentType>
 
 function App() {
+  const [locationHash, setLocationHash] = useState(() => window.location.hash)
   const enabledNavigationItems = useMemo(() => getEnabledNavigationItems(navigation), [])
   const enabledSectionIds = useMemo(() => getEnabledSectionIds(navigation), [])
   const scrollActiveSection = useActiveSection(enabledSectionIds)
@@ -46,12 +49,25 @@ function App() {
     toggleLayoutMode,
   } = usePortfolioLayout(enabledSectionIds, scrollActiveSection)
 
+  useEffect(() => {
+    const syncLocationHash = () => setLocationHash(window.location.hash)
+
+    window.addEventListener('hashchange', syncLocationHash)
+    window.addEventListener('popstate', syncLocationHash)
+
+    return () => {
+      window.removeEventListener('hashchange', syncLocationHash)
+      window.removeEventListener('popstate', syncLocationHash)
+    }
+  }, [])
+
+  const localJournalPostSlug = parseJournalPostHash(locationHash)
   const visibleSectionIds = isMultiPageLayout ? [activePageSection] : enabledSectionIds
 
   return (
     <Box minH="100vh" w="100%">
       <Navbar
-        activeSection={activeSection}
+        activeSection={localJournalPostSlug ? 'journal' : activeSection}
         getNavigationHref={getNavigationHref}
         layoutMode={layoutMode}
         navigationItems={enabledNavigationItems}
@@ -67,11 +83,15 @@ function App() {
         data-layout-mode={layoutMode}
         data-testid="portfolio-main"
       >
-        {visibleSectionIds.map((sectionId) => {
-          const SectionComponent = sectionComponents[sectionId]
+        {localJournalPostSlug ? (
+          <JournalPostPage slug={localJournalPostSlug} />
+        ) : (
+          visibleSectionIds.map((sectionId) => {
+            const SectionComponent = sectionComponents[sectionId]
 
-          return <SectionComponent key={sectionId} />
-        })}
+            return <SectionComponent key={sectionId} />
+          })
+        )}
       </Box>
     </Box>
   )
