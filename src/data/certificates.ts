@@ -14,7 +14,7 @@ export const certificates = [
     issuer: 'AIxImpact',
     kind: 'Competition',
     description:
-      'Recognition for applying AI and product thinking in a competitive build setting, with emphasis on practical delivery and presentation.',
+      'Recognition for presenting a feasible and meaningful AI-based solution to the problem of predicting and handling future global pandemics.',
     file: aixImpactCertificate,
     logoKey: 'aiximpact',
     logoLabel: 'AIxImpact competition logo mark',
@@ -26,7 +26,7 @@ export const certificates = [
     issuer: 'AIxImpact',
     kind: 'Presentation',
     description:
-      'Final project deck showing problem framing, solution design, implementation decisions, and communication of the AIxImpact outcome.',
+      'Final project deck showing problem framing, solution design, implementation decisions, and justification of our group\'s proposal for the AIxImpact case competition.',
     file: aixImpactPresentation,
     logoKey: 'aiximpact',
     logoLabel: 'AIxImpact presentation logo mark',
@@ -62,7 +62,7 @@ export const certificates = [
     issuer: 'Coursera',
     kind: 'Coursework',
     description:
-      'Course completion evidence for structured machine learning study, strengthening the portfolio with formal online learning artifacts.',
+      'Certified completion of the Machine Learning course on Coursera by Deep Learning AI.',
     file: courseraCertificate,
     logoKey: 'coursera',
     logoLabel: 'Coursera logo',
@@ -71,14 +71,14 @@ export const certificates = [
   },
   {
     title: 'Database System Focus Area',
-    issuer: 'Academic',
+    issuer: 'National University of Singapore',
     kind: 'Coursework',
     description:
-      'Academic focus area evidence for database systems, reinforcing backend, data modeling, and scalable storage foundations.',
+      'Certified completion of the Database Specialisation track from the NUS Computer Science degree.',
     file: databaseSystemFocusArea,
-    logoKey: 'database',
+    logoKey: 'nus',
     logoLabel: 'Database coursework logo mark',
-    logoAccent: '#4169e1',
+    logoAccent: '#ef7c00',
     ariaLabel: 'Open Database System Focus Area certificate',
   },
   {
@@ -86,7 +86,7 @@ export const certificates = [
     issuer: 'National University of Singapore',
     kind: 'Award',
     description:
-      'Academic award recognizing strong performance in big data systems, highlighting distributed data processing and analytical depth.',
+      'Academic award recognizing top performance in big data systems, a specialisation module on distributed big data processing.',
     file: nusBigDataSystemsAward,
     logoKey: 'nus',
     logoLabel: 'National University of Singapore award logo mark',
@@ -96,13 +96,13 @@ export const certificates = [
   {
     title: 'University Academic Certificate',
     issuer: 'Academic',
-    kind: 'Academic',
+    kind: 'National University of Singapore',
     description:
-      'Formal academic record supporting the education timeline and providing evidence of completed university-level study.',
+      'Official degree scroll for my 4-year undergraduate study in Singapore.',
     file: universityCertificate,
-    logoKey: 'university',
+    logoKey: 'nus',
     logoLabel: 'University certificate logo mark',
-    logoAccent: '#1d4ed8',
+    logoAccent: '#ef7c00',
     ariaLabel: 'Open University certificate',
   },
 ] satisfies CertificateEntry[]

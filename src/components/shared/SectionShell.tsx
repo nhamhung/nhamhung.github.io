@@ -9,7 +9,7 @@ type SectionShellProps = {
   id: SectionId
   eyebrow: string
   title: string
-  intro?: string
+  intro: string
   nextSectionId?: SectionId
   children: ReactNode
 }
@@ -33,14 +33,18 @@ function SectionShell({ id, eyebrow, title, intro, nextSectionId, children }: Se
           <Text className="code-font" color="var(--text-300)" letterSpacing="widest" fontSize="xs">
             {eyebrow}
           </Text>
-          <Heading as="h2" fontSize={{ base: '3xl', md: '5xl' }} color="var(--text-100)">
+          <Heading
+            as="h2"
+            tabIndex={-1}
+            data-chapter-heading
+            fontSize={{ base: '3xl', md: '5xl' }}
+            color="var(--text-100)"
+          >
             {title}
           </Heading>
-          {intro ? (
-            <Text maxW="760px" color="var(--text-300)" lineHeight="1.8">
-              {intro}
-            </Text>
-          ) : null}
+          <Text maxW="760px" color="var(--text-300)" lineHeight="1.8">
+            {intro}
+          </Text>
         </VStack>
 
         {children}

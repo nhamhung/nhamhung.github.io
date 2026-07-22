@@ -1,114 +1,110 @@
 import { Badge, Box, Container, Flex, Heading, HStack, Image, Link, Text, VStack } from '@chakra-ui/react'
+import ReactMarkdown from 'react-markdown'
+import type { Components } from 'react-markdown'
 import { HiArrowLeft } from 'react-icons/hi'
 
 import ContentCard from './shared/ContentCard'
 import { getLocalJournalPostBySlug } from '../data/journalPosts'
+import type { JournalPostPageProps } from '../templates/types'
 
-type JournalPostPageProps = {
-  slug: string
-}
+const markdownComponents: Components = {
+  h1: ({ children }) => (
+    <Heading as="h2" fontSize={{ base: '2xl', md: '3xl' }} color="var(--text-100)" mb={5}>
+      {children}
+    </Heading>
+  ),
+  h2: ({ children }) => (
+    <Heading as="h3" fontSize={{ base: 'xl', md: '2xl' }} color="var(--text-100)" mt={8} mb={4}>
+      {children}
+    </Heading>
+  ),
+  h3: ({ children }) => (
+    <Heading as="h4" fontSize={{ base: 'lg', md: 'xl' }} color="var(--text-100)" mt={7} mb={3}>
+      {children}
+    </Heading>
+  ),
+  p: ({ children }) => (
+    <Text color="var(--text-300)" lineHeight="1.9" mb={5}>
+      {children}
+    </Text>
+  ),
+  strong: ({ children }) => (
+    <Box as="strong" color="var(--text-100)" fontWeight={700}>
+      {children}
+    </Box>
+  ),
+  em: ({ children }) => <Box as="em">{children}</Box>,
+  a: ({ href, children }) => {
+    const isExternal = href?.startsWith('http://') || href?.startsWith('https://')
 
-type MarkdownBlock =
-  | { type: 'heading'; level: 1 | 2 | 3; text: string }
-  | { type: 'paragraph'; text: string }
-  | { type: 'list'; items: string[] }
-
-const parseMarkdownBlocks = (content: string): MarkdownBlock[] => {
-  const blocks: MarkdownBlock[] = []
-  const lines = content.split(/\r?\n/)
-  let paragraph: string[] = []
-  let listItems: string[] = []
-
-  const flushParagraph = () => {
-    if (paragraph.length > 0) {
-      blocks.push({ type: 'paragraph', text: paragraph.join(' ') })
-      paragraph = []
-    }
-  }
-
-  const flushList = () => {
-    if (listItems.length > 0) {
-      blocks.push({ type: 'list', items: listItems })
-      listItems = []
-    }
-  }
-
-  for (const line of lines) {
-    const trimmedLine = line.trim()
-
-    if (!trimmedLine) {
-      flushParagraph()
-      flushList()
-      continue
-    }
-
-    const headingMatch = /^(#{1,3})\s+(.+)$/.exec(trimmedLine)
-
-    if (headingMatch) {
-      flushParagraph()
-      flushList()
-      blocks.push({
-        type: 'heading',
-        level: headingMatch[1].length as 1 | 2 | 3,
-        text: headingMatch[2],
-      })
-      continue
-    }
-
-    if (trimmedLine.startsWith('- ')) {
-      flushParagraph()
-      listItems.push(trimmedLine.slice(2))
-      continue
-    }
-
-    flushList()
-    paragraph.push(trimmedLine)
-  }
-
-  flushParagraph()
-  flushList()
-
-  return blocks
+    return (
+      <Link
+        href={href}
+        color="var(--accent-300)"
+        textDecoration="underline"
+        textUnderlineOffset="3px"
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noreferrer' : undefined}
+      >
+        {children}
+      </Link>
+    )
+  },
+  ul: ({ children }) => (
+    <Box as="ul" pl={6} mb={5} color="var(--text-300)">
+      {children}
+    </Box>
+  ),
+  ol: ({ children }) => (
+    <Box as="ol" pl={6} mb={5} color="var(--text-300)">
+      {children}
+    </Box>
+  ),
+  li: ({ children }) => (
+    <Box as="li" mb={2} lineHeight="1.8">
+      {children}
+    </Box>
+  ),
+  blockquote: ({ children }) => (
+    <Box
+      as="blockquote"
+      borderLeft="3px solid"
+      borderColor="var(--accent-300)"
+      bg="var(--active-nav-bg)"
+      px={5}
+      py={4}
+      mb={5}
+    >
+      {children}
+    </Box>
+  ),
+  pre: ({ children }) => (
+    <Box
+      as="pre"
+      overflowX="auto"
+      bg="var(--media-shell-bg)"
+      border="1px solid"
+      borderColor="var(--line-700)"
+      borderRadius="md"
+      p={4}
+      mb={5}
+    >
+      {children}
+    </Box>
+  ),
+  code: ({ children }) => (
+    <Box as="code" className="code-font" color="var(--text-100)" fontSize="0.9em">
+      {children}
+    </Box>
+  ),
+  img: ({ src, alt }) => (
+    <Image src={src} alt={alt ?? ''} maxW="100%" maxH="560px" objectFit="contain" mx="auto" my={6} />
+  ),
+  hr: () => <Box as="hr" border={0} borderTop="1px solid" borderColor="var(--line-700)" my={8} />,
 }
 
 function MarkdownContent({ content }: { content: string }) {
-  return (
-    <VStack align="stretch" gap={5}>
-      {parseMarkdownBlocks(content).map((block, index) => {
-        if (block.type === 'heading') {
-          return (
-            <Heading
-              key={`${block.type}-${index}`}
-              as={`h${block.level + 1}` as 'h2' | 'h3' | 'h4'}
-              fontSize={block.level === 1 ? { base: '2xl', md: '3xl' } : { base: 'xl', md: '2xl' }}
-              color="var(--text-100)"
-              mt={index === 0 ? 0 : 4}
-            >
-              {block.text}
-            </Heading>
-          )
-        }
-
-        if (block.type === 'list') {
-          return (
-            <Box as="ul" key={`${block.type}-${index}`} pl={5} color="var(--text-300)">
-              {block.items.map((item) => (
-                <Box as="li" key={item} mb={2} lineHeight="1.8">
-                  {item}
-                </Box>
-              ))}
-            </Box>
-          )
-        }
-
-        return (
-          <Text key={`${block.type}-${index}`} color="var(--text-300)" lineHeight="1.9">
-            {block.text}
-          </Text>
-        )
-      })}
-    </VStack>
-  )
+  return <ReactMarkdown components={markdownComponents}>{content}</ReactMarkdown>
 }
 
 function JournalPostPage({ slug }: JournalPostPageProps) {
@@ -155,7 +151,25 @@ function JournalPostPage({ slug }: JournalPostPageProps) {
           </ContentCard>
         ) : (
           <ContentCard p={0} overflow="hidden" data-testid="journal-post-page">
-            <Image src={post.image} alt={post.imageAlt} w="100%" h={{ base: '220px', md: '340px' }} objectFit="cover" />
+            <Box
+              w="100%"
+              aspectRatio={16 / 9}
+              overflow="hidden"
+              bg="var(--media-shell-bg)"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Image
+                src={post.image}
+                alt={post.imageAlt}
+                w="100%"
+                h="100%"
+                objectFit="contain"
+                data-image-fit="contain"
+                data-testid="journal-post-image"
+              />
+            </Box>
             <VStack align="stretch" gap={6} p={{ base: 6, md: 8 }}>
               <HStack justify="space-between" align="start" gap={3} flexWrap="wrap">
                 <Text className="code-font" color="var(--text-300)" fontSize="xs">

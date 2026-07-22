@@ -93,7 +93,14 @@ function Hero() {
               <Text className="code-font" fontSize={{ base: 'sm', md: 'md' }} color="var(--text-300)">
                 {hero.eyebrow}
               </Text>
-              <Heading as="h1" fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }} lineHeight="1.05" color="var(--text-100)">
+              <Heading
+                as="h1"
+                tabIndex={-1}
+                data-chapter-heading
+                fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
+                lineHeight="1.05"
+                color="var(--text-100)"
+              >
                 {renderHeadline()}
               </Heading>
             </VStack>
@@ -118,11 +125,11 @@ function Hero() {
             <HStack gap={3} pt={2} flexWrap="wrap" justify="center" w="100%">
               <Button
                 onClick={() => scrollToSection(hero.primaryAction.sectionId)}
-                bg="var(--accent-500)"
-                color="white"
+                bg="var(--primary-bg)"
+                color="var(--primary-text)"
                 border="1px solid"
                 borderColor="rgba(118, 168, 255, 0.6)"
-                _hover={{ bg: 'var(--accent-400)' }}
+                _hover={{ bg: 'var(--primary-hover-bg)' }}
                 aria-label={hero.primaryAction.ariaLabel}
                 data-testid="hero-primary-action"
               >

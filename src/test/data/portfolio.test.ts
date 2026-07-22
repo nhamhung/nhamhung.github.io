@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
-import { portfolio, sectionIds } from './portfolio'
-import type { ExternalLink, SectionId } from '../types/portfolio'
+import { portfolio, sectionIds } from '../../data/portfolio'
+import type { ContentSectionId, ExternalLink, SectionId } from '../../types/portfolio'
 
 const supportedHrefPattern = /^(https?:\/\/|mailto:|#\/)/
 
@@ -21,6 +21,22 @@ const expectKnownSection = (sectionId: SectionId, context: string) => {
 }
 
 describe('src/data/portfolio.ts', () => {
+  it('keeps student-editable copy complete for every non-home section', () => {
+    const contentSectionIds = sectionIds.filter(
+      (sectionId): sectionId is ContentSectionId => sectionId !== 'home',
+    )
+
+    expect(Object.keys(portfolio.sectionContent)).toHaveLength(contentSectionIds.length)
+
+    for (const sectionId of contentSectionIds) {
+      const copy = portfolio.sectionContent[sectionId]
+
+      expectNonEmpty(copy.eyebrow, `src/data/sectionContent.ts ${sectionId}.eyebrow is required`)
+      expectNonEmpty(copy.title, `src/data/sectionContent.ts ${sectionId}.title is required`)
+      expectNonEmpty(copy.description, `src/data/sectionContent.ts ${sectionId}.description is required`)
+    }
+  })
+
   it('keeps required profile and hero fields filled in', () => {
     expectNonEmpty(portfolio.profile.name, 'src/data/profile.ts profile.name is required')
     expectNonEmpty(portfolio.profile.role, 'src/data/profile.ts profile.role is required')
@@ -37,11 +53,16 @@ describe('src/data/portfolio.ts', () => {
   })
 
   it('keeps social links and project actions usable without network checks', () => {
+    const projectIds = new Set<string>()
+
     for (const link of portfolio.profile.socialLinks) {
       expectExternalLink(link, `src/data/profile.ts social link "${link.label}"`)
     }
 
     for (const project of portfolio.projects) {
+      expectNonEmpty(project.id, 'src/data/projects.ts project.id is required')
+      expect(projectIds.has(project.id), `src/data/projects.ts project id "${project.id}" must be unique`).toBe(false)
+      projectIds.add(project.id)
       expectNonEmpty(project.title, 'src/data/projects.ts project.title is required')
       expectNonEmpty(project.description, `src/data/projects.ts project "${project.title}" needs a description`)
       expectNonEmpty(project.logoKey, `src/data/projects.ts project "${project.title}" needs a logo key`)
@@ -125,6 +146,18 @@ describe('src/data/portfolio.ts', () => {
       expectNonEmpty(experience.company, `src/data/experience.ts experience "${experience.title}" needs a company`)
     }
 
+    for (const award of portfolio.awards) {
+      expectNonEmpty(award.title, 'src/data/awards.ts award.title is required')
+      expectNonEmpty(award.organization, `src/data/awards.ts award "${award.title}" needs an organization`)
+      expectNonEmpty(award.year, `src/data/awards.ts award "${award.title}" needs a year`)
+      expectNonEmpty(award.description, `src/data/awards.ts award "${award.title}" needs a description`)
+      expectNonEmpty(award.tag, `src/data/awards.ts award "${award.title}" needs a tag`)
+      expect(
+        Boolean(award.logo?.trim() || award.logoText?.trim()),
+        `src/data/awards.ts award "${award.title}" needs a logo or text mark`,
+      ).toBe(true)
+    }
+
     for (const skillCategory of portfolio.skills) {
       expectNonEmpty(skillCategory.category, 'src/data/skills.ts skill category name is required')
       expect(skillCategory.skills.length, `src/data/skills.ts category "${skillCategory.category}" needs skills`).toBeGreaterThan(0)
@@ -135,5 +168,37 @@ describe('src/data/portfolio.ts', () => {
         expectNonEmpty(skill.logoLabel, `src/data/skills.ts skill "${skill.label}" needs a logo label`)
       }
     }
+  })
+
+  it('includes the resume-backed Sea and PSA internship experience', () => {
+    const seaInternship = portfolio.experience.find(
+      (entry) => entry.title === 'Data Analyst Intern' && entry.company === 'Sea Limited (Shopee Finance)',
+    )
+    const psaInternship = portfolio.experience.find(
+      (entry) =>
+        entry.title === 'Data Analytics and Machine Learning Intern' && entry.company === 'PSA International',
+    )
+
+    expect(seaInternship?.period).toBe('Nov 2021 - May 2022')
+    expect(seaInternship?.description.length).toBeGreaterThanOrEqual(3)
+    expect(psaInternship?.period).toBe('May 2021 - Nov 2021')
+    expect(psaInternship?.description.length).toBeGreaterThanOrEqual(2)
+  })
+
+  it('includes the Saint Andrew\'s and Zhonghua school achievements', () => {
+    const modelStudentAward = portfolio.awards.find(
+      (award) => award.title === 'Model Student Award' && award.organization === "Saint Andrew's Junior College",
+    )
+    const choirAward = portfolio.awards.find(
+      (award) =>
+        award.title === 'Singapore Youth Festival Choir - Silver Award' &&
+        award.organization === 'Zhonghua Secondary School',
+    )
+
+    expect(modelStudentAward).toMatchObject({ year: '2017', tag: 'CHARACTER' })
+    expect(modelStudentAward?.description).toContain('exemplary character')
+    expect(choirAward).toMatchObject({ year: '2015', tag: 'ARTS' })
+    expect(choirAward?.logo).toContain('zhonghua')
+    expect(choirAward?.description).toContain('Singapore Youth Festival')
   })
 })

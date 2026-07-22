@@ -4,7 +4,7 @@ import { Badge, Box, Button, Heading, HStack, SimpleGrid, Text, VStack } from '@
 import ContentCard from './shared/ContentCard'
 import LogoMark from './shared/LogoMark'
 import SectionShell from './shared/SectionShell'
-import { certificates, skills } from '../data/portfolio'
+import { certificates, sectionContent, skills } from '../data/portfolio'
 import type { CertificateEntry, SkillEntry } from '../types/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
 
@@ -69,8 +69,9 @@ function Skills() {
   return (
     <SectionShell
       id="skills"
-      eyebrow="SKILL_MATRIX"
-      title="Technical Skills and Certifications"
+      eyebrow={sectionContent.skills.eyebrow}
+      title={sectionContent.skills.title}
+      intro={sectionContent.skills.description}
       nextSectionId="contact"
     >
       <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap={6} mb={8}>

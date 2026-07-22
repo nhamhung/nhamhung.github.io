@@ -2,65 +2,58 @@
 
 ## Application Packages
 
-- `my-portfolio` - Vite React application that renders and deploys a student portfolio website.
+- `my-portfolio` - React/Vite application that renders a configurable student portfolio and local journal.
 
 ## Infrastructure Packages
 
-- `.github/workflows/deploy.yml` - GitHub Actions workflow for GitHub Pages deployment.
+- `.github/workflows/deploy.yml` - GitHub Actions workflow that builds and deploys the static site to GitHub Pages.
 
 ## Shared Packages
 
-- `src/components/ui` - Chakra UI provider and helper components.
-- `src/assets` - Shared static images, logos, and certificate PDFs.
+- `src/data` - Student-editable typed portfolio and template configuration.
+- `src/types` - Shared data and section contracts.
+- `src/hooks` - Layout and navigation state.
+- `src/utils` - Scroll, route, media, and animation helpers.
+- `src/components/shared` - Reusable section, card, action, and logo primitives.
+- `src/components/ui` - Chakra provider and UI helpers.
+- `src/assets` - Images, logos, resume, and certificate documents.
+- `src/content/journal` - Local Markdown journal bodies.
 
 ## Test Packages
 
-- None detected.
+- `src/App.test.tsx` - Application smoke and route behavior.
+- `src/data/*.test.ts` - Navigation and content validation.
+- `src/hooks/*.test.ts` - Layout helper behavior.
+- `src/templates/*.test.ts` - Template registry completeness and fallback.
 
-## Component Count
+## Total Count
 
-- **Total Source Components**: 14
-- **Portfolio Sections**: 10
-- **UI Helper Components**: 4
-- **Application Entrypoints**: 2
-- **Source CSS Files**: 2
-- **Static Assets**: 21
+- **Total Packages**: 1 application package plus deployment configuration.
+- **Source Files**: 86 files under `src/` at analysis time.
+- **React Components**: 27 TSX files, including tests and the entrypoint.
+- **TypeScript Modules**: 33 TS files, including tests.
+- **Stylesheets**: 2 CSS files.
+- **Bundled Assets and Content**: 24 files, including one Markdown journal post.
+- **Automated Tests**: 5 test files with 23 passing test cases at the latest recorded verification.
 
-## Source Component Inventory
+## User-Facing Components
 
-- `App` - Top-level section orchestration and active section tracking.
-- `Navbar` - Desktop/mobile navigation.
-- `Hero` - First-screen introduction and CTAs.
-- `About` - Personal summary and metrics.
-- `Education` - Education cards.
-- `Experience` - Professional experience timeline.
-- `Awards` - Awards cards.
-- `Projects` - Selected project cards.
-- `Gallery` - Journey image gallery.
-- `Videos` - Educational video embeds.
-- `Skills` - Skill categories and certificate previews.
-- `Contact` - Mailto contact form.
-- `Provider` - Chakra UI app provider.
-- `ColorMode`, `Tooltip`, `Toaster` helpers - Chakra UI support exports.
+- `App` - Template, route, layout, and visible-section orchestration.
+- `Navbar` - Shared desktop/mobile navigation and display controls.
+- `Hero` and `ArtisticHero` - Template-specific introductions and actions.
+- `About` - Biography and metrics.
+- `Education` - Education records.
+- `Experience` - Work and leadership records.
+- `Awards` - Awards and recognitions.
+- `Projects` and `ArtisticProjects` - Template-specific project presentations.
+- `Gallery` and `ArtisticGallery` - Template-specific visual portfolios and previews.
+- `Journal` - Combined in-site and external writing index.
+- `JournalPostPage` - Local writing detail and not-found states.
+- `Skills` - Skill groups and certificates.
+- `Contact` - Mailto contact form and social actions.
 
-## User-Facing Sections
+## Template Differentiation Boundary
 
-- Home
-- About
-- Education
-- Experience
-- Awards
-- Projects
-- Gallery
-- Videos
-- Skills
-- Contact
-
-## Template Customization Hotspots
-
-- Personal identity, roles, and links: `Hero.tsx`, `Navbar.tsx`, `Contact.tsx`
-- Resume-style content: `About.tsx`, `Education.tsx`, `Experience.tsx`, `Awards.tsx`
-- Project showcase: `Projects.tsx`
-- Media and certificates: `Gallery.tsx`, `Videos.tsx`, `Skills.tsx`, `src/assets`
-- Deployment repository path: `vite.config.ts`
-- GitHub Pages workflow: `.github/workflows/deploy.yml`
+- **Currently Template-Specific**: Hero, Projects, Gallery, section shell, and CSS variables.
+- **Currently Shared**: Navbar, App-level section ordering, layout switcher, About, Education, Experience, Awards, Journal, Skills, Contact, and local post detail.
+- **Architectural Constraint**: A template can replace section components but cannot yet replace the Navbar or define a distinct section sequence, section grouping, or page-level interaction model.

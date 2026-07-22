@@ -9,6 +9,7 @@ Use this template to create a personal portfolio with sections for your profile,
 - Your name, headline, location, resume link, contact email, and social links.
 - About, education, experience, awards, projects, gallery, videos, skills, and certificates.
 - In-site journal posts and external blog post links.
+- Portfolio template style: Engineering, Neutral, or Business.
 - Section order and visibility in the navigation.
 - Images, logos, gallery photos, resume PDF, and certificate PDFs.
 - Reusable card/action/section components if you want to extend the layout later.
@@ -19,7 +20,7 @@ Yes. You can edit this web page, but you edit it through the project files, not 
 
 The browser page is a live preview. When you run `npm run dev`, Vite watches the files and refreshes the page after you save changes. Most students should edit content in `src/data/`, write in-site journal posts in `src/content/journal/`, and place files such as images or PDFs in `src/assets/`.
 
-If you want to change the layout, buttons, cards, or visual components, edit files under `src/components/`. Layout changes require more care than content edits, so run the verification commands before publishing.
+If you want to change the layout, edit the matching folder under `src/templates/`. Shared buttons, cards, and section components live under `src/components/`. Layout changes require more care than content edits, so run the verification commands before publishing.
 
 ## Prerequisites
 
@@ -71,35 +72,39 @@ npm run preview
 
 What each command does:
 
-| Command | Purpose |
-|---|---|
-| `npm run test` | Runs lightweight checks for app rendering, navigation config, and portfolio data. |
-| `npm run build` | Checks TypeScript and creates a production build in `dist`. |
-| `npm run lint` | Runs ESLint across the project. |
-| `npm run preview` | Serves the production build locally for a final check. |
+| Command           | Purpose                                                                           |
+| ----------------- | --------------------------------------------------------------------------------- |
+| `npm run test`    | Runs lightweight checks for app rendering, navigation config, and portfolio data. |
+| `npm run build`   | Checks TypeScript and creates a production build in `dist`.                       |
+| `npm run lint`    | Runs ESLint across the project.                                                   |
+| `npm run preview` | Serves the production build locally for a final check.                            |
 
 ## Project Structure
 
-| Path | What To Edit There |
-|---|---|
-| `src/data/profile.ts` | Your name, hero text, contact email, resume, and social links. |
-| `src/data/about.ts` | About section content and highlights. |
-| `src/data/education.ts` | Schools, degrees, coursework, and education dates. |
-| `src/data/experience.ts` | Work, internship, leadership, or volunteer experience. |
-| `src/data/awards.ts` | Awards, honors, and recognitions. |
-| `src/data/projects.ts` | Project cards, descriptions, links, and technologies. |
-| `src/data/gallery.ts` | Gallery image entries. |
-| `src/data/videos.ts` | Video entries and links. |
-| `src/data/skills.ts` | Skill groups and tools. |
-| `src/data/certificates.ts` | Certificate metadata and PDF imports. |
-| `src/data/blog.ts` | External blog links, such as WordPress posts. |
-| `src/data/journalPosts.ts` | In-site journal post metadata and Markdown imports. |
-| `src/data/navigation.ts` | Section order, labels, and visibility. |
-| `src/content/journal/` | Markdown files for journal posts that are published directly inside this site. |
-| `src/types/portfolio.ts` | Shared TypeScript types for portfolio data. Use this as a reference when editing data files. |
-| `src/assets/` | Images, logos, gallery photos, PDFs, and other static files. |
-| `src/assets/documents/` | Resume and other downloadable document files. |
-| `src/components/shared/` | Reusable UI helpers for cards, section shells, and external actions. |
+| Path                       | What To Edit There                                                                           |
+| -------------------------- | -------------------------------------------------------------------------------------------- |
+| `src/data/profile.ts`      | Your name, hero text, contact email, resume, and social links.                               |
+| `src/data/about.ts`        | About section content and highlights.                                                        |
+| `src/data/sectionContent.ts` | Eyebrows, headings, and introductory descriptions for every non-home section.              |
+| `src/data/education.ts`    | Schools, degrees, coursework, and education dates.                                           |
+| `src/data/experience.ts`   | Work, internship, leadership, or volunteer experience.                                       |
+| `src/data/awards.ts`       | Awards, honors, and recognitions.                                                            |
+| `src/data/projects.ts`     | Project cards, descriptions, links, and technologies.                                        |
+| `src/data/gallery.ts`      | Gallery image entries.                                                                       |
+| `src/data/videos.ts`       | Video entries and links.                                                                     |
+| `src/data/skills.ts`       | Skill groups and tools.                                                                      |
+| `src/data/certificates.ts` | Certificate metadata and PDF imports.                                                        |
+| `src/data/blog.ts`         | External blog links, such as WordPress posts.                                                |
+| `src/data/journalPosts.ts` | In-site journal post metadata and Markdown imports.                                          |
+| `src/data/template.ts`     | Choose the portfolio presentation template.                                                  |
+| `src/data/navigation.ts`   | Section order, labels, and visibility.                                                       |
+| `src/content/journal/`     | Markdown files for journal posts that are published directly inside this site.               |
+| `src/types/portfolio.ts`   | Shared TypeScript types for portfolio data. Use this as a reference when editing data files. |
+| `src/assets/`              | Images, logos, gallery photos, PDFs, and other static files.                                 |
+| `src/assets/documents/`    | Resume and other downloadable document files.                                                |
+| `src/components/shared/`   | Reusable UI helpers for cards, section shells, and external actions.                         |
+| `src/templates/`           | Presentation templates that render the shared portfolio data in different visual styles.     |
+| `src/test/`                | Automated tests, kept separate from student-editable content files.                           |
 
 Most students should start with `src/data/profile.ts`, then update the section-specific files under `src/data/`.
 
@@ -118,8 +123,29 @@ Update your display name, short introduction, location, email, resume link, and 
 Edit:
 
 - `src/data/navigation.ts`
+- `src/data/sectionContent.ts`
 
-Use this file to control which sections appear in navigation and how they are ordered. Keep navigation IDs aligned with the matching page sections.
+Use `navigation.ts` to control which sections appear in navigation and how they are ordered. Keep navigation IDs aligned with the matching page sections.
+
+Use `sectionContent.ts` to edit the eyebrow, heading, and introductory description shown below the heading for About, Education, Experience, Awards, Projects, Gallery, Journal, Skills, and Contact. The Home introduction remains in `src/data/profile.ts`.
+
+### Choose A Template Style
+
+Edit:
+
+- `src/data/template.ts`
+
+Choose the structure that best supports the way you want to present your work:
+
+- `engineering`: fixed top navigation, a technical hero, and full-width stacked sections.
+- `neutral`: a full-width magazine masthead, featured cover story, editorial spreads, and project dispatches.
+- `business`: a consulting-report header, sticky numbered contents, evidence registers, and recommendation-style cases.
+
+```ts
+export const selectedTemplateId = "neutral";
+```
+
+All three templates use the same content files. Students do not need to duplicate their profile, projects, gallery, or journal data when switching templates. Template selection happens in the project file; the published page does not show a visitor-facing template switcher.
 
 ### Education, Experience, Awards, Projects, Gallery, Videos, And Skills
 
@@ -149,6 +175,8 @@ For an in-site journal post, add a Markdown file under:
 Then add its title, date, summary, tags, and content import in:
 
 - `src/data/journalPosts.ts`
+
+In-site posts support standard Markdown such as headings, **bold text**, *italics*, links, ordered and unordered lists, quotes, code blocks, and images. Write Markdown directly in the `.md` file; embedded raw HTML is intentionally not rendered.
 
 For an external blog post, update:
 
@@ -192,14 +220,15 @@ For the detailed guide, including URL patterns and troubleshooting, read [DEPLOY
 
 ## Common Local Issues
 
-| Symptom | What To Try |
-|---|---|
-| `npm install` fails | Confirm Node.js is version 20 or newer, then try again. |
-| The dev server does not start | Make sure dependencies are installed with `npm install`. |
-| I changed text in the browser but it disappeared | Edit and save the matching file in `src/data/`, `src/content/journal/`, or `src/components/` instead. The browser is only a preview. |
-| An image or PDF is missing | Check that the file exists in `src/assets/` and that the matching import path is correct. |
-| TypeScript reports a data error | Compare your data file with the matching type in `src/types/portfolio.ts`. |
-| The deployed site has broken assets | Read the base path and troubleshooting sections in `DEPLOYMENT.md`. |
+| Symptom                                                | What To Try                                                                                                                          |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `npm install` fails                                    | Confirm Node.js is version 20 or newer, then try again.                                                                              |
+| The dev server does not start                          | Make sure dependencies are installed with `npm install`.                                                                             |
+| I changed text in the browser but it disappeared       | Edit and save the matching file in `src/data/`, `src/content/journal/`, or `src/components/` instead. The browser is only a preview. |
+| I switched templates but do not see the expected style | Check `src/data/template.ts` and use `engineering`, `neutral`, or `business`, then restart the dev server if needed.                 |
+| An image or PDF is missing                             | Check that the file exists in `src/assets/` and that the matching import path is correct.                                            |
+| TypeScript reports a data error                        | Compare your data file with the matching type in `src/types/portfolio.ts`.                                                           |
+| The deployed site has broken assets                    | Read the base path and troubleshooting sections in `DEPLOYMENT.md`.                                                                  |
 
 ## Tech Stack
 

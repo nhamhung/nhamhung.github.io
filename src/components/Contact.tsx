@@ -6,7 +6,7 @@ import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
 import ContentCard from './shared/ContentCard'
 import ExternalAction from './shared/ExternalAction'
 import SectionShell from './shared/SectionShell'
-import { profile } from '../data/portfolio'
+import { profile, sectionContent } from '../data/portfolio'
 import type { ExternalLink } from '../types/portfolio'
 import { buildMailtoUrl } from '../utils/contact'
 import type { ContactFormInput } from '../utils/contact'
@@ -46,9 +46,9 @@ function Contact() {
   return (
     <SectionShell
       id="contact"
-      eyebrow="CONTACT_INTERFACE"
-      title="Contact Me"
-      intro="Open to discussing backend engineering, data platform work, teaching, and collaborations."
+      eyebrow={sectionContent.contact.eyebrow}
+      title={sectionContent.contact.title}
+      intro={sectionContent.contact.description}
     >
       <ContentCard p={{ base: 5, md: 8 }} className="reveal-up delay-1">
         <form onSubmit={handleSubmit}>
@@ -128,7 +128,7 @@ function Contact() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Tell me what you are building."
+                placeholder="Tell me what you've been up to."
                 required
                 rows={6}
                 resize="vertical"
@@ -146,11 +146,11 @@ function Contact() {
 
             <Button
               type="submit"
-              bg="var(--accent-500)"
-              color="white"
+              bg="var(--primary-bg)"
+              color="var(--primary-text)"
               border="1px solid"
               borderColor="rgba(118, 168, 255, 0.58)"
-              _hover={{ bg: 'var(--accent-400)' }}
+              _hover={{ bg: 'var(--primary-hover-bg)' }}
               data-testid="contact-submit"
             >
               Send Message

@@ -1,102 +1,76 @@
 # AI-DLC State Tracking
 
-## Project Information
-- **Project Type**: Brownfield
-- **Start Date**: 2026-06-08T13:11:07Z
-- **Current Phase**: CONSTRUCTION
-- **Current Stage**: Code Generation Planning - Journal Inline Posts - Awaiting Review
+## Active Workflow
 
-## Workspace State
-- **Existing Code**: Yes
-- **Reverse Engineering Needed**: Yes
-- **Workspace Root**: /Users/nhamhhung/my-portfolio
-- **Application Type**: Single-page portfolio website
-- **Primary Stack**: React, TypeScript, Vite, Chakra UI, Tailwind CSS
+- **Project**: Brownfield React/Vite static portfolio
+- **Workspace**: `/Users/nhamhhung/my-portfolio`
+- **Change**: Neutral and Business Layout Variety
+- **Current phase**: CONSTRUCTION
+- **Current stage**: Code Generation Part 2 - Review Gate
+- **Requirement questions**: `aidlc-docs/inception/requirements/neutral-business-layout-variety-requirement-questions.md`
+- **Requirements**: `aidlc-docs/inception/requirements/neutral-business-layout-variety-requirements.md`
+- **Story assessment**: `aidlc-docs/inception/plans/neutral-business-layout-variety-user-stories-assessment.md`
+- **Story plan**: `aidlc-docs/inception/plans/neutral-business-layout-variety-story-generation-plan.md`
+- **Personas**: `aidlc-docs/inception/user-stories/neutral-business-layout-variety-personas.md`
+- **User stories**: `aidlc-docs/inception/user-stories/neutral-business-layout-variety-stories.md`
+- **Execution plan**: `aidlc-docs/inception/plans/neutral-business-layout-variety-execution-plan.md`
+- **Code plan**: `aidlc-docs/construction/plans/neutral-business-layout-variety-code-generation-plan.md`
+- **Code summary**: `aidlc-docs/construction/neutral-business-layout-variety/code/code-generation-summary.md`
+- **Next action**: Review the aligned Journal overview thumbnails and full post image, then approve continuation to Build and Test
 
-## Code Location Rules
-- **Application Code**: Workspace root (NEVER in aidlc-docs/)
-- **Documentation**: aidlc-docs/ only
-- **Structure patterns**: See code-generation.md Critical Rules
+## Proposed Scope
+
+- Keep exactly three templates: Engineering, Neutral, and Business.
+- Give Neutral and Business more visibly different page structures, navigation patterns, section compositions, and content hierarchy.
+- Preserve Engineering and reuse shared portfolio content, routes, actions, layout modes, and static deployment.
+- Keep each alternative no more complicated to maintain than the Engineering layout unless the requirements answers explicitly expand it.
 
 ## Extension Configuration
-| Extension | Enabled | Decided At |
+
+| Extension | Enabled | Decision |
 |---|---|---|
-| Security Baseline | No | Requirements Analysis |
-| Property-Based Testing | No | Requirements Analysis |
+| Security Baseline | No | Confirmed in Neutral and Business requirements analysis |
+| Property-Based Testing | No | Confirmed in Neutral and Business requirements analysis |
 
-## Stage Progress
-- [x] Workspace Detection - Completed on 2026-06-08T13:11:07Z
-- [x] Reverse Engineering - Completed on 2026-06-08T13:11:07Z
-- [x] Requirements Analysis - Completed on 2026-06-08T13:28:35Z
-- [x] User Stories - Completed on 2026-06-08T14:29:52Z
-- [x] Workflow Planning - Completed on 2026-06-08T14:42:30Z
-- [x] Application Design - Completed on 2026-06-08T15:01:44Z
-- [x] Units Generation - Completed on 2026-06-08T15:37:14Z
-- [x] Functional Design - Template Data And Shared Types completed on 2026-06-09T17:33:57Z
-- [x] NFR Requirements - Template Data And Shared Types completed on 2026-06-12T09:15:49Z
-- [x] NFR Design - Template Data And Shared Types completed on 2026-06-12T10:26:02Z
-- [x] Infrastructure Design - Template Data And Shared Types completed on 2026-06-12T17:01:40Z
-- [x] Code Generation - Template Data And Shared Types completed on 2026-06-13T09:49:16Z
-- [x] Functional Design - Component Refactor And Shared UI Utilities completed on 2026-06-17T18:50:03Z
-- [x] NFR Requirements - Component Refactor And Shared UI Utilities completed on 2026-06-17T19:07:58Z
-- [x] NFR Design - Component Refactor And Shared UI Utilities completed on 2026-06-18T17:30:48Z
-- [x] Infrastructure Design - Component Refactor And Shared UI Utilities completed on 2026-06-20T11:40:02Z
-- [x] Code Generation - Component Refactor And Shared UI Utilities completed on 2026-06-20T17:28:09Z
-- [x] Functional Design - GitHub Pages Deployment Configuration completed on 2026-06-25T05:33:55Z
-- [x] NFR Requirements - GitHub Pages Deployment Configuration completed on 2026-06-25T13:18:50Z
-- [x] NFR Design - GitHub Pages Deployment Configuration completed on 2026-06-25T13:32:43Z
-- [x] Infrastructure Design - GitHub Pages Deployment Configuration completed on 2026-06-25T14:38:35Z
-- [x] Code Generation - GitHub Pages Deployment Configuration completed on 2026-06-25T14:47:07Z
-- [x] Functional Design - Student Documentation completed on 2026-06-25T15:04:11Z
-- [x] NFR Requirements - Student Documentation completed on 2026-06-25T15:35:16Z
-- [x] NFR Design - Student Documentation completed on 2026-06-25T16:12:13Z
-- [x] Infrastructure Design - Student Documentation completed on 2026-06-25T16:26:37Z
-- [x] Code Generation - Student Documentation completed on 2026-06-25T17:58:57Z
-- [x] Functional Design - Lightweight Tests And Verification completed on 2026-06-25T18:18:24Z
-- [x] NFR Requirements - Lightweight Tests And Verification completed on 2026-06-25T18:52:22Z
-- [x] NFR Design - Lightweight Tests And Verification completed on 2026-06-26T17:23:02Z
-- [x] Infrastructure Design - Lightweight Tests And Verification completed on 2026-06-26T18:16:04Z
-- [x] Code Generation - Lightweight Tests And Verification completed on 2026-06-26T18:24:54Z
-- [x] Build and Test completed on 2026-06-27T06:09:05Z
-- [x] Requirements Analysis - Multi-Page Layout Switcher completed on 2026-06-27T11:40:04Z
-- [x] User Stories - Multi-Page Layout Switcher completed on 2026-06-27T12:04:28Z
-- [x] Workflow Planning - Multi-Page Layout Switcher completed on 2026-06-27T12:13:48Z
-- [x] Application Design - Multi-Page Layout Switcher completed on 2026-06-27T16:10:58Z
-- [x] Units Generation - Multi-Page Layout Switcher completed on 2026-06-27T17:36:49Z
-- [x] Functional Design - Multi-Page Layout Switcher completed on 2026-06-27T18:29:21Z
-- [x] NFR Requirements - Multi-Page Layout Switcher completed on 2026-06-28T01:26:59Z
-- [x] NFR Design - Multi-Page Layout Switcher completed on 2026-06-28T08:54:03Z
-- [x] Code Generation - Blog Section completed on 2026-06-29T15:03:43Z
-- [x] Requirements Analysis - Journal Inline Posts completed on 2026-07-02T17:09:04Z
-- [x] User Stories - Journal Inline Posts completed on 2026-07-02T17:17:00Z
-- [x] Workflow Planning - Journal Inline Posts completed on 2026-07-02T18:02:32Z
-- [x] Application Design - Journal Inline Posts completed on 2026-07-02T18:02:32Z
-- [x] Units Generation - Journal Inline Posts completed on 2026-07-02T18:05:25Z
-- [x] Functional Design - Journal Inline Posts completed on 2026-07-03T16:15:53Z
-- [x] Code Generation Planning - Journal Inline Posts completed on 2026-07-03T17:11:40Z
-- [ ] Code Generation - Journal Inline Posts awaiting review
+## Active Stage Progress
 
-## Reverse Engineering Status
-- [x] Reverse Engineering - Completed on 2026-06-08T13:11:07Z
-- **Artifacts Location**: aidlc-docs/inception/reverse-engineering/
+- [x] Workspace Detection - Reused current brownfield context
+- [x] Reverse Engineering - Reused existing architecture and component inventory
+- [x] Requirements Analysis - Approved on 2026-07-20
+- [x] User Stories - Approved on 2026-07-20
+- [x] Workflow Planning - Approved on 2026-07-20
+- [x] Application Design - Skipped; existing template contracts are sufficient
+- [x] Units Planning and Generation - Skipped; one cohesive UI unit
+- [x] Functional Design - Skipped; no new business logic
+- [x] NFR Requirements and Design - Skipped; approved requirements and existing patterns are sufficient
+- [x] Infrastructure Design - Skipped; no infrastructure changes
+- [x] Code Generation Part 1 - Approved on 2026-07-20
+- [ ] Code Generation Part 2 - Local journal overview thumbnail refinement complete; manual responsive review and approval pending
+- [ ] Build and Test - Execute after code generation
 
-## Execution Plan Summary
-- **Total Remaining Stages Before Operations Placeholder**: 8
-- **Stages to Execute**: Application Design, Units Generation, Functional Design, NFR Requirements, NFR Design, Code Generation, Build and Test
-- **Stages to Skip**: Infrastructure Design
+## Reused Foundation
 
-## Current Status
-- **Lifecycle Phase**: CONSTRUCTION
-- **Current Stage**: Code Generation - Journal Inline Posts - Awaiting Review
-- **Next Stage**: Build and Test after code generation approval
-- **Status**: Code generated and verified; awaiting user review and approval
+- ATR-U1 Template Shell and Configuration Foundation completed and approved.
+- App owns browser hash, active section, journal route, and layout state.
+- Template definitions provide Shell, journal, chapter labels, and section maps.
+- Engineering regression, route, focus, data, lint, and build baselines were green at ATR-U1 completion.
 
-## Active Change Request
-- **Name**: Journal Inline Posts
-- **Started**: 2026-07-02T16:53:32Z
-- **User Request**: Enhance Journal to include local in-site blog posts so students without WordPress or another external site can maintain journals directly in the portfolio.
-- **Classification**: Brownfield user-facing feature
-- **Recommended Next Step**: Review generated Journal Inline Posts code and approve Code Generation
+## Superseded Scope
 
-## Deferred Scope Notes
-- **Multi-page layout conversion button**: User requested a button to automatically convert the current single landing page design into a stunning multi-page layout. This is a new user-facing feature and should be planned as a separate AI-DLC change after the current lightweight testing unit, unless the user explicitly asks to pause Unit 5 and re-scope the project.
+- The proposed fourth Stylish Artistic Template was withdrawn during requirements analysis before design or implementation.
+- The original Artistic Exhibition ATR-U2/ATR-U3 direction is closed without ATR-U2 application-code generation.
+- Horizontal rails, parallax, full-screen visual index expansion, and bespoke motion systems must not drive the active implementation.
+- Superseded artifacts remain historical and are not active instructions.
+
+## Documentation Controls
+
+- Active index: `aidlc-docs/README.md`.
+- Update active artifacts instead of creating duplicate revisions.
+- Keep only mandatory stage artifacts plus concise implementation and verification evidence.
+- Keep `audit.md` append-only and complete.
+
+## Historical Summary
+
+- The Three Template Portfolio Simplification delivered and verified Engineering, Neutral, and Business, including the later Neutral and Business visual-quality revisions. Its final Build and Test documentation gate was overtaken by this additive request; its green test, lint, TypeScript, and build evidence remains the baseline for the new workflow.
+- Earlier workflows delivered shared data, component utilities, deployment configuration, student documentation, layout modes, local journal posts, and initial template support.
+- The complete chronological record remains in `aidlc-docs/audit.md`.

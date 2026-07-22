@@ -4,113 +4,135 @@
 
 - **Type**: npm scripts with Vite and TypeScript project references.
 - **Configuration**:
-  - `package.json` defines `dev`, `build`, `lint`, and `preview`.
-  - `vite.config.ts` configures React SWC, Tailwind CSS, TypeScript paths, and `base: '/my-portfolio/'`.
-  - `tsconfig.app.json` uses strict TypeScript checks for app code.
-  - `eslint.config.ts` configures ESLint recommended, TypeScript recommended, React recommended, and Prettier compatibility.
-  - `.github/workflows/deploy.yml` deploys `dist/` to GitHub Pages.
+  - `package.json` defines `dev`, `test`, `build`, `lint`, and `preview`.
+  - `vite.config.ts` configures React SWC, Tailwind CSS, TypeScript paths, Vitest, and an environment-driven base path.
+  - `tsconfig.app.json` enables strict TypeScript checks for application and test code.
+  - `eslint.config.ts` configures base JavaScript, TypeScript, React, and Prettier compatibility.
+  - `.github/workflows/deploy.yml` derives the GitHub Pages base path and deploys `dist/`.
 
 ## Module Hierarchy
 
 ```mermaid
 flowchart TD
     Main["src/main.tsx"]
-    Provider["src/components/ui/provider.tsx"]
-    App["src/App.tsx"]
-    Navbar["Navbar"]
-    Sections["Portfolio Sections"]
-    Assets["src/assets"]
+    Provider["UI Provider"]
+    App["App Shell"]
+    Navbar["Shared Navbar"]
+    Registry["Template Registry"]
+    Templates["Engineering and Artistic Templates"]
+    Sections["Section Components"]
+    Hooks["Layout Hook"]
+    Utils["Scroll, Journal, Media, and Animation Utilities"]
+    Data["Typed Data Modules"]
+    Content["Journal Markdown"]
+    Assets["Static Assets"]
 
     Main --> Provider
     Provider --> App
     App --> Navbar
-    App --> Sections
-    Sections --> Assets
+    App --> Registry
+    App --> Hooks
+    Registry --> Templates
+    Templates --> Sections
+    Sections --> Data
+    Sections --> Utils
+    Data --> Content
+    Data --> Assets
 ```
 
 ### Text Alternative
 
-`main.tsx` mounts the Chakra provider and `App`. `App` renders `Navbar` and each portfolio section. Section components import local assets directly.
+`main.tsx` mounts the provider and App. App uses the shared Navbar, layout hook, and template registry. Templates map section IDs to section components. Components consume typed data and utilities; data modules import journal Markdown and static assets.
 
 ## Existing Files Inventory
 
-- `src/main.tsx` - React entrypoint that mounts `App` inside Chakra provider and React strict mode.
-- `src/App.tsx` - Application shell, section ordering, active section tracking.
-- `src/App.css` - Shared animation and engineering-grid styles.
-- `src/index.css` - Global CSS imports, CSS variables, base document styles, font class.
-- `src/components/Navbar.tsx` - Fixed navigation bar, mobile drawer, smooth scroll navigation.
-- `src/components/Hero.tsx` - Hero section, profile image, headline, CTA buttons, social links.
-- `src/components/About.tsx` - About text and summary metrics.
-- `src/components/Education.tsx` - Education timeline/cards with institution logos.
-- `src/components/Experience.tsx` - Professional experience timeline.
-- `src/components/Awards.tsx` - Awards and achievements cards.
-- `src/components/Projects.tsx` - Project cards with external repository/demo links.
-- `src/components/Gallery.tsx` - Image gallery with modal preview.
-- `src/components/Videos.tsx` - YouTube video embeds and external watch links.
-- `src/components/Skills.tsx` - Skills, certificate metadata, certificate previews, modal PDF viewer.
-- `src/components/Contact.tsx` - Contact form that generates a mailto URL and social links.
-- `src/components/ui/provider.tsx` - Chakra UI provider wrapper.
-- `src/components/ui/color-mode.tsx` - Chakra color mode helpers.
-- `src/components/ui/tooltip.tsx` - Chakra tooltip helper.
-- `src/components/ui/toaster.tsx` - Chakra toaster helper.
-- `src/assets/*` - Local images, logos, and PDF certificate assets.
-- `.github/workflows/deploy.yml` - GitHub Pages deployment automation.
-- `README.md` - Current project setup and overview.
-- `DEPLOYMENT.md` - Current GitHub Pages deployment guide.
+### Application and Styling
+- `src/main.tsx` - React entrypoint and provider mount.
+- `src/App.tsx` - Template, navigation, layout, and journal route orchestration.
+- `src/App.css` - Template-scoped variables, backgrounds, and shared animations.
+- `src/index.css` - Global variables, document styles, font import, and color mode values.
+
+### Templates
+- `src/data/template.ts` - Student-editable active template selection.
+- `src/templates/types.ts` - Template ID and complete section-map contract.
+- `src/templates/index.ts` - Registry, active template resolution, and fallback.
+- `src/templates/engineering/index.ts` - Engineering section mapping.
+- `src/templates/artistic/index.ts` - Artistic section mapping.
+- `src/templates/artistic/ArtisticHero.tsx` - Artistic first viewport.
+- `src/templates/artistic/ArtisticProjects.tsx` - Editorial project studies.
+- `src/templates/artistic/ArtisticGallery.tsx` - Artistic image collection and modal.
+- `src/templates/artistic/ArtisticSectionShell.tsx` - Artistic section framing.
+
+### Shared and Baseline Components
+- `src/components/Navbar.tsx` - Shared fixed desktop/mobile navigation, layout switch, and color mode control.
+- `src/components/Hero.tsx` - Engineering hero.
+- `src/components/About.tsx` - Biography and metrics.
+- `src/components/Education.tsx` - Education records.
+- `src/components/Experience.tsx` - Experience timeline.
+- `src/components/Awards.tsx` - Awards and recognitions.
+- `src/components/Projects.tsx` - Engineering project cards.
+- `src/components/Gallery.tsx` - Engineering media gallery and preview.
+- `src/components/Journal.tsx` - Combined local and external writing cards.
+- `src/components/JournalPostPage.tsx` - Local post detail and not-found states.
+- `src/components/Skills.tsx` - Skills and certificate previews.
+- `src/components/Contact.tsx` - Contact form and social actions.
+- `src/components/shared/*` - Shared section, card, action, and logo primitives.
+- `src/components/ui/*` - Chakra provider, color mode, tooltip, and toaster helpers.
+
+### Data, Content, Types, and Utilities
+- `src/data/*.ts` - Typed student-editable profile, navigation, career, project, media, writing, skill, certificate, and template configuration.
+- `src/content/journal/*.md` - Local journal article bodies.
+- `src/types/portfolio.ts` - Shared content and section contracts.
+- `src/hooks/usePortfolioLayout.ts` - Layout persistence, hash parsing, and section navigation.
+- `src/utils/scroll.ts` - Enabled-navigation filtering, active-section tracking, and smooth scrolling.
+- `src/utils/journal.ts` - Local journal route creation and parsing.
+- `src/utils/media.ts` - YouTube URL helpers.
+- `src/utils/animation.ts` - Staggered reveal class selection.
+
+### Tests and Delivery
+- `src/App.test.tsx` - App rendering, layout mode, navigation, and journal route smoke tests.
+- `src/data/navigation.test.ts` - Section/navigation configuration tests.
+- `src/data/portfolio.test.ts` - Portfolio content and link validation tests.
+- `src/hooks/usePortfolioLayout.test.ts` - Layout helper tests.
+- `src/templates/templateRegistry.test.ts` - Template resolution and section completeness tests.
+- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow.
+- `README.md` - Student customization and publishing manual.
+- `DEPLOYMENT.md` - Detailed deployment guidance.
 
 ## Design Patterns
 
-### Section Component Pattern
-- **Location**: `src/components/*.tsx`.
-- **Purpose**: Keep each portfolio area isolated as a React function component.
-- **Implementation**: Each section renders a root `Box` with a stable `id`, shared classes, Chakra layout primitives, and local arrays for repeatable content.
+### Registry and Strategy Pattern
+- **Location**: `src/templates/`.
+- **Purpose**: Swap presentation while preserving one content model.
+- **Implementation**: Each `PortfolioTemplate` supplies a `Record<SectionId, ComponentType>` and the registry resolves the configured ID.
 
-### Data-Driven Card Rendering
-- **Location**: `Experience.tsx`, `Education.tsx`, `Awards.tsx`, `Projects.tsx`, `Gallery.tsx`, `Videos.tsx`, `Skills.tsx`.
-- **Purpose**: Render repeated cards from arrays.
-- **Implementation**: Arrays are declared inside or near components and mapped into Chakra UI cards.
+### Typed Content Configuration
+- **Location**: `src/data/` and `src/types/portfolio.ts`.
+- **Purpose**: Let students edit content without modifying presentation logic.
+- **Implementation**: Section data uses `satisfies` against shared TypeScript types and is aggregated by `portfolio.ts`.
 
-### Static Asset Imports
-- **Location**: Section components and `Skills.tsx`.
-- **Purpose**: Let Vite resolve hashed production asset URLs.
-- **Implementation**: Direct imports for images; `import.meta.glob` for certificate PDFs.
+### Hash-Routed Static Navigation
+- **Location**: `src/hooks/usePortfolioLayout.ts`, `src/utils/journal.ts`, and `src/App.tsx`.
+- **Purpose**: Support direct links and multiple layout modes on GitHub Pages without a server router.
+- **Implementation**: Anchor hashes represent single-page sections; `#/section` and `#/journal/slug` represent routed views.
 
-### Mailto Contact Pattern
-- **Location**: `Contact.tsx`.
-- **Purpose**: Avoid backend infrastructure while still offering a contact form.
-- **Implementation**: Form state is encoded into a `mailto:` URL on submit.
+### Shared Section and Action Primitives
+- **Location**: `src/components/shared/`.
+- **Purpose**: Keep recurring layout, links, logos, and accessibility behavior consistent.
+- **Implementation**: Shared React components receive typed props and CSS-variable styling.
 
 ## Critical Dependencies
 
-### React
-- **Version**: 19.2.0.
-- **Usage**: Component rendering and state/effect hooks.
-- **Purpose**: Main UI framework.
-
-### Vite
-- **Version**: 7.2.4.
-- **Usage**: Development server, bundling, asset handling, production build.
-- **Purpose**: Static frontend build system.
-
-### Chakra UI
-- **Version**: 3.30.0.
-- **Usage**: Layout, responsive props, buttons, drawer, dialog, form controls, badges.
-- **Purpose**: Component primitives and styling system.
-
-### Tailwind CSS
-- **Version**: 4.1.18.
-- **Usage**: Imported in global CSS and configured through Vite plugin.
-- **Purpose**: Utility CSS support, though most visible styling currently uses Chakra props and custom CSS variables.
-
-### React Icons
-- **Version**: 5.5.0.
-- **Usage**: Social, navigation, arrow, and external-link icons.
-- **Purpose**: Icon rendering.
+- **React 19.2.0** - Component rendering, state, effects, and hooks.
+- **Chakra UI 3.30.0** - Responsive primitives, controls, drawers, dialogs, and styling props.
+- **Vite 7.2.4** - Development server, asset handling, testing integration, and production bundling.
+- **Vitest 4.1.9 and Testing Library 16.3.2** - Unit and DOM behavior tests.
+- **React Icons 5.5.0** - Navigation, action, social, and status iconography.
 
 ## Maintainability Risks
 
-- Student-editable data is mixed with JSX, increasing the chance of breaking layout while changing content.
-- Repeated scroll helpers and section IDs can drift out of sync.
-- The fixed `base` path requires manual edits for every fork unless made configurable.
-- README includes Vite starter text that can distract template users.
-- There are no tests for rendering, navigation links, or deployment configuration.
+- The template contract only varies section components; the shared Navbar and App-level layout behavior cannot yet differ by template.
+- The artistic template still reuses most engineering section components, limiting visual and interaction differentiation.
+- `SectionId` and `sectionIds` are maintained separately and require tests to prevent drift.
+- There are two ESLint configuration files, which can confuse contributors about the active configuration.
+- Animation classes are CSS-driven and do not yet centralize reduced-motion behavior for template-specific interactions.

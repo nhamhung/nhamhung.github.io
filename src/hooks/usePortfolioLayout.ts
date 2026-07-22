@@ -58,6 +58,8 @@ export const createAnchorHash = (sectionId: SectionId): string => `#${sectionId}
 
 export const isMultiPageHash = (hash: string): boolean => hash.startsWith('#/')
 
+export const isMultiPageSectionHash = (hash: string): boolean => /^#\/[^/]+$/.test(hash)
+
 export const resolveSectionId = (
   sectionId: string | null | undefined,
   enabledSectionIds: readonly SectionId[],
@@ -89,6 +91,7 @@ const updateBrowserHash = (hash: string): void => {
   }
 
   window.history.pushState(null, '', hash)
+  window.dispatchEvent(new PopStateEvent('popstate'))
 }
 
 export type PortfolioLayoutState = {
@@ -113,7 +116,7 @@ export const usePortfolioLayout = (
   )
 
   const [layoutMode, setLayoutMode] = useState<LayoutMode>(() => {
-    if (canUseBrowser() && isMultiPageHash(window.location.hash) && initialHashSection) {
+    if (canUseBrowser() && isMultiPageSectionHash(window.location.hash)) {
       return 'multi'
     }
 
@@ -126,21 +129,20 @@ export const usePortfolioLayout = (
 
   useEffect(() => {
     const handleHashChange = () => {
-      const hashSection = parseSectionHash(window.location.hash, enabledSectionIds)
+      if (!isMultiPageSectionHash(window.location.hash)) return
 
-      if (!hashSection || !isMultiPageHash(window.location.hash)) {
-        return
-      }
+      const hashSection = parseSectionHash(window.location.hash, enabledSectionIds)
+      const resolvedSection = hashSection ?? fallbackSectionId
 
       setLayoutMode('multi')
       writeStoredLayoutMode('multi')
-      setActivePageSection(hashSection)
+      setActivePageSection(resolvedSection)
     }
 
     window.addEventListener('hashchange', handleHashChange)
 
     return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [enabledSectionIds])
+  }, [enabledSectionIds, fallbackSectionId])
 
   const navigateToSection = useCallback(
     (sectionId: SectionId) => {

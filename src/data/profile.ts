@@ -44,8 +44,8 @@ export const hero = {
   intro: profile.summary,
   stats: [
     { value: '4+ Years', label: 'Experience' },
-    { value: 'Data + Backend', label: 'Focus' },
-    { value: 'End-to-End', label: 'Coverage' },
+    { value: 'Data + Teaching', label: 'Focus' },
+    { value: 'Everything Data-related', label: 'Coverage' },
   ],
   primaryAction: {
     label: 'View Projects',

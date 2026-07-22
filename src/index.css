@@ -14,6 +14,9 @@
   --accent-400: #45a2ff;
   --accent-500: #2280eb;
   --accent-300: #62f0d5;
+  --primary-bg: #176fc3;
+  --primary-hover-bg: #1b75cc;
+  --primary-text: #ffffff;
   --page-glow-primary: rgba(36, 132, 255, 0.22);
   --page-glow-secondary: rgba(98, 240, 213, 0.12);
   --nav-bg: rgba(4, 12, 24, 0.64);
@@ -61,6 +64,9 @@
   --accent-400: #155db5;
   --accent-500: #0f4fa3;
   --accent-300: #006f63;
+  --primary-bg: #0f4fa3;
+  --primary-hover-bg: #155db5;
+  --primary-text: #ffffff;
   --page-glow-primary: rgba(42, 126, 218, 0.14);
   --page-glow-secondary: rgba(5, 125, 112, 0.09);
   --nav-bg: rgba(255, 255, 255, 0.86);

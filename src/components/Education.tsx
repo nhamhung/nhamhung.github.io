@@ -2,12 +2,18 @@ import { Box, Heading, Image, Text, VStack } from '@chakra-ui/react'
 
 import ContentCard from './shared/ContentCard'
 import SectionShell from './shared/SectionShell'
-import { education } from '../data/portfolio'
+import { education, sectionContent } from '../data/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
 
 function Education() {
   return (
-    <SectionShell id="education" eyebrow="EDU_TIMELINE" title="Education" nextSectionId="experience">
+    <SectionShell
+      id="education"
+      eyebrow={sectionContent.education.eyebrow}
+      title={sectionContent.education.title}
+      intro={sectionContent.education.description}
+      nextSectionId="experience"
+    >
         <VStack align="stretch" gap={6}>
           {education.map((edu, index) => (
             <ContentCard

@@ -4,16 +4,16 @@ import ContentCard from './shared/ContentCard'
 import ExternalAction from './shared/ExternalAction'
 import LogoMark from './shared/LogoMark'
 import SectionShell from './shared/SectionShell'
-import { projects } from '../data/portfolio'
+import { projects, sectionContent } from '../data/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
 
 function Projects() {
   return (
     <SectionShell
       id="projects"
-      eyebrow="BUILD_LOGS"
-      title="Selected Projects"
-      intro="A mix of learning systems and engineering outputs focused on practical implementation, sharing, and measurable outcomes."
+      eyebrow={sectionContent.projects.eyebrow}
+      title={sectionContent.projects.title}
+      intro={sectionContent.projects.description}
       nextSectionId="gallery"
     >
         <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap={6}>

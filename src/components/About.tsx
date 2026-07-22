@@ -2,12 +2,18 @@ import { Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 
 import ContentCard from './shared/ContentCard'
 import SectionShell from './shared/SectionShell'
-import { about } from '../data/portfolio'
+import { about, sectionContent } from '../data/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
 
 function About() {
   return (
-    <SectionShell id="about" eyebrow={about.eyebrow} title={about.title} intro={about.intro} nextSectionId="education">
+    <SectionShell
+      id="about"
+      eyebrow={sectionContent.about.eyebrow}
+      title={sectionContent.about.title}
+      intro={sectionContent.about.description}
+      nextSectionId="education"
+    >
         <VStack align="stretch" gap={5} mb={8}>
           {about.paragraphs.map((paragraph, index) => (
             <ContentCard key={paragraph} className={`reveal-up ${getAnimationDelayClass(index)}`}>

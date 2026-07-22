@@ -2,12 +2,18 @@ import { Badge, Box, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
 
 import ContentCard from './shared/ContentCard'
 import SectionShell from './shared/SectionShell'
-import { awards } from '../data/portfolio'
+import { awards, sectionContent } from '../data/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
 
 function Awards() {
   return (
-    <SectionShell id="awards" eyebrow="ACHIEVEMENT_LOG" title="Awards and Achievements" nextSectionId="projects">
+    <SectionShell
+      id="awards"
+      eyebrow={sectionContent.awards.eyebrow}
+      title={sectionContent.awards.title}
+      intro={sectionContent.awards.description}
+      nextSectionId="projects"
+    >
         <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap={6}>
           {awards.map((award, index) => (
             <ContentCard
@@ -31,7 +37,27 @@ function Awards() {
                   border="1px solid"
                   borderColor="rgba(69, 162, 255, 0.36)"
                 >
-                  <Image src={award.logo} alt={`${award.organization} logo`} w="100%" h="100%" objectFit="contain" />
+                  {award.logo ? (
+                    <Image
+                      src={award.logo}
+                      alt={`${award.organization} logo`}
+                      w="100%"
+                      h="100%"
+                      objectFit="contain"
+                    />
+                  ) : (
+                    <Text
+                      role="img"
+                      aria-label={`${award.organization} mark`}
+                      className="code-font"
+                      color="var(--accent-300)"
+                      fontSize="xs"
+                      fontWeight={800}
+                      textAlign="center"
+                    >
+                      {award.logoText}
+                    </Text>
+                  )}
                 </Box>
                 <Badge
                   className="code-font"

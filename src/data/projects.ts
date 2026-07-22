@@ -2,6 +2,7 @@ import type { ProjectEntry } from '../types/portfolio'
 
 export const projects = [
   {
+    id: 'coursework-certificates',
     title: 'Coursework and Certificates',
     description:
       'A curated academic archive covering everything I have learnt over the years.',
@@ -23,6 +24,7 @@ export const projects = [
     ],
   },
   {
+    id: 'program-analyzer',
     title: 'Program Analyzer',
     description:
       "A C++ static program analyzer built to answer developers' queries about source-code relationships.",
@@ -44,6 +46,7 @@ export const projects = [
     ],
   },
   {
+    id: 'java-resume-application',
     title: 'Java Resume Application',
     description:
       'A Java desktop application for managing, customizing, and exporting resume versions from a centralized command-line workflow.',

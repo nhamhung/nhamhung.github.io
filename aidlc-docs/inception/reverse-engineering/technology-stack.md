@@ -2,56 +2,48 @@
 
 ## Programming Languages
 
-- **TypeScript** - App code and Vite configuration.
-- **TSX** - React component templates.
-- **CSS** - Global styles, CSS variables, animations.
-- **YAML** - GitHub Actions workflow.
+- **TypeScript 5.9.3** - Application, configuration, data models, and tests.
+- **TSX** - React components and DOM tests.
+- **CSS** - Global and template-scoped visual systems and animations.
+- **Markdown** - Local journal article content and project documentation.
+- **YAML** - GitHub Actions deployment workflow.
 
 ## Frameworks and Libraries
 
-- **React 19.2.0** - Component model, rendering, hooks.
+- **React 19.2.0** - Component rendering and hooks.
 - **React DOM 19.2.0** - Browser rendering.
-- **Chakra UI 3.30.0** - Component primitives and responsive styling.
-- **Emotion React 11.14.0** - Styling dependency used by Chakra UI.
-- **next-themes 0.4.6** - Theme/color mode support.
-- **React Icons 5.5.0** - Icon components.
-- **Tailwind CSS 4.1.18** - Global utility CSS layer imported through `src/index.css`.
+- **Chakra UI 3.30.0** - Responsive UI primitives and interactions.
+- **Emotion React 11.14.0** - Chakra styling dependency.
+- **next-themes 0.4.6** - Color mode support.
+- **React Icons 5.5.0** - Interface and social icons.
+- **Tailwind CSS 4.1.18** - Utility CSS layer integrated through Vite.
 
 ## Build Tools
 
-- **Vite 7.2.4** - Dev server and production bundler.
-- **@vitejs/plugin-react-swc 4.2.2** - React Fast Refresh and SWC compilation.
-- **@tailwindcss/vite 4.1.18** - Tailwind Vite integration.
-- **vite-tsconfig-paths 6.0.3** - TypeScript path alias support.
-- **TypeScript 5.9.3** - Type checking and project references.
+- **Vite 7.2.4** - Development server, static build, asset processing, and test configuration.
+- **React SWC Plugin 4.2.2** - React compilation and fast refresh.
+- **TypeScript Paths Plugin 6.0.3** - Vite path alias resolution.
 - **npm** - Dependency and script runner.
 
-## Quality Tools
+## Testing and Quality Tools
 
-- **ESLint 9.39.2** - Linting.
-- **typescript-eslint 8.51.0** - TypeScript lint rules.
-- **eslint-plugin-react 7.37.5** - React lint rules.
-- **eslint-plugin-react-hooks 7.0.1** - React hooks lint package is installed but not currently wired into the config.
-- **eslint-plugin-react-refresh 0.4.24** - React refresh lint package is installed but not currently wired into the config.
+- **Vitest 4.1.9** - Unit and DOM test runner.
+- **Testing Library React 16.3.2** - User-oriented React rendering and interaction tests.
+- **jest-dom 6.9.1** - DOM assertions.
+- **jsdom 29.1.1** - Browser-like test environment.
+- **ESLint 9.39.2** - Static analysis.
+- **typescript-eslint 8.51.0** - TypeScript lint support.
 - **Prettier 3.7.4** - Formatting.
-- **eslint-config-prettier 10.1.8** - Disables conflicting formatting lint rules.
 
 ## Infrastructure
 
-- **GitHub Pages** - Static website hosting.
-- **GitHub Actions** - Build and deploy automation.
-- **Node.js 20** - CI runtime in `.github/workflows/deploy.yml`.
+- **GitHub Pages** - Static production hosting.
+- **GitHub Actions** - Build and deployment automation.
+- **Node.js 20** - CI runtime and documented minimum for students.
 
 ## Runtime Model
 
-- Static files only.
-- No backend process.
-- No database.
-- No secrets required for normal deployment beyond GitHub Pages permissions.
-
-## Browser Integrations
-
-- YouTube iframe embeds.
-- Mailto link generation.
-- External links to GitHub, LinkedIn, WordPress, and YouTube.
-- Google Fonts CSS import.
+- Static browser application only.
+- No backend, database, authentication, or runtime secrets.
+- Hash-based client navigation is compatible with GitHub Pages.
+- Local content and assets are bundled by Vite; external media and links remain third-party dependencies.

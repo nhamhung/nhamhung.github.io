@@ -4,91 +4,60 @@
 
 ```mermaid
 flowchart TD
-    Main["src/main.tsx"]
-    Provider["ui/provider.tsx"]
-    App["src/App.tsx"]
-    Navbar["Navbar.tsx"]
-    Sections["Section Components"]
-    Assets["src/assets"]
-    Styles["src/index.css and src/App.css"]
+    Main["main.tsx"]
+    Provider["UI Provider"]
+    App["App Shell"]
+    Registry["Template Registry"]
+    Templates["Template Definitions"]
+    Components["Section Components"]
+    Hooks["Layout Hook"]
+    Data["Typed Data"]
+    Utils["Shared Utilities"]
+    Content["Journal Content"]
+    Assets["Static Assets"]
 
     Main --> Provider
     Provider --> App
-    App --> Navbar
-    App --> Sections
-    Sections --> Assets
-    Main --> Styles
+    App --> Registry
+    App --> Hooks
+    Registry --> Templates
+    Templates --> Components
+    Components --> Data
+    Components --> Utils
+    Data --> Content
+    Data --> Assets
 ```
 
 ### Text Alternative
 
-`main.tsx` depends on provider, app, and global styles. `App.tsx` depends on navigation and all section components. Section components depend on local images and PDFs.
+The entrypoint mounts the UI provider and App. App resolves the registry and layout hook. The registry loads template definitions; templates select section components. Components consume typed data and utilities, while data modules import local content and assets.
 
-### `src/main.tsx` depends on `src/App.tsx`
-- **Type**: Runtime.
-- **Reason**: Mounts the application.
+### Key Internal Relationships
 
-### `src/main.tsx` depends on `src/components/ui/provider.tsx`
-- **Type**: Runtime.
-- **Reason**: Provides Chakra UI context.
-
-### `src/App.tsx` depends on section components
-- **Type**: Runtime.
-- **Reason**: Renders the full page sequence.
-
-### Section components depend on static assets
-- **Type**: Runtime/build.
-- **Reason**: Images and certificates are resolved by Vite into production asset URLs.
+- `src/App.tsx` depends on navigation data, layout behavior, journal parsing, the shared Navbar, and active template.
+- `src/templates/index.ts` depends on the configured template ID and both template definitions.
+- Every template depends on the complete `SectionId` contract.
+- Artistic components depend on shared portfolio data, shared actions/logo helpers, and artistic section framing.
+- Shared and engineering components depend on the same typed data modules and shared utilities.
+- Journal data depends on Markdown content and journal hash helpers.
+- Tests depend on the registry, data contracts, App behavior, and jsdom provider setup.
 
 ## External Dependencies
 
-### `@chakra-ui/react`
-- **Version**: ^3.30.0.
-- **Purpose**: UI primitives, responsive props, dialogs, drawer, form controls.
-- **License**: MIT.
-
-### `@chakra-ui/icons`
-- **Version**: ^2.2.4.
-- **Purpose**: Chakra icon support package. No direct usage was identified in the inspected source.
-- **License**: MIT.
-
-### `@emotion/react`
-- **Version**: ^11.14.0.
-- **Purpose**: Styling dependency for Chakra UI.
-- **License**: MIT.
-
-### `@tailwindcss/vite`
-- **Version**: ^4.1.18.
-- **Purpose**: Tailwind integration with Vite.
-- **License**: MIT.
-
-### `next-themes`
-- **Version**: ^0.4.6.
-- **Purpose**: Color mode/theme behavior through Chakra UI helpers.
-- **License**: MIT.
-
-### `react`
-- **Version**: ^19.2.0.
-- **Purpose**: UI framework.
-- **License**: MIT.
-
-### `react-dom`
-- **Version**: ^19.2.0.
-- **Purpose**: DOM rendering.
-- **License**: MIT.
-
-### `react-icons`
-- **Version**: ^5.5.0.
-- **Purpose**: Icons in navigation, CTAs, section arrows, and links.
-- **License**: MIT.
-
-### `tailwindcss`
-- **Version**: ^4.1.18.
-- **Purpose**: Utility CSS framework.
-- **License**: MIT.
+- **`@chakra-ui/react` ^3.30.0** - UI primitives, responsive styling, drawers, dialogs, and controls; MIT.
+- **`@chakra-ui/icons` ^2.2.4** - Chakra icon package; MIT; no direct source usage identified.
+- **`@emotion/react` ^11.14.0** - Chakra styling runtime; MIT.
+- **`@tailwindcss/vite` ^4.1.18 and `tailwindcss` ^4.1.18** - Utility CSS integration; MIT.
+- **`next-themes` ^0.4.6** - Theme state; MIT.
+- **`react` and `react-dom` ^19.2.0** - UI framework and DOM renderer; MIT.
+- **`react-icons` ^5.5.0** - Icon components; MIT.
+- **`vite` ^7.2.4 and `@vitejs/plugin-react-swc` ^4.2.2** - Development and build pipeline; MIT.
+- **`vitest` ^4.1.9, Testing Library, and jsdom** - Automated tests; MIT.
+- **ESLint, TypeScript ESLint, and Prettier** - Static quality and formatting tools; MIT.
 
 ## Dependency Health Notes
 
-- The project has both `eslint.config.js` and `eslint.config.ts` files. This can confuse new contributors if the active config is unclear.
-- Several installed lint plugins are not fully represented in `eslint.config.ts`.
-- For template usage, dependency versions are modern but may create friction if students use older Node versions. The guide should state Node 20 or newer clearly.
+- The stack is current and compatible with the documented Node 20 workflow.
+- The project has both `eslint.config.js` and `eslint.config.ts`; the active configuration should be clarified or consolidated later.
+- Animation work can be implemented with CSS and React already present; a new animation library should only be added if the approved interaction design requires capabilities that CSS cannot provide cleanly.
+- There is no router package. The current hash-routing utilities deliberately avoid server rewrite requirements on GitHub Pages.

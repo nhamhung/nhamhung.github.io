@@ -16,3 +16,8 @@ if (!window.matchMedia) {
     dispatchEvent: () => false,
   })
 }
+
+if (!window.requestAnimationFrame) {
+  window.requestAnimationFrame = (callback) => window.setTimeout(callback, 0)
+  window.cancelAnimationFrame = (frameId) => window.clearTimeout(frameId)
+}

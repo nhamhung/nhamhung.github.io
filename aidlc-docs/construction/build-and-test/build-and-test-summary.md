@@ -65,3 +65,26 @@ npm run preview
 |---|---|---|
 | Security Baseline | Disabled | User opted out during Requirements Analysis. |
 | Property-Based Testing | Disabled | User opted out during Requirements Analysis. |
+
+# Build And Test Summary - Artistic Template Support
+
+## Verification Date
+
+2026-07-16T17:52:29Z
+
+## Commands Run
+
+| Command | Result |
+|---|---|
+| `npm run test` | Passed. 5 test files and 23 tests passed. |
+| `npx tsc -p tsconfig.app.json --noEmit` | Passed. |
+| `npm run lint` | Passed. |
+| `npm run build` | Passed with Vite's existing large chunk warning. |
+
+## Notes
+
+- The artistic template support remains static-site compatible.
+- No backend, database, runtime API, or deployment workflow changes were introduced.
+- The template registry test verifies that every supported template maps every known section ID.
+
+---

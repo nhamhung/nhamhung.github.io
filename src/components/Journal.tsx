@@ -3,7 +3,7 @@ import { Badge, Box, Flex, Heading, HStack, Image, SimpleGrid, Text, VStack } fr
 import ContentCard from './shared/ContentCard'
 import ExternalAction from './shared/ExternalAction'
 import SectionShell from './shared/SectionShell'
-import { videos, writing } from '../data/portfolio'
+import { sectionContent, videos, writing } from '../data/portfolio'
 import type { WritingEntry } from '../types/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
 import { getYouTubeEmbedUrl } from '../utils/media'
@@ -16,9 +16,9 @@ function Journal() {
   return (
     <SectionShell
       id="journal"
-      eyebrow="JOURNAL_FEED"
-      title="Journal"
-      intro="Educational videos and written notes from Learn IT together, showing how I explain technical ideas through demos, study systems, and reflections."
+      eyebrow={sectionContent.journal.eyebrow}
+      title={sectionContent.journal.title}
+      intro={sectionContent.journal.description}
       nextSectionId="skills"
     >
       <VStack align="stretch" gap={{ base: 10, md: 14 }}>
@@ -111,7 +111,23 @@ function Journal() {
                   boxShadow: 'var(--card-hover-shadow)',
                 }}
               >
-                <Image src={post.image} alt={post.imageAlt} w="100%" h="190px" objectFit="cover" />
+                <Box
+                  w="100%"
+                  h="190px"
+                  overflow="hidden"
+                  data-thumbnail-height="190px"
+                  data-testid={`writing-image-frame-${post.source}-${index}`}
+                >
+                  <Image
+                    src={post.image}
+                    alt={post.imageAlt}
+                    w="100%"
+                    h="100%"
+                    objectFit="cover"
+                    data-image-fit="cover"
+                    data-testid={`writing-image-${post.source}-${index}`}
+                  />
+                </Box>
                 <VStack align="stretch" gap={4} p={6} flex="1">
                   <HStack justify="space-between" align="start" gap={3} flexWrap="wrap">
                     <Text className="code-font" color="var(--text-300)" fontSize="xs">

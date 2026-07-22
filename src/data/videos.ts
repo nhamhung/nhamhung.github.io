@@ -5,7 +5,7 @@ export const videos = [
     id: 'effective-it-self-study',
     title: 'Tự học IT như nào hiệu quả nhất?',
     description:
-      'With many learning resources available, this video focuses on choosing a practical and sustainable way to self-study IT.',
+      'With many learning resources available, this video focuses on choosing the most practical and efficient way to self-study IT.',
     videoId: '1Whd4I0b1u4',
     watchLink: {
       label: 'Watch on YouTube',
@@ -14,14 +14,14 @@ export const videos = [
     },
   },
   {
-    id: 'apache-kafka-real-time-processing',
-    title: 'Xử lý dữ liệu trong thời gian thực với Apache Kafka',
+    id: 'cdc-real-time-processing',
+    title: 'Change Data Capture (CDC) là gì? Ứng dụng CDC với Debezium + MySQL + PostgreSQL + Kafka',
     description: 'A detailed walkthrough of building real-time data processing flows with Apache Kafka.',
-    videoId: 'jfu4ORM8k9Q',
+    videoId: 'bOHkXixyGig',
     watchLink: {
       label: 'Watch on YouTube',
-      href: 'https://www.youtube.com/watch?v=jfu4ORM8k9Q',
-      ariaLabel: 'Watch the Apache Kafka real-time processing video on YouTube',
+      href: 'https://www.youtube.com/watch?v=bOHkXixyGig',
+      ariaLabel: 'Watch the CDC real-time processing video on YouTube',
     },
   },
   {

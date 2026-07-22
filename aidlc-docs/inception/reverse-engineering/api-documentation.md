@@ -2,85 +2,71 @@
 
 ## REST APIs
 
-No REST APIs are implemented in this project. The portfolio is a static client-side application with no backend service.
+No REST APIs are implemented. The portfolio is a static client-side application with no backend or database.
 
 ## Internal APIs
 
-### `App`
-- **Signature**: `function App(): JSX.Element`
-- **Purpose**: Render the portfolio shell and all sections.
-- **State**: `activeSection`.
-- **Side Effects**: Registers a scroll listener to update active navigation.
+### Template Registry
+- **`getPortfolioTemplate(templateId: PortfolioTemplateId): PortfolioTemplate`**: Resolves a registered template and falls back to engineering.
+- **`activePortfolioTemplate: PortfolioTemplate`**: The template selected by `src/data/template.ts`.
+- **`portfolioTemplates: PortfolioTemplate[]`**: Registered engineering and artistic templates.
 
-### `Navbar`
-- **Signature**: `function Navbar({ activeSection = 'home' }: NavbarProps): JSX.Element`
-- **Parameters**:
-  - `activeSection?: string` - Current section ID for active link highlighting.
-- **Purpose**: Render fixed desktop and mobile navigation.
-- **Side Effects**: Registers a scroll listener to control scrolled header styling.
+### `PortfolioTemplate`
+- **Fields**: `id`, `label`, `description`, and `sectionComponents`.
+- **Section Contract**: `sectionComponents` is a complete `Record<SectionId, ComponentType>`.
+- **Current IDs**: `engineering` and `artistic`.
 
-### Section Components
-- **Signatures**:
-  - `Hero(): JSX.Element`
-  - `About(): JSX.Element`
-  - `Education(): JSX.Element`
-  - `Experience(): JSX.Element`
-  - `Awards(): JSX.Element`
-  - `Projects(): JSX.Element`
-  - `Gallery(): JSX.Element`
-  - `Videos(): JSX.Element`
-  - `Skills(): JSX.Element`
-  - `Contact(): JSX.Element`
-- **Purpose**: Render independent portfolio sections.
-- **Shared Behavior**: Most sections include a local `scrollToSection(sectionId: string)` helper for next-section arrow navigation.
+### App Shell
+- **`App(): JSX.Element`**: Resolves enabled navigation, active template sections, layout mode, current hash, and local journal routes.
+- **Journal Behavior**: A `#/journal/{slug}` hash renders `JournalPostPage`; otherwise App renders all enabled sections or the active multi-page section.
 
-### `GalleryItem`
-- **Location**: `src/components/Gallery.tsx`.
-- **Fields**:
-  - `id: number`
-  - `src: string`
-  - `alt: string`
-  - `title: string`
-  - `description: string`
-- **Purpose**: Typed image card model for the gallery.
+### Layout Hook
+- **`usePortfolioLayout(enabledSectionIds, scrollActiveSection): PortfolioLayoutState`**: Coordinates layout mode and navigation.
+- **`createSectionHash(sectionId): string`**: Returns a multi-page hash such as `#/projects`.
+- **`createAnchorHash(sectionId): string`**: Returns a single-page anchor such as `#projects`.
+- **`parseSectionHash(hash, enabledSectionIds): SectionId | undefined`**: Validates a section hash.
+- **`resolveSectionId(sectionId, enabledSectionIds, fallback): SectionId`**: Resolves unknown IDs safely.
+- **`readStoredLayoutMode` / `writeStoredLayoutMode`**: Access layout preference with storage failure fallbacks.
 
-### Certificate Metadata
-- **Location**: `src/components/Skills.tsx`.
-- **Fields**:
-  - `title`
-  - `issuer`
-  - `kind`
-  - `file`
-- **Purpose**: Build certificate cards from PDF files and metadata.
+### Navigation and Scroll Utilities
+- **`getEnabledNavigationItems(items)`**: Narrows navigation to enabled entries.
+- **`getEnabledSectionIds(items)`**: Returns enabled section IDs.
+- **`scrollToSection(sectionId)`**: Smooth-scrolls to a section.
+- **`useActiveSection(sectionIds, offset)`**: Tracks the active section from viewport geometry.
 
-### Contact Form State
-- **Location**: `src/components/Contact.tsx`.
-- **Fields**:
-  - `name`
-  - `email`
-  - `subject`
-  - `message`
-- **Purpose**: Build a mailto subject/body from visitor-entered contact data.
+### Journal Utilities
+- **`createJournalPostHref(slug): string`**: Creates `#/journal/{slug}`.
+- **`parseJournalPostHash(hash): string | undefined`**: Extracts a local post slug from the hash.
+
+### Shared UI APIs
+- **`ExternalAction`**: Renders accessible internal, external, mail, and download actions.
+- **`SectionShell` / `ArtisticSectionShell`**: Frame section headings, content, and next-section navigation.
+- **`ContentCard`**: Provides shared card surface behavior.
+- **`LogoMark`**: Resolves configured logo keys into visual marks.
 
 ## Data Models
 
-The project currently uses inline object arrays rather than exported data models. Key model shapes include:
+### Portfolio Root
+- **Fields**: `profile`, `hero`, `navigation`, `about`, `education`, `experience`, `awards`, `projects`, `gallery`, `videos`, `blog`, `journalPosts`, `writing`, `skills`, and `certificates`.
+- **Validation**: Constructed with TypeScript `satisfies Portfolio`; tests verify key fields and links.
 
-- **Navigation Item**: `{ id: string, label: string }`
-- **Experience**: `{ title: string, company: string, period: string, description: string[] }`
-- **Education**: `{ degree: string, institution: string, period: string, specialization: string, logo: string, description: string[] }`
-- **Award**: `{ title: string, organization: string, year: string, description: string, logo: string, tag: string }`
-- **Project**: `{ title: string, description: string, technologies: string[], github: string, demo: string }`
-- **Video**: `{ id: number, title: string, description: string, videoId: string }`
-- **Skill Category**: `{ category: string, skills: string[] }`
+### Navigation and Sections
+- **`SectionId`**: Union of `home`, `about`, `education`, `experience`, `awards`, `projects`, `gallery`, `journal`, `skills`, and `contact`.
+- **`NavigationItem`**: `id`, `label`, and `enabled`.
+
+### Writing
+- **`WordPressWritingPost`**: External WordPress title, URL, image, date, category, summary, and topics.
+- **`LocalJournalPost`**: Local slug, hash URL, image, date, metadata, and imported Markdown content.
+- **`WritingEntry`**: Union of WordPress and local writing entries.
+
+### Portfolio Evidence
+- **Models**: `Profile`, `HeroSection`, `AboutSection`, `EducationEntry`, `ExperienceEntry`, `AwardEntry`, `ProjectEntry`, `GalleryItem`, `VideoEntry`, `SkillCategory`, and `CertificateEntry`.
+- **Relationships**: Templates consume these shared records; actions use `ExternalLink` or `DownloadLink`; project and media arrays feed repeated presentation components.
 
 ## External Browser APIs
 
-- `window.addEventListener('scroll', ...)` for active section and header state.
-- `document.getElementById(...)` and `Element.scrollIntoView(...)` for smooth section navigation.
-- `window.open(...)` for external project and certificate links.
-- `window.location.href = 'mailto:...'` for contact submission.
-
-## Template API Recommendation
-
-For a student baseline template, move editable content into exported data files such as `src/data/profile.ts`, `src/data/sections.ts`, `src/data/projects.ts`, and `src/data/skills.ts`. Components should consume typed data rather than containing all user-specific text directly.
+- `window.history.pushState` and hash events for static routing.
+- `window.localStorage` for layout preference.
+- `document.getElementById` and `scrollIntoView` for single-page navigation.
+- `window.location.href` with `mailto:` for contact submission.
+- Dialog, iframe, image, and PDF browser capabilities for media previews.

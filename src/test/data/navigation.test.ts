@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
-import { navigation, sectionIds } from './navigation'
-import type { SectionId } from '../types/portfolio'
+import { navigation, sectionIds } from '../../data/navigation'
+import type { SectionId } from '../../types/portfolio'
 
 const expectedSectionIds: SectionId[] = [
   'home',

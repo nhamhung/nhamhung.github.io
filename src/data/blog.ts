@@ -10,7 +10,7 @@ export const blog = [
     publishedDate: 'Dec 31, 2024',
     category: 'Reflection',
     summary:
-      'A year-end reflection on learning, teaching, graduate study, and the personal milestones that shaped a meaningful year.',
+      'A year-end reflection on learning, teaching, graduate study, and the personal milestones that have shaped a meaningful year for me.',
     topics: ['Reflection', 'Learning', 'Teaching'],
   },
   {
@@ -22,7 +22,7 @@ export const blog = [
     publishedDate: 'Dec 7, 2024',
     category: 'Computer Science',
     summary:
-      'A practical reflection on balancing work, graduate study, teaching, content creation, and sustained technical learning.',
+      'A personal sharing on tips to juggle multiple tasks at once despite our often tight schedule.',
     topics: ['Time Management', 'Learning', 'Computer Science'],
   },
   {

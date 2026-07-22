@@ -39,6 +39,7 @@ function ExternalAction({
     return (
       <Link
         {...sharedProps}
+        className="portfolio-icon-action"
         color="var(--text-300)"
         _hover={{ color: 'var(--accent-300)', transform: 'translateY(-2px)' }}
         transition="all 0.2s ease"
@@ -67,26 +68,24 @@ function ExternalAction({
   const primaryStyles =
     tone === 'primary'
       ? {
-          bg: 'var(--accent-500)',
-          color: 'white',
-          borderColor: 'rgba(118, 168, 255, 0.58)',
-          _hover: { bg: 'var(--accent-400)' },
+          bg: 'var(--primary-bg)',
+          color: 'var(--primary-text)',
+          borderColor: 'var(--primary-bg)',
+          _hover: { bg: 'var(--primary-hover-bg)', borderColor: 'var(--primary-hover-bg)' },
         }
       : {
-          bg: 'rgba(34, 128, 235, 0.1)',
+          bg: 'var(--control-bg-soft)',
           color: 'var(--text-100)',
-          borderColor: 'rgba(118, 168, 255, 0.42)',
-          _hover: { bg: 'rgba(34, 128, 235, 0.2)' },
+          borderColor: 'var(--line-500)',
+          _hover: { bg: 'var(--control-hover-bg)' },
         }
 
   return (
     <Link
       {...sharedProps}
+      className="portfolio-action-link"
       display="inline-flex"
       alignItems="center"
-      minH="32px"
-      px={3}
-      py={1.5}
       borderRadius="md"
       border="1px solid"
       fontSize="sm"

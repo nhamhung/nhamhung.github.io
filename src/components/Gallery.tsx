@@ -3,7 +3,7 @@ import { Box, Dialog, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 
 import SectionShell from './shared/SectionShell'
-import { gallery } from '../data/portfolio'
+import { gallery, sectionContent } from '../data/portfolio'
 import type { GalleryItem } from '../types/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
 
@@ -17,7 +17,13 @@ function Gallery() {
   }
 
   return (
-    <SectionShell id="gallery" eyebrow="JOURNEY_FRAMES" title="Learning Journey" nextSectionId="journal">
+    <SectionShell
+      id="gallery"
+      eyebrow={sectionContent.gallery.eyebrow}
+      title={sectionContent.gallery.title}
+      intro={sectionContent.gallery.description}
+      nextSectionId="journal"
+    >
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
           {gallery.map((image, index) => (
             <Box

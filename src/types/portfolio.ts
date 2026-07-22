@@ -62,12 +62,19 @@ export type HeroSection = {
 }
 
 export type AboutSection = {
-  eyebrow: string
-  title: string
-  intro: string
   paragraphs: string[]
   metrics: Metric[]
 }
+
+export type ContentSectionId = Exclude<SectionId, 'home'>
+
+export type SectionCopy = {
+  eyebrow: string
+  title: string
+  description: string
+}
+
+export type SectionContent = Record<ContentSectionId, SectionCopy>
 
 export type EducationEntry = {
   degree: string
@@ -90,11 +97,13 @@ export type AwardEntry = {
   organization: string
   year: string
   description: string
-  logo: string
+  logo?: string
+  logoText?: string
   tag: string
 }
 
 export type ProjectEntry = {
+  id: string
   title: string
   description: string
   logoKey: string
@@ -178,6 +187,7 @@ export type Portfolio = {
   profile: Profile
   hero: HeroSection
   navigation: NavigationItem[]
+  sectionContent: SectionContent
   about: AboutSection
   education: EducationEntry[]
   experience: ExperienceEntry[]

@@ -1,10 +1,6 @@
 import type { AboutSection } from '../types/portfolio'
 
 export const about = {
-  eyebrow: 'ABOUT_PROTOCOL',
-  title: 'About Me',
-  intro:
-    'I build robust data pipelines, platforms and backend services that are designed for reliability, maintainability, and clear business impact.',
   paragraphs: [
     'I am a data engineer focused on designing efficient pipelines and analytics systems that turn raw data into trustworthy decision enablers. My work spans ingestion, modeling, orchestration, and data product delivery.',
     'Outside engineering, I mentor students and support them in building confidence, academic skills and portfolios. Teaching and empowering others is my greatest passion and motivation.',

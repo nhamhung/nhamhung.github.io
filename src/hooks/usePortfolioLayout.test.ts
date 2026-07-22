@@ -6,6 +6,7 @@ import {
   createAnchorHash,
   createSectionHash,
   isLayoutMode,
+  isMultiPageSectionHash,
   parseSectionHash,
   readStoredLayoutMode,
   resolveSectionId,
@@ -25,6 +26,9 @@ describe('usePortfolioLayout helpers', () => {
   it('creates hash values for single-page anchors and multi-page routes', () => {
     expect(createAnchorHash('about')).toBe('#about')
     expect(createSectionHash('about')).toBe('#/about')
+    expect(isMultiPageSectionHash('#/about')).toBe(true)
+    expect(isMultiPageSectionHash('#/missing')).toBe(true)
+    expect(isMultiPageSectionHash('#/journal/post-slug')).toBe(false)
   })
 
   it('parses valid hash values and ignores unknown sections', () => {
@@ -38,6 +42,7 @@ describe('usePortfolioLayout helpers', () => {
     expect(resolveSectionId('projects', enabledSectionIds, 'home')).toBe('projects')
     expect(resolveSectionId('missing', enabledSectionIds, 'about')).toBe('about')
     expect(resolveSectionId(undefined, [], 'projects')).toBe('home')
+    expect(resolveSectionId(parseSectionHash('#/missing', enabledSectionIds), enabledSectionIds)).toBe('home')
   })
 
   it('reads and writes valid stored layout mode values', () => {

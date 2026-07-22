@@ -2,16 +2,16 @@ import { Badge, Box, Heading, Text, VStack } from '@chakra-ui/react'
 
 import ContentCard from './shared/ContentCard'
 import SectionShell from './shared/SectionShell'
-import { experience } from '../data/portfolio'
+import { experience, sectionContent } from '../data/portfolio'
 import { getAnimationDelayClass } from '../utils/animation'
 
 function Experience() {
   return (
     <SectionShell
       id="experience"
-      eyebrow="CAREER_LOG"
-      title="Professional Experience"
-      intro="High-impact roles across data engineering, backend systems, and education with production ownership and business-facing delivery."
+      eyebrow={sectionContent.experience.eyebrow}
+      title={sectionContent.experience.title}
+      intro={sectionContent.experience.description}
       nextSectionId="awards"
     >
         <VStack align="stretch" gap={8} position="relative" pl={{ base: 0, md: 8 }}>

@@ -2,54 +2,88 @@
 
 ## System Overview
 
-This project is a static single-page React application built with Vite. It renders a portfolio as a sequence of section components and uses Chakra UI for layout primitives, Tailwind CSS for the imported utility layer, custom CSS variables for the visual theme, and Vite asset imports for local images and PDF certificates. The production artifact is a `dist/` folder that can be served by GitHub Pages.
+This project is a static React 19 and TypeScript portfolio built with Vite. `App` combines a template registry, typed portfolio data, hash-based layout routing, local journal routing, and shared navigation. The engineering and artistic templates consume the same data model and can substitute section components without duplicating student content. Chakra UI supplies responsive primitives, custom CSS variables define template themes, and GitHub Actions deploys the Vite build to GitHub Pages.
 
 ## Architecture Diagram
 
 ```mermaid
 flowchart TD
     Browser["Browser"]
-    GitHubPages["GitHub Pages Static Hosting"]
-    Dist["dist Build Output"]
-    Vite["Vite Build"]
-    ReactApp["React App"]
-    Components["Section Components"]
-    Assets["Images and PDFs"]
-    ExternalLinks["External Links"]
-    GitHubActions["GitHub Actions Workflow"]
+    App["App Shell"]
+    Layout["Layout and Hash Routing"]
+    Registry["Template Registry"]
+    Engineering["Engineering Template"]
+    Artistic["Artistic Template"]
+    Shared["Shared Section Components"]
+    Data["Typed Portfolio Data"]
+    Journal["Markdown Journal Content"]
+    Assets["Images, Resume, and Certificates"]
+    Build["Vite Build"]
+    Actions["GitHub Actions"]
+    Pages["GitHub Pages"]
 
-    Browser --> GitHubPages
-    GitHubPages --> Dist
-    GitHubActions --> Vite
-    Vite --> Dist
-    ReactApp --> Components
-    ReactApp --> Assets
-    Components --> ExternalLinks
-    Vite --> ReactApp
+    Browser --> App
+    App --> Layout
+    App --> Registry
+    Registry --> Engineering
+    Registry --> Artistic
+    Engineering --> Shared
+    Artistic --> Shared
+    Engineering --> Data
+    Artistic --> Data
+    Data --> Journal
+    Data --> Assets
+    Actions --> Build
+    Build --> Pages
+    Pages --> Browser
 ```
 
 ### Text Alternative
 
-GitHub Actions runs the Vite build. Vite bundles the React app and static assets into `dist/`. GitHub Pages serves `dist/` to browser visitors. The app renders local content and links out to GitHub, LinkedIn, YouTube, WordPress, and email.
+The browser loads the App shell. App resolves navigation and hash routing, selects a registered template, and renders that template's section mapping. Both templates consume shared typed data, Markdown journal content, and bundled assets. GitHub Actions runs Vite and deploys the output to GitHub Pages.
 
 ## Component Descriptions
 
 ### Application Package
-- **Purpose**: Static portfolio frontend.
-- **Responsibilities**: Render content sections, manage active navigation, provide responsive layout and interactions.
-- **Dependencies**: React, React DOM, Chakra UI, Tailwind CSS Vite plugin, React Icons, Vite.
+- **Purpose**: Static student portfolio frontend.
+- **Responsibilities**: Resolve journal routes, layout mode, navigation state, template selection, and visible section rendering.
+- **Dependencies**: React, Chakra UI, template registry, layout hook, typed data, and browser history APIs.
 - **Type**: Application.
 
-### UI Provider
-- **Purpose**: Configure Chakra UI and color mode behavior.
-- **Responsibilities**: Wrap the app with Chakra provider and theme/color-mode support.
-- **Dependencies**: Chakra UI, next-themes.
+### Template Registry
+- **Purpose**: Provide swappable presentation strategies.
+- **Responsibilities**: Register engineering and artistic templates, resolve `selectedTemplateId`, fall back to engineering, and expose complete section mappings.
+- **Dependencies**: Template definitions and shared `SectionId` contract.
+- **Type**: Application model.
+
+### Engineering Template
+- **Purpose**: Present technical and career evidence in a structured format.
+- **Responsibilities**: Map all sections to the baseline shared components.
+- **Dependencies**: Shared section components and portfolio data.
+- **Type**: Presentation.
+
+### Artistic Template
+- **Purpose**: Present the same evidence with stronger visual and editorial emphasis.
+- **Responsibilities**: Supply artistic Hero, Projects, Gallery, and section shell components while currently reusing the remaining shared sections and shared navigation.
+- **Dependencies**: Shared data, shared components, gallery media, and artistic CSS variables.
+- **Type**: Presentation.
+
+### Layout and Journal Routing
+- **Purpose**: Support continuous, section-routed, and local-post experiences without a server router.
+- **Responsibilities**: Persist layout mode, parse hashes, render one or all sections, and resolve `#/journal/{slug}` routes.
+- **Dependencies**: Browser history, local storage, navigation configuration, and journal utilities.
+- **Type**: Application behavior.
+
+### UI Provider and Shared UI
+- **Purpose**: Provide theming and reusable presentation primitives.
+- **Responsibilities**: Configure Chakra, color mode, actions, section shells, logo marks, tooltips, and toasts.
+- **Dependencies**: Chakra UI, Emotion, next-themes, and React Icons.
 - **Type**: Shared UI support.
 
 ### GitHub Pages Workflow
-- **Purpose**: Deploy the static app from `main`.
-- **Responsibilities**: Checkout, setup Node 20, run `npm ci`, run `npm run build`, upload pages artifact, deploy pages.
-- **Dependencies**: GitHub Actions pages actions.
+- **Purpose**: Build and publish the static portfolio.
+- **Responsibilities**: Install Node dependencies, derive the repository base path, run the build, and deploy `dist/`.
+- **Dependencies**: GitHub Actions and Vite.
 - **Type**: Deployment automation.
 
 ## Data Flow
@@ -57,44 +91,34 @@ GitHub Actions runs the Vite build. Vite bundles the React app and static assets
 ```mermaid
 sequenceDiagram
     participant Visitor
-    participant Browser
-    participant PortfolioApp
-    participant ExternalTarget
+    participant App
+    participant Layout
+    participant Template
+    participant Data
 
-    Visitor->>Browser: Open portfolio URL
-    Browser->>PortfolioApp: Load static assets and React bundle
-    PortfolioApp->>Browser: Render section content
-    Visitor->>PortfolioApp: Click navigation item
-    PortfolioApp->>Browser: Smooth scroll to section
-    Visitor->>PortfolioApp: Open link, video, certificate, or email form
-    PortfolioApp->>ExternalTarget: Navigate to external URL or mailto link
+    Visitor->>App: Open portfolio or hash URL
+    App->>Layout: Resolve layout and active route
+    App->>Template: Resolve configured template
+    Template->>Data: Read shared portfolio content
+    Template-->>Visitor: Render selected presentation
+    Visitor->>Layout: Navigate or switch layout mode
+    Layout-->>App: Update hash and visible section
+    App-->>Visitor: Render section or journal post
 ```
 
 ### Text Alternative
 
-The browser loads the built app, React renders portfolio content, visitor actions trigger section scrolling or external navigation, and the contact form creates a mailto URL.
+A visitor opens the site, App resolves the URL and chosen template, and the template reads shared portfolio data. Navigation updates the URL and visible content. Local journal hashes render a dedicated post page; other section hashes render one or all template sections depending on layout mode.
 
 ## Integration Points
 
 - **External APIs**: None.
 - **Databases**: None.
-- **Third-party Services**:
-  - GitHub repositories and GitHub Pages for source hosting and deployment.
-  - LinkedIn and WordPress for external profile/content links.
-  - YouTube embed URLs for educational videos.
-  - Mailto link for contact submission.
-  - Google Fonts import in `src/index.css`.
+- **Third-party Services**: GitHub and GitHub Pages, LinkedIn, WordPress, YouTube embeds, Google Fonts, and the visitor's email client through `mailto:`.
+- **Browser APIs**: History, hash changes, local storage, scrolling, and media/dialog interactions.
 
 ## Infrastructure Components
 
 - **CDK Stacks**: None.
-- **Deployment Model**: GitHub Actions builds a static Vite app and deploys it to GitHub Pages.
-- **Networking**: Public static website. No server runtime, database, private network, or API gateway.
-
-## Template Readiness Observations
-
-- Current section content is embedded inside React components, which makes customization harder for beginner students.
-- Navigation items are duplicated between `App.tsx` and `Navbar.tsx`.
-- Scroll helper logic is repeated in most sections.
-- The deployment base path is fixed to `/my-portfolio/`, which students must change for their own repository name.
-- The existing deployment workflow is suitable for GitHub Pages and can remain the publishing foundation.
+- **Deployment Model**: GitHub Actions builds a static Vite artifact and deploys it to GitHub Pages.
+- **Networking**: Public static hosting with no API server, private network, or database.
