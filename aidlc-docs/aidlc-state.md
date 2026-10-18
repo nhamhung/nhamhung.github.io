@@ -2,6 +2,54 @@
 
 ## Active Workflow
 
+- **Change**: Vietnamese NUS CS career guidance presentation.
+- **Current phase**: INCEPTION.
+- **Current stage**: Application Design - artifact review gate.
+- **Workspace**: `/Users/nhamquochung/nhamhung.github.io`.
+- **Depth**: Standard proposed for requirements; moderate multi-component feature.
+- **Plan**: `aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md`.
+- **Execution plan**: `aidlc-docs/inception/plans/nus-career-talk-execution-plan.md`.
+- **Active question file**: `aidlc-docs/inception/application-design/nus-career-talk/review-questions.md`.
+- **Next action**: Await generated application-design approval, then begin Functional Design for nus-career-talk.
+- **Active requirements**: `aidlc-docs/inception/requirements/nus-career-talk-requirements.md`.
+- **Approval file**: `aidlc-docs/inception/application-design/nus-career-talk/review-questions.md`.
+- **Prior workflow**: Retained below; its Code Generation review is still pending.
+
+## NUS Career Talk Stage Progress
+
+- [x] Workspace Detection.
+- [x] Reverse Engineering refresh.
+- [x] Reverse Engineering approval.
+- [x] Requirements Analysis.
+  - [x] Load architecture and analyse intent at standard depth.
+  - [x] Prepare clarification and extension opt-in questions.
+  - [x] Receive answers and check contradictions.
+  - [x] Generate requirements.
+  - [x] Approve generated requirements.
+- [x] User Stories assessment and generation.
+  - [x] Assess need and prepare story-generation plan.
+  - [x] Approve story approach.
+  - [x] Generate personas, stories and acceptance matrix.
+  - [x] Approve generated stories.
+- [x] Workflow Planning.
+  - [x] Generate execution plan and workflow diagram.
+  - [x] Approve execution plan.
+- [ ] Application Design - execute.
+  - [x] Prepare component/state-ownership plan.
+  - [x] Approve design approach.
+  - [x] Generate application-design artifacts.
+  - [ ] Approve generated application design.
+- Units Generation - skip; one cohesive unit.
+- [ ] Construction.
+  - [ ] Functional Design - execute.
+  - [ ] NFR Requirements - execute.
+  - [ ] NFR Design - execute.
+  - Infrastructure Design - skip; hosting unchanged.
+  - [ ] Code Generation - planning and generation.
+- [ ] Build and Test.
+
+## Previous Workflow - Business Colour Refresh
+
 - **Project**: Brownfield React/Vite static portfolio
 - **Workspace**: `/Users/nhamhhung/nhamhung.github.io`
 - **Change**: Business Color and Two-Theme Refresh
@@ -45,8 +93,8 @@
 
 | Extension              | Enabled | Decision                                              |
 | ---------------------- | ------- | ----------------------------------------------------- |
-| Security Baseline      | No      | Business Youthful Color Refresh Requirements Analysis |
-| Property-Based Testing | No      | Business Youthful Color Refresh Requirements Analysis |
+| Security Baseline      | No      | NUS Career Talk Requirements Analysis (Q7 B) |
+| Property-Based Testing | No      | NUS Career Talk Requirements Analysis (Q8 C) |
 
 ## Active Stage Progress
 

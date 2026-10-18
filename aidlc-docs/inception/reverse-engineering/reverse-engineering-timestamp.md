@@ -1,22 +1,21 @@
 # Reverse Engineering Metadata
 
-**Analysis Date**: 2026-07-23T12:18:16Z
-**Analyzer**: AI-DLC
-**Workspace**: /Users/nhamhhung/my-portfolio
-**Total Files Analyzed**: 274
+**Analysis Date**: 2026-10-17T15:43:22Z
+**Workspace**: /Users/nhamquochung/nhamhung.github.io
+**Scope**: Current single-package portfolio and integration seams for the Vietnamese NUS career talk.
 
-## Artifacts Generated
+## Refresh checklist
 
 - [x] business-overview.md
 - [x] architecture.md
 - [x] code-structure.md
 - [x] api-documentation.md
 - [x] component-inventory.md
-- [x] technology-stack.md
 - [x] dependencies.md
 - [x] code-quality-assessment.md
-- [x] github-pages-template-guide.md (retained; deployment guidance remains valid)
+- [x] technology-stack.md reviewed; declared stack remains applicable.
+- [x] Existing build and deployment configuration reviewed.
+- [x] Retired-theme architecture corrected.
+- [x] Explicit reverse-engineering approval.
 
-## Refresh Scope
-
-This refresh incorporates typed student data, local journal posts, the single/multi-page layout hook, Engineering/Neutral/Business shells, App-owned runtime style selection, guarded browser persistence, shared component utilities, automated tests, and environment-driven GitHub Pages paths.
+No application code changed. Existing colour-refresh review remains pending in workflow history.

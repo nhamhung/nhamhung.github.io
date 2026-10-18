@@ -1,67 +1,22 @@
 # Dependencies
 
-## Internal Dependencies
+## Internal relationships
 
-```mermaid
-flowchart TD
-    Main["main.tsx"]
-    Provider["UI Provider"]
-    App["App Shell"]
-    Selection["Template Selection"]
-    Registry["Template Registry"]
-    Templates["Template Definitions"]
-    Components["Section Components"]
-    Hooks["Layout Hook"]
-    Data["Typed Data"]
-    Utils["Shared Utilities"]
-    Content["Journal Content"]
-    Assets["Static Assets"]
+React root -> provider -> App -> template registry and layout hook -> shells and section components -> typed data, utilities, content and assets.
 
-    Main --> Provider
-    Provider --> App
-    App --> Selection
-    App --> Registry
-    App --> Hooks
-    Registry --> Templates
-    Templates --> Components
-    Components --> Data
-    Components --> Utils
-    Data --> Content
-    Data --> Assets
-```
+App also depends on journal parsing, navigation configuration and browser-storage helpers. Template options are separated into `src/templates/options.ts`. Tests import the application contracts and render through the configured jsdom environment.
 
-### Text Alternative
+## Declared external dependencies
 
-The entrypoint mounts the UI provider and App. App owns template selection and resolves the registry and layout hook. The registry loads three template definitions; templates provide shells and select section components. Components consume typed data and utilities, while data modules import local content and assets.
+- React/React DOM ^19.2.0: rendering.
+- Chakra UI ^3.30.0, Emotion ^11.14.0: UI and styling.
+- next-themes ^0.4.6: colour mode.
+- react-icons ^5.5.0: icons.
+- react-markdown ^10.1.0: Markdown rendering.
+- Tailwind/Vite integration ^4.1.18: utility styling.
+- Chakra icons ^2.2.4: declared icon package.
+- Vite ^7.2.4, React SWC plugin ^4.2.2, TypeScript ~5.9.3: build tooling.
+- Vitest ^4.1.9, Testing Library React ^16.3.2, jest-dom ^6.9.1, jsdom ^29.1.1: tests.
+- ESLint, TypeScript ESLint and Prettier: static checks and formatting.
 
-### Key Internal Relationships
-
-- `src/App.tsx` depends on navigation data, layout behavior, journal parsing, template-selection persistence, and the three-template registry.
-- `src/templates/index.ts` depends on the configured source-default ID and all three template definitions.
-- Every template depends on the complete `SectionId` contract.
-- Engineering, Neutral, and Business shells depend on the shared `PortfolioStyleSelector`.
-- Neutral and Business components depend on shared portfolio data, actions, and their scoped presentation rules.
-- Shared and Engineering components depend on the same typed data modules and shared utilities.
-- Journal data depends on Markdown content and journal hash helpers.
-- Tests depend on the registry, data contracts, App behavior, and jsdom provider setup.
-
-## External Dependencies
-
-- **`@chakra-ui/react` ^3.30.0** - UI primitives, responsive styling, drawers, dialogs, and controls; MIT.
-- **`@chakra-ui/icons` ^2.2.4** - Chakra icon package; MIT; no direct source usage identified.
-- **`@emotion/react` ^11.14.0** - Chakra styling runtime; MIT.
-- **`@tailwindcss/vite` ^4.1.18 and `tailwindcss` ^4.1.18** - Utility CSS integration; MIT.
-- **`next-themes` ^0.4.6** - Theme state; MIT.
-- **`react` and `react-dom` ^19.2.0** - UI framework and DOM renderer; MIT.
-- **`react-icons` ^5.5.0** - Icon components; MIT.
-- **`react-markdown` ^10.1.0** - Safe CommonMark rendering for local journal posts; MIT.
-- **`vite` ^7.2.4 and `@vitejs/plugin-react-swc` ^4.2.2** - Development and build pipeline; MIT.
-- **`vitest` ^4.1.9, Testing Library, and jsdom** - Automated tests; MIT.
-- **ESLint, TypeScript ESLint, and Prettier** - Static quality and formatting tools; MIT.
-
-## Dependency Health Notes
-
-- The stack is current and compatible with the documented Node 20 workflow.
-- The project has both `eslint.config.js` and `eslint.config.ts`; the active configuration should be clarified or consolidated later.
-- Runtime template selection reuses Chakra Menu, React state, and browser storage; no additional selector dependency is required.
-- There is no router package. The current hash-routing utilities deliberately avoid server rewrite requirements on GitHub Pages.
+These are manifest version ranges, not a claim of installed versions or current upstream compatibility. No dependency installation, upgrade or licence audit was performed during this refresh.

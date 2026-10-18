@@ -9182,3 +9182,223 @@ For the connect\_channels, please make the color consistent with other component
 **Context**: CONSTRUCTION - Code Generation Part 2 Review Gate
 
 ---
+
+## NUS Vietnamese Career Talk - Workspace Detection
+**Timestamp**: 2026-10-17T15:43:22Z
+**User Input**: "using ai-dlc for current website, I want to create a page for presentation and a career guidance talk to high school students in Vietnamese where I will introduce NUS CS major and specialisations to make them understand future career aspects. Some information I want to include:
+
+Distinction between computer science and computer engineering
+NUS specialisations introduction
+For each specialisation, I want to see beautiful visualisations or animations showcasing which applications they can have, and which career tracks they can lead to
+Finally, a closing remark that triggers excitement for the students"
+**AI Response**: "Displayed the complete AI-DLC welcome, loaded common rules and extension opt-in files, inspected state, source, build configuration and existing architecture. Existing React/TypeScript/Vite portfolio; clean working tree. Previous colour-refresh review remains pending. Stale three-template architecture requires refresh before requirements. Sites design guidance applies to the existing local repository. No hosted Site registration or publication performed."
+**Context**: INCEPTION - New change; preserve previous workflow history.
+
+---
+
+## NUS Vietnamese Career Talk - Reverse Engineering Review
+**Timestamp**: 2026-10-17T15:43:22Z
+**User Input**: "N/A - no additional user message"
+**AI Response**: "Refreshed stale reverse-engineering artifacts from inspected source and configuration. Current site supports Engineering and Business only. Recorded review plan checkboxes and retained prior workflow. Security Baseline and PBT skipped because both are disabled in existing state; no full extension rules loaded. Preliminary official NUS search identifies undergraduate pathways as CS Focus Areas. Created dedicated approval question file. User-facing prompt: Please review the refreshed analysis and answer Question 1 with A to approve, B to request changes, or C for another direction. Approval is required by .aidlc-rule-details/inception/reverse-engineering.md Step 13: Do not proceed until user explicitly approves. Requirements and code generation have not begun."
+**Context**: INCEPTION - Reverse Engineering approval gate.
+
+---
+
+## NUS Career Talk - Architecture Approval and Requirements Clarification
+**Timestamp**: 2026-10-17T16:21:53Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/requirements/nus-career-talk-architecture-review-questions.md
+
+## Open tabs:
+- nus-career-talk-architecture-review-questions.md: aidlc-docs/inception/requirements/nus-career-talk-architecture-review-questions.md
+
+## My request:
+approve"
+**AI Response**: "Recorded explicit architecture approval, corroborated by Answer A in the review file. Updated plan and stage checkboxes. Loaded relevant architecture and requirements rules, checked official NUS Focus Areas, documented intent, and created eight clarification questions covering duration, format, area coverage, visual direction, interaction, entry point and both optional extensions. Full extension rules remain unloaded. User-facing prompt: Architecture approved. Please fill the eight Answer tags in the linked requirements question file and tell me when done. The local Requirements Analysis rule requires answers before requirements generation."
+**Context**: INCEPTION - Requirements Analysis; awaiting answers under requirements-analysis.md Step 6 gate. No application code changed.
+
+---
+
+## NUS Career Talk - Requirements Generation and Review Gate
+**Timestamp**: 2026-10-17T17:10:51Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+
+## Open tabs:
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+- nus-career-talk-architecture-review-questions.md: aidlc-docs/inception/requirements/nus-career-talk-architecture-review-questions.md
+
+## My request:
+approve and continue"
+**AI Response**: "Read saved answers exactly as 1 B, 2 A, 3 A, 4 A, 5 A, 6 A, 7 B, 8 C. Validated completeness and resolved duration/coverage through the selected overview-plus-exploration structure. Recorded Security Baseline and PBT disabled; skipped full extension rules. Generated requirements and review question file, validated Markdown tables, and updated progress immediately. No application code changed. Approval of the answers authorizes requirements generation; generated requirements remain pending review."
+**Context**: INCEPTION - Requirements Analysis.
+
+---
+
+## NUS Career Talk - Requirements Approval Prompt
+**Timestamp**: 2026-10-17T17:10:51Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Requirements Analysis Complete. Requirements specify a 10–15 minute Vietnamese presentation, all eleven focus areas with interactive application/career demos, three featured live demos, an exploration view, a dark colourful style and links from both headers. Please examine aidlc-docs/inception/requirements/nus-career-talk-requirements.md. Request Changes or Approve & Continue to User Stories. The local requirements-analysis.md Step 9 requires explicit review of the generated requirements before proceeding. The dedicated review question file provides A, B and X choices. Both optional extensions are disabled: N/A, no enabled blocking findings."
+**Context**: Requirements Analysis Step 9 review gate.
+
+---
+
+## NUS Career Talk - Requirements Approved and Story Plan Prepared
+**Timestamp**: 2026-10-17T17:12:00Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+
+## Open tabs:
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+- nus-career-talk-architecture-review-questions.md: aidlc-docs/inception/requirements/nus-career-talk-architecture-review-questions.md
+
+## My request:
+approve and continue"
+**AI Response**: "Recorded explicit requirements approval, marked requirements and review answer approved, assessed User Stories as required for new presenter/student interactions, and prepared the story-generation plan with one approach question. Validated plain Markdown before writing and updated checkboxes in this interaction. Security and PBT extension rules skipped because disabled. No application code or generated story artifacts changed."
+**Context**: INCEPTION - User Stories Part 1.
+
+---
+
+## NUS Career Talk - Story Approach Approval Prompt
+**Timestamp**: 2026-10-17T17:12:00Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Requirements approved. Prepared a compact User Stories plan: two personas, journey-based stories, Given/When/Then acceptance criteria, and coverage for every focus-area demo. Please answer Question 1 in the linked story-generation plan; A approves the recommended approach. Both optional extensions remain disabled (N/A). The local user-stories.md Step 13 says “Do not proceed until the user explicitly approves the story approach,” so story generation awaits this plan review."
+**Context**: user-stories.md Steps 7–13; awaiting approach approval before Part 2 generation.
+
+---
+
+## NUS Career Talk - Story Plan Approval
+**Timestamp**: 2026-10-17T17:15:41Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+- nus-career-talk-architecture-review-questions.md: aidlc-docs/inception/requirements/nus-career-talk-architecture-review-questions.md
+
+## My request:
+approve and continue"
+**AI Response**: "Recorded explicit approval of the recommended journey-based story plan as Question 1 A. No conflicting preference supplied. Proceeding with two personas, Given/When/Then stories and eleven-area acceptance matrix. Security Baseline and PBT remain disabled and full rules are skipped."
+**Context**: INCEPTION - User Stories Part 2 authorised.
+
+---
+
+## NUS Career Talk - Stories Generated and Validated
+**Timestamp**: 2026-10-17T17:15:41Z
+**User Input**: "N/A - no further user input"
+**AI Response**: "Generated two task-based personas, nine journey-based stories and eleven distinct demo acceptance scenarios under the approved plan. Mapped all FR1–FR8 and NFR1–NFR5, documented shared dependencies and umbrella/cross-cutting story granularity, and checked scope consistency. Validated Markdown table structure and coverage counts before writing. Updated plan and state checkboxes. No implementation tests run because only documentation changed. Security Baseline and PBT full rules skipped because disabled."
+**Context**: INCEPTION - User Stories Part 2 generation completed; review pending.
+
+---
+
+## NUS Career Talk - Generated Stories Approval Prompt
+**Timestamp**: 2026-10-17T17:15:41Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "User Stories Complete. Generated nine journey-based stories for presenter and high-school student personas, with Given/When/Then criteria and eleven distinct demo acceptance scenarios. Review stories.md and personas.md under aidlc-docs/inception/user-stories/nus-career-talk/. Request Changes or Approve & Continue to Workflow Planning using review-questions.md. Both optional extensions remain disabled (N/A). The local user-stories.md Step 21 requires explicit approval of generated stories before proceeding."
+**Context**: User Stories Steps 19–21; awaiting generated-story approval.
+
+---
+
+## NUS Career Talk - Generated Stories Approved
+**Timestamp**: 2026-10-17T17:17:40Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+- nus-career-talk-architecture-review-questions.md: aidlc-docs/inception/requirements/nus-career-talk-architecture-review-questions.md
+
+## My request:
+approve"
+**AI Response**: "Recorded explicit approval of the generated stories and personas from the preceding review prompt; marked the story plan complete and advanced to Workflow Planning. Loaded approved requirements, answers, intent, stories, personas and relevant architecture/dependencies. Optional extensions remain disabled; full rules skipped."
+**Context**: INCEPTION - Workflow Planning authorised.
+
+---
+
+## NUS Career Talk - Workflow Plan Prepared
+**Timestamp**: 2026-10-17T17:17:40Z
+**User Input**: "N/A - no additional input"
+**AI Response**: "Created one-unit execution plan with six remaining stages, impact/dependency/risk analysis, verification strategy and success criteria. Validated restricted Mermaid declarations and edge targets before writing; included a text alternative and validated Markdown table structure. Recorded skip decisions and updated state and plan checkboxes. No application code changed and no implementation checks run. Optional extension rules skipped because disabled."
+**Context**: INCEPTION - Workflow Planning review pending.
+
+---
+
+## NUS Career Talk - Workflow Approval Prompt
+**Timestamp**: 2026-10-17T17:17:40Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Workflow Planning Complete. Recommended: one unit with Application Design, Functional Design, focused NFR Requirements and NFR Design, Code Generation, and Build and Test. Skip separate Units Generation and Infrastructure Design because this is one static feature with unchanged hosting. Medium integration risk; main boundaries are App routing, both headers, demo state and animation lifecycle. Review aidlc-docs/inception/plans/nus-career-talk-execution-plan.md. You may Request Changes, Add Skipped Stages, or Approve & Continue to Application Design using the linked review question file. The local workflow-planning.md Step 9 requires plan review; stage choices remain under user control. Optional extensions are disabled: N/A."
+**Context**: Workflow Planning Step 9; awaiting explicit execution-plan approval.
+
+---
+
+## NUS Career Talk - Workflow Approved; Application Design Planning
+**Timestamp**: 2026-10-17T17:19:34Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+- nus-career-talk-architecture-review-questions.md: aidlc-docs/inception/requirements/nus-career-talk-architecture-review-questions.md
+
+## My request:
+approve"
+**AI Response**: "Recorded execution-plan approval and review answer A. Loaded Application Design rules, existing App and shell source, execution plan and state; prepared a concrete component/state-ownership proposal and artifact checklist. Engineering header integration is through Navbar; Business through its shell. Checked plan content before writing. Updated approval and progress checkboxes in this interaction. No application code or design artifacts generated yet. Optional extension rules skipped because disabled."
+**Context**: INCEPTION - Application Design planning gate.
+
+---
+
+## NUS Career Talk - Application Design Approach Prompt
+**Timestamp**: 2026-10-17T17:19:34Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Execution plan approved. Prepared an application-design proposal: a separately loaded talk page, typed Vietnamese content, shared presentation/exploration state and eleven distinct demos with local state. Please answer Question 1 in aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md; A approves generating the five design artifacts. Application-design.md Steps 6–10 require a plan answer before artifact generation. Both optional extensions remain disabled (N/A)."
+**Context**: Application Design Steps 6–10; awaiting approach answer before artifact generation.
+
+---
+
+## NUS Career Talk - Application Design Plan Approved
+**Timestamp**: 2026-10-17T17:35:40Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+- nus-career-talk-architecture-review-questions.md: aidlc-docs/inception/requirements/nus-career-talk-architecture-review-questions.md
+
+## My request:
+approve and continue"
+**AI Response**: "Recorded explicit application-design plan approval as Question 1 A. No competing preference or ambiguity supplied. Inspected layout hook: only one-segment multi-page section hashes are normalised; the talk uses a multi-segment hash. Proceeding with the approved five artifacts. Optional extension rules skipped because disabled."
+**Context**: INCEPTION - Application Design artifact generation.
+
+---
+
+## NUS Career Talk - Application Design Generated
+**Timestamp**: 2026-10-17T17:35:40Z
+**User Input**: "N/A - no additional input"
+**AI Response**: "Generated components, conceptual method contracts, client orchestration, dependency diagram/matrix and consolidated application design. Mapped all requirements/stories/demo scenarios; validated Markdown and simple diagram structure before writing; updated plan/state in this interaction. No application code changed or runtime tests run. Optional extension rules remain skipped because disabled."
+**Context**: INCEPTION - Application Design artifacts ready for review.
+
+---
+
+## NUS Career Talk - Application Design Approval Prompt
+**Timestamp**: 2026-10-17T17:35:40Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Application Design Complete. Created five documents defining the lazy talk route, presentation/exploration ownership, separate typed content, eleven demo components and browser lifecycle contracts. Review aidlc-docs/inception/application-design/nus-career-talk/application-design.md. Request Changes, Add Units Generation, or Approve & Continue to Functional Design using review-questions.md. The local Application Design rule Step 13 requires explicit approval of the generated design before proceeding. Both optional extensions remain disabled (N/A)."
+**Context**: Application Design Steps 11–13; awaiting final design approval.
+
+---
