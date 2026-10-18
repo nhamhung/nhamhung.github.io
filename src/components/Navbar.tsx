@@ -21,6 +21,7 @@ import type { NavigationItem, SectionId } from '../types/portfolio'
 import { getEnabledNavigationItems } from '../utils/scroll'
 import { PortfolioStyleSelector } from './shared/PortfolioStyleSelector'
 import { ColorModeButton } from './ui/color-mode'
+import { NUS_TALK_HASH } from '../utils/talkRoute'
 
 type NavbarProps = {
   activeSection?: SectionId
@@ -82,8 +83,8 @@ function Navbar({
       boxShadow={isScrolled ? 'var(--nav-shadow)' : 'none'}
       transition="all 0.3s ease"
     >
-      <Container maxW="1280px" px={{ base: 4, md: 8 }}>
-        <Flex as="nav" justify="space-between" align="center" h={{ base: '68px', md: '76px' }}>
+      <Container maxW="1600px" px={{ base: 4, md: 8 }}>
+        <Flex as="nav" justify="space-between" align="center" gap={{base:2,md:4}} h={{ base: '68px', md: '76px' }}>
           <Link
             href={getNavigationHref('home')}
             onClick={(e) => {
@@ -92,12 +93,15 @@ function Navbar({
             }}
             display="flex"
             alignItems="center"
+            minW={0}
+            flexShrink={{base:1,md:0}}
             gap={3}
             aria-label="Scroll to home section"
             data-testid="navbar-brand-link"
           >
             <Box
               w={{ base: '36px', md: '40px' }}
+              flexShrink={0}
               h={{ base: '36px', md: '40px' }}
               borderRadius="md"
               overflow="hidden"
@@ -111,14 +115,14 @@ function Navbar({
               <Text className="code-font" fontSize="xs" color="var(--text-300)" letterSpacing="widest">
                 PROFILE.NODE
               </Text>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight={600} color="var(--text-100)">
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight={600} color="var(--text-100)" whiteSpace={{base:'normal',sm:'nowrap'}}>
                 {profile.name}
               </Text>
             </Box>
           </Link>
 
           {!isMultiPageLayout ? (
-            <Flex as="ul" listStyleType="none" gap={1} align="center" display={{ base: 'none', lg: 'flex' }}>
+            <Flex as="ul" listStyleType="none" gap={1} align="center" display={{ base: 'none', '2xl': 'flex' }}>
               {navigationItems.map((item) => {
                 const isActive = activeSection === item.id
 
@@ -130,7 +134,7 @@ function Navbar({
                         e.preventDefault()
                         handleSectionClick(item.id)
                       }}
-                      px={3}
+                      px={2}
                       py={2}
                       borderRadius="md"
                       fontSize="sm"
@@ -156,7 +160,8 @@ function Navbar({
             </Flex>
           ) : null}
 
-          <Flex align="center" gap={2}>
+          <Flex align="center" gap={2} flexShrink={0}>
+            <Link href={NUS_TALK_HASH} display={{ base: 'none', md: 'inline-flex' }} minH="44px" minW="108px" flexShrink={0} whiteSpace="nowrap" justifyContent="center" alignItems="center" px={4} border="1px solid" borderColor="var(--active-nav-border)" borderRadius="md" bg="var(--accent-control-bg)" _hover={{bg:'var(--accent-control-hover-bg)'}} color="var(--text-100)" fontWeight={600} fontSize="sm" data-testid="navbar-talk-link">NUS CS ↗</Link>
             <PortfolioStyleSelector
               activeTemplateId={activeTemplateId}
               onSelectTemplate={onSelectTemplate}
@@ -191,7 +196,7 @@ function Navbar({
 
             <IconButton
               aria-label="Toggle menu"
-              display={isMultiPageLayout ? 'flex' : { base: 'flex', lg: 'none' }}
+              display={isMultiPageLayout ? 'flex' : { base: 'flex', '2xl': 'none' }}
               variant="ghost"
               onClick={open ? onClose : onOpen}
               color="var(--text-100)"
@@ -230,6 +235,7 @@ function Navbar({
             </Drawer.Header>
             <Drawer.Body py={4} px={3}>
               <VStack align="stretch" gap={2}>
+                <Link href={NUS_TALK_HASH} onClick={onClose} minH="44px" px={3} py={2} color="var(--text-100)" data-testid="navbar-mobile-talk-link">NUS CS · Mở lối tương lai ↗</Link>
                 <Button
                   w="100%"
                   variant="outline"

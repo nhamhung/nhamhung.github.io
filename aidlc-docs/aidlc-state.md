@@ -3,17 +3,31 @@
 ## Active Workflow
 
 - **Change**: Vietnamese NUS CS career guidance presentation.
-- **Current phase**: INCEPTION.
-- **Current stage**: Application Design - artifact review gate.
+- **Current phase**: CONSTRUCTION - focused amendment.
+- **Current stage**: Header/introduction amendment - generated-code review.
+- **Workflow status**: Reopened for requested header/introduction amendment.
 - **Workspace**: `/Users/nhamquochung/nhamhung.github.io`.
 - **Depth**: Standard proposed for requirements; moderate multi-component feature.
-- **Plan**: `aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md`.
+- **Plan**: `aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md`.
+- **Code-generation plan**: `aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md`.
 - **Execution plan**: `aidlc-docs/inception/plans/nus-career-talk-execution-plan.md`.
-- **Active question file**: `aidlc-docs/inception/application-design/nus-career-talk/review-questions.md`.
-- **Next action**: Await generated application-design approval, then begin Functional Design for nus-career-talk.
-- **Active requirements**: `aidlc-docs/inception/requirements/nus-career-talk-requirements.md`.
-- **Approval file**: `aidlc-docs/inception/application-design/nus-career-talk/review-questions.md`.
+- **Active question file**: `aidlc-docs/construction/nus-career-talk/code/header-intro-review-questions.md`.
+- **Next action**: Await amendment generated-code approval, then complete formal Build and Test handoff.
+- **Active requirements**: `aidlc-docs/inception/requirements/nus-career-talk-header-intro-requirements.md`.
+- **Base requirements**: `aidlc-docs/inception/requirements/nus-career-talk-requirements.md`.
+- **Approval file**: `aidlc-docs/construction/nus-career-talk/code/header-intro-review-questions.md`.
 - **Prior workflow**: Retained below; its Code Generation review is still pending.
+
+## Header and Introduction Amendment Progress
+
+- [x] Workspace/context and CV inspection.
+- [x] Header diagnosis and introduction draft.
+- [x] Clarify introduction placement - second talk slide, with existing portrait.
+- [x] Requirements amendment approval.
+- [x] Prepare combined workflow/story/code-plan review.
+- [x] Approve combined plan.
+- [x] Planning, implementation and review revisions verified - 124 tests and production build passed; fitted fullscreen verified at three projection resolutions.
+- [ ] Generated-code approval and amendment Build and Test.
 
 ## NUS Career Talk Stage Progress
 
@@ -34,19 +48,30 @@
 - [x] Workflow Planning.
   - [x] Generate execution plan and workflow diagram.
   - [x] Approve execution plan.
-- [ ] Application Design - execute.
+- [x] Application Design - execute.
   - [x] Prepare component/state-ownership plan.
   - [x] Approve design approach.
   - [x] Generate application-design artifacts.
-  - [ ] Approve generated application design.
+  - [x] Approve generated application design.
 - Units Generation - skip; one cohesive unit.
-- [ ] Construction.
-  - [ ] Functional Design - execute.
-  - [ ] NFR Requirements - execute.
-  - [ ] NFR Design - execute.
+- [x] Construction.
+  - [x] Functional Design - execute.
+    - [x] Generate domain, logic, rules and frontend artifacts.
+    - [x] Approve Functional Design.
+  - [x] NFR Requirements - execute.
+    - [x] Generate quality criteria and stack decisions.
+    - [x] Approve NFR Requirements.
+  - [x] NFR Design - execute.
+    - [x] Generate patterns and logical components.
+    - [x] Approve NFR Design.
   - Infrastructure Design - skip; hosting unchanged.
-  - [ ] Code Generation - planning and generation.
-- [ ] Build and Test.
+  - [x] Code Generation - planning and generation.
+    - [x] Prepare twelve-step implementation plan.
+    - [x] Approve entire generation plan.
+    - [x] Implement all twelve generation steps; 114 tests and production build passed.
+    - [x] Approve generated code.
+- [x] Build and Test - 114 tests, production build, instructions and summary complete.
+- [x] Operations review - approved; placeholder acknowledged, workflow complete.
 
 ## Previous Workflow - Business Colour Refresh
 
@@ -65,6 +90,10 @@
 - **Next action**: Await explicit Code Generation review before the final Build and Test rerun
 
 ## Current Scope
+
+Vietnamese talk at `#/talks/nus-cs`: twelve presentation scenes including a professional introduction with portfolio photo, complete eleven-area exploration, local interactive demos, career examples, inspiring closing and both-template entry links. Implementation and Build and Test approved; Operations placeholder acknowledged. Workflow complete. See `construction/nus-career-talk/code/code-generation-summary.md` for evidence and limits.
+
+## Previous Change Scope
 
 - Apply the approved blue/mint/cream background palette and taupe/cream/orange text palette to Business.
 - Preserve Business layout, typography, content, routes, interactions, responsive behavior, and certificate previews.

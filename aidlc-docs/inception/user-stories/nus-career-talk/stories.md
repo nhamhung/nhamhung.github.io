@@ -160,3 +160,16 @@ NFR5 additionally requires design/code review of separately editable Vietnamese 
 All eight functional and five non-functional requirements are mapped. The live sequence retains the approved 10–15 minute target and three featured demos; independent exploration retains all eleven. No new backend, accounts, live inference, admissions/salary guidance or employment guarantees were introduced.
 
 Security Baseline: N/A, disabled by Q7 B. Property-Based Testing: N/A, disabled by Q8 C. Full extension rules were skipped; no enabled extension has a blocking finding. Ordinary correctness, accessibility and regression checks remain acceptance obligations.
+
+## US10 - Meet the speaker (approved focused amendment)
+
+As a high-school student, I want a short introduction to the speaker and their experience so that I understand the perspective behind the talk.
+
+Personas: P1, P2. References: amendment R2/R3, FR1, NFR1/NFR2.
+
+- Given the opening, when I advance, then scene two shows the existing portfolio photo, Nham Quoc Hung and the concise approved Vietnamese CV highlights.
+- Given the education highlight, when I read it, then UT Austin study is ongoing according to the CV, not described as completed.
+- Given phone or projection layout, when I inspect the introduction, then the original portrait is not stretched and text remains reachable.
+- Given the inserted scene, when I navigate to a featured demo and explore, then the correct field opens and the presentation position is retained on return.
+
+US01 additionally requires the NUS CS action and arrow to stay together with reserved width/padding and compact navigation before crowding. US02/US07 now use ten content-derived scenes. Implementation coverage is recorded in `aidlc-docs/construction/nus-career-talk/code/header-intro-summary.md`.

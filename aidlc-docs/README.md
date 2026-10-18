@@ -2,6 +2,18 @@
 
 ## Active Change
 
+- **Change**: Vietnamese NUS CS career guidance presentation.
+- **Requirements**: [Requirements](inception/requirements/nus-career-talk-requirements.md).
+- **Execution plan**: [Plan](inception/plans/nus-career-talk-execution-plan.md).
+- **Implementation plan**: [Code generation](construction/plans/nus-career-talk-code-generation-plan.md).
+- **Implementation and verification**: [Summary](construction/nus-career-talk/code/code-generation-summary.md).
+- **Build and Test**: [Results and instructions](construction/build-and-test/nus-career-talk/build-and-test-summary.md).
+- **Current amendment**: [Header and photo introduction](construction/nus-career-talk/code/header-intro-summary.md), implemented and verified; [generated-code review pending](construction/nus-career-talk/code/header-intro-review-questions.md).
+- **Baseline status**: Complete; no deployment performed.
+- **State and audit**: `aidlc-state.md`, `audit.md`.
+
+## Previous Change
+
 - **Change**: Business Color and Two-Theme Refresh
 - **Requirement questions**: `inception/requirements/business-youthful-color-refresh-requirement-questions.md`
 - **Requirements**: `inception/requirements/business-youthful-color-refresh-requirements.md`

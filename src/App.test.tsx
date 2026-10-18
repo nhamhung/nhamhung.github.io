@@ -578,12 +578,17 @@ describe("App smoke render", () => {
 
   it("preserves color mode while changing styles", async () => {
     renderPortfolio();
-
-    fireEvent.click(await screen.findByTestId("navbar-theme-toggle"));
-    await waitFor(() => expect(document.documentElement).toHaveClass("dark"));
+    const toggle = await screen.findByTestId("navbar-theme-toggle");
+    const selectedMode = document.documentElement.classList.contains("dark")
+      ? "light"
+      : "dark";
+    fireEvent.click(toggle);
+    await waitFor(() =>
+      expect(document.documentElement).toHaveClass(selectedMode),
+    );
     await selectPortfolioStyle("engineering", "business");
 
-    expect(document.documentElement).toHaveClass("dark");
+    expect(document.documentElement).toHaveClass(selectedMode);
     expect(
       await screen.findByTestId("business-theme-toggle"),
     ).toBeInTheDocument();

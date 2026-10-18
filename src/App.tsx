@@ -1,4 +1,18 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  lazy,
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import TalkRouteBoundary from "./components/TalkRouteBoundary";
+import {
+  isNusTalkHash,
+  navigateTalkHash,
+  portfolioReturnHash,
+} from "./utils/talkRoute";
 
 import "./App.css";
 import { navigation } from "./data/portfolio";
@@ -99,7 +113,49 @@ export function PortfolioApp({ initialTemplate }: PortfolioAppProps) {
   );
 }
 
+const TalkPage = lazy(() => import("./features/nus-talk/TalkPage"));
 function App() {
+  const [hash, setHash] = useState(() => window.location.hash);
+  const returnHash = useRef(portfolioReturnHash(window.location.hash));
+  useEffect(() => {
+    const sync = () => {
+      const next = window.location.hash;
+      if (!isNusTalkHash(next)) returnHash.current = portfolioReturnHash(next);
+      setHash(next);
+    };
+    window.addEventListener("hashchange", sync);
+    window.addEventListener("popstate", sync);
+    return () => {
+      window.removeEventListener("hashchange", sync);
+      window.removeEventListener("popstate", sync);
+    };
+  }, []);
+  const exit = () => navigateTalkHash(returnHash.current);
+  if (isNusTalkHash(hash))
+    return (
+      <TalkRouteBoundary onExit={exit}>
+        <Suspense
+          fallback={
+            <section
+              lang="vi"
+              style={{
+                padding: 40,
+                minHeight: "100vh",
+                background: "#f6f8f3",
+                color: "#19354a",
+              }}
+            >
+              <p role="status">Đang mở hành trình NUS CS…</p>
+              <button data-testid="talk-loading-exit" onClick={exit}>
+                Về portfolio
+              </button>
+            </section>
+          }
+        >
+          <TalkPage onExit={exit} />
+        </Suspense>
+      </TalkRouteBoundary>
+    );
   return <PortfolioApp />;
 }
 

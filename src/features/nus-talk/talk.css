@@ -1,0 +1,1061 @@
+.nus-talk {
+  --field: #11695d;
+  --nt-bg: #f6f8f3;
+  --nt-panel: #ffffff;
+  --nt-muted: #4d6470;
+  background: var(--nt-bg);
+  color: #19354a;
+  min-height: 100dvh;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    sans-serif;
+  line-height: 1.6;
+  isolation: isolate;
+  color-scheme: light;
+  overflow-wrap: anywhere;
+}
+.nus-talk * {
+  box-sizing: border-box;
+}
+.nus-talk button,
+.nus-talk select,
+.nus-talk input {
+  font: inherit;
+}
+.nus-talk button,
+.nus-talk select,
+.nus-talk a.nt-button {
+  min-height: 44px;
+  border: 1px solid #7a9188;
+  background: #fff;
+  color: #19354a;
+  border-radius: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.nus-talk button:hover,
+.nus-talk a.nt-button:hover {
+  background: #e9f1ec;
+  border-color: var(--field);
+}
+.nus-talk button:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+.nus-talk :focus-visible {
+  outline: 3px solid #805d16;
+  outline-offset: 4px;
+}
+.nus-talk a {
+  color: #205e99;
+  text-underline-offset: 4px;
+}
+.nus-talk p {
+  margin: 0 0 1em;
+}
+.nus-talk h1,
+.nus-talk h2,
+.nus-talk h3 {
+  line-height: 1.13;
+  letter-spacing: -0.035em;
+  font-weight: 750;
+  margin: 0;
+}
+.nus-talk h1 {
+  font-size: clamp(2.4rem, 4.8vw, 4.6rem);
+  max-width: 1050px;
+}
+.nus-talk h2 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+}
+.nus-talk h3 {
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+.nus-talk small,
+.nus-talk .nt-muted {
+  color: var(--nt-muted);
+}
+.nus-talk .nt-label {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  font-weight: 650;
+  color: var(--field);
+}
+.nus-talk .nt-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 18px clamp(16px, 4vw, 64px);
+  border-bottom: 1px solid #cbd9d0;
+  flex-wrap: wrap;
+  background: #f6f8f3;
+}
+.nus-talk .nt-brand {
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  font-size: 13px;
+}
+.nus-talk .nt-brand span {
+  color: #11695d;
+}
+.nus-talk .nt-tools,
+.nus-talk .nt-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.nus-talk .nt-primary {
+  background: var(--field);
+  color: #f6f8f3;
+  border-color: var(--field);
+  font-weight: 700;
+}
+.nus-talk .nt-primary:hover {
+  background: #0b5249;
+  color: #fff;
+}
+.nus-talk .nt-main {
+  max-width: 1536px;
+  margin: auto;
+  padding: clamp(24px, 2.4vw, 40px);
+}
+.nus-talk .nt-kicker {
+  margin-bottom: 22px;
+}
+.nus-talk .nt-lead {
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  color: #4c6370;
+  max-width: 850px;
+  margin: 24px 0 32px;
+  line-height: 1.65;
+}
+.nus-talk .nt-slide {
+  min-height: 65vh;
+}
+.nus-talk .nt-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.nus-talk .nt-card {
+  background: #fff;
+  border: 1px solid #c3d3c9;
+  border-radius: 18px;
+  padding: 28px;
+}
+.nus-talk .nt-card p {
+  color: #4c6370;
+  margin-top: 14px;
+}
+.nus-talk .nt-card .nt-label {
+  display: block;
+  margin-bottom: 12px;
+}
+.nus-talk .nt-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px clamp(16px, 4vw, 64px);
+  border-top: 1px solid #cbd9d0;
+}
+.nus-talk .nt-progress {
+  height: 3px;
+  background: #dce8e0;
+}
+.nus-talk .nt-progress div {
+  height: 100%;
+  background: var(--field);
+  transition: width 0.3s;
+}
+.nus-talk .nt-map {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.nus-talk .nt-area-choice {
+  text-align: left;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+  padding: 18px;
+}
+.nus-talk .nt-area-choice strong {
+  display: block;
+  font-size: 16px;
+}
+.nus-talk .nt-area-choice small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.nus-talk .nt-symbol {
+  color: var(--field);
+  font-size: 32px;
+  flex: none;
+}
+.nus-talk .nt-explore-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+.nus-talk .nt-area-nav {
+  display: grid;
+  gap: 8px;
+}
+.nus-talk .nt-area-nav button[aria-pressed="true"] {
+  border-color: var(--field);
+  background: #e3eee7;
+}
+.nus-talk .nt-detail {
+  min-width: 0;
+}
+.nus-talk .nt-detail .nt-lead {
+  font-size: 1.15rem;
+}
+.nus-talk .nt-detail h2 {
+  color: var(--field);
+}
+.nus-talk .nt-careers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+.nus-talk .nt-careers p {
+  font-size: 15px;
+}
+.nus-talk .nt-source {
+  margin-top: 36px;
+  font-size: 13px;
+  color: var(--nt-muted);
+}
+.nus-talk .nt-source a {
+  margin-right: 18px;
+  display: inline-block;
+}
+.nus-talk .nt-source summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 10px 0;
+}
+.nus-talk .nt-feature-copy {
+  margin-top: 18px;
+  color: #4c6370;
+}
+.nus-talk .nt-demo {
+  border: 1px solid #99b4a5;
+  background: linear-gradient(140deg, #fff, #edf5ef);
+  border-radius: 22px;
+  padding: 24px;
+  margin-top: 20px;
+  min-width: 0;
+  box-shadow: 0 18px 70px #183a4a0d;
+}
+.nus-talk .nt-demo-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.nus-talk .nt-demo-top button {
+  font-size: 13px;
+}
+.nus-talk .nt-demo-note {
+  font-size: 13px;
+  color: #4d6470;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.nus-talk .nt-result {
+  display: block;
+  padding: 14px 18px;
+  margin-top: 18px;
+  border-left: 3px solid var(--field);
+  background: #e8f1eb;
+  font-size: 17px;
+  white-space: pre-wrap;
+}
+.nus-talk .nt-controls {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.nus-talk .nt-controls label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nus-talk input[type="range"] {
+  accent-color: var(--field);
+  max-width: 100%;
+  min-height: 44px;
+}
+.nus-talk .nt-diagram {
+  width: 100%;
+  max-height: 340px;
+  display: block;
+}
+.nus-talk svg text {
+  fill: #29485b;
+  font: 18px system-ui;
+}
+.nus-talk .nt-path {
+  stroke-dasharray: 12 6;
+  animation: nt-flow 2s linear infinite;
+}
+.nus-talk[data-motion="false"] *,
+.nus-talk[data-motion="false"] *:before,
+.nus-talk[data-motion="false"] *:after {
+  animation: none !important;
+  transition: none !important;
+}
+.nus-talk .nt-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+.nus-talk .nt-tile {
+  padding: 18px 8px;
+  text-align: center;
+  border: 1px solid #7a9188;
+  border-radius: 10px;
+  background: #eef4f0;
+}
+.nus-talk .nt-tile.active {
+  background: var(--field);
+  color: #f6f8f3;
+}
+.nus-talk .nt-pipeline {
+  display: flex;
+  gap: 12px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+.nus-talk .nt-stage {
+  border: 1px solid #7a9188;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+}
+.nus-talk .nt-stage.active {
+  border-color: var(--field);
+  color: var(--field);
+  background: #e2eee6;
+}
+.nus-talk .nt-big-value {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 750;
+  color: var(--field);
+  padding: 28px 0;
+  text-align: center;
+}
+.nus-talk .nt-skip {
+  position: absolute;
+  left: 16px;
+  top: -90px;
+  background: #fff;
+  padding: 12px;
+  z-index: 100;
+}
+.nus-talk .nt-skip:focus {
+  top: 8px;
+}
+.nus-talk .nt-orbit {
+  height: 400px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.nus-talk .nt-orbit-ring {
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  border: 1px solid #9ab8aa;
+  border-radius: 50%;
+  transform: rotateX(55deg) rotate(-25deg);
+}
+.nus-talk .nt-orbit-ring:nth-child(2) {
+  transform: rotateY(55deg) rotate(35deg);
+}
+.nus-talk .nt-orbit-ring:nth-child(3) {
+  width: 230px;
+  height: 230px;
+  transform: rotateX(-30deg) rotateY(50deg);
+  border-color: #11695d;
+}
+.nus-talk .nt-orbit-core {
+  height: 140px;
+  width: 140px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 30%, #e1efe4, #78aa94 55%, #d2e4d8);
+  border-radius: 36px;
+  transform: rotate(-15deg);
+  box-shadow: 0 0 100px #11695d33;
+  font-size: 62px;
+  color: #19354a;
+}
+.nus-talk .nt-orbit-label {
+  position: absolute;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  border: 1px solid #a5bcb0;
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 40px;
+}
+.nus-talk .nt-orbit-label:nth-last-child(1) {
+  bottom: 20px;
+  right: 10%;
+}
+.nus-talk .nt-orbit-label:nth-last-child(2) {
+  top: 15px;
+  left: 0;
+}
+.nus-talk .nt-orbit-label:nth-last-child(3) {
+  right: 0;
+  top: 100px;
+}
+.nus-talk .nt-challenge {
+  padding: 35px;
+  border-left: 3px solid #805d16;
+  background: #fff7e8;
+  margin-top: 32px;
+  max-width: 850px;
+}
+.nus-talk .nt-robot {
+  font-size: 72px;
+  text-align: center;
+  margin: 15px 0;
+}
+.nus-talk .nt-caption {
+  font-size: 15px;
+  color: #4c6370;
+}
+.nus-talk .nt-worker {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.nus-talk .nt-task {
+  padding: 10px 17px;
+  border: 1px solid var(--field);
+  color: var(--field);
+  border-radius: 6px;
+}
+.nus-talk .nt-code {
+  font-family: ui-monospace, monospace;
+  letter-spacing: 0.05em;
+}
+@keyframes nt-flow {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+@media (min-width: 1100px) {
+  .nus-talk .nt-presentation .nt-lead {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1000px) {
+  .nus-talk .nt-map {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .nus-talk .nt-explore-layout {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+  .nus-talk .nt-two {
+    gap: 18px;
+  }
+  .nus-talk .nt-orbit {
+    height: 320px;
+  }
+  .nus-talk .nt-orbit-ring {
+    width: 260px;
+    height: 260px;
+  }
+}
+@media (max-width: 760px) {
+  .nus-talk .nt-two,
+  .nus-talk .nt-explore-layout {
+    grid-template-columns: 1fr;
+  }
+  .nus-talk .nt-map {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nus-talk .nt-area-nav {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nus-talk .nt-careers {
+    grid-template-columns: 1fr;
+  }
+  .nus-talk .nt-toolbar {
+    padding: 14px 16px;
+  }
+  .nus-talk .nt-tools button {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  .nus-talk .nt-main {
+    padding: 28px 18px;
+  }
+  .nus-talk .nt-demo {
+    padding: 16px;
+  }
+  .nus-talk .nt-footer {
+    padding: 18px;
+    flex-wrap: wrap;
+  }
+  .nus-talk .nt-card {
+    padding: 20px;
+  }
+  .nus-talk .nt-demo-top {
+    align-items: start;
+  }
+  .nus-talk .nt-area-choice {
+    padding: 12px;
+    gap: 8px;
+  }
+  .nus-talk .nt-area-choice strong {
+    font-size: 14px;
+  }
+  .nus-talk .nt-symbol {
+    font-size: 24px;
+  }
+  .nus-talk .nt-orbit {
+    height: 300px;
+  }
+  .nus-talk .nt-slide {
+    min-height: 50vh;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nus-talk * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.nus-talk .nt-mobile-picker {
+  display: none;
+}
+.nus-talk .nt-orbit-ring:first-child {
+  animation: nt-orbit 25s linear infinite;
+}
+@keyframes nt-orbit {
+  0% {
+    transform: rotateX(55deg) rotate(-25deg);
+  }
+  to {
+    transform: rotateX(55deg) rotate(335deg);
+  }
+}
+@media (max-width: 760px) {
+  .nus-talk .nt-area-nav {
+    display: none;
+  }
+  .nus-talk .nt-mobile-picker {
+    display: grid;
+    gap: 10px;
+  }
+  .nus-talk .nt-mobile-picker select {
+    max-width: 100%;
+    width: 100%;
+    white-space: normal;
+  }
+  .nus-talk .nt-explore-layout {
+    gap: 24px;
+  }
+}
+.nus-talk:fullscreen {
+  overflow: auto;
+  max-height: 100dvh;
+}
+.nus-talk .nt-slide {
+  min-height: 55vh;
+}
+.nus-talk .nt-mobile-picker select {
+  white-space: nowrap;
+}
+.nus-talk .nt-speaker-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+.nus-talk .nt-speaker-portrait {
+  margin: 0;
+  border: 1px solid #a5bcb0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 50px #183a4a0d;
+}
+.nus-talk .nt-speaker-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.nus-talk .nt-speaker-portrait figcaption {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+}
+.nus-talk .nt-speaker-portrait figcaption strong {
+  font-size: 22px;
+}
+.nus-talk .nt-speaker-portrait figcaption > span:last-child {
+  font-size: 14px;
+  color: #4c6370;
+}
+.nus-talk .nt-speaker-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.nus-talk .nt-speaker-highlights .nt-card {
+  padding: 24px;
+  height: 100%;
+}
+.nus-talk .nt-speaker-highlights .nt-card p {
+  font-size: 18px;
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+.nus-talk .nt-speaker-note {
+  margin-top: 24px;
+}
+@media (max-width: 1000px) {
+  .nus-talk .nt-speaker-grid {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 20px;
+  }
+  .nus-talk .nt-speaker-highlights {
+    grid-template-columns: 1fr;
+  }
+  .nus-talk .nt-speaker-highlights .nt-card p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .nus-talk .nt-speaker-grid {
+    grid-template-columns: 1fr;
+  }
+  .nus-talk .nt-speaker-portrait {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .nus-talk .nt-speaker-highlights {
+    gap: 12px;
+  }
+}
+.nus-talk .nt-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.nus-talk .nt-compare-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 4px solid var(--field);
+}
+.nus-talk .nt-compare-card .nt-label {
+  margin: 0;
+}
+.nus-talk .nt-compare-card h2 {
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  min-height: 1.2em;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+.nus-talk .nt-compare-card p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.nus-talk .nt-compare-focus {
+  min-height: 3.4em;
+}
+.nus-talk .nt-explained-flow {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 8px 0;
+  margin: 0;
+}
+.nus-talk .nt-explained-flow li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  background: #edf4ef;
+  border: 1px solid #a9c2b3;
+  border-radius: 12px;
+  padding: 16px 10px;
+  font-size: 16px;
+  color: #19354a;
+}
+.nus-talk .nt-flow-number {
+  color: var(--field);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.nus-talk .nt-flow-arrow {
+  position: absolute;
+  right: -12px;
+  top: calc(50% - 14px);
+  color: var(--field);
+  background: #fff;
+  font-size: 20px;
+  z-index: 1;
+}
+.nus-talk .nt-compare-example {
+  flex: 1;
+}
+.nus-talk .nt-compare-careers {
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid #c3d3c9;
+  padding-top: 18px;
+  margin-top: auto;
+  font-size: 16px;
+}
+.nus-talk .nt-common-ground {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 18px;
+  background: #e7f0e9;
+  border-left: 4px solid #11695d;
+  border-radius: 10px;
+  padding: 22px;
+  margin-top: 24px;
+  color: #29485b;
+}
+.nus-talk .nt-common-ground p {
+  margin: 0;
+}
+.nus-talk .nt-nus-grid h2 {
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  line-height: 1.2;
+}
+.nus-talk .nt-nus-grid .nt-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.nus-talk .nt-nus-grid .nt-card p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.75;
+}
+.nus-talk .nt-curriculum-path {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 18px;
+}
+.nus-talk .nt-curriculum-path li {
+  display: grid;
+  gap: 5px;
+  padding-left: 18px;
+  border-left: 3px solid #a0c0ac;
+  color: #4c6370;
+}
+.nus-talk .nt-curriculum-path strong {
+  color: #11695d;
+}
+@media (max-width: 760px) {
+  .nus-talk .nt-compare-grid {
+    grid-template-columns: 1fr;
+  }
+  .nus-talk .nt-compare-card h2,
+  .nus-talk .nt-compare-focus {
+    min-height: 0;
+  }
+  .nus-talk .nt-compare-card p,
+  .nus-talk .nt-nus-grid .nt-card p {
+    font-size: 16px;
+  }
+  .nus-talk .nt-common-ground {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .nus-talk .nt-explained-flow li {
+    font-size: 14px;
+    padding: 12px 5px;
+  }
+}
+.nus-talk .nt-comparison-scene > h1,
+.nus-talk .nt-nus-scene > h1 {
+  font-size: clamp(2rem, 3.3vw, 3rem);
+  max-width: none;
+}
+.nus-talk .nt-comparison-scene > .nt-lead,
+.nus-talk .nt-nus-scene > .nt-lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  max-width: 1100px;
+  margin: 18px 0 24px;
+}
+.nus-talk .nt-compare-card {
+  padding: 22px;
+}
+.nus-talk .nt-compare-card h2 {
+  font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+}
+.nus-talk[data-presenting="true"] {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.nus-talk[data-presenting="true"] .nt-toolbar {
+  padding: 6px 16px;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.nus-talk[data-presenting="true"] .nt-brand {
+  display: none;
+}
+.nus-talk[data-presenting="true"] .nt-tools {
+  width: 100%;
+  justify-content: flex-end;
+}
+.nus-talk[data-presenting="true"] .nt-main {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  overflow: auto;
+}
+.nus-talk[data-presenting="true"][data-view="presentation"] .nt-main {
+  overflow: hidden;
+}
+.nus-talk[data-presenting="true"] .nt-source {
+  display: none;
+}
+.nus-talk[data-presenting="true"] .nt-footer {
+  padding: 6px 16px;
+  flex-shrink: 0;
+}
+.nus-talk[data-presenting="true"] .nt-progress {
+  flex-shrink: 0;
+}
+.nus-talk[data-presenting="true"][data-view="exploration"] .nt-main {
+  padding: 24px;
+}
+.nus-talk .nt-fit-frame {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.nus-talk .nt-fit-box {
+  position: relative;
+  flex: none;
+}
+.nus-talk .nt-fit-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  padding: 24px 40px;
+  transform-origin: top left;
+}
+.nus-talk .nt-fit-canvas .nt-slide {
+  min-height: 0;
+}
+.nus-talk .nt-fit-canvas h1 {
+  font-size: 52px;
+  max-width: none;
+}
+.nus-talk .nt-fit-canvas .nt-lead {
+  font-size: 22px;
+  margin: 16px 0 24px;
+}
+.nus-talk .nt-fit-canvas .nt-compare-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.nus-talk .nt-fit-canvas .nt-speaker-grid {
+  grid-template-columns: 260px minmax(0, 1fr);
+}
+.nus-talk .nt-fit-canvas .nt-speaker-highlights {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.nus-talk .nt-fit-canvas .nt-map {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.nus-talk .nt-fit-canvas .nt-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.nus-talk .nt-fit-canvas .nt-detail {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 16px 24px;
+  align-items: start;
+}
+.nus-talk .nt-fit-canvas .nt-detail > .nt-kicker {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+.nus-talk .nt-fit-canvas .nt-detail > .nt-demo-host {
+  grid-column: 1;
+  grid-row: 2 / span 3;
+  margin: 0;
+}
+.nus-talk .nt-fit-canvas .nt-detail > .nt-feature-copy,
+.nus-talk .nt-fit-canvas .nt-detail > .nt-caption,
+.nus-talk .nt-fit-canvas .nt-detail > .nt-careers {
+  grid-column: 2;
+  margin: 0;
+}
+.nus-talk .nt-fit-canvas .nt-careers {
+  grid-template-columns: 1fr;
+}
+.nus-talk .nt-fit-canvas .nt-speaker-highlights {
+  gap: 12px;
+}
+.nus-talk .nt-fit-canvas .nt-speaker-highlights .nt-card {
+  padding: 16px 20px;
+}
+.nus-talk .nt-fit-canvas .nt-speaker-highlights .nt-card p {
+  line-height: 1.4;
+  margin-top: 10px;
+}
+.nus-talk .nt-fit-canvas .nt-speaker-highlights .nt-card .nt-label {
+  margin-bottom: 8px;
+}
+.nus-talk .nt-fit-canvas .nt-demo-host {
+  min-width: 0;
+}
+.nus-talk .nt-fit-canvas .nt-demo-host > .nt-demo {
+  margin-top: 0;
+}
+.nus-talk .nt-fit-canvas .nt-detail > .nt-feature-copy {
+  grid-row: 2;
+}
+.nus-talk .nt-fit-canvas .nt-detail > .nt-careers {
+  grid-row: 3;
+}
+.nus-talk .nt-fit-canvas .nt-detail > .nt-caption {
+  grid-row: 4;
+}
+
+.nus-talk .nt-demo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: var(--nt-bg);
+  padding: 16px;
+  overflow: auto;
+}
+.nus-talk .nt-demo-overlay > .nt-demo {
+  margin: 0;
+  min-height: calc(100dvh - 32px);
+  display: flex;
+  flex-direction: column;
+}
+.nus-talk .nt-demo-overlay .nt-diagram {
+  flex: 1;
+  width: 100%;
+  height: calc(100dvh - 300px);
+  min-height: 240px;
+  max-height: none;
+}
+.nus-talk .nt-demo-overlay .nt-demo-top {
+  flex-shrink: 0;
+}
+.nus-talk .nt-demo-overlay .nt-demo-note {
+  margin-top: auto;
+  padding-top: 12px;
+}
+.nus-talk .nt-demo-overlay > .nt-demo {
+  height: calc(100dvh - 32px);
+  overflow: auto;
+}
+.nus-talk .nt-demo-overlay .nt-diagram {
+  flex: 1 1 0;
+  height: 0;
+  min-height: 120px;
+}
+.nus-talk .nt-demo-overlay .nt-controls,
+.nus-talk .nt-demo-overlay .nt-result,
+.nus-talk .nt-demo-overlay .nt-demo-note {
+  flex-shrink: 0;
+}
+
+.nus-talk .nt-overview-grid,
+.nus-talk .nt-overview-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.nus-talk .nt-overview-example {
+  margin-top: 20px;
+}
+.nus-talk .nt-overview-flow {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+.nus-talk .nt-overview-flow li {
+  border-left: 3px solid #11695d;
+  padding-left: 16px;
+  display: grid;
+  gap: 8px;
+}
+.nus-talk .nt-overview-flow span {
+  color: var(--nt-muted);
+}
+.nus-talk .nt-overview-scene > h1 {
+  font-size: clamp(2rem, 3.3vw, 3rem);
+}
+@media (max-width: 760px) {
+  .nus-talk .nt-overview-grid,
+  .nus-talk .nt-overview-flow {
+    grid-template-columns: 1fr;
+  }
+}
+.nus-talk .nt-fit-canvas .nt-overview-grid,
+.nus-talk .nt-fit-canvas .nt-overview-flow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}

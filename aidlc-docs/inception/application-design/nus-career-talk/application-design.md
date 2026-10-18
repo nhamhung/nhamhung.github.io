@@ -1,6 +1,6 @@
 # NUS Career Talk - Application Design
 
-Status: generated under the approved design plan; final design review pending.
+Status: approved by explicit user response “approve” on 2026-10-18.
 
 ## Decision summary
 
@@ -52,7 +52,7 @@ Own mode, slide position, selected focus area and motion pause preference for th
 
 ### PresentationView and PresentationControls
 
-Render the approximately twelve-minute narrative: opening, CS/CE comparison, NUS CS introduction, eleven-area overview, three featured demos, and closing. Controls expose previous/next, progress, exploration, fullscreen and exit. Render only the current teaching scene and its active demo. NUS sources remain accessible without requiring a dense projection slide.
+Render the approximately twelve-minute narrative: opening, speaker introduction with the portfolio photo, CS/CE comparison, NUS CS introduction, eleven-area overview, three featured demos, and closing. Controls expose previous/next, progress, exploration, fullscreen and exit. Render only the current teaching scene and its active demo. NUS sources remain accessible without requiring a dense projection slide.
 
 ### ExplorationView and FocusAreaDetails
 

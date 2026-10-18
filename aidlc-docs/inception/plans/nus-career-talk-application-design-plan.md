@@ -1,6 +1,6 @@
 # NUS Career Talk - Application Design Plan
 
-Status: five artifacts generated and validated; application-design review pending.
+Status: completed; generated application design approved.
 
 ## Context and decisions already approved
 
@@ -52,7 +52,7 @@ All artifacts belong under `aidlc-docs/inception/application-design/nus-career-t
 - [x] Validate completeness against US01–US09, M01–M11 and FR1–FR8/NFR1–NFR5; identify any unresolved design issues.
 - [x] Validate Markdown and diagrams, record extension compliance and update plan/state checkboxes.
 - [x] Present application-design artifacts and a dedicated review question for explicit approval.
-- [ ] Receive application-design approval before starting Functional Design in Construction.
+- [x] Receive application-design approval before starting Functional Design in Construction.
 
 ## Question 1 - Design approach
 

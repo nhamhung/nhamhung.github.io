@@ -146,13 +146,16 @@ Six execution stages remain after this plan's approval. Duration depends on desi
 - [x] Validate workflow diagram structure and provide a text alternative.
 - [x] Generate execution plan and review question; update state and audit.
 - [x] Receive execution-plan approval.
-- [ ] Application Design.
-- [ ] Functional Design for nus-career-talk.
-- [ ] NFR Requirements for nus-career-talk.
-- [ ] NFR Design for nus-career-talk.
-- [ ] Code Generation Part 1 plan approval.
-- [ ] Code Generation Part 2 implementation and review.
-- [ ] Build and Test with instruction artifacts and required review.
+- [x] Application Design.
+- [x] Functional Design for nus-career-talk.
+- [x] NFR Requirements for nus-career-talk.
+- [x] NFR Design for nus-career-talk.
+- [x] Code Generation Part 1 plan approval.
+- [x] Code Generation Part 2 implementation and review.
+  - [x] Implemented and verified; 114 tests and production build passed.
+  - [x] Generated-code approval.
+- [x] Build and Test with instruction artifacts and results.
+- [x] Approve results and proceed to Operations placeholder.
 
 Skipped: Units Generation and Infrastructure Design. Operations remains a placeholder. Each executed stage must load its own rule details and follow its explicit review gate.
 

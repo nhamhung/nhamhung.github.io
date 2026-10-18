@@ -2,6 +2,9 @@
 
 Status: approved by explicit user response “approve and continue” on 2026-10-18.
 
+
+Current amendment: [Header and photo introduction requirements](nus-career-talk-header-intro-requirements.md) add the speaker as scene two and update navigation to ten scenes. The original requirement record below remains the baseline.
+
 ## Intent and scope
 
 Create a Vietnamese presentation page within the existing portfolio for a 10–15 minute high-school career guidance talk. Explain Computer Science versus Computer Engineering, introduce NUS CS focus areas, connect each to applications and possible careers through beautiful interactive visuals, and close with an exciting, achievable first step.

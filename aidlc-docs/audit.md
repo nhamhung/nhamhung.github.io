@@ -9402,3 +9402,701 @@ approve and continue"
 **Context**: Application Design Steps 11–13; awaiting final design approval.
 
 ---
+
+## NUS Career Talk - Application Design Approved
+**Timestamp**: 2026-10-18T05:22:07Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## Open tabs:
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+- nus-career-talk-architecture-review-questions.md: aidlc-docs/inception/requirements/nus-career-talk-architecture-review-questions.md
+
+## My request:
+approve"
+**AI Response**: "Recorded explicit application-design artifact approval from the preceding review prompt. Separate Units Generation remains skipped under the approved execution plan; its one-unit definition and story allocation provide Functional Design context. Beginning the approved Functional Design stage. Both optional extensions disabled; full rules skipped."
+**Context**: CONSTRUCTION - nus-career-talk Functional Design.
+
+---
+
+## NUS Career Talk - Functional Design Generated
+**Timestamp**: 2026-10-18T05:22:07Z
+**User Input**: "N/A - no additional input"
+**AI Response**: "Created functional plan and four artifacts with nine-scene narrative, finite content/session models, eleven bounded toy demo computations, validation, resets and edge cases. All clarification categories evaluated; no unresolved product question required input. Validated plain Markdown and eleven-model coverage before writes. Updated checkboxes and state. No application code or runtime checks performed."
+**Context**: CONSTRUCTION - Functional Design review pending.
+
+---
+
+## NUS Career Talk - Functional Design Approval Prompt
+**Timestamp**: 2026-10-18T05:22:07Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Functional Design Complete - nus-career-talk. Defined nine narrative scenes, session transitions, typed content entities and eleven deterministic demo models with inputs, outputs, reset and failure rules. Review aidlc-docs/construction/nus-career-talk/functional-design/. Request Changes or Continue to Next Stage to approve and proceed to NFR Requirements. The local Functional Design rule Step 8 requires explicit approval before proceeding. Security Baseline and PBT are disabled (N/A); no enabled blocking findings."
+**Context**: Functional Design Steps 7–8; two-option review gate.
+
+---
+
+## NUS Career Talk - Functional Design Approved
+**Timestamp**: 2026-10-18T05:40:45Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+
+## Open tabs:
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+
+## My request:
+approve and continue"
+**AI Response**: "Recorded explicit Functional Design approval as Continue to Next Stage. Loaded all four functional-design artifacts, NFR Requirements rules, state and dependency manifest. Proceeding to the approved focused NFR assessment; both optional extension rule sets remain skipped because disabled."
+**Context**: CONSTRUCTION - NFR Requirements.
+
+---
+
+## NUS Career Talk - NFR Requirements Generated
+**Timestamp**: 2026-10-18T05:40:45Z
+**User Input**: "N/A - no additional input"
+**AI Response**: "Assessed all required NFR categories against approved static-site constraints; no unresolved product clarification. Generated fifteen identifiable quality criteria and retained-stack decisions. Thresholds are proposed acceptance targets, not measured outcomes. Validated Markdown tables before file writes and updated plan/state. No application code changed and no implementation checks run."
+**Context**: CONSTRUCTION - NFR Requirements review gate.
+
+---
+
+## NUS Career Talk - NFR Requirements Approval Prompt
+**Timestamp**: 2026-10-18T05:40:45Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "NFR Requirements Complete - nus-career-talk. Defined fifteen verifiable quality criteria covering keyboard/motion, contrast, projection/mobile readability, bounded local computation, routing, chunk/fullscreen fallback and source accuracy. Retain existing React/TypeScript/Vite stack and native CSS/SVG visuals. Review nfr-requirements.md and tech-stack-decisions.md under aidlc-docs/construction/nus-career-talk/nfr-requirements/. Request Changes or Continue to Next Stage to NFR Design. The local NFR Requirements rule Step 8 requires explicit approval before proceeding. Both optional extensions remain disabled (N/A)."
+**Context**: NFR Requirements Steps 7–8; two-option review.
+
+---
+
+## NUS Career Talk - NFR Requirements Approved
+**Timestamp**: 2026-10-18T05:47:59Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+
+## Open tabs:
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+
+## My request:
+continue"
+**AI Response**: "Recorded Continue to Next Stage as explicit NFR Requirements approval. Loaded NFR Design rules and both NFR requirements artifacts. Proceeding to the approved pattern design; optional extension rules skipped because disabled."
+**Context**: CONSTRUCTION - NFR Design.
+
+---
+
+## NUS Career Talk - NFR Design Generated
+**Timestamp**: 2026-10-18T05:47:59Z
+**User Input**: "N/A - no additional input"
+**AI Response**: "Assessed resilience, scalability, performance, security and logical-component categories with explicit applicability evidence. Generated patterns and client logical components covering Q01–Q15. No unresolved product choice required further input. Validated plain Markdown/table structure before writes and updated checkboxes/state. No application code or implementation checks run; optional extension rules skipped because disabled."
+**Context**: CONSTRUCTION - NFR Design review pending.
+
+---
+
+## NUS Career Talk - NFR Design Approval Prompt
+**Timestamp**: 2026-10-18T05:47:59Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "NFR Design Complete - nus-career-talk. Defined scoped keyboard/focus handling, reduced-motion/pause policy, lazy loading and error recovery, fullscreen fallbacks and one-active-demo lifecycle. Review nfr-design-patterns.md and logical-components.md under aidlc-docs/construction/nus-career-talk/nfr-design/. Request Changes or Continue to Next Stage to Code Generation Part 1 (implementation planning). Infrastructure Design stays skipped. The local NFR Design rule Step 8 requires explicit approval before proceeding. Both optional extensions remain disabled (N/A)."
+**Context**: NFR Design Steps 7–8; two-option review.
+
+---
+
+## NUS Career Talk - NFR Design Approved
+**Timestamp**: 2026-10-18T05:54:48Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+
+## Open tabs:
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+
+## My request:
+approve and continue"
+**AI Response**: "Recorded explicit NFR Design approval as Continue to Next Stage. Infrastructure Design remains skipped under the approved execution plan. Loaded Code Generation rules, current state and manifest; preparing the whole-unit implementation plan. Optional extension rules skipped because disabled."
+**Context**: CONSTRUCTION - Code Generation Part 1.
+
+---
+
+## NUS Career Talk - Code Generation Plan Prepared
+**Timestamp**: 2026-10-18T05:54:48Z
+**User Input**: "N/A - no additional input"
+**AI Response**: "Prepared twelve numbered, path-specific implementation steps with story/scenario traceability, readiness context, meaningful tests, existing static deployment constraints and verification limits. Validated plain Markdown and step count before writing. Updated stage/checklist state. No application code changed and no implementation tests run. Whole-plan approval remains pending."
+**Context**: CONSTRUCTION - Code Generation Part 1.
+
+---
+
+## NUS Career Talk - Code Generation Whole-Plan Approval Prompt
+**Timestamp**: 2026-10-18T05:54:48Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Code Generation plan ready. Twelve steps cover verified Vietnamese content, deterministic models, eleven interactive visuals, presentation/exploration views, browser accessibility/fallbacks, existing-site integration, tests and review. Please review aidlc-docs/construction/plans/nus-career-talk-code-generation-plan.md. A approves the whole plan and begins implementation; B requests changes; X allows another direction. The local Code Generation rule Part 1 Step 7 requires explicit approval of the complete plan before application edits. Both optional extensions remain disabled (N/A)."
+**Context**: Code Generation Part 1 Step 7; explicit whole-plan approval required before Part 2.
+
+---
+
+## Code Generation - Plan Approved
+**Timestamp**: 2026-10-18T06:15:56Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+
+## Open tabs:
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+
+## My request:
+approve"
+**AI Response**: "Approved entire twelve-step plan. Verified NUS sources. Temporary official Node runtime downloaded because npm/node absent. Initial content script failed encoding before any writes; corrected through UTF-8 source files."
+**Context**: Code Generation Part 2; extensions disabled and skipped.
+
+---
+
+## Code Generation - Implementation and Verification Complete
+**Timestamp**: 2026-10-18T08:49:57Z
+**User Input**: "N/A - no additional user message"
+**AI Response**: "Implemented all twelve steps: Vietnamese content, models, eleven demos, browser hooks, narrative/exploration, route/error boundary and both headers. Added meaningful content/model/demo/route tests. Initial focused 23 tests passed; complete suite final 114 passed across 16 files. Corrected an existing colour-mode test assumption after isolated reproduction; theme logic unchanged. Production build passed; separate talk chunk verified. Chrome desktop/projection/mobile, all scenes/topics, reduced motion, keyboard, fullscreen and selected contrast checks completed. Measured one route action at 33.1ms to two frames. Actual browser zoom, Safari/Firefox, screen reader and timed rehearsal remain unverified; documented limits. Fixed mobile navigation/label clipping and focus scroll/cleanup details; affected tests and build rerun successfully. Temporary Node runtime/dependencies used with approved escalation after sandbox failures. No packages/lockfile/deployment workflow changed. Updated all plan/story checkboxes, summary, documentation index and state. Optional extensions remain disabled and skipped."
+**Context**: Code Generation review pending; formal Build and Test not yet executed.
+
+---
+
+## Code Generation - Raw Input Correction
+**Timestamp**: 2026-10-18T08:49:57Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+
+## Open tabs:
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+
+## My request:
+approve"
+**AI Response**: "This is the exact raw approval input for this turn; the initial approval audit entry accidentally included an extra architecture-review tab. Appending correction without overwriting the historical entry."
+**Context**: Append-only audit correction.
+
+---
+
+## Code Generation - Approval Prompt
+**Timestamp**: 2026-10-18T08:49:57Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Code Generation Complete - nus-career-talk. Implemented the Vietnamese presentation and eleven interactive focus-area demos at #/talks/nus-cs, with entry links in both themes. 114 tests pass; production build passes; Chrome layouts, keyboard, fullscreen and reduced motion checked. Review code-generation-summary.md and the application source. Request Changes or Continue to Next Stage to formal Build and Test using code/review-questions.md. The local Code Generation rule Part 2 Step 15 requires explicit code approval before proceeding. Both optional extensions remain disabled (N/A)."
+**Context**: Code Generation Part 2 Step 15; awaiting explicit generated-code approval.
+
+---
+
+## NUS Career Talk - Generated Code Approved
+**Timestamp**: 2026-10-18T09:01:08Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+
+## Open tabs:
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+
+## My request:
+approve and continue"
+**AI Response**: "Recorded explicit approval of generated code as Continue to Next Stage. Loaded Build and Test rules, state and implementation evidence. Ran the complete suite and production build for the formal stage. Both optional extensions remain disabled; their full rules were skipped."
+**Context**: CONSTRUCTION - Build and Test.
+
+---
+
+## NUS Career Talk - Build and Test Stage Complete
+**Timestamp**: 2026-10-18T09:01:08Z
+**User Input**: "N/A - no additional user input"
+**AI Response**: "Formal rerun: 114 tests across 16 files passed (6.10s); TypeScript/Vite build passed (Vite bundling 1.79s), separate talk chunk verified; diff whitespace check passed. No code changes or new dependencies. Reused unchanged-code Chrome evidence and documented unverified actual zoom, cross-browser, screen-reader and rehearsal checks. Generated five required instruction/summary files plus E2E instructions and review question in a scoped subdirectory, preserving previous workflow history. Validated Markdown tables and content before writes; updated code approval, plan checkboxes, state and index. Optional extension rules skipped because disabled."
+**Context**: CONSTRUCTION - Build and Test completed; Operations review pending.
+
+---
+
+## NUS Career Talk - Operations Transition Approval Prompt
+**Timestamp**: 2026-10-18T09:01:08Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Build and Test Complete. Complete suite passed 114 tests across 16 files; TypeScript/Vite production build passed. Required build/unit/integration/performance instructions, manual browser checks and summary are generated under aidlc-docs/construction/build-and-test/nus-career-talk/. Existing browser evidence and unverified rehearsal/cross-browser/zoom checks are explicitly documented. Review the summary and answer the dedicated question: Build and test instructions complete. Ready to proceed to Operations stage? The local Build and Test workflow requires explicit approval before the Operations placeholder. Both optional extensions remain disabled (N/A). No publication has occurred."
+**Context**: Build and Test review gate; do not advance until explicit approval.
+
+---
+
+## NUS Career Talk - Build and Test Approval and Workflow Closure
+**Timestamp**: 2026-10-18T09:30:54Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+
+## Open tabs:
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+
+## My request:
+approve and continue"
+**AI Response**: "Recorded explicit Build and Test approval and transition to Operations. Loaded operations/operations.md: Operations is a placeholder and the supplied workflow ends after Construction Build and Test. Updated all remaining approval checkboxes, state/index/summary and created Operations handoff. No further gate, deployment, commit or push performed. Existing 114-test and production-build evidence retained; no application changes required rerunning checks. Security Baseline/PBT remain disabled and N/A. Final handoff: workflow complete; page at #/talks/nus-cs, run npm run dev for local preview; implementation is not published."
+**Context**: OPERATIONS placeholder acknowledged; NUS career-talk workflow complete.
+
+---
+
+## NUS Career Talk - Header and Introduction Amendment Request
+**Timestamp**: 2026-10-18T11:35:46Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+
+## Open tabs:
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+- nus-career-talk-requirement-verification-questions.md: aidlc-docs/inception/requirements/nus-career-talk-requirement-verification-questions.md
+
+## My request:
+Please fix the NUS CS button as it's a little bit crammed
+
+Also, please add a page to quickly introduce myself, based on information from my CV"
+**AI Response**: "Inspected attached screenshot showing NUS/CS/arrow wrapping, current navigation, completed workflow state, talk slide bounds and featured-index mapping. Read bundled CV via local Swift/PDFKit after confirming no Python PDF package installed. CV supports NUS Honours Distinction Database focus, Torilab/Rakuten/Sea experience, ongoing UT Austin studies through December 2026 and mentorship. Prepared concrete introduction copy and placement question; no application code changed yet. Reopened existing workflow as focused requirements amendment, preserving previous completed stages. Security/PBT full rules skipped because disabled."
+**Context**: INCEPTION - focused amendment; screenshot attachment noted separately from complete textual input above.
+
+---
+
+## NUS Career Talk - Introduction Placement Clarification
+**Timestamp**: 2026-10-18T11:35:46Z
+**User Input**: "N/A - clarification prompt"
+**AI Response**: "Diagnosed NUS CS link wrapping from flex shrink in a crowded desktop header. Read the actual bundled CV and drafted a concise Vietnamese introduction. Please answer Question 1 in nus-career-talk-header-intro-questions.md: A adds a talk slide, B a separate page, C both, X another direction. The local requirements-analysis.md Step 6 gate requires resolving this placement ambiguity before generating amendment requirements. Existing optional extensions remain disabled (N/A)."
+**Context**: Requirements Analysis clarification gate; awaiting placement answer.
+
+---
+
+## Header and Introduction - Placement and Photo Confirmed
+**Timestamp**: 2026-10-18T12:05:33Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+
+## Open tabs:
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+
+## My request:
+yes please, please also add my portfolio photo there"
+**AI Response**: "Read saved Answer A, confirming introduction as second presentation slide. Recorded explicit existing-portfolio-photo request. Created focused R1–R3 requirements including responsive header spacing, CV-backed Vietnamese introduction and content-derived ten-slide navigation; no unresolved placement ambiguity. Reused disabled extension decisions and skipped full rules. Validated plain Markdown before writing; updated plan/state in this interaction. No application edits yet."
+**Context**: INCEPTION - Requirements review.
+
+---
+
+## Header and Introduction - Requirements Approval Prompt
+**Timestamp**: 2026-10-18T12:05:33Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Requirements Analysis Complete. The introduction will be the second talk slide, with the existing portfolio portrait and concise Vietnamese CV highlights. The amendment also fixes the cramped NUS CS action and updates navigation for ten scenes. Review nus-career-talk-header-intro-requirements.md; Request Changes or Approve & Continue to Workflow Planning using the review file. Requirements Analysis Step 9 requires explicit approval of generated requirements before proceeding. Optional extensions remain disabled (N/A)."
+**Context**: Requirements Analysis Step 9 review gate.
+
+---
+
+## Header and Introduction - Requirements Approved; Focused Planning
+**Timestamp**: 2026-10-18T12:10:15Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+
+## Open tabs:
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+- nus-career-talk-story-generation-plan.md: aidlc-docs/inception/plans/nus-career-talk-story-generation-plan.md
+- nus-career-talk-requirements.md: aidlc-docs/inception/requirements/nus-career-talk-requirements.md
+
+## My request:
+approve and continue"
+**AI Response**: "Recorded explicit requirements approval. Prepared focused execution plan, bounded US10/acceptance amendment using the already-approved personas/methodology, and a complete path-specific seven-step code-generation plan for joint review. No source edits yet. Existing design/quality contracts reused; no new architectural or infrastructure stage needed. Validated restricted Mermaid structure and Markdown before writes; updated progress immediately. Optional extension rules skipped because disabled."
+**Context**: INCEPTION - Workflow Planning with concrete generation sequence for joint approval.
+
+---
+
+## Header and Introduction - Combined Plan Approval Prompt
+**Timestamp**: 2026-10-18T12:10:15Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Workflow Planning Complete. Prepared one focused workflow with reused design/personas and a bounded speaker story amendment, plus a complete seven-step implementation plan covering header layout, CV/photo slide, content-derived navigation, regressions, browser checks and documentation. Review both linked plans together. Approve & Continue authorizes the whole concrete workflow/story/code-generation sequence and begins implementation; Request Changes or Add Skipped Stages remain available. The local workflow-planning.md Step 9 and code-generation.md Part 1 Step 7 require explicit plan approval before source edits. Both optional extensions remain disabled (N/A)."
+**Context**: Workflow/code-generation approval gate; combined approval requested to avoid duplicate permission for the same concrete sequence.
+
+---
+
+## Header and Introduction - Combined Plan Approved
+**Timestamp**: 2026-10-18T12:11:57Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+approve"
+**AI Response**: "Recorded explicit combined workflow/story/code-plan approval. Beginning the seven-step amendment; no additional approval of the same concrete sequence is required. Loaded relevant code/requirements and inspected original portfolio portrait for responsive display. Optional Security/PBT extensions remain disabled and skipped."
+**Context**: CONSTRUCTION - Amendment Code Generation.
+
+---
+
+## Header and Introduction - Implementation Verified
+**Timestamp**: 2026-10-18T12:15:11Z
+**User Input**: "N/A - no additional user input"
+**AI Response**: "Executed all seven approved steps. Added reserved non-wrapping header action and responsive full-navigation breakpoint, second speaker scene with unchanged portfolio portrait and CV-backed copy, and content-derived slide/featured mapping. Updated relevant regression checks; 26 focused tests passed, complete suite 115 passed across 16 files; TypeScript/Vite build passed; diff check passed. Chrome inspected both headers at 360/1110/1280/1440/1536/1920px and speaker at 1440x900/1280x720/360x800; no overlap, wrapping, horizontal overflow or runtime exceptions; photo loaded square. Updated current source/design/count contracts, story US10 and documentation while retaining dated baseline evidence. No dependency, image source, hosting, commit, push or publication changes. Optional full extension rules skipped because disabled."
+**Context**: CONSTRUCTION - Amendment Code Generation complete; review pending.
+
+---
+
+## Header and Introduction - Generated Code Approval Prompt
+**Timestamp**: 2026-10-18T12:15:11Z
+**User Input**: "N/A - approval prompt"
+**AI Response**: "Code Generation Complete - header/photo introduction. Fixed responsive NUS CS spacing in both headers and added the CV-backed introduction with the original portfolio portrait as slide 02 / 10. All 115 tests across 16 files and production build pass. Chrome checked both headers at six widths and portrait layout at three viewport sizes. Review header-intro-summary.md; Request Changes or Continue to Next Stage for amendment Build and Test in header-intro-review-questions.md. The local Code Generation rule Part 2 Step 15 requires explicit generated-code approval before proceeding. Optional extensions remain disabled (N/A)."
+**Context**: Code Generation Part 2 review gate.
+
+---
+
+## Header and Introduction - Generated Code Changes Requested
+**Timestamp**: 2026-10-18T15:48:01Z
+**User Input**: "# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+replace em with các em, update my name to Nhâm Quốc Hùng, sửa slide này cho cân đối 2 phần, sửa câu từ để dịch sát nghĩa và nghe chuyên nghiệp hơn, hiện tại câu từ khá lủng cùng, sửa các slide về NUS để nói ý rằng vì tôi học CS ở đây, tôi sẽ sử dụng chương trình của trường để giới thiệu cho các em về ngành, ngoài ra các logo của slide so sánh CS và CE khá khó hiểu, bỏ các đề cập về CV đi vì đây là bài thuyết trình, update phần giới thiệu sao cho thể hiện được việc tôi là chuyên gia về cả lĩnh vực CS lẫn tư vấn học sinh. Ngoài ra, đổi background color để trông thân thiện mà vẫn chuyên nghiệp"
+**AI Response**: "Treating this as Request Changes at the generated-code review gate. User explicitly authorises copy/name, balanced CS/CE comparison, labelled explanatory diagrams, personal NUS curriculum framing, removal of CV references, stronger technical/educational advisory positioning and friendlier professional background. Updating the existing code plan with these concrete revision steps and implementing directly; existing disabled extensions remain N/A and full rules skipped. Two attached screenshots provide layout/copy evidence."
+**Context**: CONSTRUCTION - Code Generation review revisions; no fresh approval of already requested revisions needed.
+
+---
+
+## Code Generation - Requested review revisions complete
+**Timestamp**: 2026-10-18T15:53:57Z
+**User Input**: No additional user input; full triggering request is recorded above.
+**AI Response**: Implemented plural audience address, accented identity, professional Vietnamese, combined engineering/advising introduction, personal NUS curriculum framing, labelled equal desktop comparison panels and a light sage/off-white/navy talk palette. Updated all revision plan checkboxes, requirements, summary and state. Verified 116 tests across 16 files, production build, whitespace check, and ten scenes at 1440/1280/360px in Chrome. No horizontal overflow or browser exceptions. Existing bundle warning and vertical scrolling documented. Security Baseline and PBT disabled; full rules skipped.
+**Context**: Return to generated-code review. Approval prompt: review header-intro-summary.md and choose Request Changes or Continue to Next Stage in header-intro-review-questions.md. The local construction/code-generation.md Step 15 explicitly requires generated-code approval before formal amendment Build and Test. No publication performed.
+
+---
+
+## Code Generation - Speaker background revision
+**Timestamp**: 2026-10-18T16:29:11Z
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+thêm thông tin về hồ sơ của tôi, gồm 12 năm sinh sống và học tập tại Singapore, 4 năm học bổng ASEAN phổ thông, 4 năm học bổng ASEAN bậc đại học, và có kinh nghiệm làm việc ở các công ty global như PSA International, Sea Group, Rakuten Group và Torilab
+
+**AI Response**: Bổ sung trực tiếp thông tin do người dùng cung cấp vào slide giới thiệu; giữ nội dung ngắn gọn, tách trải nghiệm Singapore và học bổng thành các mục rõ ràng.
+**Context**: Authorised change at existing generated-code review; no new workflow required.
+
+---
+
+## Code Generation - Speaker background revision complete
+**Timestamp**: 2026-10-18T16:29:26Z
+**AI Response**: Đã bổ sung 12 năm sinh sống và học tập tại Singapore, 4 năm học bổng ASEAN phổ thông, 4 năm học bổng ASEAN đại học, cùng kinh nghiệm tại PSA International, Sea Group, Rakuten Group và Torilab. Giữ nguyên ảnh và phần chuyên môn CS/tư vấn học sinh. Năm kiểm thử liên quan và production build đều đạt.
+**Context**: Updated plan checkboxes and review evidence; generated-code review remains pending, with no new approval request.
+
+---
+
+## Code Generation - Audience address revision
+**Timestamp**: 2026-10-18T16:30:52Z
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+Bỏ các phần xưng tôi, chỉ gọi và xưng với các bạn học sinh là các em
+
+**AI Response**: Remove presenter first-person wording, use neutral biographical phrasing and address students consistently as các em.
+**Context**: Authorised editorial revision within pending generated-code review.
+
+---
+
+## Code Generation - Audience address verification
+**Timestamp**: 2026-10-18T16:31:08Z
+**AI Response**: Đã bỏ các phần xưng tôi, chuyển lời giới thiệu sang diễn đạt trung tính và thống nhất gọi học sinh là các em. Năm kiểm thử liên quan và build đều đạt; đã kiểm tra toàn bộ mã/nội dung bài nói không còn tôi, chúng ta hay các bạn.
+**Context**: Requested revision complete; plan updated, existing review status preserved.
+
+---
+
+## Code Generation - Fitted fullscreen revision
+**Timestamp**: 2026-10-18T17:36:29.235992+00:00
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+please add a full screen mode to make it fit like a presentation, where I can present it easily
+
+**AI Response**: Existing fullscreen does not fit scrolling slides. Implement fitted slide canvas, browser-window fallback, Escape exit and presenter keyboard controls as an explicitly requested review revision.
+**Context**: Existing generated-code review; Security Baseline/PBT disabled, full rules skipped.
+
+---
+
+## Code Generation - Fitted fullscreen complete
+**Timestamp**: 2026-10-18T17:39:16.908240+00:00
+**AI Response**: Implemented fitted fullscreen/window presentation, dynamic scene scaling, readable demo/career columns, Page Up/Down navigation, Escape exit and cleanup. All 118 tests passed; production build passed; Chrome fit checks 30/30 at three resolutions with no runtime errors. Updated plan, requirements, state and review summary.
+**Context**: Explicitly requested revision complete; existing generated-code review gate retained. No new permission request or publication.
+
+---
+
+## Code Generation - Demo fullscreen layout fix
+**Timestamp**: 2026-10-18T17:43:47.264510+00:00
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+please fix the demo so it displays full screen
+
+**AI Response**: Screenshot shows career cards displaced below the demo. Found grid selector targeting nested panel rather than direct DemoHost wrapper. Fix placement and widen demo column, then measure actual content geometry.
+**Context**: User-requested review correction; screenshot supplied.
+
+---
+
+## Code Generation - Demo fullscreen correction complete
+**Timestamp**: 2026-10-18T17:46:24.342169+00:00
+**AI Response**: Fixed misplaced demo wrapper, enlarged visualization column and added a full-viewport interactive demo view with Escape/close return and preserved results. All 119 tests and production build passed. Chrome geometry checks passed at three resolutions; inspected graph/controls/results within 1280×720. Updated plan and review evidence.
+**Context**: User-requested correction complete. Existing review gate retained; no publication.
+
+---
+
+## Code Generation - CS overview revision
+**Timestamp**: 2026-10-18T17:56:14.348598+00:00
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+Tôi cần một nơi giải thích tổng quan CS là gì rõ hơn
+
+**AI Response**: Add a foundational CS overview after the speaker introduction and before CS/CE, covering computation, core learning questions, programming as a tool and a relatable example.
+**Context**: Explicitly requested review revision; existing presentation components and fitted mode reused.
+
+---
+
+## Code Generation - CS overview complete
+**Timestamp**: 2026-10-18T17:56:38.175351+00:00
+**AI Response**: Đã thêm slide Khoa học máy tính là gì? sau giới thiệu, trước CS/CE: định nghĩa, ba nhóm câu hỏi cốt lõi, ví dụ xếp thời khoá biểu và vai trò của lập trình. Cập nhật kiểm thử thứ tự và điều hướng cho 11 slide; 119 kiểm thử và build đều đạt.
+**Context**: Updated plan, requirements, state and review evidence. No new browser screenshot pass or publication. Existing review gate retained.
+
+---
+
+## Code Generation - Career wording clarification
+**Timestamp**: 2026-10-18T18:00:26.710826+00:00
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+hiểu dữ liệu và xây nền tảng hơi khó hiểu
+
+**AI Response**: Replace abstract career exploration labels and descriptions with concrete student-friendly actions and examples. Screenshot supplied.
+**Context**: Requested editorial review fix within existing presentation.
+
+---
+
+## Code Generation - Career wording complete
+**Timestamp**: 2026-10-18T18:00:39.150862+00:00
+**AI Response**: Đã đổi thành Giúp máy học và dự đoán và Giữ ứng dụng hoạt động ổn định, kèm ví dụ cụ thể. Sáu kiểm thử liên quan và build đều đạt.
+**Context**: Plan and review evidence updated; links unchanged.
+
+---
+
+## Code Generation - Full Vietnamese editorial review
+**Timestamp**: 2026-10-18T18:02:13.326176+00:00
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+# Tương lai công nghệ có chỗ cho ý tưởng của các em
+
+&#x20;cũng rất không tự nhiên, làm ơn sửa hết câu từ cho phù hợp với văn phong tiếng việc
+
+**AI Response**: Review all learner-facing Vietnamese across narrative, exploration and eleven demos; replace translated slogans, clipped phrases and awkward instructions with direct natural Vietnamese. Preserve factual claims, audience address and functionality.
+**Context**: User explicitly requests full copy revision at existing review gate.
+
+---
+
+## Code Generation - Vietnamese editorial pass complete
+**Timestamp**: 2026-10-18T18:03:02.652944+00:00
+**AI Response**: Đã rà soát toàn bộ slide, 11 lĩnh vực và hướng dẫn tương tác; sửa câu kết, khẩu hiệu, câu hỏi và mô tả còn gượng sang tiếng Việt cụ thể, tự nhiên hơn. Giữ thuật ngữ tiếng Anh chính thức để đối chiếu. 119 kiểm thử và build đều đạt.
+**Context**: Plan, editorial requirements and review evidence updated; no publication.
+
+---
+
+## Code Generation - Five simulation scenes
+**Timestamp**: 2026-10-18T18:05:52.422019+00:00
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+bỏ slide tìm hiểu ngành CS qua NUS, dùng 5 slide ứng dụng mô phỏng thay vì 3
+
+**AI Response**: Remove dedicated NUS curriculum introduction and use five featured simulation slides by adding existing database and security demos. Update numbering, navigation and regression coverage.
+**Context**: Authorised review revision; no new external facts or dependencies.
+
+---
+
+## Code Generation - Five simulation scenes complete
+**Timestamp**: 2026-10-18T18:06:14.360539+00:00
+**AI Response**: Đã bỏ slide tìm hiểu CS qua chương trình NUS; có 5 slide mô phỏng gồm thuật toán, AI, đồ hoạ, cơ sở dữ liệu và an toàn máy tính. Tổng 12 slide; 124 kiểm thử và build đều đạt.
+**Context**: Updated numbered plan, requirements, state and review evidence. No publication.
+
+---
+
+## Code Generation - Replace database presentation demo
+**Timestamp**: 2026-10-18T18:31:56.128125+00:00
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+Chỉ mục mẫu là gì? Thay thế demo về database bằng cái khác
+
+**AI Response**: Explain that Chỉ mục mẫu labelled a binary-search illustration rather than an actual database index; replace the featured database scene with the existing networking/rerouting demo and clarify misleading wording in optional database exploration.
+**Context**: Direct review request; five featured scenes and twelve total slides retained.
+
+---
+
+## Code Generation - Database featured replacement complete
+**Timestamp**: 2026-10-18T18:32:13.637043+00:00
+**AI Response**: Đã thay slide database bằng mô phỏng gửi dữ liệu và đổi đường truyền khi máy gặp sự cố. Giữ 5 slide mô phỏng, tổng 12 slide. Sửa nhãn Chỉ mục mẫu thành Tìm kiếm nhị phân trong phần khám phá tuỳ chọn. 124 kiểm thử và build đều đạt.
+**Context**: Requested correction complete; plan and evidence updated.
+
+---
+
+## Code Generation - Graph edge label readability
+**Timestamp**: 2026-10-18T18:35:14.398529+00:00
+**User Input**:
+# Context from my IDE setup:
+
+## Active file: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+
+## Open tabs:
+- nus-career-talk-header-intro-code-generation-plan.md: aidlc-docs/construction/plans/nus-career-talk-header-intro-code-generation-plan.md
+- nus-career-talk-header-intro-execution-plan.md: aidlc-docs/inception/plans/nus-career-talk-header-intro-execution-plan.md
+- nus-career-talk-header-intro-questions.md: aidlc-docs/inception/requirements/nus-career-talk-header-intro-questions.md
+- business-logic-model.md: aidlc-docs/construction/nus-career-talk/functional-design/business-logic-model.md
+- nus-career-talk-application-design-plan.md: aidlc-docs/inception/plans/nus-career-talk-application-design-plan.md
+
+## My request:
+thay từ chỉ mục mẫu bằng từ đúng, ngoài ra fix lỗi vị trí của 2 số 1 để dễ nhìn hơn
+
+**AI Response**: Confirm accurate database label Tìm kiếm nhị phân, then move vertical-edge weights off their connecting lines for legibility. Screenshot supplied.
+**Context**: Isolated review fix to shared demo graph.
+
+---
+
+## Code Generation - Graph labels complete
+**Timestamp**: 2026-10-18T18:35:27.570799+00:00
+**AI Response**: Đã xác nhận nhãn Tìm kiếm nhị phân thay Chỉ mục mẫu và dịch hai số 1 sang bên phải cạnh dọc, tránh chồng lên đường nối. 11 kiểm thử demo và build đều đạt.
+**Context**: Plan and review evidence updated.
+
+---

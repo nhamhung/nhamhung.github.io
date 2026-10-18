@@ -15,6 +15,7 @@ import { PortfolioStyleSelector } from "../../components/shared/PortfolioStyleSe
 import { ColorModeButton } from "../../components/ui/color-mode";
 import { profile } from "../../data/portfolio";
 import type { PortfolioShellProps } from "../types";
+import { NUS_TALK_HASH } from "../../utils/talkRoute";
 
 function BusinessShell({
   activeSection,
@@ -160,6 +161,28 @@ function BusinessShell({
           </Link>
 
           <Flex align="center" gap={2} flex="none">
+            <Link
+              href={NUS_TALK_HASH}
+              display={{ base: "none", md: "inline-flex" }}
+              minH="44px"
+              alignItems="center"
+              px={4}
+              minW="108px"
+              flexShrink={0}
+              whiteSpace="nowrap"
+              justifyContent="center"
+              border="1px solid"
+              borderColor="var(--line-500)"
+              borderRadius="md"
+              bg="var(--control-bg-soft)"
+              _hover={{ bg: "var(--control-hover-bg)" }}
+              fontWeight={600}
+              color="var(--text-100)"
+              fontSize="sm"
+              data-testid="business-talk-link"
+            >
+              NUS CS ↗
+            </Link>
             <Box
               display={{ base: "none", md: "block" }}
               pr={4}
@@ -249,6 +272,15 @@ function BusinessShell({
             </Drawer.Header>
             <Drawer.Body py={5}>
               <VStack align="stretch" gap={5}>
+                <Link
+                  href={NUS_TALK_HASH}
+                  onClick={onClose}
+                  minH="44px"
+                  color="var(--text-100)"
+                  data-testid="business-mobile-talk-link"
+                >
+                  NUS CS · Mở lối tương lai ↗
+                </Link>
                 <Box as="nav" aria-label="Business mobile showcase navigation">
                   <VStack as="ul" align="stretch" gap={1} listStyleType="none">
                     {navigationLinks("mobile")}

@@ -1,5 +1,7 @@
 # Build and Test Summary
 
+Latest workflow: [NUS Career Talk results](nus-career-talk/build-and-test-summary.md). The previous workflow results below are retained as historical evidence.
+
 ## Outcome
 
 The template-first beginner README and mode-specific Business Direct Contact color update pass all automated quality gates. No dependency, route, asset, data model, or deployment workflow changed.
